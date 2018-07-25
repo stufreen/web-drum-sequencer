@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import { getAudioContext } from '../services';
+import { startPlayback } from '../common';
 
 export const LOOKAHEAD = 0.1; // seconds
 
@@ -22,9 +23,13 @@ const scheduleChannel = (channel, state) => {
     channel.notes.forEach((note) => {
       const noteTime = startTime + (note.beat * 60 / bpm);
       if (noteTime >= currentTime &&
-        noteTime < currentTime + LOOKAHEAD &&
-        typeof schedule[note.id] === 'undefined') {
-        schedule[note.id] = scheduleNote(channel.id, noteTime);
+        noteTime < currentTime + LOOKAHEAD) {
+        // Don't schedule the same note twice
+        if (typeof schedule[note.id] === 'undefined') {
+          schedule[note.id] = scheduleNote(channel.id, noteTime);
+        }
+      } else {
+        delete schedule[note.id]; // Clear out irrelevant notes from schedule
       }
     });
   }
@@ -32,10 +37,21 @@ const scheduleChannel = (channel, state) => {
 
 const tick = (store) => {
   const state = store.getState();
-  // console.log(state);
+
+  // Don't do anything if use hasn't pressed play
   if (!R.path(['playbackSession', 'playing'], state)) {
     return;
   }
+
+  // Loop playback
+  const bpm = R.path(['playbackSession', 'bpm'], state);
+  const startTime = R.path(['playbackSession', 'startTime'], state);
+  const currentTime = getAudioContext().currentTime;
+  const barEnd = startTime + (16 * 60 / bpm);
+  if (currentTime + LOOKAHEAD > barEnd) {
+    store.dispatch(startPlayback());
+  }
+
   state.channels.forEach((channel) => {
     scheduleChannel(channel, state);
   });
@@ -85,7 +101,7 @@ export const initializeAudioScheduler = (store) => {
   getAudioContext();
   loadSamples(store)
     .then(() => {
-      tick(store);
+      // Start the loop!!!
       setInterval(() => {
         tick(store);
       }, 25);

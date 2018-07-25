@@ -1,12 +1,13 @@
 import { connect } from 'react-redux'
 import { compose } from 'recompose';
 import { PlayButtonComponent } from './PlayButton.component';
-import { startPlayback } from '../../common';
+import { startPlayback, stopPlayback, playbackSessionSelectors } from '../../common';
 
 const mapDispatchToProps = {
   startPlayback,
+  stopPlayback,
 };
 
 export const PlayButton = compose(
-  connect(null, mapDispatchToProps),
+  connect(playbackSessionSelectors, mapDispatchToProps),
 )(PlayButtonComponent);
