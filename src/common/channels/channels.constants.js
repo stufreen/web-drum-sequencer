@@ -1,0 +1,3 @@
+export const CHANNELS_CONSTANTS = {
+  ADD_CHANNEL: 'ADD_CHANNEL',
+};
