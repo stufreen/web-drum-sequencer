@@ -1,9 +1,9 @@
 import React from 'react';
 import { ChannelLabel, Toggles } from '.';
 
-export const Channel = ({ data }) => (
+export const Channel = ({ channel }) => (
   <div className="flex">
-    <ChannelLabel>{data.name}</ChannelLabel>
-    <Toggles />
+    <ChannelLabel>{channel.name}</ChannelLabel>
+    <Toggles notes={channel.notes} channelID={channel.id} />
   </div>
 );

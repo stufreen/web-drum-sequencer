@@ -1,2 +1,2 @@
-export * from './notes';
+export * from './playbackSession';
 export * from './channels';
