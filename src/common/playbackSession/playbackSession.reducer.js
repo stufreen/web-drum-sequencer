@@ -1,13 +1,12 @@
 import { PLAYBACK_SESSION_CONSTANTS } from "./playbackSession.constants";
 import { getAudioContext } from '../../services';
+import { LOOKAHEAD } from '../../utils';
 
-export const playbackSessionInitialState = [
-  {
-    bpm: 100,
-    playing: false,
-    startTime: null,
-  },
-];
+export const playbackSessionInitialState = {
+  bpm: 240,
+  playing: false,
+  startTime: null,
+};
 
 export const playbackSessionReducer = (state = playbackSessionInitialState, action) => {
   switch (action.type) {
@@ -15,7 +14,7 @@ export const playbackSessionReducer = (state = playbackSessionInitialState, acti
       return {
         ...state,
         playing: true,
-        startTime: getAudioContext().currentTime,
+        startTime: getAudioContext().currentTime + LOOKAHEAD,
       };
     default:
       return state;
