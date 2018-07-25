@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PageTitle>Drum Machine</PageTitle>
+        <PageTitle>Drumbox</PageTitle>
         <PlayButton />
         <ChannelList />
       </div>
