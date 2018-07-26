@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
-import { PageTitle, ChannelList, PlayButton } from './components';
+import { PageTitle, ChannelList, PlayButton, BPMInput } from './components';
 
 class App extends Component {
   render() {
@@ -8,6 +8,7 @@ class App extends Component {
       <div className="App">
         <PageTitle>Drumbox</PageTitle>
         <PlayButton />
+        <BPMInput />
         <ChannelList />
       </div>
     );

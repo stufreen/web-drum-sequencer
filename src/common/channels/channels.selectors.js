@@ -1,5 +1,3 @@
-import { createStructuredSelector } from 'reselect';
+import * as R from 'ramda';
 
-export const channelsSelector = createStructuredSelector({
-  channels: state => state.channels,
-});
+export const channelsSelector = R.path(['channels']);

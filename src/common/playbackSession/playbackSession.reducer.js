@@ -22,6 +22,11 @@ export const playbackSessionReducer = (state = playbackSessionInitialState, acti
         playing: false,
         startTime: null,
       };
+    case PLAYBACK_SESSION_CONSTANTS.SET_BPM:
+      return {
+        ...state,
+        bpm: action.payload
+      };
     default:
       return state;
   }

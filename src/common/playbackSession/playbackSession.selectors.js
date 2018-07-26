@@ -1,5 +1,4 @@
-import { createStructuredSelector } from 'reselect';
+import * as R from 'ramda';
 
-export const playbackSessionSelectors = createStructuredSelector({
-  playing: state => state.playbackSession.playing,
-});
+export const playingSelector = R.path(['playbackSession', 'playing']);
+export const bpmSelector = R.path(['playbackSession', 'bpm']);

@@ -7,3 +7,8 @@ export const startPlayback = () => ({
 export const stopPlayback = () => ({
   type: PLAYBACK_SESSION_CONSTANTS.STOP_PLAYBACK,
 });
+
+export const setBPM = (val) => ({
+  type: PLAYBACK_SESSION_CONSTANTS.SET_BPM,
+  payload: val,
+});
