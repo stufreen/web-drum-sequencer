@@ -17,9 +17,12 @@ const scheduleNote = (sampleId, noteTime) => {
 
 const scheduleChannel = (channel, state) => {
   if (typeof channel.notes !== 'undefined') {
+    // Get some info about current state
     const bpm = R.path(['playbackSession', 'bpm'], state);
     const startTime = R.path(['playbackSession', 'startTime'], state);
     const currentTime = getAudioContext().currentTime;
+
+    // Check if the notes should be scheduled
     channel.notes.forEach((note) => {
       const noteTime = startTime + ((note.beat - 1) * 60 / bpm);
       if (noteTime >= currentTime &&
@@ -38,7 +41,7 @@ const scheduleChannel = (channel, state) => {
 const tick = (store) => {
   const state = store.getState();
 
-  // Don't do anything if use hasn't pressed play
+  // Don't do anything if user hasn't pressed play
   if (!R.path(['playbackSession', 'playing'], state)) {
     return;
   }
@@ -47,7 +50,7 @@ const tick = (store) => {
   const bpm = R.path(['playbackSession', 'bpm'], state);
   const startTime = R.path(['playbackSession', 'startTime'], state);
   const currentTime = getAudioContext().currentTime;
-  const currentBeat = (currentTime - startTime) * (bpm / 60) + 1;
+  const currentBeat = (currentTime - startTime + LOOKAHEAD) * (bpm / 60) + 1;
 
   // Dispatch action to redux to update transport
   store.dispatch(setCurrentBeat(currentBeat));
