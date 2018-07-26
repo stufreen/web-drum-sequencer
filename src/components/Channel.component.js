@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ChannelLabel, Toggles } from '.';
+import { ChannelLabel } from './ChannelLabel.component';
+import { Toggles } from './Toggles';
 
 export const Channel = ({ channel }) => (
   <div className="flex mb2">

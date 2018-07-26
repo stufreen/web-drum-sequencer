@@ -1,8 +1,7 @@
 import * as R from 'ramda';
 import { getAudioContext } from '../services';
+import { LOOKAHEAD } from './audioEngine.config';
 import { startPlayback, setCurrentBeat } from '../common';
-
-export const LOOKAHEAD = 0.1; // seconds
 
 const cachedArrayBuffers = {};
 const schedule = {};

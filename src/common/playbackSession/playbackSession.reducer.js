@@ -1,6 +1,6 @@
 import { PLAYBACK_SESSION_CONSTANTS } from './playbackSession.constants';
 import { getAudioContext } from '../../services';
-import { LOOKAHEAD } from '../../utils';
+import { LOOKAHEAD } from '../../utils/audioEngine.config';
 
 export const playbackSessionInitialState = {
   bpm: 100,
