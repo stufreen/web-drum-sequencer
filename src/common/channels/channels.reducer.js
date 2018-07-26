@@ -3,26 +3,75 @@ import { CHANNELS_CONSTANTS } from "./channels.constants";
 
 export const channelsInitialState = [
   {
-    id: 'snare',
-    name: 'Snare',
-    url: '/assets/drums/snare.wav',
+    id: 'kick',
+    name: 'Kick',
+    url: '/assets/drums/roland-707/kick-1-r1.wav',
     notes: [
       {
-        beat: 0,
+        beat: 1,
+        id: uuid(),
+      },
+      {
+        beat: 2.5,
+        id: uuid(),
+      },
+      {
+        beat: 4.25,
+        id: uuid(),
+      },
+    ],
+  },
+  {
+    id: 'snare',
+    name: 'Snare',
+    url: '/assets/drums/roland-707/snare-1-r1.wav',
+    notes: [
+      {
+        beat: 2,
+        id: uuid(),
+      },
+      {
+        beat: 4,
+        id: uuid(),
+      }
+    ],
+  },
+  {
+    id: 'hhclosed',
+    name: 'Hi Hat',
+    url: '/assets/drums/roland-707/hat-closed-r1.wav',
+    notes: [
+      {
+        beat: 1,
+        id: uuid(),
+      },
+      {
+        beat: 2,
+        id: uuid(),
+      },
+      {
+        beat: 3,
         id: uuid(),
       },
       {
         beat: 4,
         id: uuid(),
       },
+    ],
+  },
+  {
+    id: 'rim',
+    name: 'Rim',
+    url: '/assets/drums/roland-707/rim-r1.wav',
+    notes: [
       {
-        beat: 8,
+        beat: 1.75,
         id: uuid(),
       },
       {
-        beat: 12,
+        beat: 3.5,
         id: uuid(),
-      }
+      },
     ],
   },
 ];

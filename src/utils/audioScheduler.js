@@ -21,7 +21,7 @@ const scheduleChannel = (channel, state) => {
     const startTime = R.path(['playbackSession', 'startTime'], state);
     const currentTime = getAudioContext().currentTime;
     channel.notes.forEach((note) => {
-      const noteTime = startTime + (note.beat * 60 / bpm);
+      const noteTime = startTime + ((note.beat - 1) * 60 / bpm);
       if (noteTime >= currentTime &&
         noteTime < currentTime + LOOKAHEAD) {
         // Don't schedule the same note twice
@@ -47,7 +47,7 @@ const tick = (store) => {
   const bpm = R.path(['playbackSession', 'bpm'], state);
   const startTime = R.path(['playbackSession', 'startTime'], state);
   const currentTime = getAudioContext().currentTime;
-  const barEnd = startTime + (16 * 60 / bpm);
+  const barEnd = startTime + (4 * 60 / bpm);
   if (currentTime + LOOKAHEAD > barEnd) {
     store.dispatch(startPlayback());
   }

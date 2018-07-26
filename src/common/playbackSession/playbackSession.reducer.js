@@ -3,7 +3,7 @@ import { getAudioContext } from '../../services';
 import { LOOKAHEAD } from '../../utils';
 
 export const playbackSessionInitialState = {
-  bpm: 240,
+  bpm: 100,
   playing: false,
   startTime: null,
 };
