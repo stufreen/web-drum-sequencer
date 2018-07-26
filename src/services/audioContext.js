@@ -1,6 +1,6 @@
 let audioCtx;
 
-export const getAudioContext = function() {
+export const getAudioContext = () => {
   if (typeof audioCtx === 'undefined') {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   }

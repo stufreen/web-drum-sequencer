@@ -1,4 +1,4 @@
-import { PLAYBACK_SESSION_CONSTANTS } from "./playbackSession.constants";
+import { PLAYBACK_SESSION_CONSTANTS } from './playbackSession.constants';
 import { getAudioContext } from '../../services';
 import { LOOKAHEAD } from '../../utils';
 
@@ -26,12 +26,12 @@ export const playbackSessionReducer = (state = playbackSessionInitialState, acti
     case PLAYBACK_SESSION_CONSTANTS.SET_BPM:
       return {
         ...state,
-        bpm: action.payload
+        bpm: action.payload,
       };
     case PLAYBACK_SESSION_CONSTANTS.SET_CURRENT_BEAT:
       return {
         ...state,
-        currentBeat: action.payload
+        currentBeat: action.payload,
       };
     default:
       return state;

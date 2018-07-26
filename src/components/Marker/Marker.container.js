@@ -1,4 +1,4 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { MarkerComponent } from './Marker.component';
 import { markerSelectors } from './Marker.selectors';

@@ -1,7 +1,7 @@
-import { connect } from 'react-redux'
-import { compose, withState } from 'recompose';
-import { BPMInputComponent } from './BpmInput.component';
-import { bpmInputSelectors } from './BpmInput.selectors';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
+import { BPMInputComponent } from './BPMInput.component';
+import { bpmInputSelectors } from './BPMInput.selectors';
 import { setBPM } from '../../common';
 
 const mapDispatchToProps = {

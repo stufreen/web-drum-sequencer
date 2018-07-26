@@ -20,13 +20,13 @@ const scheduleChannel = (channel, state) => {
     // Get some info about current state
     const bpm = R.path(['playbackSession', 'bpm'], state);
     const startTime = R.path(['playbackSession', 'startTime'], state);
-    const currentTime = getAudioContext().currentTime;
+    const { currentTime } = getAudioContext();
 
     // Check if the notes should be scheduled
     channel.notes.forEach((note) => {
       const noteTime = startTime + ((note.beat - 1) * 60 / bpm);
-      if (noteTime >= currentTime &&
-        noteTime < currentTime + LOOKAHEAD) {
+      if (noteTime >= currentTime
+        && noteTime < currentTime + LOOKAHEAD) {
         // Don't schedule the same note twice
         if (typeof schedule[note.id] === 'undefined') {
           schedule[note.id] = scheduleNote(channel.id, noteTime);
@@ -49,7 +49,7 @@ const tick = (store) => {
   // Calculate timing
   const bpm = R.path(['playbackSession', 'bpm'], state);
   const startTime = R.path(['playbackSession', 'startTime'], state);
-  const currentTime = getAudioContext().currentTime;
+  const { currentTime } = getAudioContext();
   const currentBeat = (currentTime - startTime + LOOKAHEAD) * (bpm / 60) + 1;
 
   // Dispatch action to redux to update transport
@@ -74,15 +74,15 @@ function fetchFile(url) {
         resolve(response.blob());
       }
       reject(new Error('Network response was not ok.'));
-    })
-  })
+    });
+  });
 }
 
 function decodeFile(sampleBlob) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const fileReader = new FileReader();
-    const soundBuffer = fileReader.readAsArrayBuffer(sampleBlob);
-    fileReader.onloadend = (e) => {
+    fileReader.readAsArrayBuffer(sampleBlob);
+    fileReader.onloadend = () => {
       resolve(fileReader.result);
     };
   });
@@ -96,14 +96,12 @@ function decodeAudio(audioArrayBuffer) {
 
 const loadSamples = (store) => {
   const state = store.getState();
-  const loaders = state.channels.map((channel) => {
-    return fetchFile(channel.url)
-      .then(decodeFile)
-      .then(decodeAudio)
-      .then((drumBuffer) => {
-        cachedArrayBuffers[channel.id] = drumBuffer;
-      });
-  });
+  const loaders = state.channels.map(channel => fetchFile(channel.url)
+    .then(decodeFile)
+    .then(decodeAudio)
+    .then((drumBuffer) => {
+      cachedArrayBuffers[channel.id] = drumBuffer;
+    }));
   return Promise.all(loaders);
 };
 

@@ -1,5 +1,5 @@
 import { uuid } from '../../services';
-import { CHANNELS_CONSTANTS } from "./channels.constants";
+import { CHANNELS_CONSTANTS } from './channels.constants';
 
 export const channelsInitialState = [
   {
@@ -33,7 +33,7 @@ export const channelsInitialState = [
       {
         beat: 4,
         id: uuid(),
-      }
+      },
     ],
   },
   {
@@ -88,7 +88,7 @@ export const channelsReducer = (state = channelsInitialState, action) => {
             return {
               ...channel,
               notes: channel.notes.filter(note => note.beat !== action.payload.beat),
-            }
+            };
           }
 
           // Add a new note
@@ -99,8 +99,8 @@ export const channelsReducer = (state = channelsInitialState, action) => {
               {
                 beat: action.payload.beat,
                 id: uuid(),
-              }
-            ]
+              },
+            ],
           };
         }
         return channel;

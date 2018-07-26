@@ -1,4 +1,4 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { PlayButtonComponent } from './PlayButton.component';
 import { playButtonSelectors } from './PlayButton.selectors';

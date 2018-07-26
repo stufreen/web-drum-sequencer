@@ -1,7 +1,7 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { ChannelListComponent } from './ChannelList.component';
-import { channelListSelectors } from './ChannelList.selectors'
+import { channelListSelectors } from './ChannelList.selectors';
 import { toggleNote } from '../../common';
 
 const mapDispatchToProps = {
