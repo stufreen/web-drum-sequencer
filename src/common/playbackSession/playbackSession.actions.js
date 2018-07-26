@@ -12,3 +12,8 @@ export const setBPM = (val) => ({
   type: PLAYBACK_SESSION_CONSTANTS.SET_BPM,
   payload: val,
 });
+
+export const setCurrentBeat = (val) => ({
+  type: PLAYBACK_SESSION_CONSTANTS.SET_CURRENT_BEAT,
+  payload: val,
+});

@@ -6,6 +6,7 @@ export const playbackSessionInitialState = {
   bpm: 100,
   playing: false,
   startTime: null,
+  currentBeat: 1,
 };
 
 export const playbackSessionReducer = (state = playbackSessionInitialState, action) => {
@@ -26,6 +27,11 @@ export const playbackSessionReducer = (state = playbackSessionInitialState, acti
       return {
         ...state,
         bpm: action.payload
+      };
+    case PLAYBACK_SESSION_CONSTANTS.SET_CURRENT_BEAT:
+      return {
+        ...state,
+        currentBeat: action.payload
       };
     default:
       return state;

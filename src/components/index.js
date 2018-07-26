@@ -5,3 +5,4 @@ export * from './ChannelLabel.component';
 export * from './Toggles';
 export * from './PlayButton';
 export * from './BPMInput';
+export * from './Marker';

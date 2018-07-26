@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import { getAudioContext } from '../services';
-import { startPlayback } from '../common';
+import { startPlayback, setCurrentBeat } from '../common';
 
 export const LOOKAHEAD = 0.1; // seconds
 
@@ -43,15 +43,22 @@ const tick = (store) => {
     return;
   }
 
-  // Loop playback
+  // Calculate timing
   const bpm = R.path(['playbackSession', 'bpm'], state);
   const startTime = R.path(['playbackSession', 'startTime'], state);
   const currentTime = getAudioContext().currentTime;
+  const currentBeat = (currentTime - startTime) * (bpm / 60) + 1;
+
+  // Dispatch action to redux to update transport
+  store.dispatch(setCurrentBeat(currentBeat));
+
+  // Loop playback if we reached the end of the bar
   const barEnd = startTime + (4 * 60 / bpm);
   if (currentTime + LOOKAHEAD > barEnd) {
     store.dispatch(startPlayback());
   }
 
+  // Schedule notes
   state.channels.forEach((channel) => {
     scheduleChannel(channel, state);
   });
