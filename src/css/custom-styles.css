@@ -1,3 +1,7 @@
+html {
+  background-color: #29292D;
+}
+
 .no-highlight {
   opacity: 1;
   transition: opacity 0.5s;
@@ -6,4 +10,8 @@
 .highlight {
   opacity: 0.7;
   transition: opacity 0;
+}
+
+.sans-serif {
+  font-family: 'futura', sans-serif;
 }

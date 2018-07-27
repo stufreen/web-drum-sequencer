@@ -9,12 +9,14 @@ import {
 } from './components';
 
 const App = () => (
-  <div className="App">
+  <div className="App pa5">
     <PageTitle>
-      Drumbox
+      WDS-1
     </PageTitle>
-    <PlayButton />
-    <BPMInput />
+    <div className="flex mv4">
+      <PlayButton />
+      <BPMInput />
+    </div>
     <Marker progress={0.2} />
     <ChannelList />
   </div>
