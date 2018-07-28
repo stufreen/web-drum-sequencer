@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ChannelLabel } from './ChannelLabel.component';
 import { Toggles } from './Toggles';
+import { Box } from './design-system';
 
 export const Channel = ({ channel }) => (
-  <div className="flex mb2">
+  <Box mb={3} display="flex">
     <ChannelLabel>
       {channel.name}
     </ChannelLabel>
     <Toggles notes={channel.notes} channelID={channel.id} />
-  </div>
+  </Box>
 );
 
 Channel.propTypes = {

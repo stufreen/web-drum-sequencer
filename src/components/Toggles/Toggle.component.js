@@ -1,19 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import * as ss from 'styled-system';
+
+const BeatButton = styled.button`
+  ${ss.color}
+  ${ss.space}
+  ${ss.width}
+  ${ss.height}
+  ${ss.borders}
+  ${ss.borderRadius}
+`;
+
+BeatButton.defaultProps = {
+  border: 'none',
+  fontWeight: 'bold',
+  borderRadius: '1rem',
+  height: '2rem',
+  width: '2rem',
+  variant: 'primary',
+};
 
 export const Toggle = ({ isActive, onClick, highlight }) => (
   isActive
     ? (
-      <button
-        className={`h3 ml1 bn flex-auto bg-light-red outline-transparent ${highlight ? 'highlight' : 'no-highlight'}`}
+      <BeatButton
         type="button"
+        bg="gold"
         onClick={onClick}
       />
     )
     : (
-      <button
-        className="h3 ml1 bn flex-auto bg-near-white outline-transparent"
+      <BeatButton
         type="button"
+        bg="darkGray"
         onClick={onClick}
       />
     ));
