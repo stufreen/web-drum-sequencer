@@ -1,4 +1,4 @@
-export * from './PageTitle.component';
+export * from './design-system';
 export * from './ChannelList';
 export * from './Channel.component';
 export * from './ChannelLabel.component';
@@ -6,3 +6,4 @@ export * from './Toggles';
 export * from './PlayButton';
 export * from './BPMInput';
 export * from './Marker';
+export * from './FancyButton.component';

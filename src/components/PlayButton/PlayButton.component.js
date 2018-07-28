@@ -1,28 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FancyButton } from '../FancyButton.component';
 
 export const PlayButtonComponent = ({ startPlayback, stopPlayback, playing }) => (playing
   ? (
-    <button
-      type="button"
+    <FancyButton
       onClick={stopPlayback}
-      className="flex align-center justify-center h3 w4 bg-red white sans-serif f5 fw3 ttu mb4 br2 bn"
+      variant="red"
+      mb={3}
     >
-      <span>
-        Stop
-      </span>
-    </button>
+      Stop
+    </FancyButton>
   )
   : (
-    <button
-      type="button"
+    <FancyButton
       onClick={startPlayback}
-      className="flex align-center justify-center h3 w4 bg-green white sans-serif f5 fw3 ttu mb4 br2 bn"
+      variant="green"
+      mb={3}
     >
-      <span>
-        Play
-      </span>
-    </button>
+      Play
+    </FancyButton>
   ));
 
 PlayButtonComponent.propTypes = {

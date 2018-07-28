@@ -1,7 +1,10 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from './css/theme';
 import './index.css';
 import {
-  PageTitle,
+  Heading,
+  Box,
   ChannelList,
   PlayButton,
   BPMInput,
@@ -9,17 +12,19 @@ import {
 } from './components';
 
 const App = () => (
-  <div className="App pa5">
-    <PageTitle>
-      WDS-1
-    </PageTitle>
-    <div className="flex mv4">
-      <PlayButton />
-      <BPMInput />
-    </div>
-    <Marker progress={0.2} />
-    <ChannelList />
-  </div>
+  <ThemeProvider theme={theme}>
+    <Box className="App" p={4}>
+      <Heading color="nearWhite" fontSize={7} fontWeight="500" mt={0}>
+        WDS-1
+      </Heading>
+      <div className="flex mv4">
+        <PlayButton />
+        <BPMInput />
+      </div>
+      <Marker progress={0.2} />
+      <ChannelList />
+    </Box>
+  </ThemeProvider>
 );
 
 export default App;
