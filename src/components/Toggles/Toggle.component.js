@@ -3,6 +3,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import * as ss from 'styled-system';
 
+const bgColor = (isActive, highlight) => {
+  if (isActive && highlight) {
+    return 'white';
+  } if (isActive) {
+    return 'melon';
+  }
+  return 'nearBlack';
+};
+
 const BeatButton = styled.button`
   ${ss.color}
   ${ss.space}
@@ -10,33 +19,24 @@ const BeatButton = styled.button`
   ${ss.height}
   ${ss.borders}
   ${ss.borderRadius}
+  outline: none;
+  transition: background-color 0.1s;
 `;
 
 BeatButton.defaultProps = {
   border: 'none',
-  fontWeight: 'bold',
-  borderRadius: '1rem',
-  height: '2rem',
-  width: '2rem',
-  variant: 'primary',
+  borderRadius: '0.75rem',
+  height: '1.5rem',
+  width: '1.5rem',
 };
 
 export const Toggle = ({ isActive, onClick, highlight }) => (
-  isActive
-    ? (
-      <BeatButton
-        type="button"
-        bg="gold"
-        onClick={onClick}
-      />
-    )
-    : (
-      <BeatButton
-        type="button"
-        bg="darkGray"
-        onClick={onClick}
-      />
-    ));
+  <BeatButton
+    type="button"
+    onClick={onClick}
+    bg={bgColor(isActive, highlight)}
+  />
+);
 
 Toggle.propTypes = {
   isActive: PropTypes.bool.isRequired,

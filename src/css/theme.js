@@ -1,32 +1,36 @@
-// theme.js
+const colors = {
+  nearWhite: '#F2F2F8',
+  lightGray: '#C0C0C6',
+  gray: '#909096',
+  steel: '#606066',
+  darkGray: '#404046',
+  nearBlack: '#29292D',
+  green: '#58A291',
+  darkGreen: '#1B806D',
+  red: '#CD545B',
+  darkRed: '#633231',
+  gold: '#E6A65D',
+  melon: '#CAD97A',
+};
+
 export default {
-  colors: {
-    nearWhite: '#F2F2F8',
-    lightGray: '#C0C0C6',
-    darkGray: '#404046',
-    nearBlack: '#29292D',
-    green: '#58A291',
-    darkGreen: '#1B806D',
-    red: '#9E2A2B',
-    darkRed: '#633231',
-    gold: '#E6A65D',
-  },
+  colors,
   fancyButtons: {
     green: {
       color: 'white',
-      backgroundColor: '#58A291',
-      boxShadow: '0 0.3em #1B806D',
+      backgroundColor: colors.green,
+      boxShadow: `0 0.3em ${colors.darkGreen}`,
       '&:active': {
-        boxShadow: '0 0 #1B806D',
+        boxShadow: `0 0 ${colors.darkGreen}`,
         transform: 'translateY(0.3em)',
       },
     },
     red: {
       color: 'white',
-      backgroundColor: '#9E2A2B',
-      boxShadow: '0 0.3em #633231',
+      backgroundColor: colors.red,
+      boxShadow: `0 0.3em ${colors.darkRed}`,
       '&:active': {
-        boxShadow: '0 0 #633231',
+        boxShadow: `0 0 ${colors.darkRed}`,
         transform: 'translateY(0.3em)',
       },
     },

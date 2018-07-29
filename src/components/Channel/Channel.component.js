@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ChannelLabel } from './ChannelLabel.component';
-import { Toggles } from './Toggles';
-import { Box } from './design-system';
+import { Toggles } from '../Toggles';
+import { Box } from '../design-system';
 
 export const Channel = ({ channel }) => (
   <Box mb={3} display="flex">

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Channel } from '../Channel.component';
+import { Channel } from '../Channel';
 
 export const ChannelListComponent = ({ channels }) => (
   <div>
