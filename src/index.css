@@ -1,7 +1,31 @@
+@font-face {
+    font-family: 'Futura';
+    src: url('/assets/fonts/FuturaStd-Medium.woff2') format('woff2'),
+        url('/assets/fonts/FuturaStd-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('/assets/fonts/FuturaStd-Bold.woff2') format('woff2'),
+        url('/assets/fonts/FuturaStd-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('/assets/fonts/FuturaStd-Heavy.woff2') format('woff2'),
+        url('/assets/fonts/FuturaStd-Heavy.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
 html {
     background-color: #29292D;
 }
 
 * {
-    font-family: "Futura Std", sans-serif;
+    font-family: "Futura", sans-serif;
 }
