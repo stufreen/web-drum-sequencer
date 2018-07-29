@@ -7,10 +7,12 @@ const colors = {
   nearBlack: '#29292D',
   green: '#58A291',
   darkGreen: '#1B806D',
+  brightRed: '#E1523D',
   red: '#CD545B',
   darkRed: '#633231',
   gold: '#E6A65D',
   melon: '#CAD97A',
+  paleMelon: '#F6F9E1',
 };
 
 export default {

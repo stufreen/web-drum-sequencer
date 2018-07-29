@@ -5,7 +5,7 @@ import * as ss from 'styled-system';
 
 const bgColor = (isActive, highlight) => {
   if (isActive && highlight) {
-    return 'white';
+    return 'paleMelon';
   } if (isActive) {
     return 'melon';
   }

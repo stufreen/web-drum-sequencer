@@ -3,3 +3,5 @@ export * from './Box';
 export * from './Button';
 export * from './Text';
 export * from './Line';
+export * from './Image';
+export * from './TextInput.js';
