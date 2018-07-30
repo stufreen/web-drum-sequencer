@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import App from './App';
 import reducer from './reducer';
-import { initializeAudioScheduler } from './utils';
+import { initializeAudioScheduler } from './services/audioScheduler';
 
 const store = createStore(reducer, compose(
   applyMiddleware(thunk),

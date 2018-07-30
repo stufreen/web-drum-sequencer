@@ -17,3 +17,8 @@ export const setCurrentBeat = val => ({
   type: PLAYBACK_SESSION_CONSTANTS.SET_CURRENT_BEAT,
   payload: val,
 });
+
+export const setStartTime = val => ({
+  type: PLAYBACK_SESSION_CONSTANTS.SET_START_TIME,
+  payload: val,
+});

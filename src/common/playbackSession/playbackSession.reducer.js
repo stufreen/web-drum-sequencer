@@ -1,6 +1,6 @@
 import { PLAYBACK_SESSION_CONSTANTS } from './playbackSession.constants';
-import { getAudioContext } from '../../services';
-import { LOOKAHEAD } from '../../utils/audioEngine.config';
+import { getAudioContext } from '../../services/audioContext';
+import { LOOKAHEAD } from '../../services/audioEngine.config';
 
 export const playbackSessionInitialState = {
   bpm: 100,
@@ -32,6 +32,11 @@ export const playbackSessionReducer = (state = playbackSessionInitialState, acti
       return {
         ...state,
         currentBeat: action.payload,
+      };
+    case PLAYBACK_SESSION_CONSTANTS.SET_START_TIME:
+      return {
+        ...state,
+        startTime: action.payload,
       };
     default:
       return state;
