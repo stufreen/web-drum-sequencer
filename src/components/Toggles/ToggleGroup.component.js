@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Box } from '../design-system';
 
 export const ToggleGroup = ({ children }) => (
@@ -14,3 +15,7 @@ export const ToggleGroup = ({ children }) => (
     {children}
   </Box>
 );
+
+ToggleGroup.propTypes = {
+  children: PropTypes.node.isRequired,
+};

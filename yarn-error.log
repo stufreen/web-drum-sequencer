@@ -1,0 +1,83 @@
+Arguments: 
+  /Users/stufreen/.nvm/versions/node/v9.1.0/bin/node /Users/stufreen/.nvm/versions/node/v9.1.0/bin/yarn lint
+
+PATH: 
+  /anaconda3/bin:/usr/local/Cellar/openvpn/2.4.4/sbin:/usr/local/opt/python/libexec/bin:/Users/stufreen/.nvm/versions/node/v9.1.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/stufreen/Library/Android/sdk/tools:/Users/stufreen/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.1.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "drumbox",
+    "version": "0.0.1",
+    "description": "Drum machine built with Web Audio API and React.",
+    "main": "index.js",
+    "scripts": {
+      "start": "webpack-dev-server --mode development",
+      "lint": "eslint src"
+    },
+    "author": "Stu Freen",
+    "license": "ISC",
+    "devDependencies": {
+      "babel": "^6.23.0",
+      "babel-cli": "^6.26.0",
+      "babel-core": "^6.26.3",
+      "babel-loader": "^7.1.5",
+      "babel-plugin-transform-object-rest-spread": "^6.26.0",
+      "babel-preset-env": "^1.7.0",
+      "babel-preset-react": "^6.24.1",
+      "css-loader": "^1.0.0",
+      "eslint": "^4.19.1",
+      "eslint-config-airbnb": "^17.0.0",
+      "eslint-plugin-import": "^2.13.0",
+      "eslint-plugin-jsx-a11y": "^6.1.1",
+      "eslint-plugin-react": "^7.10.0",
+      "style-loader": "^0.21.0",
+      "webpack": "^4.16.2",
+      "webpack-cli": "^3.1.0",
+      "webpack-dev-server": "^3.1.5"
+    },
+    "dependencies": {
+      "prop-types": "^15.6.2",
+      "ramda": "^0.25.0",
+      "react": "^16.4.1",
+      "react-dom": "^16.4.1",
+      "react-redux": "^5.0.7",
+      "recompose": "^0.27.1",
+      "redux": "^4.0.0",
+      "redux-thunk": "^2.3.0",
+      "reselect": "^3.0.1",
+      "styled-components": "^3.3.3",
+      "styled-system": "^3.0.2",
+      "uuid": "^3.3.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c eslint src
+  Directory: /Users/stufreen/Projects/drumbox
+  Output:
+  
+      at ProcessTermError.MessageError (/Users/stufreen/.nvm/versions/node/v9.1.0/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/Users/stufreen/.nvm/versions/node/v9.1.0/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/Users/stufreen/.nvm/versions/node/v9.1.0/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at emitTwo (events.js:135:13)
+      at ChildProcess.emit (events.js:224:7)
+      at maybeClose (internal/child_process.js:943:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)

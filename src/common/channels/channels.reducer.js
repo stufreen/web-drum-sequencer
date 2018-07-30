@@ -1,4 +1,4 @@
-import { uuid } from '../../services';
+import { uuid } from '../../services/uuid';
 import { CHANNELS_CONSTANTS } from './channels.constants';
 
 export const channelsInitialState = [

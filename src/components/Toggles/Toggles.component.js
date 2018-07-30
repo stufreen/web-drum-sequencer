@@ -38,8 +38,8 @@ export const TogglesComponent = ({
 
   return (
     <Box display="flex" flex="1 1 auto">
-      {toggleGroups.map(toggleGroup => (
-        <ToggleGroup>
+      {toggleGroups.map((toggleGroup, i) => (
+        <ToggleGroup key={i /* eslint-disable-line*/}>
           {toggleGroup}
         </ToggleGroup>
       ))}

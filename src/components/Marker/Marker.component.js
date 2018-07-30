@@ -13,4 +13,5 @@ export const MarkerComponent = ({ progress, children }) => (
 
 MarkerComponent.propTypes = {
   progress: PropTypes.number.isRequired,
+  children: PropTypes.node.isRequired,
 };

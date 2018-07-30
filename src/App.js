@@ -9,7 +9,6 @@ import {
   ChannelList,
   PlayButton,
   BPMInput,
-  Marker,
   ChannelHeader,
 } from './components';
 
