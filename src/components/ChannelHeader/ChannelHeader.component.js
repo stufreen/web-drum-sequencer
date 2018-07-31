@@ -8,7 +8,7 @@ export const ChannelHeader = () => (
     <ChannelHeaderLabel width="8rem" mr={4}>
       Channels
     </ChannelHeaderLabel>
-    <Marker display="flex" flex="1 1 auto">
+    <Marker>
       <ChannelHeaderLabel flex="1 1 auto">
         1
       </ChannelHeaderLabel>

@@ -13,7 +13,7 @@ const Container = Box.extend`
 `;
 
 export const MarkerComponent = ({ progress, children }) => (
-  <Container width={1} flex="1 1 auto" display="flex" position="relative">
+  <Container flex="1 1 auto" position="relative">
     <Progress progress={progress} height="100%" bg="white" opacity="0.2" position="absolute" />
     <Box position="absolute" display="flex" width="100%">
       {children}
