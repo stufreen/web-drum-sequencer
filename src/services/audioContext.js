@@ -6,3 +6,11 @@ export const getAudioContext = () => {
   }
   return audioCtx;
 };
+
+export const playNote = (noteTime, buffer) => {
+  const source = getAudioContext().createBufferSource();
+  source.buffer = buffer;
+  source.connect(getAudioContext().destination);
+  source.start(noteTime);
+  return source;
+};
