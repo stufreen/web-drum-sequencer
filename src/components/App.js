@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import theme from './css/theme';
-import './index.css';
+import theme from '../css/theme';
+import '../index.css';
 import {
   Heading,
   Box,
@@ -10,7 +10,7 @@ import {
   PlayButton,
   BPMInput,
   ChannelHeader,
-} from './components';
+} from '.';
 
 const App = () => (
   <ThemeProvider theme={theme}>
