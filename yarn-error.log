@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/stufreen/.nvm/versions/node/v9.1.0/bin/node /Users/stufreen/.nvm/versions/node/v9.1.0/bin/yarn lint
+  /Users/stufreen/.nvm/versions/node/v9.1.0/bin/node /Users/stufreen/.nvm/versions/node/v9.1.0/bin/yarn test
 
 PATH: 
   /anaconda3/bin:/usr/local/Cellar/openvpn/2.4.4/sbin:/usr/local/opt/python/libexec/bin:/Users/stufreen/.nvm/versions/node/v9.1.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/stufreen/Library/Android/sdk/tools:/Users/stufreen/Library/Android/sdk/platform-tools
@@ -21,7 +21,8 @@ npm manifest:
     "main": "index.js",
     "scripts": {
       "start": "webpack-dev-server --mode development",
-      "lint": "eslint src"
+      "lint": "eslint src",
+      "test": "jest"
     },
     "author": "Stu Freen",
     "license": "ISC",
@@ -39,6 +40,7 @@ npm manifest:
       "eslint-plugin-import": "^2.13.0",
       "eslint-plugin-jsx-a11y": "^6.1.1",
       "eslint-plugin-react": "^7.10.0",
+      "jest": "^23.4.2",
       "style-loader": "^0.21.0",
       "webpack": "^4.16.2",
       "webpack-cli": "^3.1.0",
@@ -57,6 +59,10 @@ npm manifest:
       "styled-components": "^3.3.3",
       "styled-system": "^3.0.2",
       "uuid": "^3.3.2"
+    },
+    "jest": {
+      "testURL": "http://localhost",
+      "verbose": true
     }
   }
 
@@ -70,7 +76,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c eslint src
+  Arguments: -c jest
   Directory: /Users/stufreen/Projects/drumbox
   Output:
   

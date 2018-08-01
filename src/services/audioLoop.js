@@ -3,11 +3,10 @@ import { loadSamples } from './sampleStore';
 import { scheduleNotes } from './audioScheduler';
 import { setCurrentBeat } from '../common';
 
-const getCurrentBeat = (playbackSession) => {
+export const getCurrentBeat = ({ bpm, startTime }) => {
   const { currentTime } = getAudioContext();
-  const beatLengthSeconds = playbackSession.bpm / 60;
-  const currentBeat = ((currentTime - playbackSession.startTime) * beatLengthSeconds);
-
+  const beatLengthSeconds = bpm / 60;
+  const currentBeat = ((currentTime - startTime) * beatLengthSeconds);
   return (currentBeat % 4) + 1;
 };
 

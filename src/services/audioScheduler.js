@@ -13,7 +13,7 @@ export const scheduleNote = (noteId, sampleId, noteTime) => {
 
 export const isBetween = (query, a, b) => query >= a && query < b;
 
-export const getChannelNotes = (channel, bpm, startTime, currentBeat) => channel.notes.filter(
+export const getChannelNotes = (channel, bpm, startTime, currentBeat) => channel.notes.map(
   (note) => {
     const lookaheadBeats = LOOKAHEAD * (60 / bpm);
     const noteTime = startTime + ((note.beat - 1) * 60 / bpm);
