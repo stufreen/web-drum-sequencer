@@ -13,32 +13,43 @@ export const scheduleNote = (noteId, sampleId, noteTime) => {
 
 export const isBetween = (query, a, b) => query >= a && query < b;
 
-export const scheduleChannel = ({
-  channel,
-  bpm,
-  startTime,
-  currentBeat,
-}) => {
-  const lookaheadBeats = LOOKAHEAD * (60 / bpm);
-  channel.notes.forEach((note) => {
+export const getChannelNotes = (channel, bpm, startTime, currentBeat) => channel.notes.filter(
+  (note) => {
+    const lookaheadBeats = LOOKAHEAD * (60 / bpm);
     const noteTime = startTime + ((note.beat - 1) * 60 / bpm);
-    if (isBetween(note.beat, currentBeat, currentBeat + lookaheadBeats)) {
-      scheduleNote(note.id, channel.id, noteTime);
-    } else if (isBetween(note.beat, currentBeat - 4, currentBeat + lookaheadBeats - 4)) {
-      scheduleNote(note.id, channel.id, noteTime);
+    if (isBetween(note.beat, currentBeat, currentBeat + lookaheadBeats)
+      || isBetween(note.beat, currentBeat - 4, currentBeat + lookaheadBeats - 4)) {
+      return {
+        id: note.id,
+        channel: channel.id,
+        time: noteTime,
+      };
+    }
+    return {
+      id: note.id,
+      channel: channel.id,
+      time: null,
+    };
+  },
+);
+
+export const getNotes = (channels, bpm, startTime, currentBeat) => channels.reduce(
+  (accumulator, channel) => [
+    ...accumulator,
+    ...getChannelNotes(channel, bpm, startTime, currentBeat),
+  ], [],
+);
+
+export const scheduleNotes = ({ bpm, startTime }, channels, currentBeat) => {
+  // Determine which notes need to be scheduled
+  const notes = getNotes(channels, bpm, startTime, currentBeat);
+
+  // Schedule the notes
+  notes.forEach((note) => {
+    if (note.time !== null) {
+      scheduleNote(note.id, note.channel, note.time);
     } else {
       delete schedule[note.id];
     }
-  });
-};
-
-export const scheduleNotes = ({ bpm, startTime }, channels, currentBeat) => {
-  channels.forEach((channel) => {
-    scheduleChannel({
-      channel,
-      bpm,
-      startTime,
-      currentBeat,
-    });
   });
 };
