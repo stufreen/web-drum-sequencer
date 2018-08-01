@@ -1,5 +1,5 @@
 import {
-  getCurrentBeat
+  getCurrentBeat,
 } from './audioLoop';
 
 jest.mock('./audioContext.js');

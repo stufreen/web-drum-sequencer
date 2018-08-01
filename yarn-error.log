@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/stufreen/.nvm/versions/node/v9.1.0/bin/node /Users/stufreen/.nvm/versions/node/v9.1.0/bin/yarn test
+  /Users/stufreen/.nvm/versions/node/v9.1.0/bin/node /Users/stufreen/.nvm/versions/node/v9.1.0/bin/yarn lint
 
 PATH: 
   /anaconda3/bin:/usr/local/Cellar/openvpn/2.4.4/sbin:/usr/local/opt/python/libexec/bin:/Users/stufreen/.nvm/versions/node/v9.1.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/stufreen/Library/Android/sdk/tools:/Users/stufreen/Library/Android/sdk/platform-tools
@@ -76,7 +76,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c jest
+  Arguments: -c eslint src
   Directory: /Users/stufreen/Projects/drumbox
   Output:
   
