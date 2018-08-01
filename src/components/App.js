@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import theme from '../css/theme';
-import '../index.css';
+import theme from '../styles/theme';
+import '../styles/index.css';
 import {
   Heading,
   Box,
