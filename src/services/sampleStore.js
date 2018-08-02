@@ -29,13 +29,26 @@ function decodeAudio(audioArrayBuffer) {
   });
 }
 
-export const loadSamples = (store) => {
-  const state = store.getState();
-  const loaders = state.channels.map(channel => fetchFile(channel.url)
+export const loadSample = (url) => {
+  if (typeof sampleStore[url] !== 'undefined') {
+    return;
+  }
+
+  fetchFile(url)
     .then(decodeFile)
     .then(decodeAudio)
     .then((drumBuffer) => {
-      sampleStore[channel.id] = drumBuffer;
+      sampleStore[url] = drumBuffer;
+    });
+};
+
+export const loadSamples = (store) => {
+  const state = store.getState();
+  const loaders = state.channels.map(channel => fetchFile(channel.sample.url)
+    .then(decodeFile)
+    .then(decodeAudio)
+    .then((drumBuffer) => {
+      sampleStore[channel.sample.url] = drumBuffer;
     }));
   return Promise.all(loaders);
 };

@@ -1,11 +1,12 @@
+import * as R from 'ramda';
 import { uuid } from '../../services/uuid';
 import { CHANNELS_CONSTANTS } from './channels.constants';
+import samples from '../../samples.config.json';
 
 export const channelsInitialState = [
   {
-    id: 'kick',
-    name: 'Kick',
-    url: '/assets/drums/roland-707/kick-1-r1.wav',
+    id: uuid(),
+    sample: samples[0],
     notes: [
       {
         beat: 1,
@@ -22,9 +23,8 @@ export const channelsInitialState = [
     ],
   },
   {
-    id: 'snare',
-    name: 'Snare',
-    url: '/assets/drums/roland-707/snare-1-r1.wav',
+    id: uuid(),
+    sample: samples[1],
     notes: [
       {
         beat: 2,
@@ -37,9 +37,8 @@ export const channelsInitialState = [
     ],
   },
   {
-    id: 'hhclosed',
-    name: 'Hi Hat',
-    url: '/assets/drums/roland-707/hat-closed-r1.wav',
+    id: uuid(),
+    sample: samples[2],
     notes: [
       {
         beat: 1,
@@ -60,9 +59,8 @@ export const channelsInitialState = [
     ],
   },
   {
-    id: 'rim',
-    name: 'Rim',
-    url: '/assets/drums/roland-707/rim-r1.wav',
+    id: uuid(),
+    sample: samples[3],
     notes: [
       {
         beat: 1.75,
@@ -101,6 +99,16 @@ export const channelsReducer = (state = channelsInitialState, action) => {
                 id: uuid(),
               },
             ],
+          };
+        }
+        return channel;
+      });
+    case CHANNELS_CONSTANTS.SET_CHANNEL_SAMPLE:
+      return state.map((channel) => {
+        if (channel.id === action.payload.channel) {
+          return {
+            ...channel,
+            sample: R.find(R.propEq('url', action.payload.sample))(samples),
           };
         }
         return channel;

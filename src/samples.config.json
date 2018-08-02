@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Kick",
+    "url": "/assets/drums/roland-707/kick-1-r1.wav"
+  },
+  {
+    "name": "Snare",
+    "url": "/assets/drums/roland-707/snare-1-r1.wav"
+  },
+  {
+    "name": "Hi Hat",
+    "url": "/assets/drums/roland-707/hat-closed-r1.wav"
+  },
+  {
+    "name": "Rim",
+    "url": "/assets/drums/roland-707/rim-r1.wav"
+  },
+  {
+    "name": "Tambourine",
+    "url": "/assets/drums/roland-707/Tambourine-R4.wav"
+  }
+]

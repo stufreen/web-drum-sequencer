@@ -1,2 +1,2 @@
-export * from './Channel.component';
-export * from './ChannelLabel.component';
+export * from './Channel.container';
+export * from './ChannelSelect.component';

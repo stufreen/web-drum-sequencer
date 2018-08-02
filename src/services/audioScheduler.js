@@ -21,13 +21,13 @@ export const getChannelNotes = (channel, bpm, startTime, currentBeat) => channel
       || isBetween(note.beat, currentBeat - 4, currentBeat + lookaheadBeats - 4)) {
       return {
         id: note.id,
-        channel: channel.id,
+        sample: channel.sample.url,
         time: noteTime,
       };
     }
     return {
       id: note.id,
-      channel: channel.id,
+      sample: channel.sample.url,
       time: null,
     };
   },
@@ -47,7 +47,7 @@ export const scheduleNotes = ({ bpm, startTime }, channels, currentBeat) => {
   // Schedule the notes
   notes.forEach((note) => {
     if (note.time !== null) {
-      scheduleNote(note.id, note.channel, note.time);
+      scheduleNote(note.id, note.sample, note.time);
     } else {
       delete schedule[note.id];
     }
