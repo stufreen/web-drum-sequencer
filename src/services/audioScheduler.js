@@ -15,14 +15,20 @@ export const isBetween = (query, a, b) => query >= a && query < b;
 
 export const getChannelNotes = (channel, bpm, startTime, currentBeat) => channel.notes.map(
   (note) => {
-    const lookaheadBeats = LOOKAHEAD * (60 / bpm);
-    const noteTime = startTime + ((note.beat - 1) * 60 / bpm);
-    if (isBetween(note.beat, currentBeat, currentBeat + lookaheadBeats)
-      || isBetween(note.beat, currentBeat - 4, currentBeat + lookaheadBeats - 4)) {
+    const lookaheadBeats = LOOKAHEAD * (bpm / 60);
+    const noteTime = startTime + ((note.beat - 1) * (60 / bpm));
+    if (isBetween(note.beat, currentBeat, currentBeat + lookaheadBeats)) {
       return {
         id: note.id,
         sample: channel.sample.url,
         time: noteTime,
+      };
+    }
+    if (isBetween(note.beat, currentBeat - 4, currentBeat + lookaheadBeats - 4)) {
+      return {
+        id: note.id,
+        sample: channel.sample.url,
+        time: startTime + ((note.beat + 3) * 60 / bpm),
       };
     }
     return {

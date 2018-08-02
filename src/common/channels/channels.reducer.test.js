@@ -19,8 +19,11 @@ describe('setChannelSample', () => {
   test('should change a sample', () => {
     const state = channelsReducer(
       channelsInitialState,
-      setChannelSample(channelsInitialState[0].id, { name: 'Foo', url: 'Bar' }),
+      setChannelSample(channelsInitialState[0].id, '/assets/drums/roland-707/snare-1-r1.wav'),
     );
-    expect(state[0].sample).toEqual({ name: 'Foo', url: 'Bar' });
+    expect(state[0].sample).toEqual({
+      name: 'Snare',
+      url: '/assets/drums/roland-707/snare-1-r1.wav',
+    });
   });
 });
