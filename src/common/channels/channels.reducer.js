@@ -64,7 +64,7 @@ export const channelsInitialState = [
   {
     id: uuid(),
     sample: samples[3],
-    gain: 1,
+    gain: 0.5,
     notes: [
       {
         beat: 1.75,
