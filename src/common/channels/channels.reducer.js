@@ -41,7 +41,7 @@ export const channelsInitialState = [
   {
     id: uuid(),
     sample: samples[2],
-    gain: 1,
+    gain: 0.6,
     notes: [
       {
         beat: 1,
@@ -127,6 +127,18 @@ export const channelsReducer = (state = channelsInitialState, action) => {
         }
         return channel;
       });
+    case CHANNELS_CONSTANTS.ADD_CHANNEL:
+      return [
+        ...state,
+        {
+          id: uuid(),
+          sample: samples[0],
+          gain: 1,
+          notes: [],
+        },
+      ];
+    case CHANNELS_CONSTANTS.REMOVE_CHANNEL:
+      return state.filter(channel => channel.id !== action.payload);
     default:
       return state;
   }

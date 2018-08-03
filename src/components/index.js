@@ -7,3 +7,4 @@ export * from './PlayButton';
 export * from './BPMInput';
 export * from './Marker';
 export * from './FancyButton.component';
+export * from './AddChannelButton';

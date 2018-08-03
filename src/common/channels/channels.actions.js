@@ -27,3 +27,12 @@ export const setChannelGain = (channel, gain) => ({
     gain,
   },
 });
+
+export const addChannel = () => ({
+  type: CHANNELS_CONSTANTS.ADD_CHANNEL,
+});
+
+export const removeChannel = id => ({
+  type: CHANNELS_CONSTANTS.REMOVE_CHANNEL,
+  payload: id,
+});

@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import { compose, withHandlers } from 'recompose';
 import { ChannelComponent } from './Channel.component';
 import { channelSelectors } from './Channel.selectors';
-import { setChannelSample, setChannelGain } from '../../common';
+import { setChannelSample, setChannelGain, removeChannel } from '../../common';
 
 const mapDispatchToProps = {
   setChannelSample,
   setChannelGain,
+  removeChannel,
 };
 
 const handlers = withHandlers({
@@ -17,6 +18,10 @@ const handlers = withHandlers({
   onSetGain: props => (e) => {
     const { setChannelGain: scg, channel } = props;
     scg(channel.id, e.target.value / 100);
+  },
+  onPressRemove: props => () => {
+    const { channel, removeChannel: rc } = props;
+    rc(channel.id);
   },
 });
 
