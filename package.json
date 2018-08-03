@@ -31,14 +31,12 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
-    "@vaadin/vaadin-dropdown-menu": "^1.1.0-beta2",
-    "@vaadin/vaadin-item": "^2.1.0-beta2",
-    "@vaadin/vaadin-list-box": "^1.1.0-beta2",
     "prop-types": "^15.6.2",
     "ramda": "^0.25.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
+    "react-select": "^2.0.0",
     "recompose": "^0.27.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",

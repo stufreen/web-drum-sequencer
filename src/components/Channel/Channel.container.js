@@ -9,9 +9,10 @@ const mapDispatchToProps = {
 };
 
 const handlers = withHandlers({
-  onSelectSample: props => event => {
-    props.setChannelSample(props.channel.id, event.target.value);
-  }
+  onSelectSample: props => (sample) => {
+    const { setChannelSample: scs, channel } = props;
+    scs(channel.id, sample.value);
+  },
 });
 
 export const Channel = compose(

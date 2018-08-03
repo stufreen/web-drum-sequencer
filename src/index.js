@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import { initializeAudio } from './services/audioLoop';
 import { store } from './store';
-import '@vaadin/vaadin-dropdown-menu/vaadin-dropdown-menu';
 
 ReactDOM.render(
   <Provider store={store}>
