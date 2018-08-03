@@ -1,5 +1,5 @@
 import { channelsInitialState, channelsReducer } from './channels.reducer';
-import { toggleNote, setChannelSample } from './channels.actions';
+import { toggleNote, setChannelSample, setChannelGain } from './channels.actions';
 
 const initialNumNotes = channelsInitialState[0].notes.length;
 
@@ -25,5 +25,15 @@ describe('setChannelSample', () => {
       name: 'Snare',
       url: '/assets/drums/roland-707/snare-1-r1.wav',
     });
+  });
+});
+
+describe('setChannelGain', () => {
+  test('should change gain for a channel', () => {
+    const state = channelsReducer(
+      channelsInitialState,
+      setChannelGain(channelsInitialState[0].id, 0.5),
+    );
+    expect(state[0].gain).toEqual(0.5);
   });
 });

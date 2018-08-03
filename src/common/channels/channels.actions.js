@@ -19,3 +19,11 @@ export const setChannelSample = (channel, sample) => {
     },
   };
 };
+
+export const setChannelGain = (channel, gain) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_GAIN,
+  payload: {
+    channel,
+    gain,
+  },
+});

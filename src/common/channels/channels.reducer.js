@@ -7,6 +7,7 @@ export const channelsInitialState = [
   {
     id: uuid(),
     sample: samples[0],
+    gain: 1,
     notes: [
       {
         beat: 1,
@@ -25,6 +26,7 @@ export const channelsInitialState = [
   {
     id: uuid(),
     sample: samples[1],
+    gain: 1,
     notes: [
       {
         beat: 2,
@@ -39,6 +41,7 @@ export const channelsInitialState = [
   {
     id: uuid(),
     sample: samples[2],
+    gain: 1,
     notes: [
       {
         beat: 1,
@@ -61,6 +64,7 @@ export const channelsInitialState = [
   {
     id: uuid(),
     sample: samples[3],
+    gain: 1,
     notes: [
       {
         beat: 1.75,
@@ -109,6 +113,16 @@ export const channelsReducer = (state = channelsInitialState, action) => {
           return {
             ...channel,
             sample: R.find(R.propEq('url', action.payload.sample))(samples),
+          };
+        }
+        return channel;
+      });
+    case CHANNELS_CONSTANTS.SET_CHANNEL_GAIN:
+      return state.map((channel) => {
+        if (channel.id === action.payload.channel) {
+          return {
+            ...channel,
+            gain: action.payload.gain,
           };
         }
         return channel;

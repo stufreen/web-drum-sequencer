@@ -7,10 +7,18 @@ export const getAudioContext = () => {
   return audioCtx;
 };
 
-export const playNote = (noteTime, buffer) => {
-  const source = getAudioContext().createBufferSource();
+export const playNote = (noteTime, buffer, gain = 1) => {
+  // Set up the AudioBufferSourceNode
+  const source = audioCtx.createBufferSource();
   source.buffer = buffer;
-  source.connect(getAudioContext().destination);
+
+  // Set up a GainNode to control note volume
+  const gainNode = audioCtx.createGain();
+  gainNode.gain.setValueAtTime(gain, audioCtx.currentTime);
+
+  // Connect and start
+  source.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
   source.start(noteTime);
   return source;
 };
