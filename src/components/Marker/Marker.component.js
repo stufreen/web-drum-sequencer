@@ -8,7 +8,13 @@ const Container = Box.extend`
 
 export const MarkerComponent = ({ progress, children }) => (
   <Container flex="1 1 auto" position="relative">
-    <Box style={{ width: `${progress * 100}%` }} height="100%" bg="white" opacity="0.2" position="absolute" />
+    <Box
+      style={{ width: `${progress * 100}%` }}
+      height="100%"
+      bg="white"
+      opacity="0.2"
+      position="absolute"
+    />
     <Box position="absolute" display="flex" width="100%">
       {children}
     </Box>
