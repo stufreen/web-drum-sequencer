@@ -17,6 +17,8 @@ export const initializeAudio = (store) => {
       setInterval(() => {
         const { playbackSession, channels } = store.getState();
         if (playbackSession.playing) {
+          scheduleNotes(playbackSession, channels, playbackSession.currentBeat);
+
           // Loop if we reached the end of the bar
           const barLength = 4 * 60 / playbackSession.bpm;
           if (audioCtx.currentTime > playbackSession.startTime + barLength) {
@@ -25,7 +27,6 @@ export const initializeAudio = (store) => {
 
           const currentBeat = getCurrentBeat(playbackSession, audioCtx);
           store.dispatch(setCurrentBeat(currentBeat));
-          scheduleNotes(playbackSession, channels, currentBeat);
         }
       }, INTERVAL);
     });
