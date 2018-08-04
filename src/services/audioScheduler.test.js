@@ -24,7 +24,7 @@ describe('getChannelNotes', () => {
   );
 
   test('should return same number of notes', () => {
-    expect(notes.length).toBe(3);
+    expect(notes.length).toBe(channelsInitialState[0].notes.length);
   });
 
   test('should calculate noteTime correctly for notes in the lookahead period', () => {
@@ -45,7 +45,9 @@ describe('getNotes', () => {
     1,
   );
 
-  test('should return correct number of notes', () => {
-    expect(notes.length).toBe(11);
+  test('should return same number of notes as initial state', () => {
+    const totalNotes = channelsInitialState.reduce((count, channel) => count + channel.notes.length, 0);
+
+    expect(notes.length).toBe(totalNotes);
   });
 });

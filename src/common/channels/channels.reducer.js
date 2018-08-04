@@ -2,81 +2,9 @@ import * as R from 'ramda';
 import { uuid } from '../../services/uuid';
 import { CHANNELS_CONSTANTS } from './channels.constants';
 import samples from '../../samples.config.json';
+import presets from '../../presets';
 
-export const channelsInitialState = [
-  {
-    id: uuid(),
-    sample: samples[0],
-    gain: 1,
-    notes: [
-      {
-        beat: 1,
-        id: uuid(),
-      },
-      {
-        beat: 2.5,
-        id: uuid(),
-      },
-      {
-        beat: 4.25,
-        id: uuid(),
-      },
-    ],
-  },
-  {
-    id: uuid(),
-    sample: samples[1],
-    gain: 1,
-    notes: [
-      {
-        beat: 2,
-        id: uuid(),
-      },
-      {
-        beat: 4,
-        id: uuid(),
-      },
-    ],
-  },
-  {
-    id: uuid(),
-    sample: samples[2],
-    gain: 0.6,
-    notes: [
-      {
-        beat: 1,
-        id: uuid(),
-      },
-      {
-        beat: 2,
-        id: uuid(),
-      },
-      {
-        beat: 3,
-        id: uuid(),
-      },
-      {
-        beat: 4,
-        id: uuid(),
-      },
-    ],
-  },
-  {
-    id: uuid(),
-    sample: samples[3],
-    gain: 0.5,
-    notes: [
-      {
-        beat: 1.75,
-        id: uuid(),
-      },
-      {
-        beat: 3.5,
-        id: uuid(),
-      },
-    ],
-  },
-];
+export const channelsInitialState = presets[0].channels;
 
 const findNote = (notes, beat) => notes.find(note => note.beat === beat);
 

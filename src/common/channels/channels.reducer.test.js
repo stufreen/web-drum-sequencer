@@ -6,6 +6,7 @@ import {
   addChannel,
   removeChannel,
 } from './channels.actions';
+import samples from '../../samples.config';
 
 const initialNumNotes = channelsInitialState[0].notes.length;
 
@@ -25,12 +26,9 @@ describe('setChannelSample', () => {
   test('should change a sample', () => {
     const state = channelsReducer(
       channelsInitialState,
-      setChannelSample(channelsInitialState[0].id, '/assets/drums/roland-707/snare-1-r1.wav'),
+      setChannelSample(channelsInitialState[0].id, samples[0].url),
     );
-    expect(state[0].sample).toEqual({
-      name: 'Snare',
-      url: '/assets/drums/roland-707/snare-1-r1.wav',
-    });
+    expect(state[0].sample).toEqual(samples[0]);
   });
 });
 

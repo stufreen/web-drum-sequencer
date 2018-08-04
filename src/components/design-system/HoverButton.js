@@ -1,11 +1,12 @@
 import { Button } from './Button';
-// import theme from '../../styles/theme';
+
+const getColor = (theme, color) => theme.colors[color] || color;
 
 export const HoverButton = Button.extend`
-  transition: all ${props => props.transitionSpeed}
+  transition: all ${({ transitionSpeed }) => transitionSpeed}
 
   &:hover {
-    color: ${props => props.theme.colors[props.hoverColor] || props.hoverColor};
-    background-color: ${props => props.theme.colors[props.hoverBg] || props.hoverBg};
+    color: ${({ theme, hoverColor }) => getColor(theme, hoverColor)};
+    background-color: ${({ theme, hoverBg }) => getColor(theme, hoverBg)};
   }
 `;
