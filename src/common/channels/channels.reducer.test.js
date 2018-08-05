@@ -5,8 +5,10 @@ import {
   setChannelGain,
   addChannel,
   removeChannel,
+  setChannels,
 } from './channels.actions';
 import samples from '../../samples.config';
+import emptyPreset from '../../presets/empty';
 
 const initialNumNotes = channelsInitialState[0].notes.length;
 
@@ -67,5 +69,15 @@ describe('removeChannel', () => {
       removeChannel('foo'),
     );
     expect(state.length).toEqual(channelsInitialState.length);
+  });
+});
+
+describe('setChannels', () => {
+  test('should replace existing channels', () => {
+    const state = channelsReducer(
+      channelsInitialState,
+      setChannels(emptyPreset.channels),
+    );
+    expect(state.length).toEqual(0);
   });
 });

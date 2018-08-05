@@ -2,6 +2,7 @@ import samples from '../samples.config.json';
 import { uuid } from '../services/uuid';
 
 export default {
+  name: 'Roland 808 - 1',
   bpm: 108,
   channels: [
     {

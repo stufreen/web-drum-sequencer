@@ -2,6 +2,7 @@ import samples from '../samples.config.json';
 import { uuid } from '../services/uuid';
 
 export default {
+  name: 'Empty',
   bpm: 80,
   channels: [
     {

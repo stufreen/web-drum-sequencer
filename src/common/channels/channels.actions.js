@@ -9,17 +9,6 @@ export const toggleNote = (channel, beat) => ({
   },
 });
 
-export const setChannelSample = (channel, sample) => {
-  loadSample(sample);
-  return {
-    type: CHANNELS_CONSTANTS.SET_CHANNEL_SAMPLE,
-    payload: {
-      channel,
-      sample,
-    },
-  };
-};
-
 export const setChannelGain = (channel, gain) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNEL_GAIN,
   payload: {
@@ -36,3 +25,24 @@ export const removeChannel = id => ({
   type: CHANNELS_CONSTANTS.REMOVE_CHANNEL,
   payload: id,
 });
+
+export const setChannels = channels => (dispatch) => {
+  channels.forEach((channel) => {
+    loadSample(channel.sample.url);
+  });
+  dispatch({
+    type: CHANNELS_CONSTANTS.SET_CHANNELS,
+    payload: channels,
+  });
+};
+
+export const setChannelSample = (channel, sample) => (dispatch) => {
+  loadSample(sample);
+  dispatch({
+    type: CHANNELS_CONSTANTS.SET_CHANNEL_SAMPLE,
+    payload: {
+      channel,
+      sample,
+    },
+  });
+};

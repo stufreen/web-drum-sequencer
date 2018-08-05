@@ -46,7 +46,10 @@ describe('getNotes', () => {
   );
 
   test('should return same number of notes as initial state', () => {
-    const totalNotes = channelsInitialState.reduce((count, channel) => count + channel.notes.length, 0);
+    const totalNotes = channelsInitialState.reduce(
+      (count, channel) => count + channel.notes.length,
+      0,
+    );
 
     expect(notes.length).toBe(totalNotes);
   });

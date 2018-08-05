@@ -7,9 +7,8 @@ import {
   Box,
   Line,
   ChannelList,
-  PlayButton,
-  BPMInput,
   ChannelHeader,
+  MasterControls,
 } from '.';
 
 const App = () => (
@@ -19,14 +18,7 @@ const App = () => (
         WDS-1
       </Heading>
       <Line bg="lightGray" mb={4} />
-      <Box mb={4} display="flex">
-        <Box mr={3}>
-          <PlayButton />
-        </Box>
-        <Box>
-          <BPMInput />
-        </Box>
-      </Box>
+      <MasterControls />
       <ChannelHeader />
       <ChannelList />
     </Box>

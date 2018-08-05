@@ -7,7 +7,7 @@ export const PlayButtonComponent = ({ startPlayback, stopPlayback, playing }) =>
     <FancyButton
       onClick={stopPlayback}
       variant="red"
-      mb={3}
+      mb={1}
       width="8rem"
     >
       Stop
@@ -17,7 +17,7 @@ export const PlayButtonComponent = ({ startPlayback, stopPlayback, playing }) =>
     <FancyButton
       onClick={startPlayback}
       variant="green"
-      mb={3}
+      mb={1}
       width="8rem"
     >
       Play

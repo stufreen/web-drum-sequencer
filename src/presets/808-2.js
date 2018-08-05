@@ -1,4 +1,5 @@
 export default {
+  name: 'Roland 808 - 2',
   bpm: 75,
   channels: [
     {

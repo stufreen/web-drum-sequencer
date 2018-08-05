@@ -8,3 +8,5 @@ export * from './BPMInput';
 export * from './Marker';
 export * from './FancyButton.component';
 export * from './AddChannelButton';
+export * from './PresetSelector';
+export * from './MasterControls';
