@@ -1,5 +1,10 @@
 import { createSelector, createStructuredSelector } from 'reselect';
-import { currentBeatSelector } from '../../common';
+import {
+  currentBeatSelector,
+  bpmSelector,
+  startTimeSelector,
+  playingSelector,
+} from '../../common';
 
 const progressSelector = createSelector(
   currentBeatSelector,
@@ -8,4 +13,7 @@ const progressSelector = createSelector(
 
 export const markerSelectors = createStructuredSelector({
   progress: progressSelector,
+  bpm: bpmSelector,
+  startTime: startTimeSelector,
+  playing: playingSelector,
 });
