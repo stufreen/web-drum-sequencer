@@ -17,8 +17,9 @@ export const PresetSelectorComponent = ({ onSelectPreset, presets }) => {
         control: styles => ({
           ...styles,
           backgroundColor: 'black',
-          border: `1px solid ${theme.colors.steel}`,
-          padding: '0.5em 1em',
+          border: `2px solid ${theme.colors.gray}`,
+          padding: '0.5em 0.5em 0.5em 1em',
+          borderRadius: '0.5em',
         }),
         singleValue: styles => ({
           ...styles,
