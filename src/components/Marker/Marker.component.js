@@ -14,10 +14,11 @@ export class MarkerComponent extends React.PureComponent {
   }
 
   updateMarker() {
-    if (this.props.playing) {
+    const { playing, startTime, bpm } = this.props;
+    if (playing) {
       const currentBeat = getCurrentBeat({
-        bpm: this.props.bpm,
-        startTime: this.props.startTime,
+        bpm,
+        startTime,
       });
       const progress = (currentBeat - 1) / 4 * 100;
       this.marker.style.width = `${progress}%`;
@@ -25,9 +26,10 @@ export class MarkerComponent extends React.PureComponent {
     window.requestAnimationFrame(() => {
       this.updateMarker();
     });
-  };
+  }
 
   render() {
+    const { children } = this.props;
     return (
       <Container flex="1 1 auto" position="relative">
         <div
@@ -41,14 +43,20 @@ export class MarkerComponent extends React.PureComponent {
           }}
         />
         <Box position="absolute" display="flex" width="100%">
-          {this.props.children}
+          {children}
         </Box>
       </Container>
     );
   }
 }
 
+MarkerComponent.defaultProps = {
+  startTime: null,
+};
+
 MarkerComponent.propTypes = {
-  // progress: PropTypes.number.isRequired,
+  startTime: PropTypes.number,
+  bpm: PropTypes.number.isRequired,
+  playing: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
 };

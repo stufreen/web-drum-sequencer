@@ -6,7 +6,6 @@ import {
   startPlayback,
   stopPlayback,
   setBPM,
-  setCurrentBeat,
   setStartTime,
 } from './playbackSession.actions';
 import { LOOKAHEAD } from '../../services/audioEngine.config';
@@ -41,13 +40,6 @@ describe('setBPM', () => {
   test('should set bpm', () => {
     const state = playbackSessionReducer(playbackSessionInitialState, setBPM(123));
     expect(state.bpm).toBe(123);
-  });
-});
-
-describe('setCurrentBeat', () => {
-  test('should set currentBeat', () => {
-    const state = playbackSessionReducer(playbackSessionInitialState, setCurrentBeat(1.1234));
-    expect(state.currentBeat).toBe(1.1234);
   });
 });
 

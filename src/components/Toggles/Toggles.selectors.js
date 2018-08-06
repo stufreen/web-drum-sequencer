@@ -5,7 +5,7 @@ import {
   playingSelector,
 } from '../../common';
 
-export const markerSelectors = createStructuredSelector({
+export const togglesSelectors = createStructuredSelector({
   bpm: bpmSelector,
   startTime: startTimeSelector,
   playing: playingSelector,

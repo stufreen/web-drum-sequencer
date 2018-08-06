@@ -7,20 +7,15 @@ import { ToggleGroup } from './ToggleGroup.component';
 
 const isActive = (notes, beat) => notes.find(note => note.beat === beat) !== undefined;
 
-const highlight = (beat, currentBeat) => {
-  if (currentBeat > beat && currentBeat < beat + 0.25) {
-    return true;
-  }
-  return false;
-};
-
 const sixteenthNotes = R.range(0, 16);
 
 export const TogglesComponent = ({
   notes,
   channelID,
   toggleNote,
-  currentBeat,
+  bpm,
+  startTime,
+  playing,
 }) => {
   const toggles = sixteenthNotes.map((index) => {
     const beat = 1 + index / 4;
@@ -29,7 +24,10 @@ export const TogglesComponent = ({
         key={index}
         isActive={isActive(notes, beat)}
         onClick={() => { toggleNote(channelID, beat); }}
-        highlight={highlight(beat, currentBeat)}
+        bpm={bpm}
+        startTime={startTime}
+        playing={playing}
+        beat={beat}
       />
     );
   });
@@ -47,9 +45,15 @@ export const TogglesComponent = ({
   );
 };
 
+TogglesComponent.defaultProps = {
+  startTime: null,
+};
+
 TogglesComponent.propTypes = {
   notes: PropTypes.arrayOf(PropTypes.object).isRequired,
   channelID: PropTypes.string.isRequired,
   toggleNote: PropTypes.func.isRequired,
-  currentBeat: PropTypes.number.isRequired,
+  startTime: PropTypes.number,
+  bpm: PropTypes.number.isRequired,
+  playing: PropTypes.bool.isRequired,
 };

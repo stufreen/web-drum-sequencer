@@ -1,17 +1,13 @@
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import { createStructuredSelector } from 'reselect';
 import { TogglesComponent } from './Toggles.component';
-import { toggleNote, currentBeatSelector } from '../../common';
+import { toggleNote } from '../../common';
+import { togglesSelectors } from './Toggles.selectors';
 
 const mapDispatchToProps = {
   toggleNote,
 };
 
-const mapStateToProps = createStructuredSelector({
-  currentBeat: currentBeatSelector,
-});
-
 export const Toggles = compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(togglesSelectors, mapDispatchToProps),
 )(TogglesComponent);

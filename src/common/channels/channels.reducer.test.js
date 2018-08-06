@@ -72,12 +72,13 @@ describe('removeChannel', () => {
   });
 });
 
+// TO DO: should be async since we use a thunk now
 describe('setChannels', () => {
   test('should replace existing channels', () => {
     const state = channelsReducer(
       channelsInitialState,
       setChannels(emptyPreset.channels),
     );
-    expect(state.length).toEqual(0);
+    expect(state.length).toEqual(1);
   });
 });

@@ -14,5 +14,9 @@ export const Box = styled.div`
   ${ss.opacity}
   ${ss.position}
   ${ss.alignItems}
+  ${ss.left}
+  ${ss.top}
+  ${ss.bottom}
+  ${ss.right}
   box-sizing: border-box;
 `;
