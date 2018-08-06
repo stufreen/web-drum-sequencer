@@ -13,7 +13,6 @@ const BeatButton = styled.button`
   ${ss.borders}
   ${ss.borderRadius}
   outline: none;
-  overflow: hidden;
   transition: background-color 0.1s;
   position: relative;
 `;
@@ -43,13 +42,17 @@ export class Toggle extends React.Component {
     if (playing && isActive && this.button) {
       const currentBeat = getCurrentBeat({ bpm, startTime });
       const opacity = currentBeat - beat < 0.25 && currentBeat - beat > 0
-        ? 1
+        ? 0.8
         : 0;
       const transition = currentBeat - beat < 0.25 && currentBeat - beat > 0
-        ? 'opacity 0s'
-        : `opacity ${bpm / 120}s`;
+        ? 'all 0s'
+        : `all ${120 / bpm}s`;
+      const transform = currentBeat - beat < 0.25 && currentBeat - beat > 0
+        ? 'scale(1.3)'
+        : 'scale(1)';
       this.button.style.transition = transition;
       this.button.style.opacity = `${opacity}`;
+      this.button.style.transform = transform;
     }
 
     window.requestAnimationFrame(() => {
@@ -67,12 +70,13 @@ export class Toggle extends React.Component {
       >
         <Box
           position="absolute"
-          bg="nearWhite"
+          bg="paleMelon"
           width="100%"
           height="100%"
           left={0}
           top={0}
           opacity={0}
+          borderRadius="100%"
           innerRef={(ref) => { this.button = ref; }}
         />
       </BeatButton>
