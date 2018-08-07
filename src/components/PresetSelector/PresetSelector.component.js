@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 import Select from 'react-select';
 import theme from '../../styles/theme';
 
-export const PresetSelectorComponent = ({ onSelectPreset, presets }) => {
+export const PresetSelectorComponent = ({ onSelectPreset, presets, currentPreset }) => {
   const options = presets.map(preset => ({
     label: preset.name,
     value: preset,
   }));
+  const selectedOption = options.find(option => option.label === currentPreset);
   return (
     <Select
       options={options}
       onChange={onSelectPreset}
-      defaultValue={options[0]}
+      value={selectedOption}
       styles={{
         control: styles => ({
           ...styles,
@@ -35,6 +36,7 @@ export const PresetSelectorComponent = ({ onSelectPreset, presets }) => {
 };
 
 PresetSelectorComponent.propTypes = {
+  currentPreset: PropTypes.string.isRequired,
   onSelectPreset: PropTypes.func.isRequired,
   presets: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

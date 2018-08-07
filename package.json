@@ -48,7 +48,6 @@
     "uuid": "^3.3.2"
   },
   "jest": {
-    "testURL": "http://localhost",
-    "verbose": true
+    "testURL": "http://localhost"
   }
 }
