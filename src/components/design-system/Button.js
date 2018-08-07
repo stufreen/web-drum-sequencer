@@ -11,6 +11,9 @@ const Button = styled.button`
   ${ss.fontWeight}
   ${ss.fontSize}
   ${ss.alignSelf}
+  ${ss.width}
+  ${ss.height}
+  outline: ${({ outline }) => outline};
 `;
 
 Button.defaultProps = {

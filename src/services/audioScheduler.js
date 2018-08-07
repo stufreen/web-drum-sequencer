@@ -5,6 +5,10 @@ import { sampleStore } from './sampleStore';
 // schedule is a lookup table of all the notes currently scheduled to be played
 const schedule = {};
 
+export const playNoteNow = (sampleId, noteGain) => {
+  playNote(null, sampleStore[sampleId], noteGain);
+};
+
 export const scheduleNote = (noteId, sampleId, noteTime, noteGain) => {
   if (typeof schedule[noteId] === 'undefined') {
     schedule[noteId] = playNote(noteTime, sampleStore[sampleId], noteGain);
