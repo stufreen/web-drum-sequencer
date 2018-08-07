@@ -1,6 +1,6 @@
 import {
   getCurrentBeat,
-} from './audioLoop';
+} from './audioContext';
 
 describe('getCurrentBeat', () => {
   test('should return beat 1 if startTime is the same as currentTime', () => {

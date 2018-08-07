@@ -40,7 +40,7 @@ export class Toggle extends React.Component {
     } = this.props;
 
     if (playing && isActive && this.button) {
-      const currentBeat = getCurrentBeat({ bpm, startTime });
+      const currentBeat = getCurrentBeat(bpm, startTime);
       const opacity = currentBeat - beat < 0.25 && currentBeat - beat > 0
         ? 0.8
         : 0;

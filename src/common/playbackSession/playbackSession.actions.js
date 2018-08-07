@@ -8,11 +8,6 @@ export const stopPlayback = () => ({
   type: PLAYBACK_SESSION_CONSTANTS.STOP_PLAYBACK,
 });
 
-export const setBPM = val => ({
-  type: PLAYBACK_SESSION_CONSTANTS.SET_BPM,
-  payload: val,
-});
-
 export const setStartTime = val => ({
   type: PLAYBACK_SESSION_CONSTANTS.SET_START_TIME,
   payload: val,

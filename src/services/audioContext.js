@@ -7,7 +7,7 @@ export const getAudioContext = () => {
   return audioCtx;
 };
 
-export const getCurrentBeat = ({ bpm, startTime }) => {
+export const getCurrentBeat = (bpm, startTime) => {
   const beatLengthSeconds = bpm / 60;
   const currentBeat = ((audioCtx.currentTime - startTime) * beatLengthSeconds);
   return (currentBeat % 4) + 1;

@@ -16,10 +16,7 @@ export class MarkerComponent extends React.PureComponent {
   updateMarker() {
     const { playing, startTime, bpm } = this.props;
     if (playing) {
-      const currentBeat = getCurrentBeat({
-        bpm,
-        startTime,
-      });
+      const currentBeat = getCurrentBeat(bpm, startTime);
       const progress = (currentBeat - 1) / 4 * 100;
       this.marker.style.width = `${progress}%`;
     }

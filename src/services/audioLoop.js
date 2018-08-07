@@ -6,12 +6,17 @@ import { INTERVAL } from './audioEngine.config';
 export const initializeAudio = (store) => {
   const audioCtx = getAudioContext(); // Start the clock
   setInterval(() => {
-    const { playbackSession, channels } = store.getState();
+    const { playbackSession, tempo, channels } = store.getState();
     if (playbackSession.playing) {
-      scheduleNotes(playbackSession, channels, getCurrentBeat(playbackSession));
+      scheduleNotes(
+        playbackSession,
+        tempo,
+        channels,
+        getCurrentBeat(tempo.bpm, playbackSession.startTime),
+      );
 
       // Loop if we reached the end of the bar
-      const barLength = 4 * 60 / playbackSession.bpm;
+      const barLength = 4 * 60 / tempo.bpm;
       if (audioCtx.currentTime > playbackSession.startTime + barLength) {
         store.dispatch(setStartTime(playbackSession.startTime + barLength));
       }

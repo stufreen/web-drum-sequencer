@@ -48,7 +48,7 @@ export const getNotes = (channels, bpm, startTime, currentBeat) => channels.redu
   ], [],
 );
 
-export const scheduleNotes = ({ bpm, startTime }, channels, currentBeat) => {
+export const scheduleNotes = ({ startTime }, { bpm }, channels, currentBeat) => {
   // Determine which notes need to be scheduled
   const notes = getNotes(channels, bpm, startTime, currentBeat);
 
