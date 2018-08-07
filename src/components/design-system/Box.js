@@ -5,10 +5,12 @@ export const Box = styled.div`
   ${ss.color}
   ${ss.space}
   ${ss.borders}
+  ${ss.borderColor}
   ${ss.borderRadius}
   ${ss.width}
   ${ss.height}
   ${ss.flex}
+  ${ss.flexDirection}
   ${ss.display}
   ${ss.justifyContent}
   ${ss.opacity}

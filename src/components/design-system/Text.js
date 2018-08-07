@@ -6,6 +6,9 @@ const Text = styled.span`
   ${ss.fontWeight}
   ${ss.fontSize}
   ${ss.space}
+  ${ss.position}
+  ${ss.left}
+  ${ss.top}
   display: block;
 `;
 

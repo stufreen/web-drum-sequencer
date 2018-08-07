@@ -20,8 +20,8 @@ const BeatButton = styled.button`
 BeatButton.defaultProps = {
   border: 'none',
   borderRadius: '100%',
-  height: '1.5vw',
-  width: '1.5vw',
+  height: '1.6vw',
+  width: '1.6vw',
 };
 
 export class Toggle extends React.Component {

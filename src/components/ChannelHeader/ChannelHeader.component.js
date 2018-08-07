@@ -5,7 +5,7 @@ import { Marker } from '../Marker';
 
 export const ChannelHeader = () => (
   <Box bg="steel" display="flex" mt={4} mb={4} pr={40}>
-    <ChannelHeaderLabel width="16rem" mr={3}>
+    <ChannelHeaderLabel width="16rem" mr={4}>
       Channels
     </ChannelHeaderLabel>
     <Marker>

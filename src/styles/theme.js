@@ -1,6 +1,6 @@
 const colors = {
   nearWhite: '#F2F2F8',
-  lightGray: '#C0C0C6',
+  lightGray: '#C0C2C7',
   gray: '#909096',
   steel: '#606066',
   darkGray: '#404046',
