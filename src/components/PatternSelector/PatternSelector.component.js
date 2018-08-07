@@ -8,7 +8,7 @@ export const PatternSelector = () => {
       display="flex"
       flexDirection="column"
       alignItems="center"
-      justifyContent="space-between" 
+      justifyContent="space-between"
       mr={1}
       key={`preset-${buttonNumber}`}
     >
@@ -51,7 +51,9 @@ export const PatternSelector = () => {
         bg="nearBlack"
         pl={1}
         pr={1}
-      >PATTERNS</Text>
+      >
+        PATTERNS
+      </Text>
       {buttons}
     </Box>
   );
