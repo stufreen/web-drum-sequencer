@@ -19,7 +19,7 @@ describe('startPlayback', () => {
 
   test('should set startTime to current time plus lookahead', () => {
     const state = playbackSessionReducer(playbackSessionInitialState, startPlayback());
-    expect(state.startTime).toBe(1 + LOOKAHEAD);
+    expect(state.startTime).toBe(1 + LOOKAHEAD + LOOKAHEAD);
   });
 });
 

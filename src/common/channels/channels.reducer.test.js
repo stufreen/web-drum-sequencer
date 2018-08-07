@@ -5,7 +5,7 @@ import {
   setChannelGain,
   addChannel,
   removeChannel,
-  setChannels,
+  replaceChannels,
 } from './channels.actions';
 import samples from '../../samples.config';
 import emptyPreset from '../../presets/empty';
@@ -72,12 +72,11 @@ describe('removeChannel', () => {
   });
 });
 
-// TO DO: should be async since we use a thunk now
-describe('setChannels', () => {
+describe('replaceChannels', () => {
   test('should replace existing channels', () => {
     const state = channelsReducer(
       channelsInitialState,
-      setChannels(emptyPreset.channels),
+      replaceChannels(emptyPreset.channels),
     );
     expect(state.length).toEqual(1);
   });

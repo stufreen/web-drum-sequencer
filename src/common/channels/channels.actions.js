@@ -26,14 +26,16 @@ export const removeChannel = id => ({
   payload: id,
 });
 
+export const replaceChannels = channels => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNELS,
+  payload: channels,
+});
+
 export const setChannels = channels => (dispatch) => {
   channels.forEach((channel) => {
     loadSample(channel.sample.url);
   });
-  dispatch({
-    type: CHANNELS_CONSTANTS.SET_CHANNELS,
-    payload: channels,
-  });
+  dispatch(replaceChannels(channels));
 };
 
 export const setChannelSample = (channel, sample) => (dispatch) => {
