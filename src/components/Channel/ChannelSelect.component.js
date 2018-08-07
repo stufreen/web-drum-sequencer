@@ -26,6 +26,7 @@ export const ChannelSelect = ({ onChange, channel }) => {
           singleValue: styles => ({
             ...styles,
             color: theme.colors.nearWhite,
+            fontSize: '0.85rem',
           }),
           menu: styles => ({
             ...styles,
