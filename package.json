@@ -40,6 +40,7 @@
     "react-select": "^2.0.0",
     "recompose": "^0.27.1",
     "redux": "^4.0.0",
+    "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^3.0.1",
     "styled-components": "^3.3.3",
