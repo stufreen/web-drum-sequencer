@@ -11,6 +11,7 @@ export const ToggleGroup = ({ children }) => (
     mr={3}
     display="flex"
     justifyContent="space-between"
+    alignItems="center"
   >
     {children}
   </Box>
