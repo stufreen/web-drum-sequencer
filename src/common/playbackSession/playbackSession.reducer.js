@@ -14,7 +14,7 @@ export const playbackSessionReducer = (state = playbackSessionInitialState, acti
       return {
         ...state,
         playing: true,
-        startTime: getAudioContext().currentTime + LOOKAHEAD,
+        startTime: getAudioContext().currentTime + LOOKAHEAD + LOOKAHEAD,
       };
     case PLAYBACK_SESSION_CONSTANTS.STOP_PLAYBACK:
       return {
