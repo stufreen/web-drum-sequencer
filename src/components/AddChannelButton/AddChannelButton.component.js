@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HoverButton } from '../design-system';
 
-export const AddChannelButtonComponent = ({ addChannel }) => (
+export const AddChannelButtonComponent = ({ newChannel }) => (
   <HoverButton
-    onClick={addChannel}
+    onClick={newChannel}
     width="16rem"
     bg="darkGray"
     color="gray"
@@ -17,5 +17,5 @@ export const AddChannelButtonComponent = ({ addChannel }) => (
 );
 
 AddChannelButtonComponent.propTypes = {
-  addChannel: PropTypes.func.isRequired,
+  newChannel: PropTypes.func.isRequired,
 };

@@ -39,20 +39,19 @@ export class Toggle extends React.Component {
       beat,
     } = this.props;
 
-    if (playing && isActive && this.button) {
-      const currentBeat = getCurrentBeat(bpm, startTime);
-      const opacity = currentBeat - beat < 0.25 && currentBeat - beat > 0
-        ? 0.8
-        : 0;
-      const transition = currentBeat - beat < 0.25 && currentBeat - beat > 0
-        ? 'all 0s'
-        : `all ${120 / bpm}s`;
-      const transform = currentBeat - beat < 0.25 && currentBeat - beat > 0
-        ? 'scale(1.3)'
-        : 'scale(1)';
-      this.button.style.transition = transition;
-      this.button.style.opacity = `${opacity}`;
-      this.button.style.transform = transform;
+    if (playing
+      && isActive
+      && this.button
+      && getCurrentBeat(bpm, startTime) - beat < 0.25
+      && getCurrentBeat(bpm, startTime) - beat > 0
+    ) {
+      this.button.style.transition = 'all 0s';
+      this.button.style.opacity = '0.8';
+      this.button.style.transform = 'scale(1.3)';
+    } else {
+      this.button.style.transition = `all ${120 / bpm}s`;
+      this.button.style.opacity = 0;
+      this.button.style.transform = 'scale(1)';
     }
 
     window.requestAnimationFrame(() => {

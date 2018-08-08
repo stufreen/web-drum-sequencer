@@ -1,7 +1,7 @@
 import { loadSample } from '../../services/sampleStore';
 import { CHANNELS_CONSTANTS } from './channels.constants';
 import { setNotes, initializeChannelNotes } from '../notes';
-import uuid from '../../services/uuid';
+import { uuid } from '../../services/uuid';
 
 export const setChannelGain = (channel, gain) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNEL_GAIN,

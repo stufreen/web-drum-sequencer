@@ -1,4 +1,5 @@
 import samples from '../samples.config.json';
+import { EMPTY_NOTE_ROW } from './empty';
 
 export default {
   name: 'Roland 808 - 1',
@@ -36,11 +37,11 @@ export default {
     },
   ],
   notes: {
-    '808-1': [[], [], [], []],
-    '808-2': [[], [], [], []],
-    '808-3': [[], [], [], []],
-    '808-4': [[], [], [], []],
-    '808-5': [[], [], [], []],
-    '808-6': [[], [], [], []],
+    '808-1': EMPTY_NOTE_ROW,
+    '808-2': EMPTY_NOTE_ROW,
+    '808-3': EMPTY_NOTE_ROW,
+    '808-4': EMPTY_NOTE_ROW,
+    '808-5': EMPTY_NOTE_ROW,
+    '808-6': EMPTY_NOTE_ROW,
   },
 };

@@ -9,7 +9,59 @@ export default {
         url: '/assets/drums/Rom808/808BD_Long-R8_C2A.wav',
       },
       gain: 1,
-      notes: [
+    },
+    {
+      id: '6869f116-7c59-4099-8216-f703f2e25ac0',
+      sample: {
+        name: '808 Snare',
+        url: '/assets/drums/Rom808/808SD_Med-R8_C2A.wav',
+      },
+      gain: 0.84,
+    },
+    {
+      id: 'e1ffa9bd-116b-409a-96ff-41e2512e38e5',
+      sample: {
+        name: '808 Clap',
+        url: '/assets/drums/Rom808/808Clap-R8_01.wav',
+      },
+      gain: 0.5,
+    },
+    {
+      id: '7ec9304a-9694-47ae-9cc8-4e350e996e73',
+      sample: {
+        name: '808 HH Closed',
+        url: '/assets/drums/Rom808/808HH-JD800.wav',
+      },
+      gain: 0.35,
+    },
+    {
+      id: 'a5aab4b3-7f5e-4eed-a511-7e8aa2b36ee1',
+      sample: {
+        name: '808 HH Open',
+        url: '/assets/drums/Rom808/808HHo-JD800.wav',
+      },
+      gain: 0.5,
+    },
+    {
+      id: 'cad470c9-659d-4f78-88e7-1959b4511eb6',
+      sample: {
+        name: '808 Cowbell',
+        url: '/assets/drums/Rom808/808CowLong-R8_C2A.wav',
+      },
+      gain: 0.4,
+    },
+    {
+      id: '10178c67-dfa6-4588-b7eb-2d5d2b1a3e11',
+      sample: {
+        name: 'Casio Snare',
+        url: '/assets/drums/casio-vl-1/snare.wav',
+      },
+      gain: 0.39,
+    },
+  ],
+  notes: {
+    'befbd604-8a5f-443c-a882-db4cf6ff9dce': [
+      [
         {
           beat: 1,
           id: '29c11382-971f-4ac8-87b9-4456c30e8371',
@@ -19,15 +71,16 @@ export default {
           id: 'c81e5da2-77d3-491d-8b24-4312eca7ca63',
         },
       ],
-    },
-    {
-      id: '6869f116-7c59-4099-8216-f703f2e25ac0',
-      sample: {
-        name: '808 Snare',
-        url: '/assets/drums/Rom808/808SD_Med-R8_C2A.wav',
-      },
-      gain: 0.84,
-      notes: [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+    ],
+    '6869f116-7c59-4099-8216-f703f2e25ac0': [
+      [
         {
           beat: 2,
           id: 'e2347a92-2e1f-4822-bc0b-694b84e3d894',
@@ -37,15 +90,16 @@ export default {
           id: 'e0635d4d-ea5a-49e9-98f9-d9dd320da85e',
         },
       ],
-    },
-    {
-      id: 'e1ffa9bd-116b-409a-96ff-41e2512e38e5',
-      sample: {
-        name: '808 Clap',
-        url: '/assets/drums/Rom808/808Clap-R8_01.wav',
-      },
-      gain: 0.5,
-      notes: [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+    ],
+    'e1ffa9bd-116b-409a-96ff-41e2512e38e5': [
+      [
         {
           beat: 2,
           id: '1c823ab2-f532-4f86-b2e9-a92d263d6533',
@@ -59,15 +113,16 @@ export default {
           id: 'b26730ea-ff93-4d86-bdbd-f93d996bf0ea',
         },
       ],
-    },
-    {
-      id: '7ec9304a-9694-47ae-9cc8-4e350e996e73',
-      sample: {
-        name: '808 HH Closed',
-        url: '/assets/drums/Rom808/808HH-JD800.wav',
-      },
-      gain: 0.35,
-      notes: [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+    ],
+    '7ec9304a-9694-47ae-9cc8-4e350e996e73': [
+      [
         {
           beat: 1.5,
           id: '5e6b7962-11e3-49e3-bba0-d17cbad75df9',
@@ -129,29 +184,31 @@ export default {
           id: 'd373fca3-c5da-4b4f-a2b8-45f2de0363b7',
         },
       ],
-    },
-    {
-      id: 'a5aab4b3-7f5e-4eed-a511-7e8aa2b36ee1',
-      sample: {
-        name: '808 HH Open',
-        url: '/assets/drums/Rom808/808HHo-JD800.wav',
-      },
-      gain: 0.5,
-      notes: [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+    ],
+    'a5aab4b3-7f5e-4eed-a511-7e8aa2b36ee1': [
+      [
         {
           beat: 4.5,
           id: 'ca978bff-09e3-4150-a5ce-530c216beeac',
         },
       ],
-    },
-    {
-      id: 'cad470c9-659d-4f78-88e7-1959b4511eb6',
-      sample: {
-        name: '808 Cowbell',
-        url: '/assets/drums/Rom808/808CowLong-R8_C2A.wav',
-      },
-      gain: 0.4,
-      notes: [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+    ],
+    'cad470c9-659d-4f78-88e7-1959b4511eb6': [
+      [
         {
           beat: 2.75,
           id: '996acdc1-761e-4a87-9c6e-c05dd01434b6',
@@ -161,15 +218,16 @@ export default {
           id: '85b96e50-e54b-498c-97a9-32f90f2228e0',
         },
       ],
-    },
-    {
-      id: '10178c67-dfa6-4588-b7eb-2d5d2b1a3e11',
-      sample: {
-        name: 'Casio Snare',
-        url: '/assets/drums/casio-vl-1/snare.wav',
-      },
-      gain: 0.39,
-      notes: [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+    ],
+    '10178c67-dfa6-4588-b7eb-2d5d2b1a3e11': [
+      [
         {
           beat: 1.25,
           id: '5c126d28-450d-4b04-bd8a-a711de613e74',
@@ -187,6 +245,13 @@ export default {
           id: '20146196-a4fb-4f22-a75c-35c945f27e65',
         },
       ],
-    },
-  ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+    ],
+  },
 };

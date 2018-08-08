@@ -1,15 +1,27 @@
 import samples from '../samples.config.json';
-import { uuid } from '../services/uuid';
+
+export const EMPTY_NOTE_ROW = [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+];
 
 export default {
   name: 'Empty',
   bpm: 80,
   channels: [
     {
-      id: uuid(),
+      id: 'empty_channel',
       sample: samples[0],
       gain: 1,
-      notes: [],
     },
   ],
+  notes: {
+    empty_channel: EMPTY_NOTE_ROW,
+  },
 };

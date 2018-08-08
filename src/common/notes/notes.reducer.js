@@ -1,5 +1,6 @@
 import { uuid } from '../../services/uuid';
 import presets from '../../presets';
+import { EMPTY_NOTE_ROW } from '../../presets/empty';
 import { NOTES_CONSTANTS } from './notes.constants';
 
 export const notesInitialState = presets[0].notes;
@@ -37,7 +38,7 @@ export const notesReducer = (state = notesInitialState, action) => {
     case NOTES_CONSTANTS.INITIALIZE_CHANNEL:
       return {
         ...state,
-        [action.payload]: [], // TO DO: add empty array for each pattern
+        [action.payload]: EMPTY_NOTE_ROW, // TO DO: add empty array for each pattern
       };
     case NOTES_CONSTANTS.REMOVE_CHANNEL:
       return {
