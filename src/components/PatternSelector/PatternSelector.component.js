@@ -1,5 +1,6 @@
 import React from 'react';
 import * as R from 'ramda';
+import { LabelBox } from '../LabelBox';
 import { Box, HoverButton, Text } from '../design-system';
 
 export const PatternSelector = () => {
@@ -21,9 +22,9 @@ export const PatternSelector = () => {
         mb={1}
       />
       <Text
-        color="gray"
+        color="steel"
         fontSize="0.6em"
-        fontWeight="bold"
+        fontWeight="600"
         m={0}
       >
         {buttonNumber + 1}
@@ -32,29 +33,8 @@ export const PatternSelector = () => {
   ));
 
   return (
-    <Box
-      display="flex"
-      border="2px solid"
-      borderColor="steel"
-      borderRadius="0.5rem"
-      p={3}
-      pb={2}
-      position="relative"
-    >
-      <Text
-        position="absolute"
-        left="1rem"
-        top="-0.6em"
-        color="gray"
-        fontSize="0.6rem"
-        fontWeight="600"
-        bg="nearBlack"
-        pl={1}
-        pr={1}
-      >
-        PATTERNS
-      </Text>
+    <LabelBox label="PATTERNS">
       {buttons}
-    </Box>
+    </LabelBox>
   );
 };

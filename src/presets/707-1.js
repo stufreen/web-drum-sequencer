@@ -6,10 +6,29 @@ export default {
   bpm: 130,
   channels: [
     {
-      id: uuid(),
+      id: '707kick',
       sample: samples[0],
       gain: 1,
-      notes: [
+    },
+    {
+      id: '707snare',
+      sample: samples[1],
+      gain: 1,
+    },
+    {
+      id: '707hat',
+      sample: samples[2],
+      gain: 0.6,
+    },
+    {
+      id: '707rim',
+      sample: samples[3],
+      gain: 0.5,
+    },
+  ],
+  notes: {
+    '707kick': [
+      [
         {
           beat: 1,
           id: uuid(),
@@ -23,12 +42,12 @@ export default {
           id: uuid(),
         },
       ],
-    },
-    {
-      id: uuid(),
-      sample: samples[1],
-      gain: 1,
-      notes: [
+      [],
+      [],
+      [],
+    ],
+    '707snare': [
+      [
         {
           beat: 2,
           id: uuid(),
@@ -38,12 +57,12 @@ export default {
           id: uuid(),
         },
       ],
-    },
-    {
-      id: uuid(),
-      sample: samples[2],
-      gain: 0.6,
-      notes: [
+      [],
+      [],
+      [],
+    ],
+    '707hat': [
+      [
         {
           beat: 1,
           id: uuid(),
@@ -61,12 +80,12 @@ export default {
           id: uuid(),
         },
       ],
-    },
-    {
-      id: uuid(),
-      sample: samples[3],
-      gain: 0.5,
-      notes: [
+      [],
+      [],
+      [],
+    ],
+    '707rim': [
+      [
         {
           beat: 1.75,
           id: uuid(),
@@ -76,6 +95,9 @@ export default {
           id: uuid(),
         },
       ],
-    },
-  ],
+      [],
+      [],
+      [],
+    ],
+  },
 };

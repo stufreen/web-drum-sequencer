@@ -9,6 +9,7 @@ const Text = styled.span`
   ${ss.position}
   ${ss.left}
   ${ss.top}
+  ${ss.letterSpacing}
   display: block;
 `;
 

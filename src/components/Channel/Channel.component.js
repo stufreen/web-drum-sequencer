@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ChannelSelect } from './ChannelSelect.component';
+import { ChannelSelect } from '../ChannelSelect';
 import { Toggles } from '../Toggles';
 import { Box } from '../design-system';
 import { RemoveButton } from './RemoveButton.component';
@@ -9,9 +9,9 @@ import { HitButton } from './HitButton.component';
 
 export const ChannelComponent = ({
   channel,
-  onSelectSample,
   onSetGain,
   onPressRemove,
+  notes,
 }) => (
   <Box mb={3} display="flex">
     <Box
@@ -24,21 +24,20 @@ export const ChannelComponent = ({
       alignItems="center"
       position="relative"
     >
-      <ChannelSelect onChange={onSelectSample} onSetGain={onSetGain} channel={channel} />
+      <ChannelSelect channel={channel} />
       <Knob size={40} value={channel.gain * 100} onChange={onSetGain} />
       <HitButton channel={channel} />
     </Box>
-    <Toggles notes={channel.notes} channelID={channel.id} />
+    <Toggles notes={notes[channel.id]} channelID={channel.id} />
     <RemoveButton onClick={onPressRemove} />
   </Box>
 );
 
 ChannelComponent.propTypes = {
+  notes: PropTypes.objectOf(PropTypes.array).isRequired,
   channel: PropTypes.shape({
-    notes: PropTypes.arrayOf(PropTypes.object).isRequired,
     id: PropTypes.string.isRequired,
   }).isRequired,
-  onSelectSample: PropTypes.func.isRequired,
   onSetGain: PropTypes.func.isRequired,
   onPressRemove: PropTypes.func.isRequired,
 };

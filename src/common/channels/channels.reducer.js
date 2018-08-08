@@ -6,35 +6,8 @@ import presets from '../../presets';
 
 export const channelsInitialState = presets[0].channels;
 
-const findNote = (notes, beat) => notes.find(note => note.beat === beat);
-
 export const channelsReducer = (state = channelsInitialState, action) => {
   switch (action.type) {
-    case CHANNELS_CONSTANTS.TOGGLE_NOTE:
-      return state.map((channel) => {
-        if (channel.id === action.payload.channel) {
-          // Untoggle (remove) a note
-          if (findNote(channel.notes, action.payload.beat)) {
-            return {
-              ...channel,
-              notes: channel.notes.filter(note => note.beat !== action.payload.beat),
-            };
-          }
-
-          // Add a new note
-          return {
-            ...channel,
-            notes: [
-              ...channel.notes,
-              {
-                beat: action.payload.beat,
-                id: uuid(),
-              },
-            ],
-          };
-        }
-        return channel;
-      });
     case CHANNELS_CONSTANTS.SET_CHANNEL_SAMPLE:
       return state.map((channel) => {
         if (channel.id === action.payload.channel) {

@@ -1,9 +1,7 @@
 import {
   isBetween,
-  getChannelNotes,
-  getNotes,
+  getScheduledNotes,
 } from './audioScheduler';
-import { channelsInitialState } from '../common/channels';
 
 describe('isBetween', () => {
   test('should return true if query is between a and b', () => {
@@ -15,42 +13,43 @@ describe('isBetween', () => {
   });
 });
 
-describe('getChannelNotes', () => {
-  const notes = getChannelNotes(
-    channelsInitialState[0], // kick channel
-    60,
-    0,
-    1,
-  );
+describe('getScheduledNotes', () => {
+  const testNotes = [
+    {
+      beat: 1,
+      id: 'foo',
+    },
+    {
+      beat: 2.5,
+      id: 'bar',
+    },
+    {
+      beat: 4.25,
+      id: 'bam',
+    },
+  ];
+
+  const scheduledNotes = getScheduledNotes({
+    channel: {
+      sample: {
+        url: '/whatever.wav',
+      },
+    },
+    channelNotes: testNotes,
+    bpm: 60,
+    startTime: 0,
+    currentBeat: 1,
+  });
 
   test('should return same number of notes', () => {
-    expect(notes.length).toBe(channelsInitialState[0].notes.length);
+    expect(scheduledNotes.length).toBe(testNotes.length);
   });
 
   test('should calculate noteTime correctly for notes in the lookahead period', () => {
-    expect(notes[0].time).toBe(0);
+    expect(scheduledNotes[0].time).toBe(0);
   });
 
   test('should set noteTime to null if note should not be scheduled', () => {
-    expect(notes[1].time).toBeNull();
-  });
-});
-
-// TO DO: Add tests for getNotes
-describe('getNotes', () => {
-  const notes = getNotes(
-    channelsInitialState, // kick channel
-    60,
-    0,
-    1,
-  );
-
-  test('should return same number of notes as initial state', () => {
-    const totalNotes = channelsInitialState.reduce(
-      (count, channel) => count + channel.notes.length,
-      0,
-    );
-
-    expect(notes.length).toBe(totalNotes);
+    expect(scheduledNotes[1].time).toBeNull();
   });
 });

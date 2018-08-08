@@ -1,6 +1,5 @@
 import { channelsInitialState, channelsReducer } from './channels.reducer';
 import {
-  toggleNote,
   setChannelSample,
   setChannelGain,
   addChannel,
@@ -9,20 +8,6 @@ import {
 } from './channels.actions';
 import samples from '../../samples.config';
 import emptyPreset from '../../presets/empty';
-
-const initialNumNotes = channelsInitialState[0].notes.length;
-
-describe('toggleNote', () => {
-  test('should toggle a note off', () => {
-    const state = channelsReducer(channelsInitialState, toggleNote(channelsInitialState[0].id, 1));
-    expect(state[0].notes.length).toBe(initialNumNotes - 1);
-  });
-
-  test('should toggle a note on', () => {
-    const state = channelsReducer(channelsInitialState, toggleNote(channelsInitialState[0].id, 2));
-    expect(state[0].notes.length).toBe(initialNumNotes + 1);
-  });
-});
 
 describe('setChannelSample', () => {
   test('should change a sample', () => {

@@ -4,6 +4,7 @@ import {
   playbackSessionReducer,
   tempoReducer,
   masterReducer,
+  notesReducer,
 } from './common';
 
 export default combineReducers({
@@ -11,4 +12,5 @@ export default combineReducers({
   playbackSession: playbackSessionReducer,
   tempo: tempoReducer,
   master: masterReducer,
+  notes: notesReducer,
 });

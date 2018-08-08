@@ -22,7 +22,7 @@ export const TogglesComponent = ({
     return (
       <Toggle
         key={index}
-        isActive={isActive(notes, beat)}
+        isActive={isActive(notes[0], beat)}
         onClick={() => { toggleNote(channelID, beat); }}
         bpm={bpm}
         startTime={startTime}
@@ -50,7 +50,7 @@ TogglesComponent.defaultProps = {
 };
 
 TogglesComponent.propTypes = {
-  notes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  notes: PropTypes.arrayOf(PropTypes.array).isRequired,
   channelID: PropTypes.string.isRequired,
   toggleNote: PropTypes.func.isRequired,
   startTime: PropTypes.number,

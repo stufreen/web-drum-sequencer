@@ -5,7 +5,7 @@ import { Box } from '../design-system';
 import sampleOptions from '../../samples.config.json';
 import theme from '../../styles/theme';
 
-export const ChannelSelect = ({ onChange, channel }) => {
+export const ChannelSelectComponent = ({ onSelectSample, channel }) => {
   const options = sampleOptions.map(sampleOption => ({
     value: sampleOption.url,
     label: sampleOption.name,
@@ -15,7 +15,7 @@ export const ChannelSelect = ({ onChange, channel }) => {
     <Box flex="1 1 auto" pr={2}>
       <Select
         options={options}
-        onChange={onChange}
+        onChange={onSelectSample}
         value={currentOption}
         styles={{
           control: styles => ({
@@ -38,12 +38,9 @@ export const ChannelSelect = ({ onChange, channel }) => {
   );
 };
 
-ChannelSelect.propTypes = {
-  onChange: PropTypes.func.isRequired,
+ChannelSelectComponent.propTypes = {
+  onSelectSample: PropTypes.func.isRequired,
   channel: PropTypes.shape({
-    notes: PropTypes.arrayOf(PropTypes.object).isRequired,
     id: PropTypes.string.isRequired,
-    sample: PropTypes.object.isRequired,
-    gain: PropTypes.number.isRequired,
   }).isRequired,
 };

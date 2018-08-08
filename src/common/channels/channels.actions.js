@@ -1,14 +1,6 @@
 import { loadSample } from '../../services/sampleStore';
 import { CHANNELS_CONSTANTS } from './channels.constants';
 
-export const toggleNote = (channel, beat) => ({
-  type: CHANNELS_CONSTANTS.TOGGLE_NOTE,
-  payload: {
-    channel,
-    beat,
-  },
-});
-
 export const setChannelGain = (channel, gain) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNEL_GAIN,
   payload: {
