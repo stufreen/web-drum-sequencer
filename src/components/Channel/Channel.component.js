@@ -12,6 +12,7 @@ export const ChannelComponent = ({
   onSetGain,
   onPressRemove,
   notes,
+  pattern,
 }) => (
   <Box mb={3} display="flex">
     <Box
@@ -28,7 +29,10 @@ export const ChannelComponent = ({
       <Knob size={40} value={channel.gain * 100} onChange={onSetGain} />
       <HitButton channel={channel} />
     </Box>
-    <Toggles notes={notes[channel.id]} channelID={channel.id} />
+    <Toggles
+      notes={notes[channel.id][pattern]}
+      channelID={channel.id}
+    />
     <RemoveButton onClick={onPressRemove} />
   </Box>
 );
@@ -40,4 +44,5 @@ ChannelComponent.propTypes = {
   }).isRequired,
   onSetGain: PropTypes.func.isRequired,
   onPressRemove: PropTypes.func.isRequired,
+  pattern: PropTypes.number.isRequired,
 };

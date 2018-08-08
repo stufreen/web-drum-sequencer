@@ -16,14 +16,15 @@ export const TogglesComponent = ({
   bpm,
   startTime,
   playing,
+  pattern,
 }) => {
   const toggles = sixteenthNotes.map((index) => {
     const beat = 1 + index / 4;
     return (
       <Toggle
         key={index}
-        isActive={isActive(notes[0], beat)}
-        onClick={() => { toggleNote(channelID, 0, beat); }}
+        isActive={isActive(notes, beat)}
+        onClick={() => { toggleNote(channelID, pattern, beat); }}
         bpm={bpm}
         startTime={startTime}
         playing={playing}
@@ -50,10 +51,11 @@ TogglesComponent.defaultProps = {
 };
 
 TogglesComponent.propTypes = {
-  notes: PropTypes.arrayOf(PropTypes.array).isRequired,
+  notes: PropTypes.arrayOf(PropTypes.object).isRequired,
   channelID: PropTypes.string.isRequired,
   toggleNote: PropTypes.func.isRequired,
   startTime: PropTypes.number,
   bpm: PropTypes.number.isRequired,
   playing: PropTypes.bool.isRequired,
+  pattern: PropTypes.number.isRequired,
 };

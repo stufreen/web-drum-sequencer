@@ -1,5 +1,4 @@
 import * as R from 'ramda';
-import { uuid } from '../../services/uuid';
 import { CHANNELS_CONSTANTS } from './channels.constants';
 import samples from '../../samples.config.json';
 import presets from '../../presets';
@@ -32,7 +31,7 @@ export const channelsReducer = (state = channelsInitialState, action) => {
       return [
         ...state,
         {
-          id: uuid(),
+          id: action.payload,
           sample: samples[0],
           gain: 1,
           notes: [],

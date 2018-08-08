@@ -1,7 +1,7 @@
 import { notesReducer } from './notes.reducer';
 import {
   toggleNote,
-  initializeChannel,
+  initializeChannelNotes,
   removeChannelNotes,
   setNotes,
 } from './notes.actions';
@@ -52,7 +52,7 @@ describe('initializeChannel', () => {
   test('should add a channel', () => {
     const state = notesReducer(
       testNotes,
-      initializeChannel('cowbell'),
+      initializeChannelNotes('cowbell'),
     );
     expect(state.cowbell).not.toBeUndefined();
   });

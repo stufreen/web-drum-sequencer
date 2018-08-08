@@ -1,1 +1,1 @@
-export * from './PatternSelector.component';
+export * from './PatternSelector.container';

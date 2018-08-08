@@ -1,6 +1,6 @@
 import { NOTES_CONSTANTS } from './notes.constants';
 
-export const initializeChannel = channelID => ({
+export const initializeChannelNotes = channelID => ({
   type: NOTES_CONSTANTS.INITIALIZE_CHANNEL,
   payload: channelID,
 });

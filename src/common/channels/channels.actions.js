@@ -1,6 +1,7 @@
 import { loadSample } from '../../services/sampleStore';
 import { CHANNELS_CONSTANTS } from './channels.constants';
-import { setNotes } from '../notes';
+import { setNotes, initializeChannelNotes } from '../notes';
+import uuid from '../../services/uuid';
 
 export const setChannelGain = (channel, gain) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNEL_GAIN,
@@ -10,8 +11,9 @@ export const setChannelGain = (channel, gain) => ({
   },
 });
 
-export const addChannel = () => ({
+export const addChannel = id => ({
   type: CHANNELS_CONSTANTS.ADD_CHANNEL,
+  payload: id,
 });
 
 export const removeChannel = id => ({
@@ -30,6 +32,12 @@ export const loadPreset = (channels, notes) => (dispatch) => {
   });
   dispatch(replaceChannels(channels));
   dispatch(setNotes(notes));
+};
+
+export const newChannel = () => (dispatch) => {
+  const newID = uuid();
+  dispatch(addChannel(newID));
+  dispatch(initializeChannelNotes(newID));
 };
 
 export const setChannelSample = (channel, sample) => (dispatch) => {

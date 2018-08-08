@@ -11,6 +11,7 @@ export const initializeAudio = (store) => {
       tempo,
       channels,
       notes,
+      master,
     } = store.getState();
 
     if (playbackSession.playing) {
@@ -19,7 +20,7 @@ export const initializeAudio = (store) => {
         channels,
         startTime: playbackSession.startTime,
         bpm: tempo.bpm,
-        pattern: 0, // TO DO: Pull from store
+        pattern: master.pattern,
         currentBeat: getCurrentBeat(tempo.bpm, playbackSession.startTime),
       });
 

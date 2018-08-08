@@ -1,9 +1,10 @@
 import React from 'react';
 import * as R from 'ramda';
+import PropTypes from 'prop-types';
 import { LabelBox } from '../LabelBox';
 import { Box, HoverButton, Text } from '../design-system';
 
-export const PatternSelector = () => {
+export const PatternSelectorComponent = ({ onSelectPattern, pattern }) => {
   const buttons = R.range(0, 8).map(buttonNumber => (
     <Box
       display="flex"
@@ -18,8 +19,12 @@ export const PatternSelector = () => {
         height="1.3rem"
         width="1.3rem"
         borderRadius={3}
-        bg="lightGray"
+        bg={pattern === buttonNumber ? 'melon' : 'lightGray'}
         mb={1}
+        transitionSpeed="0.2s"
+        onClick={() => {
+          onSelectPattern(buttonNumber);
+        }}
       />
       <Text
         color="steel"
@@ -37,4 +42,9 @@ export const PatternSelector = () => {
       {buttons}
     </LabelBox>
   );
+};
+
+PatternSelectorComponent.propTypes = {
+  pattern: PropTypes.number.isRequired,
+  onSelectPattern: PropTypes.func.isRequired,
 };
