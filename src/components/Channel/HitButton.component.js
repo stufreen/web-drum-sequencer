@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { playNoteNow } from '../../services/audioScheduler';
 import { HoverButton } from '../design-system';
 
@@ -17,3 +18,10 @@ export const HitButton = ({ channel }) => (
     }}
   />
 );
+
+HitButton.propTypes = {
+  channel: PropTypes.shape({
+    sample: PropTypes.object.isRequired,
+    gain: PropTypes.number.isRequired,
+  }).isRequired,
+};

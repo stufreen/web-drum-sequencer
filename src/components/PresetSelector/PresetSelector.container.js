@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 import { compose, withProps, withHandlers } from 'recompose';
 import { PresetSelectorComponent } from './PresetSelector.component';
 import { presetSelectorSelectors } from './PresetSelector.selectors';
-import { setBPM, setChannels, setPreset } from '../../common';
+import { setBPM, loadPreset, setPreset } from '../../common';
 import presets from '../../presets';
 
 const mapDispatchToProps = {
   setBPM,
-  setChannels,
+  loadPreset,
   setPreset,
 };
 
@@ -20,11 +20,11 @@ export const PresetSelector = compose(
     onSelectPreset: props => ({ value }) => {
       const {
         setBPM: connectedSetBPM,
-        setChannels: connectedSetChannels,
+        loadPreset: connectedLoadPreset,
         setPreset: connectedSetPreset,
       } = props;
       connectedSetBPM(value.bpm);
-      connectedSetChannels(value.channels);
+      connectedLoadPreset(value.channels, value.notes);
       connectedSetPreset(value.name);
     },
   }),

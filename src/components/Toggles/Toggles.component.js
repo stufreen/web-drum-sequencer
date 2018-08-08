@@ -23,7 +23,7 @@ export const TogglesComponent = ({
       <Toggle
         key={index}
         isActive={isActive(notes[0], beat)}
-        onClick={() => { toggleNote(channelID, beat); }}
+        onClick={() => { toggleNote(channelID, 0, beat); }}
         bpm={bpm}
         startTime={startTime}
         playing={playing}

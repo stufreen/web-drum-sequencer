@@ -1,5 +1,6 @@
 import { loadSample } from '../../services/sampleStore';
 import { CHANNELS_CONSTANTS } from './channels.constants';
+import { setNotes } from '../notes';
 
 export const setChannelGain = (channel, gain) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNEL_GAIN,
@@ -23,11 +24,12 @@ export const replaceChannels = channels => ({
   payload: channels,
 });
 
-export const setChannels = channels => (dispatch) => {
+export const loadPreset = (channels, notes) => (dispatch) => {
   channels.forEach((channel) => {
     loadSample(channel.sample.url);
   });
   dispatch(replaceChannels(channels));
+  dispatch(setNotes(notes));
 };
 
 export const setChannelSample = (channel, sample) => (dispatch) => {
