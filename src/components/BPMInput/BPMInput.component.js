@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Image, TextInput } from '../design-system';
+import bpmImage from '../../assets/images/bpm.png';
 
 export const BPMInputComponent = ({ bpm, setBPM }) => (
   <Box width="7rem">
     <Image
-      src="/assets/images/bpm.png"
+      src={bpmImage}
       alt="BPM"
       position="absolute"
       zIndex={0}
@@ -30,17 +31,6 @@ export const BPMInputComponent = ({ bpm, setBPM }) => (
         setBPM(parseInt(e.target.value, 10));
       }}
     />
-    {/* <label htmlFor="bpm" >
-      <input
-        id="bpm"
-        className="input-reset ba f2 b--mid-gray bw1 pa2 mb2 db w4 h3 bg-black red br2"
-        type="number"
-        value={bpm}
-        onChange={(e) => {
-          setBPM(parseInt(e.target.value, 10));
-        }}
-      />
-    </label> */}
   </Box>
 );
 

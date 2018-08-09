@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 import { Box } from '../design-system';
-import sampleOptions from '../../samples.config.json';
+import sampleOptions from '../../samples.config';
 import theme from '../../styles/theme';
 
 export const ChannelSelectComponent = ({ onSelectSample, channel }) => {

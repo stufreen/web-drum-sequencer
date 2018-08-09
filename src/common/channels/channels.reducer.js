@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import { CHANNELS_CONSTANTS } from './channels.constants';
-import samples from '../../samples.config.json';
+import samples from '../../samples.config';
 import presets from '../../presets';
 
 export const channelsInitialState = presets[0].channels;

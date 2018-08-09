@@ -7,13 +7,14 @@ import App from './components/App';
 import { initializeAudio } from './services/audioLoop';
 import { configureStore } from './store';
 import { loadSamples } from './services/sampleStore';
+import './assets/js/webaudio-controls';
 
 const { store, persistor } = configureStore(() => {
   loadSamples(store);
 });
 
 if ('serviceWorker' in navigator) {
-  const registration = runtime.register();
+  runtime.register();
 }
 
 ReactDOM.render(

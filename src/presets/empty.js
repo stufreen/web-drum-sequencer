@@ -1,4 +1,4 @@
-import samples from '../samples.config.json';
+import samples from '../samples.config';
 
 export const EMPTY_NOTE_ROW = [
   [],

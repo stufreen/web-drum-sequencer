@@ -1,4 +1,4 @@
-import samples from '../samples.config.json';
+import samples from '../samples.config';
 import { EMPTY_NOTE_ROW } from './empty';
 
 export default {

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import knobImage from '../assets/images/simplegray.png';
 
 export class Knob extends React.Component {
   componentDidMount() {
@@ -12,7 +13,7 @@ export class Knob extends React.Component {
     return (
       <webaudio-knob
         ref={(element) => { this.knob = element; }}
-        src="/assets/images/simplegray.png"
+        src={knobImage}
         sprites="100"
         min="0"
         max="100"

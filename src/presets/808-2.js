@@ -1,66 +1,47 @@
+import samples from '../samples.config';
+
 export default {
   name: 'Roland 808 - 2',
   bpm: 75,
   channels: [
     {
-      id: 'befbd604-8a5f-443c-a882-db4cf6ff9dce',
-      sample: {
-        name: '808 Kick Long',
-        url: '/assets/drums/Rom808/808BD_Long-R8_C2A.wav',
-      },
+      id: 'trap-1',
+      sample: samples[6],
       gain: 1,
     },
     {
-      id: '6869f116-7c59-4099-8216-f703f2e25ac0',
-      sample: {
-        name: '808 Snare',
-        url: '/assets/drums/Rom808/808SD_Med-R8_C2A.wav',
-      },
-      gain: 0.84,
+      id: 'trap-2',
+      sample: samples[8],
+      gain: 1,
     },
     {
-      id: 'e1ffa9bd-116b-409a-96ff-41e2512e38e5',
-      sample: {
-        name: '808 Clap',
-        url: '/assets/drums/Rom808/808Clap-R8_01.wav',
-      },
+      id: 'trap-3',
+      sample: samples[9],
+      gain: 1,
+    },
+    {
+      id: 'trap-4',
+      sample: samples[10],
       gain: 0.5,
     },
     {
-      id: '7ec9304a-9694-47ae-9cc8-4e350e996e73',
-      sample: {
-        name: '808 HH Closed',
-        url: '/assets/drums/Rom808/808HH-JD800.wav',
-      },
-      gain: 0.35,
-    },
-    {
-      id: 'a5aab4b3-7f5e-4eed-a511-7e8aa2b36ee1',
-      sample: {
-        name: '808 HH Open',
-        url: '/assets/drums/Rom808/808HHo-JD800.wav',
-      },
+      id: 'trap-5',
+      sample: samples[11],
       gain: 0.5,
     },
     {
-      id: 'cad470c9-659d-4f78-88e7-1959b4511eb6',
-      sample: {
-        name: '808 Cowbell',
-        url: '/assets/drums/Rom808/808CowLong-R8_C2A.wav',
-      },
+      id: 'trap-6',
+      sample: samples[7],
       gain: 0.4,
     },
     {
-      id: '10178c67-dfa6-4588-b7eb-2d5d2b1a3e11',
-      sample: {
-        name: 'Casio Snare',
-        url: '/assets/drums/casio-vl-1/snare.wav',
-      },
-      gain: 0.39,
+      id: 'trap-7',
+      sample: samples[14],
+      gain: 0.4,
     },
   ],
   notes: {
-    'befbd604-8a5f-443c-a882-db4cf6ff9dce': [
+    'trap-1': [
       [
         {
           beat: 1,
@@ -79,7 +60,7 @@ export default {
       [],
       [],
     ],
-    '6869f116-7c59-4099-8216-f703f2e25ac0': [
+    'trap-2': [
       [
         {
           beat: 2,
@@ -98,7 +79,7 @@ export default {
       [],
       [],
     ],
-    'e1ffa9bd-116b-409a-96ff-41e2512e38e5': [
+    'trap-3': [
       [
         {
           beat: 2,
@@ -121,7 +102,7 @@ export default {
       [],
       [],
     ],
-    '7ec9304a-9694-47ae-9cc8-4e350e996e73': [
+    'trap-4': [
       [
         {
           beat: 1.5,
@@ -192,7 +173,7 @@ export default {
       [],
       [],
     ],
-    'a5aab4b3-7f5e-4eed-a511-7e8aa2b36ee1': [
+    'trap-5': [
       [
         {
           beat: 4.5,
@@ -207,7 +188,7 @@ export default {
       [],
       [],
     ],
-    'cad470c9-659d-4f78-88e7-1959b4511eb6': [
+    'trap-6': [
       [
         {
           beat: 2.75,
@@ -226,7 +207,7 @@ export default {
       [],
       [],
     ],
-    '10178c67-dfa6-4588-b7eb-2d5d2b1a3e11': [
+    'trap-7': [
       [
         {
           beat: 1.25,
