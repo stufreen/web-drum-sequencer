@@ -35,6 +35,7 @@ export const getScheduledNotes = ({
         gain: channel.gain,
       };
     }
+    // If nearing the end of the bar, schedule notes at the start of the bar too
     if (isBetween(note.beat, currentBeat - 4, currentBeat + lookaheadBeats - 4)) {
       return {
         id: note.id,
@@ -43,6 +44,7 @@ export const getScheduledNotes = ({
         gain: channel.gain,
       };
     }
+    // Return note objects with time: null that should not be scheduled
     return {
       id: note.id,
       sample: channel.sample.url,
@@ -64,7 +66,7 @@ export const scheduleNotes = ({
     (accumulator, channel) => [
       ...accumulator,
       ...getScheduledNotes({
-        channelNotes: notes[channel.id][pattern],
+        channelNotes: notes[channel.id][pattern], // Play the current pattern
         channel,
         startTime,
         bpm,
