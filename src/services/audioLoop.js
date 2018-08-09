@@ -1,4 +1,4 @@
-import { getAudioContext, getCurrentBeat } from './audioContext';
+import { getAudioContext, getCurrentBeat, updateChannelNodes } from './audioContext';
 import { scheduleNotes } from './audioScheduler';
 import { setStartTime } from '../common';
 import { INTERVAL } from './audioEngine.config';
@@ -13,6 +13,8 @@ export const initializeAudio = (store) => {
       notes,
       master,
     } = store.getState();
+
+    updateChannelNodes(channels);
 
     if (playbackSession.playing) {
       scheduleNotes({

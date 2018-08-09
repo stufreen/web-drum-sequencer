@@ -14,7 +14,7 @@ export const HitButton = ({ channel }) => (
     p={0}
     outline="none"
     onMouseDown={() => {
-      playNoteNow(channel.sample.url, channel.gain);
+      playNoteNow(channel);
     }}
   />
 );

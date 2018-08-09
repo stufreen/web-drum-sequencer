@@ -5,13 +5,15 @@ import { sampleStore } from './sampleStore';
 // schedule is a lookup table of all the notes currently scheduled to be played
 const schedule = {};
 
-export const playNoteNow = (sampleId, noteGain) => {
-  playNote(null, sampleStore[sampleId], noteGain);
+export const playNoteNow = (noteChannel) => {
+  const sampleID = noteChannel.sample.url;
+  playNote(null, sampleStore[sampleID], noteChannel.id);
 };
 
-export const scheduleNote = (noteId, sampleId, noteTime, noteGain) => {
-  if (typeof schedule[noteId] === 'undefined') {
-    schedule[noteId] = playNote(noteTime, sampleStore[sampleId], noteGain);
+export const scheduleNote = (noteID, noteTime, noteChannel) => {
+  if (typeof schedule[noteID] === 'undefined') {
+    const sampleID = noteChannel.sample.url;
+    schedule[noteID] = playNote(noteTime, sampleStore[sampleID], noteChannel.id);
   }
 };
 
@@ -30,25 +32,23 @@ export const getScheduledNotes = ({
     if (isBetween(note.beat, currentBeat, currentBeat + lookaheadBeats)) {
       return {
         id: note.id,
-        sample: channel.sample.url,
         time: noteTime,
-        gain: channel.gain,
+        channel,
       };
     }
     // If nearing the end of the bar, schedule notes at the start of the bar too
     if (isBetween(note.beat, currentBeat - 4, currentBeat + lookaheadBeats - 4)) {
       return {
         id: note.id,
-        sample: channel.sample.url,
         time: startTime + ((note.beat + 3) * 60 / bpm),
-        gain: channel.gain,
+        channel,
       };
     }
     // Return note objects with time: null that should not be scheduled
     return {
       id: note.id,
-      sample: channel.sample.url,
       time: null,
+      channel,
     };
   },
 );
@@ -78,7 +78,7 @@ export const scheduleNotes = ({
   // Schedule the notes
   notesToSchedule.forEach((note) => {
     if (note.time !== null) {
-      scheduleNote(note.id, note.sample, note.time, note.gain);
+      scheduleNote(note.id, note.time, note.channel);
     } else {
       delete schedule[note.id];
     }
