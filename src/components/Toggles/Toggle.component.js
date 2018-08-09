@@ -31,6 +31,10 @@ export class Toggle extends React.Component {
   }
 
   updateToggle() {
+    if (!this.button) {
+      return; // Button has unmounted, stop the animation
+    }
+
     const {
       playing,
       startTime,
@@ -41,7 +45,6 @@ export class Toggle extends React.Component {
 
     if (playing
       && isActive
-      && this.button
       && getCurrentBeat(bpm, startTime) - beat < 0.25
       && getCurrentBeat(bpm, startTime) - beat > 0
     ) {
