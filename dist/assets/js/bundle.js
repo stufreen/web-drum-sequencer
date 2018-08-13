@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8b20ada558c368aaa848";
+/******/ 	var hotCurrentHash = "98ad0dee2520d4048e73";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -6803,7 +6803,7 @@ eval("\n\nexports.__esModule = true;\nexports.defaultMemoize = defaultMemoize;\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var serviceWorkerOption = {\"scriptURL\":\"/sw.js\"};\n      \"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n/* eslint-disable flowtype/require-valid-file-annotation */\n/* global serviceWorkerOption */\n\nexports.default = {\n  register: function register() {\n    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};\n\n    if (navigator.serviceWorker) {\n      return navigator.serviceWorker.register(serviceWorkerOption.scriptURL, options);\n    }\n\n    return false;\n  }\n};\nmodule.exports = exports[\"default\"];\n\n//# sourceURL=webpack:///../node_modules/serviceworker-webpack-plugin/lib/runtime.js?");
+eval("var serviceWorkerOption = {\"scriptURL\":\"sw.js\"};\n      \"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n/* eslint-disable flowtype/require-valid-file-annotation */\n/* global serviceWorkerOption */\n\nexports.default = {\n  register: function register() {\n    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};\n\n    if (navigator.serviceWorker) {\n      return navigator.serviceWorker.register(serviceWorkerOption.scriptURL, options);\n    }\n\n    return false;\n  }\n};\nmodule.exports = exports[\"default\"];\n\n//# sourceURL=webpack:///../node_modules/serviceworker-webpack-plugin/lib/runtime.js?");
 
 /***/ }),
 

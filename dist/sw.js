@@ -1,36 +1,36 @@
 var serviceWorkerOption = {
   "assets": [
-    "/assets/audio/808BD_Long-R8_C2A.wav",
-    "/assets/audio/808BD_Short2-R8_C2A.wav",
-    "/assets/audio/808Clap-R8_01.wav",
-    "/assets/audio/808CowLong-R8_C2A.wav",
-    "/assets/audio/808HH-JD800.wav",
-    "/assets/audio/808HHo-JD800.wav",
-    "/assets/audio/808SD_Med-R8_C2A.wav",
-    "/assets/audio/high.wav",
-    "/assets/audio/low.wav",
-    "/assets/audio/snare.wav",
-    "/assets/audio/Tambourine-R4.wav",
-    "/assets/audio/hat-closed-r1.wav",
-    "/assets/audio/kick-1-r1.wav",
-    "/assets/audio/rim-r1.wav",
-    "/assets/audio/snare-1-r1.wav",
-    "/assets/fonts/21e11f3e402000cc47311642b081a30a.woff",
-    "/assets/fonts/8612f086e8406b4b304caa7cac52a0a7.woff2",
-    "/assets/fonts/bb67ace0f25b28040a393a79d2eacf49.woff",
-    "/assets/fonts/c7262c85fc05c9177075e237c23372fe.woff2",
-    "/assets/fonts/86cade2f761700598f5f2c260193cb09.woff",
-    "/assets/fonts/33a7a7c3caf1424a788ad1a74046845f.woff2",
-    "/assets/images/bpm.png",
-    "/assets/images/simplegray.png",
-    "/assets/js/bundle.js"
+    "./assets/audio/808BD_Long-R8_C2A.wav",
+    "./assets/audio/808BD_Short2-R8_C2A.wav",
+    "./assets/audio/808Clap-R8_01.wav",
+    "./assets/audio/808CowLong-R8_C2A.wav",
+    "./assets/audio/808HH-JD800.wav",
+    "./assets/audio/808HHo-JD800.wav",
+    "./assets/audio/808SD_Med-R8_C2A.wav",
+    "./assets/audio/high.wav",
+    "./assets/audio/low.wav",
+    "./assets/audio/snare.wav",
+    "./assets/audio/Tambourine-R4.wav",
+    "./assets/audio/hat-closed-r1.wav",
+    "./assets/audio/kick-1-r1.wav",
+    "./assets/audio/rim-r1.wav",
+    "./assets/audio/snare-1-r1.wav",
+    "./assets/fonts/21e11f3e402000cc47311642b081a30a.woff",
+    "./assets/fonts/8612f086e8406b4b304caa7cac52a0a7.woff2",
+    "./assets/fonts/bb67ace0f25b28040a393a79d2eacf49.woff",
+    "./assets/fonts/c7262c85fc05c9177075e237c23372fe.woff2",
+    "./assets/fonts/86cade2f761700598f5f2c260193cb09.woff",
+    "./assets/fonts/33a7a7c3caf1424a788ad1a74046845f.woff2",
+    "./assets/images/bpm.png",
+    "./assets/images/simplegray.png",
+    "./assets/js/bundle.js"
   ]
 };
         
         /******/ (function(modules) { // webpackBootstrap
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "680021555fe9e381d750";
+/******/ 	var hotCurrentHash = "cdd032287159749a55ca";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -768,7 +768,7 @@ var serviceWorkerOption = {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nwindow.self.addEventListener('install', function (event) {\n  event.waitUntil(caches.open('wdsCache').then(function (cache) {\n    return cache.addAll(['/', '/assets/images/bpm.png', '/assets/images/simplegray.png', '/assets/js/bundle.js']);\n  }));\n});\n\nwindow.self.addEventListener('fetch', function (event) {\n  event.respondWith(caches.match(event.request).then(function (response) {\n    // Cache hit - return response\n    if (response) {\n      return response;\n    }\n\n    // IMPORTANT: Clone the request. A request is a stream and\n    // can only be consumed once. Since we are consuming this\n    // once by cache and once by the browser for fetch, we need\n    // to clone the response.\n    var fetchRequest = event.request.clone();\n\n    return fetch(fetchRequest).then(function (fetchResponse) {\n      // Check if we received a valid response\n      if (!fetchResponse || fetchResponse.status !== 200 || fetchResponse.type !== 'basic') {\n        return fetchResponse;\n      }\n\n      // IMPORTANT: Clone the response. A response is a stream\n      // and because we want the browser to consume the response\n      // as well as the cache consuming the response, we need\n      // to clone it so we have two streams.\n      var responseToCache = fetchResponse.clone();\n\n      caches.open('wdsCache').then(function (cache) {\n        cache.put(event.request, responseToCache);\n      });\n\n      return fetchResponse;\n    });\n  }));\n});\n\n//# sourceURL=webpack:///./sw.js?");
+eval("\n\nself.addEventListener('fetch', function (event) {\n  event.respondWith(caches.match(event.request).then(function (response) {\n    // Cache hit - return response\n    if (response) {\n      return response;\n    }\n\n    // IMPORTANT: Clone the request. A request is a stream and\n    // can only be consumed once. Since we are consuming this\n    // once by cache and once by the browser for fetch, we need\n    // to clone the response.\n    var fetchRequest = event.request.clone();\n\n    return fetch(fetchRequest).then(function (fetchResponse) {\n      // Check if we received a valid response\n      if (!fetchResponse || fetchResponse.status !== 200 || fetchResponse.type !== 'basic') {\n        return fetchResponse;\n      }\n\n      // IMPORTANT: Clone the response. A response is a stream\n      // and because we want the browser to consume the response\n      // as well as the cache consuming the response, we need\n      // to clone it so we have two streams.\n      var responseToCache = fetchResponse.clone();\n\n      caches.open('wdsCache').then(function (cache) {\n        cache.put(event.request, responseToCache);\n      });\n\n      return fetchResponse;\n    });\n  }));\n});\n\n//# sourceURL=webpack:///./sw.js?");
 
 /***/ })
 

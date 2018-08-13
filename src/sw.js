@@ -1,15 +1,4 @@
-window.self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open('wdsCache').then(cache => cache.addAll([
-      '/',
-      '/assets/images/bpm.png',
-      '/assets/images/simplegray.png',
-      '/assets/js/bundle.js',
-    ])),
-  );
-});
-
-window.self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
