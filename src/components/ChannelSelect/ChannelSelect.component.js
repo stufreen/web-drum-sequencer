@@ -26,6 +26,7 @@ export const ChannelSelectComponent = ({ onSelectSample, channel }) => {
           singleValue: styles => ({
             ...styles,
             color: theme.colors.nearWhite,
+            opacity: channel.sampleLoaded ? 1 : 0.3,
             fontSize: '0.85rem',
           }),
           menu: styles => ({

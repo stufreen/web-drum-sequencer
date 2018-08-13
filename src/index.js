@@ -6,11 +6,14 @@ import runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import App from './components/App';
 import { initializeAudio } from './services/audioLoop';
 import { configureStore } from './store';
-import { loadSamples } from './services/sampleStore';
+import { loadSampleStatefully } from './common';
 import './assets/js/webaudio-controls';
 
 const { store, persistor } = configureStore(() => {
-  loadSamples(store);
+  const { channels } = store.getState();
+  channels.forEach((channel) => {
+    loadSampleStatefully(store.dispatch, channel);
+  });
 });
 
 if ('serviceWorker' in navigator) {

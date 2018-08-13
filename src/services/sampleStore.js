@@ -31,24 +31,14 @@ function decodeAudio(audioArrayBuffer) {
 
 export const loadSample = (url) => {
   if (typeof sampleStore[url] !== 'undefined') {
-    return;
+    return Promise.resolve(true);
   }
 
-  fetchFile(url)
+  return fetchFile(url)
     .then(decodeFile)
     .then(decodeAudio)
     .then((drumBuffer) => {
       sampleStore[url] = drumBuffer;
+      return true;
     });
-};
-
-export const loadSamples = (store) => {
-  const state = store.getState();
-  const loaders = state.channels.map(channel => fetchFile(channel.sample.url)
-    .then(decodeFile)
-    .then(decodeAudio)
-    .then((drumBuffer) => {
-      sampleStore[channel.sample.url] = drumBuffer;
-    }));
-  return Promise.all(loaders);
 };

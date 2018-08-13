@@ -26,9 +26,24 @@ export const replaceChannels = channels => ({
   payload: channels,
 });
 
+export const sampleLoaded = (channelID, isLoaded) => ({
+  type: CHANNELS_CONSTANTS.SAMPLE_LOADED,
+  payload: {
+    channelID,
+    isLoaded,
+  },
+});
+
+export const loadSampleStatefully = (dispatch, channel) => {
+  dispatch(sampleLoaded(channel.id, false));
+  loadSample(channel.sample.url).then(() => {
+    dispatch(sampleLoaded(channel.id, true));
+  });
+};
+
 export const loadPreset = (channels, notes) => (dispatch) => {
   channels.forEach((channel) => {
-    loadSample(channel.sample.url);
+    loadSampleStatefully(dispatch, channel);
   });
   dispatch(replaceChannels(channels));
   dispatch(setNotes(notes));
@@ -41,7 +56,11 @@ export const newChannel = () => (dispatch) => {
 };
 
 export const setChannelSample = (channel, sample) => (dispatch) => {
-  loadSample(sample);
+  dispatch(sampleLoaded(channel, false));
+  loadSample(sample).then(() => {
+    dispatch(sampleLoaded(channel, true));
+  });
+
   dispatch({
     type: CHANNELS_CONSTANTS.SET_CHANNEL_SAMPLE,
     payload: {
