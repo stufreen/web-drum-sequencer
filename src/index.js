@@ -16,6 +16,15 @@ const { store, persistor } = configureStore(() => {
   });
 });
 
+window.addEventListener('online', () => {
+  const { channels } = store.getState();
+  channels.forEach((channel) => {
+    if (!channel.sampleLoaded) {
+      loadSampleStatefully(store.dispatch, channel);
+    }
+  });
+});
+
 if ('serviceWorker' in navigator) {
   runtime.register();
 }

@@ -40,5 +40,6 @@ export const loadSample = (url) => {
     .then((drumBuffer) => {
       sampleStore[url] = drumBuffer;
       return true;
-    });
+    })
+    .catch(() => false);
 };
