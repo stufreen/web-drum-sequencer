@@ -25,9 +25,9 @@ window.addEventListener('online', () => {
   });
 });
 
-if ('serviceWorker' in navigator) {
-  runtime.register();
-}
+// if ('serviceWorker' in navigator) {
+//   runtime.register();
+// }
 
 ReactDOM.render(
   <Provider store={store}>

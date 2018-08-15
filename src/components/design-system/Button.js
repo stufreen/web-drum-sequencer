@@ -13,6 +13,7 @@ const Button = styled.button`
   ${ss.alignSelf}
   ${ss.width}
   ${ss.height}
+  ${ss.flex}
   outline: ${({ outline }) => outline};
 `;
 

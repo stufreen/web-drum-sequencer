@@ -29,3 +29,14 @@ html {
 * {
     font-family: "Futura", sans-serif;
 }
+
+.bpm-text-input {
+    -moz-appearance:textfield;
+}
+
+/* Webkit browsers like Safari and Chrome */
+.bpm-text-input::-webkit-inner-spin-button,
+.bpm-text-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

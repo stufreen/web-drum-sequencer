@@ -14,7 +14,7 @@ export const LabelBox = ({ label, children }) => (
   >
     <Text
       position="absolute"
-      left="1rem"
+      left="0.5rem"
       top="-0.6em"
       color="gray"
       fontSize="0.6rem"
