@@ -8,7 +8,7 @@ import {
 } from '../design-system';
 
 const ShinyBox = Box.extend`
-  background: linear-gradient(190deg, #223 0%, #334 50%,#0a0e0a 51%, #112 100%);
+  background: linear-gradient(190deg, #29292D 0%, #404046 50%,#0a0e0a 51%, #29292D 100%);
 `;
 
 export const BPMInputComponent = ({ bpm, setBPM }) => (
@@ -56,9 +56,17 @@ export const BPMInputComponent = ({ bpm, setBPM }) => (
         setBPM(parseInt(e.target.value, 10));
       }}
     />
-    <Box display="flex" flexDirection="column" width="3rem">
-      <Button color="white" bg="transparent" p={0} flex="auto" width="3rem">UP</Button>
-      <Button color="white" bg="transparent" p={0} flex="auto" width="3rem">DOWN</Button>
+    <Box display="flex" flexDirection="column">
+      <Button color="white" bg="transparent" p={0} flex="auto" width="2rem">
+        <svg width="12px" height="7px" viewBox="0 0 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+          <polygon points="0 7 12 7 6 0" fill="white" />
+        </svg>
+      </Button>
+      <Button color="white" bg="transparent" p={0} flex="auto" width="2rem">
+        <svg width="12px" height="7px" viewBox="0 0 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+          <polygon points="0 0 12 0 6 7" fill="white" />
+        </svg>
+      </Button>
     </Box>
   </ShinyBox>
 );
