@@ -11,6 +11,14 @@ const ShinyBox = Box.extend`
   background: linear-gradient(190deg, #29292D 0%, #404046 50%,#0a0e0a 51%, #29292D 100%);
 `;
 
+const BPMButton = Button.extend`
+  outline: none;
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+`;
+
 export const BPMInputComponent = ({ bpm, setBPM }) => (
   <ShinyBox
     display="flex"
@@ -42,7 +50,7 @@ export const BPMInputComponent = ({ bpm, setBPM }) => (
       zIndex={1}
       width="3rem"
       height="1.5rem"
-      p="0.8rem"
+      p="0.7rem 0.2rem 0.5rem 0.7rem"
       fontSize="1.5rem"
       lineHeight="1em"
       fontWeight="600"
@@ -57,16 +65,36 @@ export const BPMInputComponent = ({ bpm, setBPM }) => (
       }}
     />
     <Box display="flex" flexDirection="column">
-      <Button color="white" bg="transparent" p={0} flex="auto" width="2rem">
-        <svg width="12px" height="7px" viewBox="0 0 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+      <BPMButton
+        color="white"
+        bg="transparent"
+        p={0}
+        flex="auto"
+        width="2rem"
+        borderRadius="0 0.5rem 0 0"
+        onClick={() => {
+          setBPM(bpm + 1);
+        }}
+      >
+        <svg width="10px" height="6px" viewBox="0 0 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
           <polygon points="0 7 12 7 6 0" fill="white" />
         </svg>
-      </Button>
-      <Button color="white" bg="transparent" p={0} flex="auto" width="2rem">
-        <svg width="12px" height="7px" viewBox="0 0 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+      </BPMButton>
+      <BPMButton
+        color="white"
+        bg="transparent"
+        p={0}
+        flex="auto"
+        width="2rem"
+        borderRadius="0 0 0.5rem 0"
+        onClick={() => {
+          setBPM(bpm - 1);
+        }}
+      >
+        <svg width="10px" height="6px" viewBox="0 0 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
           <polygon points="0 0 12 0 6 7" fill="white" />
         </svg>
-      </Button>
+      </BPMButton>
     </Box>
   </ShinyBox>
 );
