@@ -12,7 +12,7 @@ export const presetsReducer = (state = presetsInitialState, action) => {
       return {
         ...state,
         userPresets: state.userPresets.map(
-          userPreset => (userPreset.id === action.payload.id
+          userPreset => (userPreset.name === action.payload.name
             ? action.payload
             : userPreset),
         ),
@@ -29,7 +29,7 @@ export const presetsReducer = (state = presetsInitialState, action) => {
       return {
         ...state,
         userPresets: state.userPresets.filter(
-          userPreset => userPreset.id !== action.payload,
+          userPreset => userPreset.name !== action.payload,
         ),
       };
     case PRESETS_CONSTANTS.PRESET_PROMPT_OPEN:

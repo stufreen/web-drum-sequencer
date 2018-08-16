@@ -7,6 +7,7 @@ import {
   loadPreset,
   setPreset,
   setPattern,
+  savePresetAs,
 } from '../../common';
 import presets from '../../presets';
 
@@ -15,6 +16,7 @@ const mapDispatchToProps = {
   loadPreset,
   setPreset,
   setPattern,
+  savePresetAs,
 };
 
 export const PresetSelector = compose(
@@ -27,7 +29,14 @@ export const PresetSelector = compose(
       if (value === 'SAVE_PRESET') {
         window.alert('save');
       } else if (value === 'SAVE_PRESET_AS') {
-        window.alert('save as');
+        const {
+          savePresetAs: connectedSavePresetAs,
+          currentState,
+        } = props;
+        connectedSavePresetAs({
+          ...currentState,
+          name: 'STOOBAR',
+        });
       } else {
         const {
           setBPM: connectedSetBPM,

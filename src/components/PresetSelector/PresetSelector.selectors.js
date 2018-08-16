@@ -5,33 +5,43 @@ import {
   channelsSelector,
   notesSelector,
   bpmSelector,
+  userPresetsSelector,
 } from '../../common';
 import presets from '../../presets';
 
-const compareChannels = (presetChannels, activeChannels) => {
-  const activeChannelsStripped = activeChannels.map(
-    activeChannel => R.omit(['sampleLoaded'], activeChannel),
-  );
-  return R.equals(presetChannels, activeChannelsStripped);
-};
-
-const currentPresetSelector = createSelector(
-  presetSelector,
-  presetName => presets.find(preset => preset.name === presetName),
-);
-
-const isEditedSelector = createSelector(
-  currentPresetSelector,
+const currentStateSelector = createSelector(
   channelsSelector,
   notesSelector,
   bpmSelector,
-  (preset, channels, notes, bpm) => !(compareChannels(preset.channels, channels)
-      && R.equals(preset.notes, notes)
-      && preset.bpm === bpm),
+  (channels, notes, bpm) => ({
+    notes,
+    bpm,
+    channels: channels.map(
+      channel => R.omit(['sampleLoaded'], channel),
+    ),
+  }),
+);
+
+// presetSelector returns the preset name - this will get the whole preset object
+const currentPresetSelector = createSelector(
+  presetSelector,
+  userPresetsSelector,
+  (presetName, userPresets) => [...presets, ...userPresets].find(
+    preset => preset.name === presetName,
+  ),
+);
+
+// Indicates if the preset is a "stock" preset or has been modified by user (not saved)
+const isEditedSelector = createSelector(
+  currentPresetSelector,
+  currentStateSelector,
+  (preset, currentState) => !R.equals(R.omit(['name'], preset), currentState),
 );
 
 export const presetSelectorSelectors = createStructuredSelector({
   isEdited: isEditedSelector,
   currentPreset: currentPresetSelector,
-  presetName: presetSelector,
+  userPresets: userPresetsSelector,
+  notes: notesSelector,
+  currentState: currentStateSelector,
 });

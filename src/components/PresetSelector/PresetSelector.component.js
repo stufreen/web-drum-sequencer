@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
+import * as R from 'ramda';
 import theme from '../../styles/theme';
 
 export const PresetSelectorComponent = ({
@@ -8,8 +9,14 @@ export const PresetSelectorComponent = ({
   presets,
   currentPreset,
   isEdited,
+  userPresets,
 }) => {
-  const defaultPresets = presets.map(preset => ({
+  const defaultPresetOptions = presets.map(preset => ({
+    label: preset.name,
+    value: preset,
+  }));
+
+  const userPresetOptions = userPresets.map(preset => ({
     label: preset.name,
     value: preset,
   }));
@@ -17,11 +24,11 @@ export const PresetSelectorComponent = ({
   const groupedOptions = [
     {
       label: 'Default',
-      options: defaultPresets,
+      options: defaultPresetOptions,
     },
     {
       label: 'User',
-      options: [],
+      options: userPresetOptions,
     },
     {
       label: 'Memory',
@@ -38,8 +45,11 @@ export const PresetSelectorComponent = ({
     },
   ];
 
-  const selectedOption = defaultPresets.find(option => option.label === currentPreset.name);
+  let selectedOption = [...defaultPresetOptions, ...userPresets].find(
+    option => option.label === currentPreset.name,
+  );
   if (isEdited && selectedOption) {
+    selectedOption = R.clone(selectedOption);
     selectedOption.label += ' *';
   }
 
@@ -76,4 +86,5 @@ PresetSelectorComponent.propTypes = {
   }).isRequired,
   onSelectPreset: PropTypes.func.isRequired,
   presets: PropTypes.arrayOf(PropTypes.object).isRequired,
+  userPresets: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

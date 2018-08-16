@@ -10,7 +10,7 @@ export const savePresetAs = preset => ({
   type: PRESETS_CONSTANTS.SAVE_PRESET_AS,
   payload: {
     ...preset,
-    id: uuid(),
+    name: uuid(),
   },
 });
 
