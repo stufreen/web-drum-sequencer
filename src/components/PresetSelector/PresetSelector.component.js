@@ -4,14 +4,39 @@ import Select from 'react-select';
 import theme from '../../styles/theme';
 
 export const PresetSelectorComponent = ({ onSelectPreset, presets, currentPreset }) => {
-  const options = presets.map(preset => ({
+  const defaultPresets = presets.map(preset => ({
     label: preset.name,
     value: preset,
   }));
-  const selectedOption = options.find(option => option.label === currentPreset);
+
+  const groupedOptions = [
+    {
+      label: 'Default',
+      options: defaultPresets,
+    },
+    {
+      label: 'User',
+      options: [],
+    },
+    {
+      label: 'Memory',
+      options: [
+        {
+          label: 'Save',
+          value: 'SAVE_PRESET',
+        },
+        {
+          label: 'Save As...',
+          value: 'SAVE_PRESET_AS',
+        },
+      ],
+    },
+  ];
+
+  const selectedOption = defaultPresets.find(option => option.label === currentPreset);
   return (
     <Select
-      options={options}
+      options={groupedOptions}
       onChange={onSelectPreset}
       value={selectedOption}
       styles={{

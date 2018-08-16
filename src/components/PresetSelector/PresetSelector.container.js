@@ -24,16 +24,22 @@ export const PresetSelector = compose(
   }),
   withHandlers({
     onSelectPreset: props => ({ value }) => {
-      const {
-        setBPM: connectedSetBPM,
-        loadPreset: connectedLoadPreset,
-        setPreset: connectedSetPreset,
-        setPattern: connectedSetPattern,
-      } = props;
-      connectedSetBPM(value.bpm);
-      connectedLoadPreset(value.channels, value.notes);
-      connectedSetPreset(value.name);
-      connectedSetPattern(0);
+      if (value === 'SAVE_PRESET') {
+        window.alert('save');
+      } else if (value === 'SAVE_PRESET_AS') {
+        window.alert('save as');
+      } else {
+        const {
+          setBPM: connectedSetBPM,
+          loadPreset: connectedLoadPreset,
+          setPreset: connectedSetPreset,
+          setPattern: connectedSetPattern,
+        } = props;
+        connectedSetBPM(value.bpm);
+        connectedLoadPreset(value.channels, value.notes);
+        connectedSetPreset(value.name);
+        connectedSetPattern(0);
+      }
     },
   }),
 )(PresetSelectorComponent);
