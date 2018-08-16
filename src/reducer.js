@@ -5,6 +5,7 @@ import {
   tempoReducer,
   masterReducer,
   notesReducer,
+  presetsReducer,
 } from './common';
 
 export default combineReducers({
@@ -13,4 +14,5 @@ export default combineReducers({
   tempo: tempoReducer,
   master: masterReducer,
   notes: notesReducer,
+  presets: presetsReducer,
 });
