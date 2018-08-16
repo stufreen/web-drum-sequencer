@@ -45,7 +45,7 @@ export const PresetSelectorComponent = ({
     },
   ];
 
-  let selectedOption = [...defaultPresetOptions, ...userPresets].find(
+  let selectedOption = [...defaultPresetOptions, ...userPresetOptions].find(
     option => option.label === currentPreset.name,
   );
   if (isEdited && selectedOption) {
