@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import Select from 'react-select';
 import theme from '../../styles/theme';
 
-export const PresetSelectorComponent = ({ onSelectPreset, presets, currentPreset }) => {
+export const PresetSelectorComponent = ({
+  onSelectPreset,
+  presets,
+  currentPreset,
+  isEdited,
+}) => {
   const defaultPresets = presets.map(preset => ({
     label: preset.name,
     value: preset,
@@ -33,7 +38,11 @@ export const PresetSelectorComponent = ({ onSelectPreset, presets, currentPreset
     },
   ];
 
-  const selectedOption = defaultPresets.find(option => option.label === currentPreset);
+  const selectedOption = defaultPresets.find(option => option.label === currentPreset.name);
+  if (isEdited && selectedOption) {
+    selectedOption.label += ' *';
+  }
+
   return (
     <Select
       options={groupedOptions}
@@ -61,7 +70,10 @@ export const PresetSelectorComponent = ({ onSelectPreset, presets, currentPreset
 };
 
 PresetSelectorComponent.propTypes = {
-  currentPreset: PropTypes.string.isRequired,
+  isEdited: PropTypes.bool.isRequired,
+  currentPreset: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  }).isRequired,
   onSelectPreset: PropTypes.func.isRequired,
   presets: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
