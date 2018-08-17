@@ -10,6 +10,7 @@ const TextInput = styled.input`
   ${ss.zIndex}
   ${ss.width}
   ${ss.height}
+  ${ss.boxShadow}
   display: block;
   border: none;
   outline: none;

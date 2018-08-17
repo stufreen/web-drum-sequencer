@@ -8,15 +8,9 @@ import {
   Form,
 } from '../design-system';
 import { Modal } from '../Modal.component';
+import theme from '../../styles/theme';
 
 export class SavePresetModalComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nameField: '',
-    };
-  }
-
   componentDidUpdate() {
     const { presetPromptOpen } = this.props;
     if (presetPromptOpen) {
@@ -27,26 +21,19 @@ export class SavePresetModalComponent extends React.Component {
   render() {
     const {
       presetPromptOpen,
-      setPresetPrompt,
-      currentState,
-      savePresetAs,
+      nameField,
+      onChangeNameField,
+      onClose,
+      onSubmit,
+      error,
     } = this.props;
-    const { nameField } = this.state;
     return (
       <Modal show={presetPromptOpen}>
         <Form
           position="relative"
           display="flex"
           flexDirection="row"
-          onSubmit={(event) => {
-            event.preventDefault();
-            setPresetPrompt(false);
-            savePresetAs({
-              ...currentState,
-              name: nameField,
-            });
-            this.setState({ nameField: '' });
-          }}
+          onSubmit={onSubmit}
         >
           <label htmlFor="preset-name">
             <Text color="white" fontSize={2} height="2rem">
@@ -54,9 +41,7 @@ export class SavePresetModalComponent extends React.Component {
             </Text>
             <TextInput
               value={nameField}
-              onChange={(e) => {
-                this.setState({ nameField: e.target.value });
-              }}
+              onChange={onChangeNameField}
               bg="white"
               borderRadius={3}
               fontSize={3}
@@ -65,6 +50,7 @@ export class SavePresetModalComponent extends React.Component {
               id="preset-name"
               placeholder="Enter name..."
               innerRef={(input) => { this.nameInput = input; }}
+              boxShadow={error ? `inset 0 0 0 3px ${theme.colors.lightRed}` : ''}
             />
           </label>
           <HoverButton
@@ -86,10 +72,7 @@ export class SavePresetModalComponent extends React.Component {
             p={0}
             display="flex"
             justifyContent="space-between"
-            onClick={() => {
-              this.setState({ nameField: '' });
-              setPresetPrompt(false);
-            }}
+            onClick={onClose}
             fontSize={3}
             alignItems="center"
             alignSelf="center"
@@ -111,10 +94,14 @@ export class SavePresetModalComponent extends React.Component {
 }
 
 SavePresetModalComponent.propTypes = {
+  onClose: PropTypes.func.isRequired,
   presetPromptOpen: PropTypes.bool.isRequired,
-  setPresetPrompt: PropTypes.func.isRequired,
-  savePresetAs: PropTypes.func.isRequired,
-  currentState: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-  }).isRequired,
+  onChangeNameField: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  nameField: PropTypes.string.isRequired,
+  error: PropTypes.string,
+};
+
+SavePresetModalComponent.defaultProps = {
+  error: null,
 };

@@ -10,7 +10,7 @@ export const savePresetAs = preset => ({
   payload: preset,
 });
 
-export const deletePreset = presetID => ({
+export const deletePreset = presetName => ({
   type: PRESETS_CONSTANTS.DELETE_PRESET,
-  payload: presetID,
+  payload: presetName,
 });

@@ -8,6 +8,7 @@ import {
   setPreset,
   setPattern,
   savePresetAs,
+  deletePreset,
   setPresetPrompt,
 } from '../../common';
 import presets from '../../presets';
@@ -18,6 +19,7 @@ const mapDispatchToProps = {
   setPreset,
   setPattern,
   savePresetAs,
+  deletePreset,
   setPresetPrompt,
 };
 
@@ -30,6 +32,20 @@ export const PresetSelector = compose(
     onSelectPreset: props => ({ value }) => {
       if (value === 'SAVE_PRESET') {
         // TO DO
+      } else if (value === 'DELETE_PRESET') {
+        const {
+          setBPM: connectedSetBPM,
+          loadPreset: connectedLoadPreset,
+          setPreset: connectedSetPreset,
+          setPattern: connectedSetPattern,
+          deletePreset: connectedDeletePreset,
+          currentPreset,
+        } = props;
+        connectedSetBPM(presets[0].bpm);
+        connectedLoadPreset(presets[0].channels, presets[0].notes);
+        connectedSetPreset(presets[0].name);
+        connectedSetPattern(0);
+        connectedDeletePreset(currentPreset.name);
       } else if (value === 'SAVE_PRESET_AS') {
         const {
           setPresetPrompt: connectedSetPresetPrompt,

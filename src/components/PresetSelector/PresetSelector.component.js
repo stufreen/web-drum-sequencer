@@ -36,12 +36,16 @@ export const PresetSelectorComponent = ({
       label: 'Memory',
       options: [
         {
-          label: 'Save',
+          label: 'Save As...',
+          value: 'SAVE_PRESET_AS',
+        },
+        {
+          label: `Save “${currentPreset.name}”`,
           value: 'SAVE_PRESET',
         },
         {
-          label: 'Save As...',
-          value: 'SAVE_PRESET_AS',
+          label: `Delete “${currentPreset.name}”`,
+          value: 'DELETE_PRESET',
         },
       ],
     },
@@ -61,6 +65,17 @@ export const PresetSelectorComponent = ({
         options={groupedOptions}
         onChange={onSelectPreset}
         value={selectedOption}
+        isOptionDisabled={({ value }) => {
+          if (value === 'SAVE_PRESET') {
+            return true;
+          }
+          if (value === 'DELETE_PRESET') {
+            return defaultPresetOptions.find(
+              option => option.label === currentPreset.name,
+            );
+          }
+          return false;
+        }}
         styles={{
           control: styles => ({
             ...styles,
