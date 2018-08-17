@@ -8,6 +8,7 @@ import {
   setPreset,
   setPattern,
   savePresetAs,
+  setPresetPrompt,
 } from '../../common';
 import presets from '../../presets';
 
@@ -17,6 +18,7 @@ const mapDispatchToProps = {
   setPreset,
   setPattern,
   savePresetAs,
+  setPresetPrompt,
 };
 
 export const PresetSelector = compose(
@@ -27,7 +29,10 @@ export const PresetSelector = compose(
   withHandlers({
     onSelectPreset: props => ({ value }) => {
       if (value === 'SAVE_PRESET') {
-        window.alert('save');
+        const {
+          setPresetPrompt: connectedSetPresetPrompt,
+        } = props;
+        connectedSetPresetPrompt(true);
       } else if (value === 'SAVE_PRESET_AS') {
         const {
           savePresetAs: connectedSavePresetAs,

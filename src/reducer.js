@@ -6,6 +6,7 @@ import {
   masterReducer,
   notesReducer,
   presetsReducer,
+  windowReducer,
 } from './common';
 
 export default combineReducers({
@@ -15,4 +16,5 @@ export default combineReducers({
   master: masterReducer,
   notes: notesReducer,
   presets: presetsReducer,
+  window: windowReducer,
 });

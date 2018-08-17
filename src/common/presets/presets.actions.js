@@ -18,13 +18,3 @@ export const deletePreset = presetID => ({
   type: PRESETS_CONSTANTS.DELETE_PRESET,
   payload: presetID,
 });
-
-export const setPresetPrompt = isOpen => ({
-  type: PRESETS_CONSTANTS.PRESET_PROMPT_OPEN,
-  payload: isOpen,
-});
-
-export const setPresetNameField = val => ({
-  type: PRESETS_CONSTANTS.SET_PRESET_NAME_FIELD,
-  payload: val,
-});

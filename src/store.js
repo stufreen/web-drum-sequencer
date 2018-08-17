@@ -8,7 +8,7 @@ export const configureStore = (callback) => {
   const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['playbackSession'],
+    blacklist: ['playbackSession', 'window'],
   };
 
   const persistedReducer = persistReducer(persistConfig, reducer);

@@ -10,3 +10,4 @@ export * from './FancyButton.component';
 export * from './AddChannelButton';
 export * from './PresetSelector';
 export * from './MasterControls';
+export * from './Modal.component';

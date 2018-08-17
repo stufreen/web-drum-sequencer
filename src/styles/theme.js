@@ -5,6 +5,7 @@ const colors = {
   steel: '#606066',
   darkGray: '#404046',
   nearBlack: '#29292D',
+  black80: 'rgba(0,0,0,0.8)',
   green: '#58A291',
   lightGreen: '#68B2A1',
   darkGreen: '#1B806D',
@@ -15,6 +16,7 @@ const colors = {
   gold: '#E6A65D',
   melon: '#CAD97A',
   paleMelon: '#F6F9E1',
+  darkMelon: '#AAB95A',
 };
 
 export default {

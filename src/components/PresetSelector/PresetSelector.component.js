@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Select from 'react-select';
 import * as R from 'ramda';
 import theme from '../../styles/theme';
+import { Box } from '../design-system';
+import { SavePresetModal } from '../SavePresetModal';
 
 export const PresetSelectorComponent = ({
   onSelectPreset,
@@ -54,28 +56,31 @@ export const PresetSelectorComponent = ({
   }
 
   return (
-    <Select
-      options={groupedOptions}
-      onChange={onSelectPreset}
-      value={selectedOption}
-      styles={{
-        control: styles => ({
-          ...styles,
-          backgroundColor: 'black',
-          border: `2px solid ${theme.colors.steel}`,
-          padding: '0.5em 0.5em 0.5em 1em',
-          borderRadius: '0.5em',
-        }),
-        singleValue: styles => ({
-          ...styles,
-          color: theme.colors.nearWhite,
-        }),
-        option: styles => ({
-          ...styles,
-          padding: '0.4em 1em',
-        }),
-      }}
-    />
+    <Box>
+      <Select
+        options={groupedOptions}
+        onChange={onSelectPreset}
+        value={selectedOption}
+        styles={{
+          control: styles => ({
+            ...styles,
+            backgroundColor: 'black',
+            border: `2px solid ${theme.colors.steel}`,
+            padding: '0.5em 0.5em 0.5em 1em',
+            borderRadius: '0.5em',
+          }),
+          singleValue: styles => ({
+            ...styles,
+            color: theme.colors.nearWhite,
+          }),
+          option: styles => ({
+            ...styles,
+            padding: '0.4em 1em',
+          }),
+        }}
+      />
+      <SavePresetModal />
+    </Box>
   );
 };
 

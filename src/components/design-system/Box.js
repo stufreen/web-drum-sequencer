@@ -20,5 +20,6 @@ export const Box = styled.div`
   ${ss.top}
   ${ss.bottom}
   ${ss.right}
+  ${ss.zIndex}
   box-sizing: border-box;
 `;

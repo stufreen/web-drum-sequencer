@@ -14,6 +14,11 @@ const Button = styled.button`
   ${ss.width}
   ${ss.height}
   ${ss.flex}
+  ${ss.position}
+  ${ss.left}
+  ${ss.top}
+  ${ss.bottom}
+  ${ss.right}
   outline: ${({ outline }) => outline};
 `;
 

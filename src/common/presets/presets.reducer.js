@@ -2,8 +2,6 @@ import { PRESETS_CONSTANTS } from './presets.constants';
 
 const presetsInitialState = {
   presetPromptOpen: false,
-  presetNameField: '',
-  userPresets: [],
 };
 
 export const presetsReducer = (state = presetsInitialState, action) => {
@@ -31,16 +29,6 @@ export const presetsReducer = (state = presetsInitialState, action) => {
         userPresets: state.userPresets.filter(
           userPreset => userPreset.name !== action.payload,
         ),
-      };
-    case PRESETS_CONSTANTS.PRESET_PROMPT_OPEN:
-      return {
-        ...state,
-        presetPromptOpen: action.payload,
-      };
-    case PRESETS_CONSTANTS.SET_PRESET_NAME_FIELD:
-      return {
-        ...state,
-        presetNameField: action.payload,
       };
     default:
       return state;

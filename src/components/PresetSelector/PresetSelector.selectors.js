@@ -6,6 +6,7 @@ import {
   notesSelector,
   bpmSelector,
   userPresetsSelector,
+  presetPromptOpenSelector,
 } from '../../common';
 import presets from '../../presets';
 
@@ -44,4 +45,5 @@ export const presetSelectorSelectors = createStructuredSelector({
   userPresets: userPresetsSelector,
   notes: notesSelector,
   currentState: currentStateSelector,
+  presetPromptOpen: presetPromptOpenSelector,
 });
