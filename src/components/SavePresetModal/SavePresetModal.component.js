@@ -8,7 +8,6 @@ import {
   Form,
 } from '../design-system';
 import { Modal } from '../Modal.component';
-import { savePresetAs } from '../../common';
 
 export class SavePresetModalComponent extends React.Component {
   constructor(props) {
