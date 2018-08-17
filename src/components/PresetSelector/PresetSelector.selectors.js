@@ -2,26 +2,12 @@ import { createStructuredSelector, createSelector } from 'reselect';
 import * as R from 'ramda';
 import {
   presetSelector,
-  channelsSelector,
   notesSelector,
-  bpmSelector,
   userPresetsSelector,
   presetPromptOpenSelector,
+  currentStateSelector,
 } from '../../common';
 import presets from '../../presets';
-
-const currentStateSelector = createSelector(
-  channelsSelector,
-  notesSelector,
-  bpmSelector,
-  (channels, notes, bpm) => ({
-    notes,
-    bpm,
-    channels: channels.map(
-      channel => R.omit(['sampleLoaded'], channel),
-    ),
-  }),
-);
 
 // presetSelector returns the preset name - this will get the whole preset object
 const currentPresetSelector = createSelector(

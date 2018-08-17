@@ -2,6 +2,7 @@ import { PRESETS_CONSTANTS } from './presets.constants';
 
 const presetsInitialState = {
   presetPromptOpen: false,
+  userPresets: [],
 };
 
 export const presetsReducer = (state = presetsInitialState, action) => {

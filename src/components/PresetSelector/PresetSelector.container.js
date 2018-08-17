@@ -29,19 +29,12 @@ export const PresetSelector = compose(
   withHandlers({
     onSelectPreset: props => ({ value }) => {
       if (value === 'SAVE_PRESET') {
+        // TO DO
+      } else if (value === 'SAVE_PRESET_AS') {
         const {
           setPresetPrompt: connectedSetPresetPrompt,
         } = props;
         connectedSetPresetPrompt(true);
-      } else if (value === 'SAVE_PRESET_AS') {
-        const {
-          savePresetAs: connectedSavePresetAs,
-          currentState,
-        } = props;
-        connectedSavePresetAs({
-          ...currentState,
-          name: 'STOOBAR',
-        });
       } else {
         const {
           setBPM: connectedSetBPM,

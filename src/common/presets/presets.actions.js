@@ -1,5 +1,4 @@
 import { PRESETS_CONSTANTS } from './presets.constants';
-import { uuid } from '../../services/uuid';
 
 export const savePreset = preset => ({
   type: PRESETS_CONSTANTS.SAVE_PRESET,
@@ -8,10 +7,7 @@ export const savePreset = preset => ({
 
 export const savePresetAs = preset => ({
   type: PRESETS_CONSTANTS.SAVE_PRESET_AS,
-  payload: {
-    ...preset,
-    name: uuid(),
-  },
+  payload: preset,
 });
 
 export const deletePreset = presetID => ({

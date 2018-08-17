@@ -1,37 +1,63 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Box,
   TextInput,
   Text,
   Button,
   HoverButton,
+  Form,
 } from '../design-system';
 import { Modal } from '../Modal.component';
+import { savePresetAs } from '../../common';
 
 export class SavePresetModalComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nameField: '',
+    };
+  }
+
   componentDidUpdate() {
     const { presetPromptOpen } = this.props;
     if (presetPromptOpen) {
-      console.log(this.nameInput);
       this.nameInput.focus();
     }
   }
 
   render() {
-    const { presetPromptOpen, setPresetPrompt } = this.props;
+    const {
+      presetPromptOpen,
+      setPresetPrompt,
+      currentState,
+      savePresetAs,
+    } = this.props;
+    const { nameField } = this.state;
     return (
       <Modal show={presetPromptOpen}>
-        <Box
+        <Form
           position="relative"
           display="flex"
           flexDirection="row"
+          onSubmit={(event) => {
+            event.preventDefault();
+            setPresetPrompt(false);
+            savePresetAs({
+              ...currentState,
+              name: nameField,
+            });
+            this.setState({ nameField: '' });
+          }}
         >
           <label htmlFor="preset-name">
             <Text color="white" fontSize={2} height="2rem">
               Preset Name
             </Text>
             <TextInput
+              value={nameField}
+              onChange={(e) => {
+                this.setState({ nameField: e.target.value });
+              }}
               bg="white"
               borderRadius={3}
               fontSize={3}
@@ -51,6 +77,7 @@ export class SavePresetModalComponent extends React.Component {
             borderRadius={0}
             p={0}
             width="4rem"
+            type="submit"
           >
             SAVE
           </HoverButton>
@@ -61,6 +88,7 @@ export class SavePresetModalComponent extends React.Component {
             display="flex"
             justifyContent="space-between"
             onClick={() => {
+              this.setState({ nameField: '' });
               setPresetPrompt(false);
             }}
             fontSize={3}
@@ -77,7 +105,7 @@ export class SavePresetModalComponent extends React.Component {
               <path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z" fill="white" />
             </svg>
           </Button>
-        </Box>
+        </Form>
       </Modal>
     );
   }
@@ -85,4 +113,9 @@ export class SavePresetModalComponent extends React.Component {
 
 SavePresetModalComponent.propTypes = {
   presetPromptOpen: PropTypes.bool.isRequired,
+  setPresetPrompt: PropTypes.func.isRequired,
+  savePresetAs: PropTypes.func.isRequired,
+  currentState: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  }).isRequired,
 };
