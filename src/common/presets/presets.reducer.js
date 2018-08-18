@@ -26,7 +26,9 @@ export const presetsReducer = (state = presetsInitialState, action) => {
       return {
         ...state,
         userPresets: [
-          ...state.userPresets,
+          ...state.userPresets.filter(
+            userPreset => userPreset.name !== action.payload.name,
+          ),
           action.payload,
         ],
       };

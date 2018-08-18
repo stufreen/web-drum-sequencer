@@ -7,11 +7,18 @@ import {
   savePresetAs,
   setPreset,
 } from '../../common';
+import defaultPresets from '../../presets';
 
 const mapDispatchToProps = {
   setPresetPrompt,
   savePresetAs,
   setPreset,
+};
+
+const isNameUnique = (proposedName, userPresets) => {
+  return [...defaultPresets, ...userPresets].find(
+    preset => preset.name === proposedName,
+  ) === undefined;
 };
 
 const handlers = {
@@ -39,12 +46,15 @@ const handlers = {
       updateNameField,
       nameField,
       setError,
+      userPresets,
     } = props;
 
     if (nameField.length < 1) {
       setError('Min length 1');
     } else if (nameField.length > 32) {
       setError('Max length 32');
+    } else if (!isNameUnique(nameField, userPresets)) {
+      setError('Must be unique');
     } else {
       connectedSetPresetPrompt(false);
       connectedSavePresetAs({
