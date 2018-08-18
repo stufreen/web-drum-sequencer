@@ -6,6 +6,9 @@ import {
   setNotes,
 } from './notes.actions';
 
+jest.mock('../../presets');
+jest.mock('../../samples.config');
+
 const testNotes = {
   bongo: [
     [

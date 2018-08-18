@@ -3,18 +3,14 @@ import { CHANNELS_CONSTANTS } from './channels.constants';
 import samples from '../../samples.config';
 import presets from '../../presets';
 
-export const channelsInitialState = presets[0].channels.map(
-  channel => ({
-    ...channel,
-  }),
-);
+export const channelsInitialState = R.clone(presets[0].channels);
 
 export const channelsReducer = (state = channelsInitialState, action) => {
   switch (action.type) {
     case CHANNELS_CONSTANTS.SET_CHANNEL_SAMPLE:
       return state.map((channel) => {
         if (channel.id === action.payload.channel) {
-          return { ...channel, sample: R.find(R.propEq('url', action.payload.sample))(samples) };
+          return { ...channel, sample: R.find(R.propEq('url', action.payload.sampleURL))(samples) };
         }
         return channel;
       });

@@ -6,16 +6,19 @@ import {
   removeChannel,
   replaceChannels,
 } from './channels.actions';
-import samples from '../../samples.config';
-import emptyPreset from '../../presets/empty';
+
+jest.mock('../../presets');
+jest.mock('../../samples.config');
+
+const testSample = '/fake/sample/b/url.wav';
 
 describe('setChannelSample', () => {
   test('should change a sample', () => {
     const state = channelsReducer(
       channelsInitialState,
-      setChannelSample(channelsInitialState[0].id, samples[0].url),
+      setChannelSample(channelsInitialState[0].id, testSample),
     );
-    expect(state[0].sample).toEqual(samples[0]);
+    expect(state[0].sample.url).toEqual(testSample);
   });
 });
 
@@ -61,7 +64,13 @@ describe('replaceChannels', () => {
   test('should replace existing channels', () => {
     const state = channelsReducer(
       channelsInitialState,
-      replaceChannels(emptyPreset.channels),
+      replaceChannels([
+        {
+          id: 'empty_channel',
+          sample: 'test',
+          gain: 1,
+        },
+      ]),
     );
     expect(state.length).toEqual(1);
   });

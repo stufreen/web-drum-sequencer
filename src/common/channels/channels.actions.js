@@ -34,6 +34,14 @@ export const sampleLoaded = (channelID, isLoaded) => ({
   },
 });
 
+export const setChannelSample = (channel, sampleURL) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_SAMPLE,
+  payload: {
+    channel,
+    sampleURL,
+  },
+});
+
 export const loadSampleStatefully = (dispatch, channel) => {
   dispatch(sampleLoaded(channel.id, false));
   loadSample(channel.sample.url).then(() => {
@@ -55,17 +63,10 @@ export const newChannel = () => (dispatch) => {
   dispatch(initializeChannelNotes(newID));
 };
 
-export const setChannelSample = (channel, sample) => (dispatch) => {
+export const loadAndSetChannelSample = (channel, sampleURL) => (dispatch) => {
   dispatch(sampleLoaded(channel, false));
-  loadSample(sample).then(() => {
+  loadSample(sampleURL).then(() => {
     dispatch(sampleLoaded(channel, true));
   });
-
-  dispatch({
-    type: CHANNELS_CONSTANTS.SET_CHANNEL_SAMPLE,
-    payload: {
-      channel,
-      sample,
-    },
-  });
+  dispatch(setChannelSample(channel, sampleURL));
 };

@@ -6,6 +6,8 @@ import { bpmSelector } from '../tempo';
 
 export const userPresetsSelector = R.path(['presets', 'userPresets']);
 
+export const presetSelector = R.path(['presets', 'preset']);
+
 export const currentStateSelector = createSelector(
   channelsSelector,
   notesSelector,

@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import { compose, withHandlers } from 'recompose';
 import { ChannelSelectComponent } from './ChannelSelect.component';
-import { setChannelSample } from '../../common';
+import { loadAndSetChannelSample } from '../../common';
 
 const mapDispatchToProps = {
-  setChannelSample,
+  loadAndSetChannelSample,
 };
 
 const handlers = withHandlers({
   onSelectSample: props => (sample) => {
-    const { setChannelSample: connectedSetChannelSample, channel } = props;
+    const { loadAndSetChannelSample: connectedSetChannelSample, channel } = props;
     connectedSetChannelSample(channel.id, sample.value);
   },
 });

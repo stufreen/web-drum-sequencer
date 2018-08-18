@@ -1,12 +1,18 @@
 import { PRESETS_CONSTANTS } from './presets.constants';
+import defaultPresets from '../../presets';
 
-const presetsInitialState = {
-  presetPromptOpen: false,
+export const presetsInitialState = {
   userPresets: [],
+  preset: defaultPresets[0].name,
 };
 
 export const presetsReducer = (state = presetsInitialState, action) => {
   switch (action.type) {
+    case PRESETS_CONSTANTS.SET_PRESET:
+      return {
+        ...state,
+        preset: action.payload,
+      };
     case PRESETS_CONSTANTS.SAVE_PRESET:
       return {
         ...state,
