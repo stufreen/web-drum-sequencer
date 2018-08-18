@@ -6,20 +6,18 @@ import { PresetSelector } from '../PresetSelector';
 import { PatternSelector } from '../PatternSelector';
 
 export const MasterControls = () => (
-  <Box mb={4} display="flex" alignItems="center" justifyContent="space-between">
-    <Box display="flex">
-      <Box mr={3}>
+  <Box mb={4} display="flex" alignItems="stretch" height="3rem" justifyContent="space-between">
+    <Box display="flex" mr={2}>
+      <Box mr={2}>
         <PlayButton />
       </Box>
-      <Box mr={3}>
-        <BPMInput />
-      </Box>
-      <Box>
-        <PatternSelector />
-      </Box>
+      <BPMInput />
     </Box>
-    <Box width="20rem">
-      <PresetSelector />
+    <Box display="flex">
+      <PatternSelector />
+      <Box ml={2} width="17rem">
+        <PresetSelector />
+      </Box>
     </Box>
   </Box>
 );

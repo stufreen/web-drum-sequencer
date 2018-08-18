@@ -66,7 +66,7 @@ export const PresetSelectorComponent = ({
   }
 
   return (
-    <Box>
+    <Box height="100%">
       <Select
         isEdited={isEdited}
         options={groupedOptions}
@@ -82,11 +82,15 @@ export const PresetSelectorComponent = ({
           return false;
         }}
         styles={{
+          container: styles => ({
+            ...styles,
+            height: '100%',
+          }),
           control: styles => ({
             ...styles,
             backgroundColor: 'black',
             border: `2px solid ${theme.colors.steel}`,
-            padding: '0.5em 0.5em 0.5em 1em',
+            height: '100%',
             borderRadius: '0.5em',
           }),
           singleValue: styles => ({

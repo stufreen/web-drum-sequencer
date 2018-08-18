@@ -8,7 +8,7 @@ import {
 } from '../design-system';
 
 const ShinyBox = Box.extend`
-  background: linear-gradient(190deg, #29292D 0%, #404046 50%,#0a0e0a 51%, #29292D 100%);
+  background: linear-gradient(190deg, #19191D 0%, #303036 50%,#0a0e0a 51%, #29292D 100%);
 `;
 
 const BPMButton = Button.extend`

@@ -8,9 +8,9 @@ export const LabelBox = ({ label, children }) => (
     border="2px solid"
     borderColor="steel"
     borderRadius="0.5rem"
-    p={3}
-    pb={2}
+    p={2}
     position="relative"
+    alignItems="center"
   >
     <Text
       position="absolute"
