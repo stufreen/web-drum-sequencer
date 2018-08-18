@@ -21,7 +21,6 @@ var serviceWorkerOption = {
     "./assets/fonts/c7262c85fc05c9177075e237c23372fe.woff2",
     "./assets/fonts/86cade2f761700598f5f2c260193cb09.woff",
     "./assets/fonts/33a7a7c3caf1424a788ad1a74046845f.woff2",
-    "./assets/images/bpm.png",
     "./assets/images/simplegray.png",
     "./assets/js/bundle.js"
   ]
@@ -30,7 +29,7 @@ var serviceWorkerOption = {
         /******/ (function(modules) { // webpackBootstrap
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "cdd032287159749a55ca";
+/******/ 	var hotCurrentHash = "ed37d9a5d5d8cbbdd66e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -768,7 +767,7 @@ var serviceWorkerOption = {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nself.addEventListener('fetch', function (event) {\n  event.respondWith(caches.match(event.request).then(function (response) {\n    // Cache hit - return response\n    if (response) {\n      return response;\n    }\n\n    // IMPORTANT: Clone the request. A request is a stream and\n    // can only be consumed once. Since we are consuming this\n    // once by cache and once by the browser for fetch, we need\n    // to clone the response.\n    var fetchRequest = event.request.clone();\n\n    return fetch(fetchRequest).then(function (fetchResponse) {\n      // Check if we received a valid response\n      if (!fetchResponse || fetchResponse.status !== 200 || fetchResponse.type !== 'basic') {\n        return fetchResponse;\n      }\n\n      // IMPORTANT: Clone the response. A response is a stream\n      // and because we want the browser to consume the response\n      // as well as the cache consuming the response, we need\n      // to clone it so we have two streams.\n      var responseToCache = fetchResponse.clone();\n\n      caches.open('wdsCache').then(function (cache) {\n        cache.put(event.request, responseToCache);\n      });\n\n      return fetchResponse;\n    });\n  }));\n});\n\n//# sourceURL=webpack:///./sw.js?");
+eval("\n\n/* eslint no-restricted-globals: 1 */\n\nself.addEventListener('fetch', function (event) {\n  event.respondWith(caches.match(event.request).then(function (response) {\n    // Cache hit - return response\n    if (response) {\n      return response;\n    }\n\n    // IMPORTANT: Clone the request. A request is a stream and\n    // can only be consumed once. Since we are consuming this\n    // once by cache and once by the browser for fetch, we need\n    // to clone the response.\n    var fetchRequest = event.request.clone();\n\n    return fetch(fetchRequest).then(function (fetchResponse) {\n      // Check if we received a valid response\n      if (!fetchResponse || fetchResponse.status !== 200 || fetchResponse.type !== 'basic') {\n        return fetchResponse;\n      }\n\n      // IMPORTANT: Clone the response. A response is a stream\n      // and because we want the browser to consume the response\n      // as well as the cache consuming the response, we need\n      // to clone it so we have two streams.\n      var responseToCache = fetchResponse.clone();\n\n      caches.open('wdsCache').then(function (cache) {\n        cache.put(event.request, responseToCache);\n      });\n\n      return fetchResponse;\n    });\n  }));\n});\n\n//# sourceURL=webpack:///./sw.js?");
 
 /***/ })
 
