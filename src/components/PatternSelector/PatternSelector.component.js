@@ -9,6 +9,7 @@ export const PatternSelectorComponent = ({ onSelectPattern, pattern }) => {
     <HoverButton
       key={`preset-${buttonNumber}`}
       p={0}
+      pt="2px"
       height="1.3rem"
       width="1.3rem"
       borderRadius={2}

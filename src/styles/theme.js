@@ -20,6 +20,14 @@ const colors = {
 };
 
 export default {
+  fontSizes: [
+    12, 14, 16, 24, 32, 48, 64, 96, 128,
+  ],
+  space: [
+    // margin and padding
+    0, 4, 8, 16, 32, 64, 128, 256,
+  ],
+  breakpoints: ['640px', '720px', '769px', '820px', '900px', '1024px', '1200px', '1400px'],
   colors,
   fancyButtons: {
     green: {

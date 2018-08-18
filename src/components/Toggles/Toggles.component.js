@@ -36,7 +36,7 @@ export const TogglesComponent = ({
   const toggleGroups = R.splitEvery(4, toggles);
 
   return (
-    <Box display="flex" flex="1 1 auto">
+    <Box display="flex" flex="1 1 auto" alignItems="center">
       {toggleGroups.map((toggleGroup, i) => (
         <ToggleGroup key={i /* eslint-disable-line*/}>
           {toggleGroup}

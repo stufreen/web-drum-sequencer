@@ -13,8 +13,8 @@ import {
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <Box className="App" p={5}>
-      <Heading color="nearWhite" fontSize={7} fontWeight="500" mt={0} mb={3}>
+    <Box className="App" p={[0, 0, 0, 1, 2, 2, 2, 3, 5]}>
+      <Heading color="nearWhite" fontSize={[5, 6]} fontWeight="500" mt={0} mb={3}>
         WDS-1
       </Heading>
       <Line bg="lightGray" mb={4} />

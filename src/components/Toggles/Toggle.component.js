@@ -20,8 +20,6 @@ const BeatButton = styled.button`
 BeatButton.defaultProps = {
   border: 'none',
   borderRadius: '100%',
-  height: '1.6vw',
-  width: '1.6vw',
 };
 
 export class Toggle extends React.Component {
@@ -69,6 +67,8 @@ export class Toggle extends React.Component {
         type="button"
         bg={isActive ? 'melon' : 'darkGray'}
         onClick={onClick}
+        width={[14, 14, 16, 18, 18, 20, 24, 30]}
+        height={[14, 14, 16, 18, 18, 20, 24, 30]}
       >
         <Box
           position="absolute"

@@ -11,13 +11,13 @@ export const RemoveButton = ({ onClick }) => (
     hoverColor="nearWhite"
     p={0}
     borderRadius="3em"
-    width={40}
-    height={40}
+    width={[20, 20, 30, 30, 40]}
+    height={[20, 20, 30, 30, 40]}
     display="flex"
-    justifyContent="space-between"
+    justifyContent="center"
     onClick={onClick}
     fontSize={3}
-    alignItems="center"
+    alignItems="middle"
     alignSelf="center"
     transitionSpeed="0.2s"
   >
