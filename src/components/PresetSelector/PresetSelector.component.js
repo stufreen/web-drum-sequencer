@@ -42,10 +42,16 @@ export const PresetSelectorComponent = ({
         {
           label: `Save “${currentPreset.name}”`,
           value: 'SAVE_PRESET',
+          disabled: !isEdited || (defaultPresetOptions.find(
+            option => option.label === currentPreset.name,
+          ) !== undefined),
         },
         {
           label: `Delete “${currentPreset.name}”`,
           value: 'DELETE_PRESET',
+          disabled: (defaultPresetOptions.find(
+            option => option.label === currentPreset.name,
+          ) !== undefined),
         },
       ],
     },
@@ -62,17 +68,16 @@ export const PresetSelectorComponent = ({
   return (
     <Box>
       <Select
+        isEdited={isEdited}
         options={groupedOptions}
         onChange={onSelectPreset}
         value={selectedOption}
-        isOptionDisabled={({ value }) => {
+        isOptionDisabled={({ value, disabled }) => {
           if (value === 'SAVE_PRESET') {
-            return true;
+            return disabled;
           }
           if (value === 'DELETE_PRESET') {
-            return defaultPresetOptions.find(
-              option => option.label === currentPreset.name,
-            );
+            return disabled;
           }
           return false;
         }}
