@@ -14,7 +14,7 @@ const colors = {
   darkRed: '#633231',
   brightRed: '#E1523D',
   gold: '#E6A65D',
-  melon: '#CAD97A',
+  melon: '#D9EC71',
   paleMelon: '#F6F9E1',
   darkMelon: '#AAB95A',
 };

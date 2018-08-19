@@ -26,6 +26,8 @@ export const initializeAudio = (store) => {
         currentBeat: getCurrentBeat(tempo.bpm, playbackSession.startTime),
       });
 
+      console.log(audioCtx.currentTime);
+
       // Loop if we reached the end of the bar
       const barLength = 4 * 60 / tempo.bpm;
       if (audioCtx.currentTime > playbackSession.startTime + barLength) {

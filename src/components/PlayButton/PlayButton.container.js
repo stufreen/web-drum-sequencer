@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { PlayButtonComponent } from './PlayButton.component';
 import { playButtonSelectors } from './PlayButton.selectors';
-import { startPlayback, stopPlayback } from '../../common';
+import { startPlaybackAndResume, stopPlayback } from '../../common';
 
 const mapDispatchToProps = {
-  startPlayback,
+  startPlaybackAndResume,
   stopPlayback,
 };
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FancyButton } from '../FancyButton.component';
-import { Box, Text } from '../design-system';
+import { Text } from '../design-system';
 
-export const PlayButtonComponent = ({ startPlayback, stopPlayback, playing }) => (playing
+export const PlayButtonComponent = ({ startPlaybackAndResume, stopPlayback, playing }) => (playing
   ? (
     <FancyButton
       onClick={stopPlayback}
@@ -27,7 +27,7 @@ export const PlayButtonComponent = ({ startPlayback, stopPlayback, playing }) =>
   )
   : (
     <FancyButton
-      onClick={startPlayback}
+      onClick={startPlaybackAndResume}
       variant="green"
       mb={1}
       width="8rem"
@@ -51,7 +51,7 @@ export const PlayButtonComponent = ({ startPlayback, stopPlayback, playing }) =>
   ));
 
 PlayButtonComponent.propTypes = {
-  startPlayback: PropTypes.func.isRequired,
+  startPlaybackAndResume: PropTypes.func.isRequired,
   stopPlayback: PropTypes.func.isRequired,
   playing: PropTypes.bool.isRequired,
 };

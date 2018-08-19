@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import * as ss from 'styled-system';
 import { getCurrentBeat } from '../../services/audioContext';
 import { Box } from '../design-system';
+import theme from '../../styles/theme';
 
 const BeatButton = styled.button`
   ${ss.color}
@@ -12,9 +13,13 @@ const BeatButton = styled.button`
   ${ss.height}
   ${ss.borders}
   ${ss.borderRadius}
+  padding: 0;
   outline: none;
   transition: background-color 0.1s;
   position: relative;
+  background: ${({ isActive }) => (isActive
+    ? 'linear-gradient(180deg, rgba(213,255,169,1) 0%, rgba(152,255,193,1) 100%);'
+    : theme.colors.darkGray)}
 `;
 
 BeatButton.defaultProps = {
@@ -26,6 +31,11 @@ export class Toggle extends React.Component {
   componentDidMount() {
     this.updateToggle.bind(this);
     this.updateToggle();
+  }
+
+  shouldComponentUpdate(nextProps) {
+    const { isActive } = this.props;
+    return nextProps.isActive !== isActive;
   }
 
   updateToggle() {
@@ -65,14 +75,15 @@ export class Toggle extends React.Component {
     return (
       <BeatButton
         type="button"
-        bg={isActive ? 'melon' : 'darkGray'}
+        isActive={isActive}
         onClick={onClick}
-        width={[14, 14, 16, 18, 18, 20, 24, 26]}
-        height={[14, 14, 16, 18, 18, 20, 24, 26]}
+        width={[18, 18, 18, 18, 18, 20, 24, 26]}
+        height={[18, 18, 18, 18, 18, 20, 24, 26]}
+        p={0}
       >
         <Box
           position="absolute"
-          bg="paleMelon"
+          bg="white"
           width="100%"
           height="100%"
           left={0}
