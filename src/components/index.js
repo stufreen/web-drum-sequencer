@@ -11,3 +11,4 @@ export * from './AddChannelButton';
 export * from './PresetSelector';
 export * from './MasterControls';
 export * from './Modal.component';
+export * from './Logo.component';

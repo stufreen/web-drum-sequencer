@@ -6,4 +6,5 @@ export const Heading = styled.h1`
   ${ss.fontSize}
   ${ss.fontWeight}
   ${ss.space}
+  ${ss.fontFamily}
 `;

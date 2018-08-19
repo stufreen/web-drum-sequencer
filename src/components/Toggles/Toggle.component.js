@@ -67,8 +67,8 @@ export class Toggle extends React.Component {
         type="button"
         bg={isActive ? 'melon' : 'darkGray'}
         onClick={onClick}
-        width={[14, 14, 16, 18, 18, 20, 24, 30]}
-        height={[14, 14, 16, 18, 18, 20, 24, 30]}
+        width={[14, 14, 16, 18, 18, 20, 24, 26]}
+        height={[14, 14, 16, 18, 18, 20, 24, 26]}
       >
         <Box
           position="absolute"

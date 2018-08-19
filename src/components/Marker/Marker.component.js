@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '../design-system';
 import { getCurrentBeat } from '../../services/audioContext';
+import theme from '../../styles/theme';
 
 const Container = Box.extend`
   overflow: hidden;
@@ -33,8 +34,7 @@ export class MarkerComponent extends React.PureComponent {
           ref={(ref) => { this.marker = ref; }}
           style={{
             height: '100%',
-            backgroundColor: 'white',
-            opacity: 0.2,
+            backgroundColor: theme.colors.darkGray,
             position: 'absolute',
             width: 0,
           }}

@@ -9,7 +9,7 @@ const HeaderText = Text.extend`
 export const ChannelHeaderLabel = ({ children, ...restProps }) => (
   <Box p={1} {...restProps}>
     <HeaderText
-      color="nearBlack"
+      color="white"
       fontWeight="700"
       fontSize="0.7rem"
     >
