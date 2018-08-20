@@ -1,6 +1,6 @@
 {
-  "name": "drumbox",
-  "version": "0.0.1",
+  "name": "web-drum-sequencer",
+  "version": "0.1.0",
   "description": "Drum machine built with Web Audio API and React.",
   "main": "index.js",
   "scripts": {
