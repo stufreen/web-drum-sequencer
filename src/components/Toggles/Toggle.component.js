@@ -6,6 +6,8 @@ import { getCurrentBeat } from '../../services/audioContext';
 import { Box } from '../design-system';
 import theme from '../../styles/theme';
 
+const gradient = `linear-gradient(180deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 100%);`;
+
 const BeatButton = styled.button`
   ${ss.color}
   ${ss.space}
@@ -18,7 +20,7 @@ const BeatButton = styled.button`
   transition: background-color 0.1s;
   position: relative;
   background: ${({ isActive }) => (isActive
-    ? 'linear-gradient(180deg, rgba(213,255,169,1) 0%, rgba(152,255,193,1) 100%);'
+    ? gradient
     : theme.colors.darkGray)}
 `;
 

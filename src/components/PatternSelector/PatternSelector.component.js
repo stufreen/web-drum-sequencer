@@ -13,7 +13,7 @@ export const PatternSelectorComponent = ({ onSelectPattern, pattern }) => {
       height="1.3rem"
       width="1.3rem"
       borderRadius={2}
-      bg={pattern === buttonNumber ? 'melon' : 'lightGray'}
+      bg={pattern === buttonNumber ? 'primary' : 'lightGray'}
       ml="1px"
       mr="1px"
       mt="1px"
@@ -24,7 +24,7 @@ export const PatternSelectorComponent = ({ onSelectPattern, pattern }) => {
       fontWeight="600"
       fontSize="0.6em"
       color="rgba(0,0,0,0.4)"
-      activeBg="darkMelon"
+      activeBg="primaryDark"
       outline="none"
     >
       {buttonNumber + 1}
