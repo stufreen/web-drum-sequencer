@@ -20,25 +20,9 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|assets)/,
+        exclude: /(node_modules)/,
         loader: 'babel-loader',
         options: { presets: ['env'] },
-      },
-      {
-        test: /\.assets\/js/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: './assets/js/',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(jpg|png|gif|svg)$/,

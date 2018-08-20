@@ -2,7 +2,6 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from '../styles/theme';
 import globalStyles from '../styles/globalStyles';
-import '../styles/index.css';
 import {
   Box,
   Line,
