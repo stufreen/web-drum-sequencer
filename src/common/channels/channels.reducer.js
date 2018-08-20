@@ -22,12 +22,7 @@ export const channelsReducer = (state = channelsInitialState, action) => {
         return channel;
       });
     case CHANNELS_CONSTANTS.ADD_CHANNEL:
-      return [...state, {
-        id: action.payload,
-        sample: samples[0],
-        gain: 1,
-        notes: [],
-      }];
+      return [...state, action.payload];
     case CHANNELS_CONSTANTS.REMOVE_CHANNEL:
       return state.filter(channel => channel.id !== action.payload);
     case CHANNELS_CONSTANTS.SAMPLE_LOADED:

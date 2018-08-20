@@ -36,7 +36,11 @@ describe('addChannel', () => {
   test('should add a channel', () => {
     const state = channelsReducer(
       channelsInitialState,
-      addChannel(),
+      addChannel({
+        id: '12345',
+        gain: 1,
+        sample: {},
+      }),
     );
     expect(state.length).toEqual(channelsInitialState.length + 1);
   });
