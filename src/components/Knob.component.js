@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '@webcomponents/webcomponentsjs/webcomponents-bundle.js'; // eslint-disable-line
 import knobImage from 'webaudio-controls/knobs/simplegray.png'; // eslint-disable-line import/no-extraneous-dependencies
 import 'webaudio-controls/webaudio-controls'; // eslint-disable-line import/no-extraneous-dependencies
 
