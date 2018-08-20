@@ -11,9 +11,10 @@ const sixteenthNotes = R.range(0, 16);
 
 export class TogglesComponent extends React.Component {
   shouldComponentUpdate(nextProps) {
-    const { notes, playing } = this.props;
+    const { bpm, notes, playing } = this.props;
     return notes.length !== nextProps.notes.length
-      || playing !== nextProps.playing;
+      || playing !== nextProps.playing
+      || bpm !== nextProps.bpm;
   }
 
   render() {
