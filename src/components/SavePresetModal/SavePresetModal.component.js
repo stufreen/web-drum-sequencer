@@ -54,8 +54,8 @@ export class SavePresetModalComponent extends React.Component {
             />
           </label>
           <HoverButton
-            bg="darkMelon"
-            hoverBg="melon"
+            bg="darkGray"
+            hoverBg="steel"
             color="white"
             transitionSpeed="0.1s"
             mt="2rem"
