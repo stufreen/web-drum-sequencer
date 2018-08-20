@@ -15,11 +15,9 @@ const mapDispatchToProps = {
   setPreset,
 };
 
-const isNameUnique = (proposedName, userPresets) => {
-  return [...defaultPresets, ...userPresets].find(
-    preset => preset.name === proposedName,
-  ) === undefined;
-};
+const isNameUnique = (proposedName, userPresets) => [...defaultPresets, ...userPresets].find(
+  preset => preset.name === proposedName,
+) === undefined;
 
 const handlers = {
   onChangeNameField: ({ updateNameField, setError }) => (event) => {

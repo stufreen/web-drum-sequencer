@@ -17,4 +17,4 @@ export const setStartTime = val => ({
 export const startPlaybackAndResume = () => (dispatch) => {
   getAudioContext().resume();
   dispatch(startPlayback());
-}
+};
