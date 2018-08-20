@@ -1,5 +1,6 @@
 var serviceWorkerOption = {
   "assets": [
+    "./assets/images/simplegray.png",
     "./assets/audio/808BD_Long-R8_C2A.wav",
     "./assets/audio/808BD_Short2-R8_C2A.wav",
     "./assets/audio/808Clap-R8_01.wav",
@@ -21,7 +22,6 @@ var serviceWorkerOption = {
     "./assets/fonts/c7262c85fc05c9177075e237c23372fe.woff2",
     "./assets/fonts/86cade2f761700598f5f2c260193cb09.woff",
     "./assets/fonts/33a7a7c3caf1424a788ad1a74046845f.woff2",
-    "./assets/images/simplegray.png",
     "./assets/js/bundle.js"
   ]
 };

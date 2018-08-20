@@ -8,7 +8,6 @@ import { initializeAudio } from './services/audioLoop';
 import { configureStore } from './store';
 import { loadSampleStatefully } from './common';
 import { startAnimations } from './services/animations';
-import './assets/js/webaudio-controls';
 
 const { store, persistor } = configureStore(() => {
   const { channels } = store.getState();
