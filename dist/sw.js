@@ -1,5 +1,6 @@
 var serviceWorkerOption = {
   "assets": [
+    "./iconstats-279c6fae528ba16fada7.json",
     "./assets/images/simplegray.png",
     "./assets/audio/808BD_Long-R8_C2A.wav",
     "./assets/audio/808BD_Short2-R8_C2A.wav",

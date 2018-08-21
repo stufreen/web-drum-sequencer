@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -79,8 +80,15 @@ module.exports = {
     new WebpackPwaManifest({
       name: 'Wed Drum Sequencer',
       short_name: 'WDS',
-      background_color: '#29292D',
+      background_color: '#202429',
       crossorigin: 'use-credentials',
+      icons: [
+        {
+          src: path.resolve('src/assets/images/icon.png'),
+          sizes: [96, 128, 192, 256, 384, 512],
+        },
+      ],
     }),
+    new FaviconsWebpackPlugin(path.resolve('src/assets/images/icon.png')),
   ],
 };
