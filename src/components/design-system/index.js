@@ -7,3 +7,4 @@ export * from './Line';
 export * from './Image';
 export * from './TextInput.js';
 export * from './Form.js';
+export * from './HoverLink.js';

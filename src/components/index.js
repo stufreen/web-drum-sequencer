@@ -12,3 +12,4 @@ export * from './PresetSelector';
 export * from './MasterControls';
 export * from './Modal.component';
 export * from './Logo.component';
+export * from './GithubLink.component';

@@ -1,6 +1,6 @@
 # Web Drum Sequencer
 
-A drum machine and sequencer built with the Web Audio API, React, and Redux.
+A browser-based drum machine and sequencer built with the Web Audio API, React, and Redux.
 
 ## Demo
 
