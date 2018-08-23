@@ -1,8 +1,8 @@
 {
   "name": "web-drum-sequencer",
   "version": "0.1.0",
-  "description": "Drum machine built with Web Audio API and React.",
-  "main": "index.js",
+  "description": "A drum machine and sequencer built with the Web Audio API and React.",
+  "main": "dist/index.html",
   "scripts": {
     "install": "napa g200kg/webaudio-controls",
     "start": "webpack-dev-server --mode development",
@@ -11,8 +11,23 @@
     "test": "jest",
     "gh-pages": "git subtree push --prefix dist origin gh-pages"
   },
-  "author": "Stu Freen",
-  "license": "ISC",
+  "author": "Stu Freen (http://www.stufreen.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stufreen/web-drum-sequencer.git"
+  },
+  "keywords": [
+    "Web Audio",
+    "Web Audio API",
+    "Drum Machine",
+    "Playback",
+    "Effect",
+    "Instrument",
+    "React",
+    "Redux",
+    "Interactive Music"
+  ],
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",

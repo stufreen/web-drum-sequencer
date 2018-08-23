@@ -11,11 +11,16 @@ import { startAnimations } from './services/animations';
 
 const { store, persistor } = configureStore(() => {
   const { channels } = store.getState();
+  // Load up all the initial samples
   channels.forEach((channel) => {
     loadSampleStatefully(store.dispatch, channel);
   });
 });
 
+/**
+ * Watch for user going online, and try to load any samples
+ * that haven't been loaded (e.g. because user was offline)
+ */
 window.addEventListener('online', () => {
   const { channels } = store.getState();
   channels.forEach((channel) => {
