@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-// import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+import runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import App from './components/App';
 import { initializeAudio } from './services/audioLoop';
 import { configureStore } from './store';
@@ -30,9 +30,9 @@ window.addEventListener('online', () => {
   });
 });
 
-// if ('serviceWorker' in navigator) {
-//   runtime.register();
-// }
+if (process.env.__PROD__ && 'serviceWorker' in navigator) { // eslint-disable-line
+  runtime.register();
+}
 
 ReactDOM.render(
   <Provider store={store}>
