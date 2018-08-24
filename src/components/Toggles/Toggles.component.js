@@ -9,21 +9,13 @@ const isActive = (notes, beat) => notes.find(note => note.beat === beat) !== und
 
 const sixteenthNotes = R.range(0, 16);
 
-export class TogglesComponent extends React.Component {
-  shouldComponentUpdate(nextProps) {
-    const { bpm, notes, playing } = this.props;
-    return notes.length !== nextProps.notes.length
-      || playing !== nextProps.playing
-      || bpm !== nextProps.bpm;
-  }
-
+export class TogglesComponent extends React.PureComponent {
   render() {
     const {
       notes,
       channelID,
       toggleNote,
       bpm,
-      startTime,
       playing,
       pattern,
     } = this.props;
@@ -33,9 +25,10 @@ export class TogglesComponent extends React.Component {
         <Toggle
           key={index}
           isActive={isActive(notes, beat)}
-          onClick={() => { toggleNote(channelID, pattern, beat); }}
+          onClick={() => {
+            toggleNote(channelID, pattern, beat);
+          }}
           bpm={bpm}
-          startTime={startTime}
           playing={playing}
           beat={beat}
         />
@@ -56,15 +49,10 @@ export class TogglesComponent extends React.Component {
   }
 }
 
-TogglesComponent.defaultProps = {
-  startTime: null,
-};
-
 TogglesComponent.propTypes = {
   notes: PropTypes.arrayOf(PropTypes.object).isRequired,
   channelID: PropTypes.string.isRequired,
   toggleNote: PropTypes.func.isRequired,
-  startTime: PropTypes.number,
   bpm: PropTypes.number.isRequired,
   playing: PropTypes.bool.isRequired,
   pattern: PropTypes.number.isRequired,
