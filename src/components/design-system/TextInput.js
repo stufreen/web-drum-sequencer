@@ -13,7 +13,6 @@ const TextInput = styled.input`
   ${ss.boxShadow}
   display: block;
   border: none;
-  outline: none;
 `;
 
 TextInput.defaultProps = {

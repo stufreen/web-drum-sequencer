@@ -12,10 +12,8 @@ const ShinyBox = Box.extend`
 `;
 
 const BPMButton = Button.extend`
-  outline: none;
-
   &:active {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
   }
 `;
 

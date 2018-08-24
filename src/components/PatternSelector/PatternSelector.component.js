@@ -23,9 +23,8 @@ export const PatternSelectorComponent = ({ onSelectPattern, pattern }) => {
       }}
       fontWeight="600"
       fontSize="0.6em"
-      color="rgba(0,0,0,0.4)"
+      color="rgba(0,0,0,0.5)"
       activeBg="primaryDark"
-      outline="none"
     >
       {buttonNumber + 1}
     </HoverButton>

@@ -12,7 +12,6 @@ export const HitButton = ({ channel }) => (
     transitionSpeed="0.1s"
     ml={2}
     p={0}
-    outline="none"
     onMouseDown={() => {
       playNoteNow(channel);
     }}

@@ -21,6 +21,10 @@ const BeatButton = styled.button`
   background: ${({ isActive }) => (isActive
     ? gradient
     : theme.colors.darkGray)}
+
+  &:focus {
+    box-shadow: 0 0 5px 5px rgba(100, 180, 255, 0.5);
+  }
 `;
 
 BeatButton.defaultProps = {
