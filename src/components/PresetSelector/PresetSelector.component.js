@@ -72,6 +72,7 @@ export const PresetSelectorComponent = ({
         options={groupedOptions}
         onChange={onSelectPreset}
         value={selectedOption}
+        aria-label="Select Preset"
         isOptionDisabled={({ value, disabled }) => {
           if (value === 'SAVE_PRESET') {
             return disabled;

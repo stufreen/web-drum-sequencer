@@ -37,7 +37,7 @@ export const BPMInputComponent = ({ bpm, setBPM }) => (
       pr={1}
       borderRadius="3px"
       letterSpacing="0.1em"
-      for="bpm"
+      htmlFor="bpm"
     >
       BPM
     </Label>
