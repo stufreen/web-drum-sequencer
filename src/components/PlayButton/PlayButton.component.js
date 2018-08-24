@@ -14,6 +14,7 @@ export const PlayButtonComponent = ({ startPlaybackAndResume, stopPlayback, play
       flexDirection="row"
       alignItems="baseline"
       justifyContent="center"
+      p={0}
     >
       <Text mr={2}>
         Stop
@@ -35,6 +36,7 @@ export const PlayButtonComponent = ({ startPlaybackAndResume, stopPlayback, play
       flexDirection="row"
       alignItems="baseline"
       justifyContent="center"
+      p={0}
     >
       <Text mr={2}>
         PLAY
