@@ -1,6 +1,5 @@
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
@@ -12,7 +11,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/js/bundle.js',
   },
-  mode: 'development',
   module: {
     rules: [
       {
@@ -63,13 +61,7 @@ module.exports = {
     ],
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
-  devServer: {
-    port: 3000,
-    contentBase: path.join(__dirname, 'dist'),
-    hotOnly: true,
-  },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new ServiceWorkerWebpackPlugin({
       entry: path.join(__dirname, 'src/sw.js'),
       publicPath: '',
