@@ -74,6 +74,7 @@ module.exports = {
       short_name: 'WDS',
       background_color: '#202429',
       crossorigin: 'use-credentials',
+      theme_color: '#000000',
       icons: [
         {
           src: path.resolve('src/assets/images/icon.png'),

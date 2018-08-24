@@ -25,6 +25,8 @@ export const PatternSelectorComponent = ({ onSelectPattern, pattern }) => {
       fontSize="0.6em"
       color="rgba(0,0,0,0.5)"
       activeBg="primaryDark"
+      disabled={pattern === buttonNumber}
+      aria-label={`Enable pattern ${buttonNumber}`}
     >
       {buttonNumber + 1}
     </HoverButton>

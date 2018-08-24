@@ -15,6 +15,7 @@ export const HitButton = ({ channel }) => (
     onMouseDown={() => {
       playNoteNow(channel);
     }}
+    aria-label={`Play ${channel.sample.name}`}
   />
 );
 

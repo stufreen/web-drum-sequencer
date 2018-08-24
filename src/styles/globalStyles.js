@@ -38,6 +38,7 @@ export default () => injectGlobal`
 
   * {
     font-family: "Futura", sans-serif;
+    font-display: swap;
   }
 
   body { 

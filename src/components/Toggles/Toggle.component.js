@@ -40,6 +40,7 @@ export const Toggle = ({ isActive, onClick, beat }) => (
     width={[18, 18, 18, 18, 18, 20, 24, 26]}
     height={[18, 18, 18, 18, 18, 20, 24, 26]}
     p={0}
+    aria-label={isActive ? `disable beat ${beat}` : `enable beat ${beat}`}
   >
     <Box
       className="wds-beat-marker"
