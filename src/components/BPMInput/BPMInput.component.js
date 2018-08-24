@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Box,
-  Text,
+  Label,
   TextInput,
   Button,
 } from '../design-system';
@@ -25,7 +25,7 @@ export const BPMInputComponent = ({ bpm, setBPM }) => (
     borderRadius="0.5rem"
     position="relative"
   >
-    <Text
+    <Label
       position="absolute"
       left="0.5rem"
       top="-0.6em"
@@ -37,9 +37,10 @@ export const BPMInputComponent = ({ bpm, setBPM }) => (
       pr={1}
       borderRadius="3px"
       letterSpacing="0.1em"
+      for="bpm"
     >
       BPM
-    </Text>
+    </Label>
     <TextInput
       min="1"
       max="999"

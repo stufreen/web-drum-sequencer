@@ -8,3 +8,4 @@ export * from './Image';
 export * from './TextInput.js';
 export * from './Form.js';
 export * from './HoverLink.js';
+export * from './Label.js';

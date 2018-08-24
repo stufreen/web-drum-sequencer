@@ -23,7 +23,7 @@ export const PatternSelectorComponent = ({ onSelectPattern, pattern }) => {
       }}
       fontWeight="600"
       fontSize="0.6em"
-      color="rgba(0,0,0,0.5)"
+      color="rgba(0,0,0,0.6)"
       activeBg="primaryDark"
       disabled={pattern === buttonNumber}
       aria-label={`Enable pattern ${buttonNumber}`}

@@ -14,6 +14,7 @@ export const ChannelSelectComponent = ({ onSelectSample, channel }) => {
   return (
     <Box flex="1 1 auto" pr={2}>
       <Select
+        aria-label="Select Channel"
         options={options}
         onChange={onSelectSample}
         value={currentOption}

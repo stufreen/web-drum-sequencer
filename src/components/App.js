@@ -22,14 +22,20 @@ const App = () => (
       p={[0, 0, 0, 1, 2, 2, 2, 3, 5]}
       pt={[4, 4, 4, 4, 4, 4, 4, 4, 5]}
     >
-      <Logo color="white" width="200px" />
-      <Line bg="lightGray" mb={4} mt={4} />
-      <MasterControls />
-      <ChannelHeader />
-      <ChannelList />
-      <Box position="absolute" bottom={0} right={0} mr={[0, 0, 0, 1, 2, 2, 2, 3, 5]}>
-        <GithubLink />
-      </Box>
+      <header>
+        <Logo color="white" width="200px" />
+        <Line bg="lightGray" mb={4} mt={4} />
+      </header>
+      <main>
+        <MasterControls />
+        <ChannelHeader />
+        <ChannelList />
+      </main>
+      <footer>
+        <Box position="absolute" bottom={0} right={0} mr={[0, 0, 0, 1, 2, 2, 2, 3, 5]}>
+          <GithubLink />
+        </Box>
+      </footer>
     </Box>
   </ThemeProvider>
 );
