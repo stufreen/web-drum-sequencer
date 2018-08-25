@@ -34,7 +34,7 @@ export const PlayButtonComponent = ({ startPlaybackAndResume, stopPlayback, play
       width="8rem"
       display="flex"
       flexDirection="row"
-      alignItems="baseline"
+      alignItems="center"
       justifyContent="center"
       p={0}
     >
