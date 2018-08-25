@@ -13,9 +13,9 @@ export const configureStore = (callback) => {
 
   const persistedReducer = persistReducer(persistConfig, reducer);
 
-  const store = createStore(persistedReducer, compose(
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line
+  const store = createStore(persistedReducer, composeEnhancers(
     applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), // eslint-disable-line
   ));
 
   const persistor = persistStore(store, null, callback);
