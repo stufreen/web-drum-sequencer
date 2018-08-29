@@ -66,7 +66,6 @@ export const newChannel = () => (dispatch) => {
   };
   dispatch(addChannel(channelToAdd));
   dispatch(initializeChannelNotes(channelToAdd.id));
-  console.log(channelToAdd);
   loadSampleStatefully(dispatch, channelToAdd);
 };
 
