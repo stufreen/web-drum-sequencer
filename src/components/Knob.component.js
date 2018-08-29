@@ -10,6 +10,11 @@ export class Knob extends React.Component {
     this.knob.addEventListener('input', onChange);
   }
 
+  componentDidUpdate() {
+    const { value } = this.props;
+    this.knob.setValue(value);
+  }
+
   render() {
     const { size, value } = this.props;
     return (
