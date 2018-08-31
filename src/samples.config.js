@@ -151,6 +151,34 @@ const sampleOptions = [
     name: 'LinnDrum Rimshot',
     url: require('./assets/drums/linndrum/linn-rim.mp3'),
   },
+  {
+    name: 'Hip Hop Bass 1',
+    url: require('./assets/drums/hip-hop/hip-hop-bd-1.wav'),
+  },
+  {
+    name: 'Hip Hop Bass 2',
+    url: require('./assets/drums/hip-hop/hip-hop-bd-2.wav'),
+  },
+  {
+    name: 'Hip Hop Snare 1',
+    url: require('./assets/drums/hip-hop/hip-hop-sd-1.wav'),
+  },
+  {
+    name: 'Hip Hop Snare 2',
+    url: require('./assets/drums/hip-hop/hip-hop-sd-2.wav'),
+  },
+  {
+    name: 'Hip Hop Hi-hat Closed 1',
+    url: require('./assets/drums/hip-hop/hip-hop-ch-1.wav'),
+  },
+  {
+    name: 'Hip Hop Hi-hat Closed 2',
+    url: require('./assets/drums/hip-hop/hip-hop-ch-2.wav'),
+  },
+  {
+    name: 'Hip Hop Hi-hat Open',
+    url: require('./assets/drums/hip-hop/hip-hop-oh.wav'),
+  },
 ];
 
 export default sampleOptions;
@@ -176,6 +204,10 @@ export const getSampleSelectOptions = () => {
     {
       label: 'Linn LinnDrum',
       options: allOptions.filter(item => item.label.includes('LinnDrum')),
+    },
+    {
+      label: 'Hip-hop',
+      options: allOptions.filter(item => item.label.includes('Hip Hop')),
     },
   ];
   return groupedOptions;
