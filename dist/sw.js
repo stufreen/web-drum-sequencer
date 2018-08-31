@@ -45,6 +45,13 @@ var serviceWorkerOption = {
     "./assets/audio/linn-mt.mp3",
     "./assets/audio/linn-lt.mp3",
     "./assets/audio/linn-rim.mp3",
+    "./assets/audio/hip-hop-bd-1.wav",
+    "./assets/audio/hip-hop-bd-2.wav",
+    "./assets/audio/hip-hop-sd-1.wav",
+    "./assets/audio/hip-hop-sd-2.wav",
+    "./assets/audio/hip-hop-ch-1.wav",
+    "./assets/audio/hip-hop-ch-2.wav",
+    "./assets/audio/hip-hop-oh.wav",
     "./assets/images/simplegray.png",
     "./assets/images/github.svg",
     "./assets/js/bundle.js"
