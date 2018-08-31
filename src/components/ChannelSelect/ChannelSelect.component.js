@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 import { Box } from '../design-system';
-import sampleOptions from '../../samples.config';
+import sampleOptions, { getSampleSelectOptions } from '../../samples.config';
 import theme from '../../styles/theme';
 
 export const ChannelSelectComponent = ({ onSelectSample, channel }) => {
@@ -15,7 +15,7 @@ export const ChannelSelectComponent = ({ onSelectSample, channel }) => {
     <Box flex="1 1 auto" pr={2}>
       <Select
         aria-label="Select Channel"
-        options={options}
+        options={getSampleSelectOptions()}
         onChange={onSelectSample}
         value={currentOption}
         styles={{
@@ -32,7 +32,13 @@ export const ChannelSelectComponent = ({ onSelectSample, channel }) => {
           }),
           menu: styles => ({
             ...styles,
+            fontSize: '0.8rem',
             width: '16rem',
+          }),
+          option: styles => ({
+            ...styles,
+            paddingTop: '0.2em',
+            paddingBottom: '0.2em',
           }),
         }}
       />

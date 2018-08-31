@@ -1,4 +1,4 @@
-export default [
+const sampleOptions = [
   {
     name: '707 Bass',
     url: require('./assets/drums/707/707-bd.wav'),
@@ -107,4 +107,76 @@ export default [
     name: 'Acetone Percussion (High)',
     url: require('./assets/drums/acetone/acetone-perc-2.wav'),
   },
+  {
+    name: 'LinnDrum Bass',
+    url: require('./assets/drums/linndrum/linn-bd.mp3'),
+  },
+  {
+    name: 'LinnDrum Snare',
+    url: require('./assets/drums/linndrum/linn-sd.mp3'),
+  },
+  {
+    name: 'LinnDrum Hi-hat Closed',
+    url: require('./assets/drums/linndrum/linn-ch.mp3'),
+  },
+  {
+    name: 'LinnDrum Hi-hat Pressed',
+    url: require('./assets/drums/linndrum/linn-ph.mp3'),
+  },
+  {
+    name: 'LinnDrum Clap',
+    url: require('./assets/drums/linndrum/linn-clap.mp3'),
+  },
+  {
+    name: 'LinnDrum Tambourine',
+    url: require('./assets/drums/linndrum/linn-tamb.mp3'),
+  },
+  {
+    name: 'LinnDrum Cowbell',
+    url: require('./assets/drums/linndrum/linn-cowbell.mp3'),
+  },
+  {
+    name: 'LinnDrum High Tom',
+    url: require('./assets/drums/linndrum/linn-ht.mp3'),
+  },
+  {
+    name: 'LinnDrum Mid Tom',
+    url: require('./assets/drums/linndrum/linn-mt.mp3'),
+  },
+  {
+    name: 'LinnDrum Low Tom',
+    url: require('./assets/drums/linndrum/linn-lt.mp3'),
+  },
+  {
+    name: 'LinnDrum Rimshot',
+    url: require('./assets/drums/linndrum/linn-rim.mp3'),
+  },
 ];
+
+export default sampleOptions;
+
+export const getSampleSelectOptions = () => {
+  const allOptions = sampleOptions.map(sampleOption => ({
+    value: sampleOption.url,
+    label: sampleOption.name,
+  }));
+  const groupedOptions = [
+    {
+      label: 'Roland 707',
+      options: allOptions.filter(item => item.label.includes('707')),
+    },
+    {
+      label: 'Roland 808',
+      options: allOptions.filter(item => item.label.includes('808')),
+    },
+    {
+      label: 'Ace Tone Rhythm Ace',
+      options: allOptions.filter(item => item.label.includes('Acetone')),
+    },
+    {
+      label: 'Linn LinnDrum',
+      options: allOptions.filter(item => item.label.includes('LinnDrum')),
+    },
+  ];
+  return groupedOptions;
+};
