@@ -3,6 +3,15 @@ export default {
   bpm: 98,
   channels: [
     {
+      id: 'e75658e5-e17b-47dd-b8ca-4d03b06068d9',
+      sample: {
+        name: 'Hip Hop Bass 1',
+        url: 'assets/audio/hip-hop-bd-1.wav'
+      },
+      gain: 1,
+      sampleLoaded: true
+    },
+    {
       id: 'empty_channel',
       sample: {
         name: 'Hip Hop Bass 2',
@@ -18,6 +27,15 @@ export default {
         url: 'assets/audio/hip-hop-sd-1.wav'
       },
       gain: 1,
+      sampleLoaded: true
+    },
+    {
+      id: '6182dd6e-188c-4157-9b97-86d904f446d5',
+      sample: {
+        name: 'Hip Hop Snare 2',
+        url: 'assets/audio/hip-hop-sd-2.wav'
+      },
+      gain: 0.6,
       sampleLoaded: true
     },
     {
@@ -39,15 +57,6 @@ export default {
       sampleLoaded: true
     },
     {
-      id: '6182dd6e-188c-4157-9b97-86d904f446d5',
-      sample: {
-        name: 'Hip Hop Snare 2',
-        url: 'assets/audio/hip-hop-sd-2.wav'
-      },
-      gain: 0.6,
-      sampleLoaded: true
-    },
-    {
       id: '26feb931-cfb9-4a93-a0ab-6f9ca189bb40',
       sample: {
         name: 'Hip Hop Hi-hat Open',
@@ -56,15 +65,6 @@ export default {
       gain: 0.33,
       sampleLoaded: true
     },
-    {
-      id: 'e75658e5-e17b-47dd-b8ca-4d03b06068d9',
-      sample: {
-        name: 'Hip Hop Bass 1',
-        url: 'assets/audio/hip-hop-bd-1.wav'
-      },
-      gain: 1,
-      sampleLoaded: true
-    }
   ],
   notes: {
     empty_channel: [
