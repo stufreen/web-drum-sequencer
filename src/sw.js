@@ -32,7 +32,7 @@ const fetchAndCache = (event) => {
 // Try to fetch first, and fall back to cache
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    fetchAndCache(event.request)
+    fetchAndCache(event)
       .catch(() => caches.match(event.request)),
   );
 });
