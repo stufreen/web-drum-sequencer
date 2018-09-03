@@ -6,7 +6,7 @@
   "scripts": {
     "install": "napa g200kg/webaudio-controls",
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "rm -rf dist && webpack --config webpack.prod.js",
     "lint": "eslint src",
     "test": "jest",
     "gh-pages": "git subtree push --prefix dist origin gh-pages"
