@@ -6,7 +6,7 @@ export default {
       id: 'empty_channel',
       sample: {
         name: '707 Bass',
-        url: 'assets/audio/707-bd.wav',
+        url: 'assets/audio/707-bd.mp3',
       },
       gain: 1,
       sampleLoaded: true,
@@ -15,7 +15,7 @@ export default {
       id: '19a36a53-a907-41f2-baef-394f0fbf0403',
       sample: {
         name: '707 Snare (high)',
-        url: 'assets/audio/707-sd-high.wav',
+        url: 'assets/audio/707-sd-high.mp3',
       },
       gain: 1,
       sampleLoaded: true,
@@ -24,7 +24,7 @@ export default {
       id: 'ca0d0d5f-61af-45a4-8d36-8648d20e3132',
       sample: {
         name: '707 Hi-hat Closed',
-        url: 'assets/audio/707-ch.wav',
+        url: 'assets/audio/707-ch.mp3',
       },
       gain: 0.19,
       sampleLoaded: true,
@@ -33,7 +33,7 @@ export default {
       id: '69aa5d1a-085a-4083-93c5-b3aa7a334278',
       sample: {
         name: '707 Hi-hat Open',
-        url: 'assets/audio/707-oh.wav',
+        url: 'assets/audio/707-oh.mp3',
       },
       gain: 0.32,
       sampleLoaded: true,
@@ -42,7 +42,7 @@ export default {
       id: '5a2f4293-159f-46e9-a9de-52eaeb326483',
       sample: {
         name: '707 Clap',
-        url: 'assets/audio/707-clap.wav',
+        url: 'assets/audio/707-clap.mp3',
       },
       gain: 0.75,
       sampleLoaded: true,
@@ -51,7 +51,7 @@ export default {
       id: '1449a5d5-79ea-4332-83e0-d5513a82d16f',
       sample: {
         name: '707 Tambourine',
-        url: 'assets/audio/707-tamb.wav',
+        url: 'assets/audio/707-tamb.mp3',
       },
       gain: 0.37,
       sampleLoaded: true,

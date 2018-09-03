@@ -1,9 +1,0 @@
-{
-  "name": "Wed Drum Sequencer",
-  "short_name": "WDS",
-  "orientation": "portrait",
-  "display": "standalone",
-  "start_url": ".",
-  "background_color": "#29292D",
-  "crossorigin": "use-credentials"
-}
