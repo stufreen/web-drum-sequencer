@@ -9,7 +9,6 @@ export default {
         url: 'assets/audio/hip-hop-bd-1.mp3',
       },
       gain: 1,
-      sampleLoaded: true,
     },
     {
       id: 'empty_channel',
@@ -18,7 +17,6 @@ export default {
         url: 'assets/audio/hip-hop-bd-2.mp3',
       },
       gain: 1,
-      sampleLoaded: true,
     },
     {
       id: '8c754c56-6cdc-479a-95b2-890ce93856c2',
@@ -27,7 +25,6 @@ export default {
         url: 'assets/audio/hip-hop-sd-1.mp3',
       },
       gain: 1,
-      sampleLoaded: true,
     },
     {
       id: '6182dd6e-188c-4157-9b97-86d904f446d5',
@@ -36,7 +33,6 @@ export default {
         url: 'assets/audio/hip-hop-sd-2.mp3',
       },
       gain: 0.6,
-      sampleLoaded: true,
     },
     {
       id: '5c34f5d0-6605-471b-95f1-eea186f332ea',
@@ -45,7 +41,6 @@ export default {
         url: 'assets/audio/hip-hop-ch-1.mp3',
       },
       gain: 1,
-      sampleLoaded: true,
     },
     {
       id: '3a8d1712-d85b-4a1c-b812-4e16da1f3731',
@@ -54,7 +49,6 @@ export default {
         url: 'assets/audio/hip-hop-ch-2.mp3',
       },
       gain: 0.46,
-      sampleLoaded: true,
     },
     {
       id: '26feb931-cfb9-4a93-a0ab-6f9ca189bb40',
@@ -63,7 +57,6 @@ export default {
         url: 'assets/audio/hip-hop-oh.mp3',
       },
       gain: 0.33,
-      sampleLoaded: true,
     },
   ],
   notes: {

@@ -1,105 +1,94 @@
 export default {
-  name: 'Linn LinnDrum',
+  name: 'LDrum',
   bpm: 124,
   channels: [
     {
       id: 'empty_channel',
       sample: {
-        name: 'LinnDrum Bass',
+        name: 'LDrum Bass',
         url: 'assets/audio/linn-bd.mp3',
       },
       gain: 1,
-      sampleLoaded: true,
     },
     {
       id: 'eca3906c-9577-4a38-a025-87f6c7b8fa88',
       sample: {
-        name: 'LinnDrum Snare',
+        name: 'LDrum Snare',
         url: 'assets/audio/linn-sd.mp3',
       },
       gain: 0.65,
-      sampleLoaded: true,
     },
     {
       id: 'c068fa91-9977-4fb1-9f41-ec3fe8473cea',
       sample: {
-        name: 'LinnDrum Hi-hat Closed',
+        name: 'LDrum Hi-hat Closed',
         url: 'assets/audio/linn-ch.mp3',
       },
       gain: 0.1,
-      sampleLoaded: true,
     },
     {
       id: '4ed97fa7-8798-4cf6-8c7b-0e42c76f1612',
       sample: {
-        name: 'LinnDrum Hi-hat Pressed',
+        name: 'LDrum Hi-hat Pressed',
         url: 'assets/audio/linn-ph.mp3',
       },
       gain: 0.15,
-      sampleLoaded: true,
     },
     {
       id: '7ac094ef-282c-4d9d-8d7c-390118dd925a',
       sample: {
-        name: 'LinnDrum High Tom',
+        name: 'LDrum High Tom',
         url: 'assets/audio/linn-ht.mp3',
       },
       gain: 0.26,
-      sampleLoaded: true,
     },
     {
       id: '046c982a-2576-453d-b021-963c6d3076ee',
       sample: {
-        name: 'LinnDrum Mid Tom',
+        name: 'LDrum Mid Tom',
         url: 'assets/audio/linn-mt.mp3',
       },
       gain: 0.27,
-      sampleLoaded: true,
     },
     {
       id: '12a11640-05d9-4a1e-88ff-c4c7525385b1',
       sample: {
-        name: 'LinnDrum Low Tom',
+        name: 'LDrum Low Tom',
         url: 'assets/audio/linn-lt.mp3',
       },
       gain: 0.35,
-      sampleLoaded: true,
     },
     {
       id: 'e72fec64-9e3d-4848-81ee-c35643a70624',
       sample: {
-        name: 'LinnDrum Cowbell',
+        name: 'LDrum Cowbell',
         url: 'assets/audio/linn-cowbell.mp3',
       },
       gain: 0.24,
-      sampleLoaded: true,
     },
     {
       id: '06126c09-a20b-4cf4-8c05-a812d3ebc7c8',
       sample: {
-        name: 'LinnDrum Clap',
+        name: 'LDrum Clap',
         url: 'assets/audio/linn-clap.mp3',
       },
       gain: 0.44,
-      sampleLoaded: true,
     },
     {
       id: 'c4b37dfa-8f2f-491b-942a-b271b7b24c71',
       sample: {
-        name: 'LinnDrum Rimshot',
+        name: 'LDrum Rimshot',
         url: 'assets/audio/linn-rim.mp3',
       },
       gain: 0.43,
-      sampleLoaded: true,
     },
     {
       id: '3bd51432-6e07-4ec5-93b0-04eef8be49f6',
       sample: {
-        name: 'LinnDrum Tambourine',
+        name: 'LDrum Tambourine',
         url: 'assets/audio/linn-tamb.mp3',
       },
       gain: 0.28,
-      sampleLoaded: true,
     },
   ],
   notes: {

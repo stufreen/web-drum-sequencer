@@ -80,75 +80,75 @@ const sampleOptions = [
     url: require('./assets/drums/808/808-lt.mp3'),
   },
   {
-    name: 'Acetone Bass',
+    name: 'Ace Bass',
     url: require('./assets/drums/acetone/acetone-bd.mp3'),
   },
   {
-    name: 'Acetone Snare (Short)',
+    name: 'Ace Snare (Short)',
     url: require('./assets/drums/acetone/acetone-sd-1.mp3'),
   },
   {
-    name: 'Acetone Snare (Long)',
+    name: 'Ace Snare (Long)',
     url: require('./assets/drums/acetone/acetone-sd-2.mp3'),
   },
   {
-    name: 'Acetone Hi-hat Closed',
+    name: 'Ace Hi-hat Closed',
     url: require('./assets/drums/acetone/acetone-ch.mp3'),
   },
   {
-    name: 'Acetone Hi-hat Open',
+    name: 'Ace Hi-hat Open',
     url: require('./assets/drums/acetone/acetone-oh.mp3'),
   },
   {
-    name: 'Acetone Percussion (Low)',
+    name: 'Ace Percussion (Low)',
     url: require('./assets/drums/acetone/acetone-perc-1.mp3'),
   },
   {
-    name: 'Acetone Percussion (High)',
+    name: 'Ace Percussion (High)',
     url: require('./assets/drums/acetone/acetone-perc-2.mp3'),
   },
   {
-    name: 'LinnDrum Bass',
+    name: 'LDrum Bass',
     url: require('./assets/drums/linndrum/linn-bd.mp3'),
   },
   {
-    name: 'LinnDrum Snare',
+    name: 'LDrum Snare',
     url: require('./assets/drums/linndrum/linn-sd.mp3'),
   },
   {
-    name: 'LinnDrum Hi-hat Closed',
+    name: 'LDrum Hi-hat Closed',
     url: require('./assets/drums/linndrum/linn-ch.mp3'),
   },
   {
-    name: 'LinnDrum Hi-hat Pressed',
+    name: 'LDrum Hi-hat Pressed',
     url: require('./assets/drums/linndrum/linn-ph.mp3'),
   },
   {
-    name: 'LinnDrum Clap',
+    name: 'LDrum Clap',
     url: require('./assets/drums/linndrum/linn-clap.mp3'),
   },
   {
-    name: 'LinnDrum Tambourine',
+    name: 'LDrum Tambourine',
     url: require('./assets/drums/linndrum/linn-tamb.mp3'),
   },
   {
-    name: 'LinnDrum Cowbell',
+    name: 'LDrum Cowbell',
     url: require('./assets/drums/linndrum/linn-cowbell.mp3'),
   },
   {
-    name: 'LinnDrum High Tom',
+    name: 'LDrum High Tom',
     url: require('./assets/drums/linndrum/linn-ht.mp3'),
   },
   {
-    name: 'LinnDrum Mid Tom',
+    name: 'LDrum Mid Tom',
     url: require('./assets/drums/linndrum/linn-mt.mp3'),
   },
   {
-    name: 'LinnDrum Low Tom',
+    name: 'LDrum Low Tom',
     url: require('./assets/drums/linndrum/linn-lt.mp3'),
   },
   {
-    name: 'LinnDrum Rimshot',
+    name: 'LDrum Rimshot',
     url: require('./assets/drums/linndrum/linn-rim.mp3'),
   },
   {
@@ -190,20 +190,20 @@ export const getSampleSelectOptions = () => {
   }));
   const groupedOptions = [
     {
-      label: 'Roland 707',
+      label: '707',
       options: allOptions.filter(item => item.label.includes('707')),
     },
     {
-      label: 'Roland 808',
+      label: '808',
       options: allOptions.filter(item => item.label.includes('808')),
     },
     {
-      label: 'Ace Tone Rhythm Ace',
-      options: allOptions.filter(item => item.label.includes('Acetone')),
+      label: 'Ace',
+      options: allOptions.filter(item => item.label.includes('Ace')),
     },
     {
-      label: 'Linn LinnDrum',
-      options: allOptions.filter(item => item.label.includes('LinnDrum')),
+      label: 'LDrum',
+      options: allOptions.filter(item => item.label.includes('LDrum')),
     },
     {
       label: 'Hip-hop',

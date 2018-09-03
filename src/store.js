@@ -10,7 +10,7 @@ const migrations = {
 
 export const configureStore = (callback) => {
   const persistConfig = {
-    key: 'root-v0.1.0',
+    key: 'root-v0.1.1',
     storage,
     version: 1,
     blacklist: ['playbackSession', 'window'],

@@ -1,5 +1,5 @@
 export default {
-  name: 'Roland TR-707',
+  name: '707',
   bpm: 133,
   channels: [
     {
@@ -9,7 +9,6 @@ export default {
         url: 'assets/audio/707-bd.mp3',
       },
       gain: 1,
-      sampleLoaded: true,
     },
     {
       id: '19a36a53-a907-41f2-baef-394f0fbf0403',
@@ -18,7 +17,6 @@ export default {
         url: 'assets/audio/707-sd-high.mp3',
       },
       gain: 1,
-      sampleLoaded: true,
     },
     {
       id: 'ca0d0d5f-61af-45a4-8d36-8648d20e3132',
@@ -27,7 +25,6 @@ export default {
         url: 'assets/audio/707-ch.mp3',
       },
       gain: 0.19,
-      sampleLoaded: true,
     },
     {
       id: '69aa5d1a-085a-4083-93c5-b3aa7a334278',
@@ -36,7 +33,6 @@ export default {
         url: 'assets/audio/707-oh.mp3',
       },
       gain: 0.32,
-      sampleLoaded: true,
     },
     {
       id: '5a2f4293-159f-46e9-a9de-52eaeb326483',
@@ -45,7 +41,6 @@ export default {
         url: 'assets/audio/707-clap.mp3',
       },
       gain: 0.75,
-      sampleLoaded: true,
     },
     {
       id: '1449a5d5-79ea-4332-83e0-d5513a82d16f',
@@ -54,7 +49,6 @@ export default {
         url: 'assets/audio/707-tamb.mp3',
       },
       gain: 0.37,
-      sampleLoaded: true,
     },
   ],
   notes: {

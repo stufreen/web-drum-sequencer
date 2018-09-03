@@ -1,6 +1,7 @@
 import empty from './empty';
 import hipHop from './hip-hop';
-import linnDrum from './linn-drum';
-import roland707 from './roland-707';
+import lDrum from './ldrum';
+import sevenohseven from './707';
+import ace from './ace';
 
-export default [empty, roland707, linnDrum, hipHop];
+export default [empty, sevenohseven, ace, lDrum, hipHop];
