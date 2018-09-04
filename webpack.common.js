@@ -71,10 +71,11 @@ module.exports = {
     }),
     new WebpackPwaManifest({
       name: 'Wed Drum Sequencer',
-      short_name: 'WDS',
+      short_name: 'WDS-1',
       background_color: '#202429',
       crossorigin: 'use-credentials',
       theme_color: '#000000',
+      display: 'standalone',
       icons: [
         {
           src: path.resolve('src/assets/images/icon.png'),
