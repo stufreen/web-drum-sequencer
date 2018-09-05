@@ -13,6 +13,7 @@ const Text = styled.span`
   ${ss.height}
   ${ss.zIndex}
   ${ss.borderRadius}
+  ${ss.textAlign}
   display: block;
 `;
 

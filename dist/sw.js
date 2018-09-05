@@ -27,19 +27,19 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x920.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-320x460.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x1096.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-768x1004.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-748x1024.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-768x1004.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-750x1294.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1182x2208.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1242x2148.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1496x2048.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1182x2208.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1536x2008.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_60x60.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1496x2048.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_128x128.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_60x60.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.json",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.webapp",
-    "./iconstats-42aced8d2d41667762d7.json",
+    "./iconstats-a99150c776a43ddb197c.json",
     "./assets/fonts/33a7a7c3caf1424a788ad1a74046845f.woff2",
     "./assets/fonts/86cade2f761700598f5f2c260193cb09.woff",
     "./assets/fonts/8612f086e8406b4b304caa7cac52a0a7.woff2",
@@ -93,7 +93,7 @@ var serviceWorkerOption = {
     "./assets/audio/hip-hop-oh.mp3",
     "./assets/images/simplegray.png",
     "./assets/images/github.svg",
-    "./assets/js/bundle-719912a830f60f887e75.js"
+    "./assets/js/bundle-0476bf736eea33e49779.js"
   ]
 };
         
