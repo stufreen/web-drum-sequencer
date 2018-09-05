@@ -23,6 +23,7 @@ export const LabelBox = ({ label, children }) => (
       pl={1}
       pr={1}
       letterSpacing="0.1em"
+      borderRadius="3px"
     >
       {label}
     </Text>

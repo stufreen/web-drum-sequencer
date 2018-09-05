@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Select from 'react-select';
 import * as R from 'ramda';
 import theme from '../../styles/theme';
-import { Box } from '../design-system';
+import { Box, Text } from '../design-system';
 import { SavePresetModal } from '../SavePresetModal';
 
 export const PresetSelectorComponent = ({
@@ -66,7 +66,23 @@ export const PresetSelectorComponent = ({
   }
 
   return (
-    <Box height="100%">
+    <Box height="100%" position="relative">
+      <Text
+        position="absolute"
+        left="0.5rem"
+        top="-0.6em"
+        color="gray"
+        fontSize="0.6rem"
+        fontWeight="600"
+        bg="nearBlack"
+        pl={1}
+        pr={1}
+        letterSpacing="0.1em"
+        zIndex={1}
+        borderRadius="3px"
+      >
+        PRESETS
+      </Text>
       <Select
         isEdited={isEdited}
         options={groupedOptions}
