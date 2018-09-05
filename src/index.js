@@ -30,9 +30,15 @@ window.addEventListener('online', () => {
   });
 });
 
+// Register service worker
 if (process.env.__PROD__ && 'serviceWorker' in navigator) { // eslint-disable-line
   runtime.register();
 }
+
+// Prompt user to install PWA
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.prompt();
+});
 
 ReactDOM.render(
   <Provider store={store}>

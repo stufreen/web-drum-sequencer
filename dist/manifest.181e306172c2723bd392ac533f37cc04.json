@@ -32,7 +32,7 @@
     }
   ],
   "name": "Wed Drum Sequencer",
-  "short_name": "WDS",
+  "short_name": "WDS-1",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": ".",
