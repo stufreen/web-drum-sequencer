@@ -3,7 +3,7 @@ import presets from '../../presets';
 import { EMPTY_NOTE_ROW } from '../../presets/empty';
 import { NOTES_CONSTANTS } from './notes.constants';
 
-export const notesInitialState = presets[0].notes;
+export const notesInitialState = presets[2].notes;
 
 // Returns a new noteAr clone with a note at beat either added or removed
 const toggleNote = (noteAr, beat) => {

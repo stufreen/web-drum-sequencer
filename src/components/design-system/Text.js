@@ -11,6 +11,8 @@ const Text = styled.span`
   ${ss.top}
   ${ss.letterSpacing}
   ${ss.height}
+  ${ss.zIndex}
+  ${ss.borderRadius}
   display: block;
 `;
 

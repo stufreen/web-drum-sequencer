@@ -70,7 +70,7 @@ module.exports = {
       template: 'index.html',
     }),
     new WebpackPwaManifest({
-      name: 'Wed Drum Sequencer',
+      name: 'WDS-1: Wed Drum Sequencer',
       short_name: 'WDS-1',
       background_color: '#202429',
       crossorigin: 'use-credentials',
