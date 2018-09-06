@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const SocialTags = require('social-tags-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -84,5 +85,25 @@ module.exports = {
       ],
     }),
     new FaviconsWebpackPlugin(path.resolve('src/assets/images/icon.png')),
+    new SocialTags({
+      appUrl: 'https://stufreen.github.io/web-drum-sequencer',
+      facebook: {
+        'og:url': 'https://stufreen.github.io/web-drum-sequencer',
+        'og:type': 'website',
+        'og:title': 'WDS-1: Web Drum Sequencer',
+        'og:image': './src/assets/images/wds-1-screen.png',
+        'og:description': 'Browser-based drum machine and sequencer for crafting beats on the go. You can save your creations and work offline.',
+        'og:locale': 'en_US',
+        'og:article:author': 'Stu Freen',
+      },
+      twitter: {
+        'twitter:card': 'summary',
+        'twitter:creator': '@stafree',
+        'twitter:url': 'https://stufreen.github.io/web-drum-sequencer',
+        'twitter:title': 'WDS-1: Web Drum Sequencer',
+        'twitter:description': 'Browser-based drum machine and sequencer for crafting beats on the go. You can save your creations and work offline.',
+        'twitter:image': './src/assets/images/wds-1-screen.png',
+      },
+    }),
   ],
 };
