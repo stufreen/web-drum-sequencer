@@ -3,7 +3,7 @@ import { CHANNELS_CONSTANTS } from './channels.constants';
 import samples from '../../samples.config';
 import presets from '../../presets';
 
-export const channelsInitialState = R.clone(presets[2].channels);
+export const channelsInitialState = R.clone(presets[1].channels);
 
 export const channelsReducer = (state = channelsInitialState, action) => {
   switch (action.type) {

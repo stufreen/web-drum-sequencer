@@ -2,12 +2,12 @@ var serviceWorkerOption = {
   "assets": [
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-36x36.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-48x48.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-72x72.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-96x96.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-144x144.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-192x192.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-256x256.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-384x384.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-72x72.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-96x96.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-57x57.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-60x60.png",
@@ -24,8 +24,8 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-16x16.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-32x32.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon.ico",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x920.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-320x460.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x920.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x1096.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-748x1024.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-768x1004.png",
@@ -39,7 +39,7 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.json",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.webapp",
-    "./iconstats-a99150c776a43ddb197c.json",
+    "./iconstats-0246518fcf1f9fe8fd5e.json",
     "./assets/fonts/33a7a7c3caf1424a788ad1a74046845f.woff2",
     "./assets/fonts/86cade2f761700598f5f2c260193cb09.woff",
     "./assets/fonts/8612f086e8406b4b304caa7cac52a0a7.woff2",
@@ -93,7 +93,7 @@ var serviceWorkerOption = {
     "./assets/audio/hip-hop-oh.mp3",
     "./assets/images/simplegray.png",
     "./assets/images/github.svg",
-    "./assets/js/bundle-0476bf736eea33e49779.js"
+    "./assets/js/bundle-ba3e2314f05b774f4d60.js"
   ]
 };
         

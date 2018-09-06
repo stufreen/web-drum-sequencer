@@ -3,7 +3,7 @@ import defaultPresets from '../../presets';
 
 export const presetsInitialState = {
   userPresets: [],
-  preset: defaultPresets[2].name,
+  preset: defaultPresets[1].name,
 };
 
 export const presetsReducer = (state = presetsInitialState, action) => {
