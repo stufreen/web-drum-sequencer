@@ -29,10 +29,11 @@ export const getCurrentBeat = (bpm, startTime, currentTime) => {
   return (currentBeat % 4) + 1;
 };
 
-export const playNote = (noteTime, buffer, channelID) => {
+export const playNote = (noteTime, buffer, channelID, notePitch = 0) => {
   // Set up the AudioBufferSourceNode
   const source = audioCtx.createBufferSource();
   source.buffer = buffer;
+  source.detune.value = notePitch;
 
   // Route to channel gain node
   source.connect(channelGainNodes[channelID]);

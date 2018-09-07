@@ -16,7 +16,7 @@ export class Knob extends React.Component {
   }
 
   render() {
-    const { size, value } = this.props;
+    const { size, value, ...rest } = this.props;
     return (
       <webaudio-knob
         ref={(element) => { this.knob = element; }}
@@ -27,6 +27,7 @@ export class Knob extends React.Component {
         width={size}
         height={size}
         value={value}
+        {...rest}
       />
     );
   }

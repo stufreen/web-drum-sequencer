@@ -5,6 +5,8 @@ import {
   addChannel,
   removeChannel,
   replaceChannels,
+  setChannelPitchCoarse,
+  setChannelPitchFine,
 } from './channels.actions';
 
 jest.mock('../../presets');
@@ -31,6 +33,27 @@ describe('setChannelGain', () => {
     expect(state[0].gain).toEqual(0.5);
   });
 });
+
+describe('setChannelPitchCoarse', () => {
+  test('should change pitch (coarse) for a channel', () => {
+    const state = channelsReducer(
+      channelsInitialState,
+      setChannelPitchCoarse(channelsInitialState[0].id, 5),
+    );
+    expect(state[0].pitchCoarse).toEqual(5);
+  });
+});
+
+describe('setChannelPitchFine', () => {
+  test('should change pitch (fine) for a channel', () => {
+    const state = channelsReducer(
+      channelsInitialState,
+      setChannelPitchFine(channelsInitialState[0].id, -50),
+    );
+    expect(state[0].pitchFine).toEqual(-50);
+  });
+});
+
 
 describe('addChannel', () => {
   test('should add a channel', () => {

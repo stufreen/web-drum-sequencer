@@ -12,6 +12,22 @@ export const setChannelGain = (channel, gain) => ({
   },
 });
 
+export const setChannelPitchCoarse = (channel, pitchCoarse) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_PITCH_COARSE,
+  payload: {
+    channel,
+    pitchCoarse,
+  },
+});
+
+export const setChannelPitchFine = (channel, pitchFine) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_PITCH_FINE,
+  payload: {
+    channel,
+    pitchFine,
+  },
+});
+
 export const addChannel = channel => ({
   type: CHANNELS_CONSTANTS.ADD_CHANNEL,
   payload: channel,
@@ -63,6 +79,8 @@ export const newChannel = () => (dispatch) => {
     id: uuid(),
     sample: samples[0],
     gain: 1,
+    pitchCoarse: 0,
+    pitchFine: 0,
   };
   dispatch(addChannel(channelToAdd));
   dispatch(initializeChannelNotes(channelToAdd.id));

@@ -1,8 +1,9 @@
 import { MASTER_CONSTANTS } from './master.constants';
+import presets from '../../presets';
 
 export const masterInitialState = {
   pattern: 0,
-  selectedChannel: null,
+  selectedChannel: presets[1].channels[0].id,
 };
 
 export const masterReducer = (state = masterInitialState, action) => {

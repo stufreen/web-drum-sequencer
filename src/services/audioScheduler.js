@@ -5,15 +5,22 @@ import { sampleStore } from './sampleStore';
 // schedule is a lookup table of all the notes currently scheduled to be played
 const schedule = {};
 
+export const pitchToCents = ({ pitchCoarse = 0, pitchFine = 0 }) => Math.round(
+  pitchCoarse * 100 + pitchFine,
+);
+
 export const playNoteNow = (noteChannel) => {
   const sampleID = noteChannel.sample.url;
-  playNote(null, sampleStore[sampleID], noteChannel.id);
+  const pitch = pitchToCents(noteChannel);
+  playNote(null, sampleStore[sampleID], noteChannel.id, pitch);
 };
 
 export const scheduleNote = (noteID, noteTime, noteChannel) => {
   if (typeof schedule[noteID] === 'undefined') {
+    console.log(noteChannel);
     const sampleID = noteChannel.sample.url;
-    schedule[noteID] = playNote(noteTime, sampleStore[sampleID], noteChannel.id);
+    const pitch = pitchToCents(noteChannel);
+    schedule[noteID] = playNote(noteTime, sampleStore[sampleID], noteChannel.id, pitch);
   }
 };
 
