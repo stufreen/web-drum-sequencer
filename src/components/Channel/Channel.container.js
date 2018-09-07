@@ -2,12 +2,18 @@ import { connect } from 'react-redux';
 import { compose, withHandlers } from 'recompose';
 import { ChannelComponent } from './Channel.component';
 import { channelSelectors } from './Channel.selectors';
-import { loadAndSetChannelSample, setChannelGain, removeChannel } from '../../common';
+import {
+  loadAndSetChannelSample,
+  setChannelGain,
+  removeChannel,
+  setSelectedChannel,
+} from '../../common';
 
 const mapDispatchToProps = {
   loadAndSetChannelSample,
   setChannelGain,
   removeChannel,
+  setSelectedChannel,
 };
 
 const handlers = withHandlers({

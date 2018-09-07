@@ -7,6 +7,7 @@ import {
   Line,
   ChannelList,
   ChannelHeader,
+  ChannelControls,
   MasterControls,
   Logo,
   GithubLink,
@@ -28,6 +29,8 @@ const App = () => (
       </header>
       <main>
         <MasterControls />
+        <Line bg="lightGray" mb={4} mt={4} />
+        <ChannelControls />
         <ChannelHeader />
         <ChannelList />
       </main>
