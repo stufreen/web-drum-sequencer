@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { playNoteNow } from '../../services/audioScheduler';
 import { HoverButton } from '../design-system';
 
-export const HitButton = ({ channel, setSelectedChannel }) => (
+export const HitButton = ({ channel, onMouseDown }) => (
   <HoverButton
     height={30}
     width={30}
@@ -12,10 +11,7 @@ export const HitButton = ({ channel, setSelectedChannel }) => (
     transitionSpeed="0.1s"
     ml={2}
     p={0}
-    onMouseDown={() => {
-      playNoteNow(channel);
-      setSelectedChannel(channel.id);
-    }}
+    onMouseDown={onMouseDown}
     aria-label={`Play ${channel.sample.name}`}
   />
 );
@@ -25,5 +21,5 @@ HitButton.propTypes = {
     sample: PropTypes.object.isRequired,
     gain: PropTypes.number.isRequired,
   }).isRequired,
-  setSelectedChannel: PropTypes.func.isRequired,
+  onMouseDown: PropTypes.func.isRequired,
 };

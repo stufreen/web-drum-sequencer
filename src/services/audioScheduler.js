@@ -17,7 +17,6 @@ export const playNoteNow = (noteChannel) => {
 
 export const scheduleNote = (noteID, noteTime, noteChannel) => {
   if (typeof schedule[noteID] === 'undefined') {
-    console.log(noteChannel);
     const sampleID = noteChannel.sample.url;
     const pitch = pitchToCents(noteChannel);
     schedule[noteID] = playNote(noteTime, sampleStore[sampleID], noteChannel.id, pitch);
