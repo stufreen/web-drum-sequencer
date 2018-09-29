@@ -29,7 +29,6 @@ const App = () => (
       </header>
       <main>
         <MasterControls />
-        <Line bg="lightGray" mb={4} mt={4} />
         <ChannelControls />
         <ChannelHeader />
         <ChannelList />

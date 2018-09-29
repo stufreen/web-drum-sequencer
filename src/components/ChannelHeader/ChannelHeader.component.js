@@ -4,13 +4,10 @@ import { ChannelHeaderLabel } from './ChannelHeaderLabel.component';
 import { Marker } from '../Marker';
 
 export const ChannelHeader = () => (
-  <Box bg="black" display="flex" mt={4} mb={4} pr={40}>
+  <Box bg="black" display="flex" mt={4} mb={2} pr={40}>
     <Box width="16rem" display="flex" mr={[2, 2, 2, 3, 4]}>
       <ChannelHeaderLabel flex="1 1 auto" mr={[2]}>
         Channels
-      </ChannelHeaderLabel>
-      <ChannelHeaderLabel width={40} mr={2} centerText>
-        Vol
       </ChannelHeaderLabel>
       <ChannelHeaderLabel width={30} mr={2} centerText>
         Hit

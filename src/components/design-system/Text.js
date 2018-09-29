@@ -14,6 +14,7 @@ const Text = styled.span`
   ${ss.zIndex}
   ${ss.borderRadius}
   ${ss.textAlign}
+  ${ss.opacity}
   display: block;
 `;
 
