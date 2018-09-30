@@ -66,7 +66,7 @@ export const loadSampleStatefully = (dispatch, channel) => {
   });
 };
 
-export const loadPreset = (channels, notes) => (dispatch) => {
+export const loadChannels = (channels, notes) => (dispatch) => {
   channels.forEach((channel) => {
     loadSampleStatefully(dispatch, channel);
   });

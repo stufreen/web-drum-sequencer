@@ -1,14 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Knob } from './Knob.component';
-import { Text, Box } from './design-system';
-
-const Label = Text.extend`
-  font-size: 0.7em;
-  text-transform: uppercase;
-  color: white;
-  text-align: center;
-`;
+import { ControlLabel, Box } from './design-system';
 
 export const InfoKnob = ({
   label,
@@ -17,17 +10,17 @@ export const InfoKnob = ({
   ...rest
 }) => (
   <Box>
-    <Label fontWeight="bold" mb={1}>
+    <ControlLabel fontWeight="bold" mb={1} textAlign="center">
       {label}
-    </Label>
+    </ControlLabel>
     <Box display="flex" alignItems="baseline">
-      <Label opacity="0.5">
+      <ControlLabel opacity="0.5">
         {minLabel}
-      </Label>
+      </ControlLabel>
       <Knob size={45} {...rest} />
-      <Label opacity="0.5">
+      <ControlLabel opacity="0.5">
         {maxLabel}
-      </Label>
+      </ControlLabel>
     </Box>
   </Box>
 );
