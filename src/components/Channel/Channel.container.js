@@ -4,14 +4,14 @@ import { ChannelComponent } from './Channel.component';
 import { channelSelectors } from './Channel.selectors';
 import {
   loadAndSetChannelSample,
-  removeChannel,
+  deleteChannel,
   setSelectedChannel,
 } from '../../common';
 import { playNoteNow } from '../../services/audioScheduler';
 
 const mapDispatchToProps = {
   loadAndSetChannelSample,
-  removeChannel,
+  deleteChannel,
   setSelectedChannel,
 };
 
@@ -25,8 +25,13 @@ const handlers = withHandlers({
     sscs(channel.id);
   },
   onPressRemove: props => () => {
-    const { channel, removeChannel: rc } = props;
-    rc(channel.id);
+    const {
+      channel,
+      channels,
+      selectedChannelId,
+      deleteChannel: dc,
+    } = props;
+    dc(channel.id, channels, selectedChannelId);
   },
   onPressHitButton: props => () => {
     const { channel } = props;

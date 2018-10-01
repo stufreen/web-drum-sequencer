@@ -3,6 +3,7 @@ import { CHANNELS_CONSTANTS } from './channels.constants';
 import { setNotes, initializeChannelNotes } from '../notes';
 import { uuid } from '../../services/uuid';
 import samples from '../../samples.config';
+import { setSelectedChannel } from '../master';
 
 export const setChannelGain = (channel, gain) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNEL_GAIN,
@@ -93,6 +94,7 @@ export const newChannel = () => (dispatch) => {
   };
   dispatch(addChannel(channelToAdd));
   dispatch(initializeChannelNotes(channelToAdd.id));
+  dispatch(setSelectedChannel(channelToAdd.id));
   loadSampleStatefully(dispatch, channelToAdd);
 };
 
@@ -102,4 +104,14 @@ export const loadAndSetChannelSample = (channel, sampleURL) => (dispatch) => {
     dispatch(sampleLoaded(channel, true));
   });
   dispatch(setChannelSample(channel, sampleURL));
+};
+
+export const deleteChannel = (channelID, channels, selectedChannelId) => (dispatch) => {
+  if (channels.length === 1) {
+    dispatch(newChannel());
+  }
+  if (selectedChannelId === channelID) {
+    dispatch(setSelectedChannel(channels[0].id));
+  }
+  dispatch(removeChannel(channelID));
 };
