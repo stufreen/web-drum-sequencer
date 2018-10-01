@@ -12,6 +12,14 @@ export const setChannelGain = (channel, gain) => ({
   },
 });
 
+export const setChannelPan = (channel, pan) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_PAN,
+  payload: {
+    channel,
+    pan,
+  },
+});
+
 export const setChannelPitchCoarse = (channel, pitchCoarse) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNEL_PITCH_COARSE,
   payload: {
@@ -81,6 +89,7 @@ export const newChannel = () => (dispatch) => {
     gain: 1,
     pitchCoarse: 0,
     pitchFine: 0,
+    pan: 0,
   };
   dispatch(addChannel(channelToAdd));
   dispatch(initializeChannelNotes(channelToAdd.id));

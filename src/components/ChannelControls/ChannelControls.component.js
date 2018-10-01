@@ -17,6 +17,7 @@ const ControlCluster = Box.extend`
 export const ChannelControlsComponent = ({
   channel,
   onSetGain,
+  onSetPan,
   onSetChannelPitchCoarse,
 }) => (
   <LabelBox label="CHANNEL CONTROL">
@@ -37,8 +38,26 @@ export const ChannelControlsComponent = ({
       </Box>
     </ControlCluster>
     <ControlCluster>
+      <Box mr={4}>
+        <InfoKnob
+          label="PAN"
+          minLabel="L"
+          maxLabel="R"
+          min="-1"
+          max="1"
+          step="0.1"
+          value={channel.pan || 0}
+          onChange={onSetPan}
+        />
+      </Box>
       <Box>
-        <InfoKnob label="VOL" minLabel="0" maxLabel="1" value={channel.gain * 100} onChange={onSetGain} />
+        <InfoKnob
+          label="VOL"
+          minLabel="0"
+          maxLabel="1"
+          value={channel.gain * 100}
+          onChange={onSetGain}
+        />
       </Box>
     </ControlCluster>
   </LabelBox>
@@ -49,5 +68,6 @@ ChannelControlsComponent.propTypes = {
     id: PropTypes.string.isRequired,
   }).isRequired,
   onSetGain: PropTypes.func.isRequired,
+  onSetPan: PropTypes.func.isRequired,
   onSetChannelPitchCoarse: PropTypes.func.isRequired,
 };

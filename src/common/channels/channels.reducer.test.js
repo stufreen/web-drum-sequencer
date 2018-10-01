@@ -2,6 +2,7 @@ import { channelsInitialState, channelsReducer } from './channels.reducer';
 import {
   setChannelSample,
   setChannelGain,
+  setChannelPan,
   addChannel,
   removeChannel,
   replaceChannels,
@@ -31,6 +32,16 @@ describe('setChannelGain', () => {
       setChannelGain(channelsInitialState[0].id, 0.5),
     );
     expect(state[0].gain).toEqual(0.5);
+  });
+});
+
+describe('setChannelPan', () => {
+  test('should change pan for a channel', () => {
+    const state = channelsReducer(
+      channelsInitialState,
+      setChannelPan(channelsInitialState[0].id, 0.5),
+    );
+    expect(state[0].pan).toEqual(0.5);
   });
 });
 
