@@ -3,12 +3,37 @@ import { CHANNELS_CONSTANTS } from './channels.constants';
 import { setNotes, initializeChannelNotes } from '../notes';
 import { uuid } from '../../services/uuid';
 import samples from '../../samples.config';
+import { setSelectedChannel } from '../master';
 
 export const setChannelGain = (channel, gain) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNEL_GAIN,
   payload: {
     channel,
     gain,
+  },
+});
+
+export const setChannelPan = (channel, pan) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_PAN,
+  payload: {
+    channel,
+    pan,
+  },
+});
+
+export const setChannelPitchCoarse = (channel, pitchCoarse) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_PITCH_COARSE,
+  payload: {
+    channel,
+    pitchCoarse,
+  },
+});
+
+export const setChannelPitchFine = (channel, pitchFine) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_PITCH_FINE,
+  payload: {
+    channel,
+    pitchFine,
   },
 });
 
@@ -50,7 +75,7 @@ export const loadSampleStatefully = (dispatch, channel) => {
   });
 };
 
-export const loadPreset = (channels, notes) => (dispatch) => {
+export const loadChannels = (channels, notes) => (dispatch) => {
   channels.forEach((channel) => {
     loadSampleStatefully(dispatch, channel);
   });
@@ -63,9 +88,13 @@ export const newChannel = () => (dispatch) => {
     id: uuid(),
     sample: samples[0],
     gain: 1,
+    pitchCoarse: 0,
+    pitchFine: 0,
+    pan: 0,
   };
   dispatch(addChannel(channelToAdd));
   dispatch(initializeChannelNotes(channelToAdd.id));
+  dispatch(setSelectedChannel(channelToAdd.id));
   loadSampleStatefully(dispatch, channelToAdd);
 };
 
@@ -75,4 +104,14 @@ export const loadAndSetChannelSample = (channel, sampleURL) => (dispatch) => {
     dispatch(sampleLoaded(channel, true));
   });
   dispatch(setChannelSample(channel, sampleURL));
+};
+
+export const deleteChannel = (channelID, channels, selectedChannelId) => (dispatch) => {
+  if (channels.length === 1) {
+    dispatch(newChannel());
+  }
+  if (selectedChannelId === channelID) {
+    dispatch(setSelectedChannel(channels[0].id));
+  }
+  dispatch(removeChannel(channelID));
 };

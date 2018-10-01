@@ -11,6 +11,8 @@ export const AddChannelButtonComponent = ({ newChannel }) => (
     hoverColor="nearWhite"
     hoverBg="steel"
     transitionSpeed="0.2s"
+    ml={1}
+    mt={2}
   >
     Add Channel +
   </HoverButton>

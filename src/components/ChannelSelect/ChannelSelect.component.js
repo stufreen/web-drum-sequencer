@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
-import { Box } from '../design-system';
+import { Box, ControlLabel } from '../design-system';
 import sampleOptions, { getSampleSelectOptions } from '../../samples.config';
 import theme from '../../styles/theme';
 
@@ -12,23 +12,31 @@ export const ChannelSelectComponent = ({ onSelectSample, channel }) => {
   }));
   const currentOption = options.find(option => channel.sample.url === option.value);
   return (
-    <Box flex="1 1 auto" pr={2}>
+    <Box>
+      <ControlLabel fontWeight="bold" mb={1} ml={1} textAlign="left">
+        SAMPLE
+      </ControlLabel>
       <Select
         aria-label="Select Channel"
         options={getSampleSelectOptions()}
         onChange={onSelectSample}
         value={currentOption}
         styles={{
+          container: styles => ({
+            ...styles,
+            height: '3rem',
+          }),
           control: styles => ({
             ...styles,
-            backgroundColor: theme.colors.nearBlack,
-            border: 'none',
+            backgroundColor: 'black',
+            border: `2px solid ${theme.colors.steel}`,
+            height: '100%',
+            borderRadius: '0.5em',
           }),
           singleValue: styles => ({
             ...styles,
             color: theme.colors.nearWhite,
             opacity: channel.sampleLoaded ? 1 : 0.3,
-            fontSize: '0.85rem',
           }),
           menu: styles => ({
             ...styles,

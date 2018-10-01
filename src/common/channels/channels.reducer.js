@@ -21,6 +21,27 @@ export const channelsReducer = (state = channelsInitialState, action) => {
         }
         return channel;
       });
+    case CHANNELS_CONSTANTS.SET_CHANNEL_PAN:
+      return state.map((channel) => {
+        if (channel.id === action.payload.channel) {
+          return { ...channel, pan: action.payload.pan };
+        }
+        return channel;
+      });
+    case CHANNELS_CONSTANTS.SET_CHANNEL_PITCH_COARSE:
+      return state.map((channel) => {
+        if (channel.id === action.payload.channel) {
+          return { ...channel, pitchCoarse: action.payload.pitchCoarse };
+        }
+        return channel;
+      });
+    case CHANNELS_CONSTANTS.SET_CHANNEL_PITCH_FINE:
+      return state.map((channel) => {
+        if (channel.id === action.payload.channel) {
+          return { ...channel, pitchFine: action.payload.pitchFine };
+        }
+        return channel;
+      });
     case CHANNELS_CONSTANTS.ADD_CHANNEL:
       return [...state, action.payload];
     case CHANNELS_CONSTANTS.REMOVE_CHANNEL:

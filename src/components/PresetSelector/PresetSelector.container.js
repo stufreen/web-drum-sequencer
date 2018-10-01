@@ -4,25 +4,27 @@ import { PresetSelectorComponent } from './PresetSelector.component';
 import { presetSelectorSelectors } from './PresetSelector.selectors';
 import {
   setBPM,
-  loadPreset,
   setPreset,
   setPattern,
   savePresetAs,
   deletePreset,
   setPresetPrompt,
   savePreset,
+  loadPreset,
+  erasePreset,
 } from '../../common';
 import presets from '../../presets';
 
 const mapDispatchToProps = {
   setBPM,
-  loadPreset,
   setPreset,
   setPattern,
   savePresetAs,
   deletePreset,
   setPresetPrompt,
   savePreset,
+  loadPreset,
+  erasePreset,
 };
 
 export const PresetSelector = compose(
@@ -32,46 +34,30 @@ export const PresetSelector = compose(
   }),
   withHandlers({
     onSelectPreset: props => ({ value }) => {
-      if (value === 'SAVE_PRESET') {
-        const {
-          savePreset: connectedSavePreset,
-          currentPreset,
-          currentState,
-        } = props;
-        connectedSavePreset({
-          ...currentState,
-          name: currentPreset.name,
-        });
-      } else if (value === 'DELETE_PRESET') {
-        const {
-          setBPM: connectedSetBPM,
-          loadPreset: connectedLoadPreset,
-          setPreset: connectedSetPreset,
-          setPattern: connectedSetPattern,
-          deletePreset: connectedDeletePreset,
-          currentPreset,
-        } = props;
-        connectedSetBPM(presets[0].bpm);
-        connectedLoadPreset(presets[0].channels, presets[0].notes);
-        connectedSetPreset(presets[0].name);
-        connectedSetPattern(0);
-        connectedDeletePreset(currentPreset.name);
-      } else if (value === 'SAVE_PRESET_AS') {
-        const {
-          setPresetPrompt: connectedSetPresetPrompt,
-        } = props;
-        connectedSetPresetPrompt(true);
-      } else {
-        const {
-          setBPM: connectedSetBPM,
-          loadPreset: connectedLoadPreset,
-          setPreset: connectedSetPreset,
-          setPattern: connectedSetPattern,
-        } = props;
-        connectedSetBPM(value.bpm);
-        connectedLoadPreset(value.channels, value.notes);
-        connectedSetPreset(value.name);
-        connectedSetPattern(0);
+      const {
+        savePreset: connectedSavePreset,
+        setPresetPrompt: connectedSetPresetPrompt,
+        erasePreset: connectedErasePreset,
+        loadPreset: connectedLoadPreset,
+        currentPreset,
+        currentState,
+      } = props;
+      switch (value) {
+        case 'SAVE_PRESET':
+          connectedSavePreset({
+            ...currentState,
+            name: currentPreset.name,
+          });
+          break;
+        case 'DELETE_PRESET':
+          connectedErasePreset(currentPreset.name);
+          break;
+        case 'SAVE_PRESET_AS':
+          connectedSetPresetPrompt(true);
+          break;
+        default:
+          connectedLoadPreset(value);
+          break;
       }
     },
   }),
