@@ -10,7 +10,7 @@ https://stufreen.github.io/web-drum-sequencer
  * Swap drum samples
  * Pattern selector to save up to 8 patterns per drum kit
  * BPM control
- * Gain control and hit button for each channel
+ * Gain and pitch control and hit button for each channel
  * Preset system for saving and loading drum kits
  * Works offline with service worker and caching
  * Installable as PWA
