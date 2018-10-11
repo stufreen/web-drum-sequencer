@@ -17,6 +17,8 @@ const colors = {
   primary: 'rgba(213,255,169,1)',
   primaryDark: 'rgba(180,215,129,1)',
   secondary: 'rgba(152,255,193,1)',
+  blue: '#2f85c6',
+  darkBlue: '#196096',
 };
 
 export default {

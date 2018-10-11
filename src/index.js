@@ -8,6 +8,7 @@ import { initializeAudio } from './services/audioLoop';
 import { configureStore } from './store';
 import { loadSampleStatefully } from './common';
 import { startAnimations } from './services/animations';
+import { initializePwaInstall } from './services/pwaInstall';
 
 const { store, persistor } = configureStore(() => {
   const { channels } = store.getState();
@@ -35,11 +36,6 @@ if (process.env.__PROD__ && 'serviceWorker' in navigator) { // eslint-disable-li
   runtime.register();
 }
 
-// Prompt user to install PWA
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.prompt();
-});
-
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
@@ -52,3 +48,5 @@ ReactDOM.render(
 initializeAudio(store);
 
 startAnimations(store);
+
+initializePwaInstall(store);

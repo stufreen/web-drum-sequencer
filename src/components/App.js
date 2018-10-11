@@ -11,6 +11,7 @@ import {
   MasterControls,
   Logo,
   GithubLink,
+  FlashMessage,
 } from '.';
 
 globalStyles();
@@ -38,6 +39,7 @@ const App = () => (
           <GithubLink />
         </Box>
       </footer>
+      <FlashMessage />
     </Box>
   </ThemeProvider>
 );

@@ -11,14 +11,14 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-57x57.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-60x60.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-72x72.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-76x76.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-72x72.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-114x114.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-120x120.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-152x152.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-144x144.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-167x167.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-180x180.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-167x167.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-precomposed.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-16x16.png",
@@ -39,7 +39,7 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.json",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.webapp",
-    "./iconstats-62a208acdd5d379c1efa.json",
+    "./iconstats-37141f48d3aff4d05537.json",
     "./assets/fonts/33a7a7c3caf1424a788ad1a74046845f.woff2",
     "./assets/fonts/86cade2f761700598f5f2c260193cb09.woff",
     "./assets/fonts/8612f086e8406b4b304caa7cac52a0a7.woff2",
@@ -94,8 +94,8 @@ var serviceWorkerOption = {
     "./assets/images/construction-light.svg",
     "./assets/images/github.svg",
     "./assets/images/simplegray.png",
-    "./assets/js/bundle-5d84d4a2ff50bf3df007.js"
+    "./assets/js/bundle-d34a65d136d38d0a391f.js"
   ]
 };
         
-        !function(e){var t={};function n(r){if(t[r])return t[r].exports;var u=t[r]={i:r,l:!1,exports:{}};return e[r].call(u.exports,u,u.exports,n),u.l=!0,u.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var u in e)n.d(r,u,function(t){return e[t]}.bind(null,u));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";self.addEventListener("fetch",function(e){e.respondWith(function(e){var t=e.request.clone();return fetch(t).then(function(t){if(!t||200!==t.status||"basic"!==t.type)return t;var n=t.clone();return caches.open("wdsCache").then(function(t){t.put(e.request,n)}),t})}(e).catch(function(){return caches.match(e.request)}))})}]);
+        !function(e){var t={};function n(r){if(t[r])return t[r].exports;var u=t[r]={i:r,l:!1,exports:{}};return e[r].call(u.exports,u,u.exports,n),u.l=!0,u.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var u in e)n.d(r,u,function(t){return e[t]}.bind(null,u));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=function(e,t){return fetch(t).then(function(t){return function(e,t){if(!t||200!==t.status||"basic"!==t.type)return t;var n=t.clone();return caches.open("wdsCache").then(function(t){t.put(e.request,n)}),t}(e,t)})};self.addEventListener("fetch",function(e){var t=e.request.clone();t.url.indexOf("/assets/")>=0?e.respondWith(caches.match(t).then(function(n){return n||r(e,t)})):e.respondWith(r(e,t))})}]);
