@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { detuneSupported } from '../../services/featureChecks';
 import { Box } from '../design-system';
 import { ChannelSelect } from '../ChannelSelect';
 import { InfoKnob } from '../InfoKnob.component';
@@ -26,15 +27,20 @@ export const ChannelControlsComponent = ({
         <ChannelSelect channel={channel} />
       </Box>
       <Box>
-        <InfoKnob
-          label="PITCH"
-          minLabel="-24"
-          maxLabel="24"
-          min="-24"
-          max="24"
-          value={channel.pitchCoarse || 0}
-          onChange={onSetChannelPitchCoarse}
-        />
+        {
+          detuneSupported
+          && (
+            <InfoKnob
+              label="PITCH"
+              minLabel="-24"
+              maxLabel="24"
+              min="-24"
+              max="24"
+              value={channel.pitchCoarse || 0}
+              onChange={onSetChannelPitchCoarse}
+            />
+          )
+        }
       </Box>
     </ControlCluster>
     <ControlCluster>

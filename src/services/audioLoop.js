@@ -1,9 +1,11 @@
+import * as stereoPannerPolyfill from 'stereo-panner-node';
 import { getAudioContext, getCurrentBeat, updateChannelNodes } from './audioContext';
 import { scheduleNotes } from './audioScheduler';
 import { setStartTime } from '../common';
 import { INTERVAL } from './audioEngine.config';
 
 export const initializeAudio = (store) => {
+  stereoPannerPolyfill.polyfill();
   const audioCtx = getAudioContext(); // Start the clock
   setInterval(() => {
     const {
