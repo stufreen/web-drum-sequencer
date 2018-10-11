@@ -1,3 +1,5 @@
+import { detuneSupported } from './featureChecks';
+
 let audioCtx;
 const channelGainNodes = {};
 const channelPanNodes = {};
@@ -48,7 +50,11 @@ export const playNote = (noteTime, buffer, channelID, notePitch = 0) => {
   // Set up the AudioBufferSourceNode
   const source = audioCtx.createBufferSource();
   source.buffer = buffer;
-  source.detune.value = notePitch;
+
+  // Detune if available
+  if (detuneSupported) {
+    source.detune.value = notePitch;
+  }
 
   // Route to channel pan node
   source.connect(channelPanNodes[channelID]);
