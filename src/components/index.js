@@ -14,3 +14,4 @@ export * from './Modal.component';
 export * from './Logo.component';
 export * from './GithubLink.component';
 export * from './ChannelControls';
+export * from './FlashMessage';

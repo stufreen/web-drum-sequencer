@@ -8,9 +8,11 @@ export const HoverButton = Button.extend`
   &:hover {
     color: ${({ theme, hoverColor }) => getColor(theme, hoverColor)};
     background-color: ${({ theme, hoverBg }) => getColor(theme, hoverBg)};
+    opacity: ${({ hoverOpacity }) => hoverOpacity};
   }
 
   &:active {
     background-color: ${({ theme, activeBg }) => getColor(theme, activeBg)};
+    opacity: ${({ hoverOpacity }) => hoverOpacity};
   }
 `;

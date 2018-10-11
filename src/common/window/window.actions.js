@@ -9,3 +9,12 @@ export const setPresetNameField = val => ({
   type: WINDOW_CONSTANTS.SET_PRESET_NAME_FIELD,
   payload: val,
 });
+
+export const showFlashMessage = messageKey => ({
+  type: WINDOW_CONSTANTS.SET_FLASH_MESSAGE,
+  payload: messageKey,
+});
+
+export const clearFlashMessage = () => ({
+  type: WINDOW_CONSTANTS.CLEAR_FLASH_MESSAGE,
+});

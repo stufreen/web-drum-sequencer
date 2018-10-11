@@ -21,5 +21,10 @@ export const Box = styled.div`
   ${ss.bottom}
   ${ss.right}
   ${ss.zIndex}
+  ${ss.boxShadow}
+  ${ss.maxWidth}
+  ${ss.minWidth}
+  ${ss.maxHeight}
+  ${ss.minHeight}
   box-sizing: border-box;
 `;

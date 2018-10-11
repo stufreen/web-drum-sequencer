@@ -59,6 +59,7 @@
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.0.4",
+    "gsap": "^2.0.2",
     "prop-types": "^15.6.2",
     "ramda": "^0.25.0",
     "react": "^16.4.1",
