@@ -11,21 +11,21 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-57x57.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-60x60.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-76x76.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-72x72.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-76x76.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-114x114.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-120x120.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-152x152.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-144x144.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-180x180.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-152x152.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-167x167.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-180x180.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-precomposed.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-16x16.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-32x32.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon.ico",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x920.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-320x460.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x920.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x1096.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-768x1004.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-748x1024.png",
@@ -39,7 +39,7 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.json",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.webapp",
-    "./iconstats-37141f48d3aff4d05537.json",
+    "./iconstats-9437506dc900f3392a11.json",
     "./assets/fonts/33a7a7c3caf1424a788ad1a74046845f.woff2",
     "./assets/fonts/86cade2f761700598f5f2c260193cb09.woff",
     "./assets/fonts/8612f086e8406b4b304caa7cac52a0a7.woff2",
@@ -94,7 +94,7 @@ var serviceWorkerOption = {
     "./assets/images/construction-light.svg",
     "./assets/images/github.svg",
     "./assets/images/simplegray.png",
-    "./assets/js/bundle-d34a65d136d38d0a391f.js"
+    "./assets/js/bundle-ad67381119ed891acc7b.js"
   ]
 };
         
