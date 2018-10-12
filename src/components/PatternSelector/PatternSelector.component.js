@@ -33,7 +33,7 @@ export const PatternSelectorComponent = ({ onSelectPattern, pattern }) => {
   ));
 
   return (
-    <LabelBox label="PATTERNS">
+    <LabelBox label="PATTERNS" hoverEffect>
       {buttons}
     </LabelBox>
   );

@@ -11,4 +11,5 @@ export const Image = styled.img`
   ${ss.justifyContent}
   ${ss.opacity}
   ${ss.position}
+  user-select: ${({ userSelect }) => userSelect};
 `;
