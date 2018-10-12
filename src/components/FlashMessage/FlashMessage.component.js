@@ -45,7 +45,7 @@ export class FlashMessageComponent extends React.Component {
     return Message
       ? (
         <Box
-          bg="nearWhite"
+          bg="white"
           position="fixed"
           bottom={0}
           right={0}
