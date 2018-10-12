@@ -12,7 +12,7 @@ const ControlCluster = Box.extend`
   display: flex;
   margin: 0.5rem;
   align-items: flex-start;
-  padding: 1rem;
+  padding: 0.8rem;
 `;
 
 export const ChannelControlsComponent = ({

@@ -4,7 +4,6 @@ import theme from '../styles/theme';
 import globalStyles from '../styles/globalStyles';
 import {
   Box,
-  Line,
   ChannelList,
   ChannelHeader,
   ChannelControls,
@@ -25,13 +24,16 @@ const App = () => (
       pt={[4, 4, 4, 4, 4, 4, 4, 4, 5]}
     >
       <header>
-        <Logo color="white" width="200px" />
-        <Line bg="lightGray" mb={4} mt={4} />
+        <Box mb={4}>
+          <Logo color="white" width="200px" />
+        </Box>
       </header>
       <main>
-        <MasterControls />
-        <ChannelControls />
-        <ChannelHeader />
+        <Box position="sticky" bg="nearBlack" top="0" zIndex="10" pt={2}>
+          <MasterControls />
+          <ChannelControls />
+          <ChannelHeader />
+        </Box>
         <ChannelList />
       </main>
       <footer>
