@@ -1,9 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import theme from '../styles/theme';
 import { Box, Text } from './design-system';
 
-export const LabelBox = ({ label, children }) => (
-  <Box
+const HoverBox = Box.extend`
+  transition: border-color 0.2s;
+
+  &:hover {
+    ${({ hoverEffect }) => (
+    hoverEffect
+      ? `border-color: ${theme.colors.gray};`
+      : '')}
+  }
+`;
+
+export const LabelBox = ({ label, children, hoverEffect }) => (
+  <HoverBox
     display="flex"
     border="2px solid"
     borderColor="steel"
@@ -11,6 +23,7 @@ export const LabelBox = ({ label, children }) => (
     p={2}
     position="relative"
     alignItems="center"
+    hoverEffect={hoverEffect}
   >
     <Text
       position="absolute"
@@ -28,10 +41,15 @@ export const LabelBox = ({ label, children }) => (
       {label}
     </Text>
     {children}
-  </Box>
+  </HoverBox>
 );
 
 LabelBox.propTypes = {
   label: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
+  hoverEffect: PropTypes.bool,
+};
+
+LabelBox.defaultProps = {
+  hoverEffect: false,
 };

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Toggles } from '../Toggles';
 import {
   Box,
-  Button,
   Text,
   Image,
 } from '../design-system';
@@ -41,9 +40,9 @@ export const ChannelComponent = ({
       alignItems="center"
       position="relative"
     >
-      <Image src={construction} height="2.5rem" mr={3} opacity={0.2} />
+      <Image src={construction} height="2.5rem" mr={3} opacity={0.2} userSelect="none" />
       <Box flex="1 1 auto">
-        <Text color="white" fontWeight="normal" textAlign="left" fontSize={2}>
+        <Text color="white" fontWeight="normal" textAlign="left" fontSize={2} userSelect="none">
           {channel.sample.name}
         </Text>
       </Box>

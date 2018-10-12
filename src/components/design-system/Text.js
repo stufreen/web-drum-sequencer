@@ -15,6 +15,7 @@ const Text = styled.span`
   ${ss.borderRadius}
   ${ss.textAlign}
   ${ss.opacity}
+  user-select: ${({ userSelect }) => userSelect};
   display: block;
 `;
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import theme from '../../styles/theme';
 import {
   Box,
   Label,
@@ -9,6 +10,11 @@ import {
 
 const ShinyBox = Box.extend`
   background: linear-gradient(190deg, #19191D 0%, #303036 50%,#0a0e0a 51%, #29292D 100%);
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: ${theme.colors.gray};
+  }
 `;
 
 const BPMButton = Button.extend`

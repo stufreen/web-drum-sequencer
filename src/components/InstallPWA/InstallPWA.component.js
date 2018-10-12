@@ -15,22 +15,36 @@ export const InstallPWA = ({ onDismiss }) => (
       fontSize={2}
       mb={3}
     >
-      Would you like to install this app to your home screen?
+      Would you like to install WDS-1 to your home screen?
     </Text>
-    <HoverButton
-      bg="blue"
-      hoverBg="darkBlue"
-      onClick={() => {
-        promptToInstall();
-        onDismiss();
-      }}
-      width="8rem"
-      color="white"
-      ml="auto"
-      display="block"
-    >
-      INSTALL
-    </HoverButton>
+    <Box display="flex" justifyContent="flex-end">
+      <HoverButton
+        bg="blue"
+        hoverBg="darkBlue"
+        onClick={() => {
+          promptToInstall();
+          onDismiss();
+        }}
+        width="7rem"
+        color="white"
+        display="block"
+      >
+        INSTALL
+      </HoverButton>
+      <HoverButton
+        bg="white"
+        hoverBg="nearWhite"
+        hoverColor="nearBlack"
+        border="2px solid lightGray"
+        onClick={onDismiss}
+        width="7rem"
+        color="darkGray"
+        ml={1}
+        display="block"
+      >
+        NOPE
+      </HoverButton>
+    </Box>
   </Box>
 );
 

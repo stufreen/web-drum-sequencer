@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Box } from '../design-system';
 import { Channel } from '../Channel';
 import { AddChannelButton } from '../AddChannelButton';
 
 export const ChannelListComponent = ({ channels }) => (
-  <div>
+  <Box mt={2}>
     {channels.map(channel => <Channel key={channel.id} channel={channel} />)}
     <AddChannelButton />
-  </div>
+  </Box>
 );
 
 ChannelListComponent.propTypes = {

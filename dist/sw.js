@@ -18,9 +18,9 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-144x144.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-152x152.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-167x167.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-180x180.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-precomposed.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-180x180.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-16x16.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-32x32.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon.ico",
@@ -34,12 +34,12 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1182x2208.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1536x2008.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1496x2048.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_60x60.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_128x128.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_512x512.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_60x60.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.json",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.webapp",
-    "./iconstats-9437506dc900f3392a11.json",
+    "./iconstats-5801a79d2a9cde95c40c.json",
     "./assets/fonts/33a7a7c3caf1424a788ad1a74046845f.woff2",
     "./assets/fonts/86cade2f761700598f5f2c260193cb09.woff",
     "./assets/fonts/8612f086e8406b4b304caa7cac52a0a7.woff2",
@@ -94,7 +94,7 @@ var serviceWorkerOption = {
     "./assets/images/construction-light.svg",
     "./assets/images/github.svg",
     "./assets/images/simplegray.png",
-    "./assets/js/bundle-ad67381119ed891acc7b.js"
+    "./assets/js/bundle-e66ceaf38581d993ffc7.js"
   ]
 };
         

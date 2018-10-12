@@ -36,6 +36,9 @@ export default {
       color: 'white',
       backgroundColor: colors.green,
       boxShadow: `0 0.3em ${colors.darkGreen}`,
+      '&:hover': {
+        backgroundColor: colors.lightGreen,
+      },
       '&:active': {
         backgroundColor: colors.lightGreen,
         boxShadow: `0 0 ${colors.darkGreen}`,
@@ -46,6 +49,9 @@ export default {
       color: 'white',
       backgroundColor: colors.red,
       boxShadow: `0 0.3em ${colors.darkRed}`,
+      '&:hover': {
+        backgroundColor: colors.lightRed,
+      },
       '&:active': {
         backgroundColor: colors.lightRed,
         boxShadow: `0 0 ${colors.darkRed}`,
