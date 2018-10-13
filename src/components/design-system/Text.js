@@ -15,6 +15,7 @@ const Text = styled.span`
   ${ss.borderRadius}
   ${ss.textAlign}
   ${ss.opacity}
+  ${ss.lineHeight}
   user-select: ${({ userSelect }) => userSelect};
   display: block;
 `;
@@ -22,6 +23,7 @@ const Text = styled.span`
 Text.defaultProps = {
   m: 0,
   p: 0,
+  lineHeight: '1em',
 };
 
 export { Text };

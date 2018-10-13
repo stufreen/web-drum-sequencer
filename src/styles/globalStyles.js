@@ -1,34 +1,34 @@
 import { injectGlobal } from 'styled-components';
 import theme from './theme';
-import futuraMediumWoff2 from '../assets/fonts/FuturaStd-Medium.woff2';
-import futuraMediumWoff from '../assets/fonts/FuturaStd-Medium.woff';
-import futuraBoldWoff2 from '../assets/fonts/FuturaStd-Bold.woff2';
-import futuraBoldWoff from '../assets/fonts/FuturaStd-Bold.woff';
-import futuraHeavyWoff2 from '../assets/fonts/FuturaStd-Heavy.woff2';
-import futuraHeavyWoff from '../assets/fonts/FuturaStd-Heavy.woff';
+import jakobRegularWoff2 from '../assets/fonts/jakob-reg-webfont.woff2';
+import jakobRegularWoff from '../assets/fonts/jakob-reg-webfont.woff';
+import jakobBoldWoff2 from '../assets/fonts/jakob-b-webfont.woff2';
+import jakobBoldWoff from '../assets/fonts/jakob-b-webfont.woff';
+import jakobSemiboldWoff2 from '../assets/fonts/jakob-sb-webfont.woff2';
+import jakobSemiboldWoff from '../assets/fonts/jakob-sb-webfont.woff';
 
 export default () => injectGlobal`
   @font-face {
-    font-family: 'Futura';
-    src: url(${futuraMediumWoff2}) format('woff2'),
-      url(${futuraMediumWoff}) format('woff');
+    font-family: 'dtj';
+    src: url(${jakobRegularWoff2}) format('woff2'),
+         url(${jakobRegularWoff}) format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'dtj';
+    src: url(${jakobSemiboldWoff2}) format('woff2'),
+         url(${jakobSemiboldWoff}) format('woff');
     font-weight: 500;
     font-style: normal;
   }
 
   @font-face {
-    font-family: 'Futura';
-    src: url(${futuraBoldWoff2}) format('woff2'),
-      url(${futuraBoldWoff}) format('woff');
+    font-family: 'dtj';
+    src: url(${jakobBoldWoff2}) format('woff2'),
+         url(${jakobBoldWoff}) format('woff');
     font-weight: bold;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Futura';
-    src: url(${futuraHeavyWoff2}) format('woff2'),
-      url(${futuraHeavyWoff}) format('woff');
-    font-weight: 600;
     font-style: normal;
   }
 
@@ -37,7 +37,7 @@ export default () => injectGlobal`
   }
 
   * {
-    font-family: "Futura", sans-serif;
+    font-family: "dtj", "Futura", sans-serif;
     font-display: swap;
   }
 
