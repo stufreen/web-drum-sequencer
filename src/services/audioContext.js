@@ -17,7 +17,10 @@ const updateGainNode = (channel) => {
     channelGainNodes[channel.id] = audioCtx.createGain();
     channelGainNodes[channel.id].connect(audioCtx.destination);
   }
-  channelGainNodes[channel.id].gain.setValueAtTime(channel.gain || 1, audioCtx.currentTime);
+  channelGainNodes[channel.id].gain.setValueAtTime(
+    typeof channel.gain === 'undefined' ? 1 : channel.gain,
+    audioCtx.currentTime,
+  );
 };
 
 const updatePanNode = (channel) => {
@@ -26,7 +29,10 @@ const updatePanNode = (channel) => {
     channelPanNodes[channel.id] = audioCtx.createStereoPanner();
     channelPanNodes[channel.id].connect(channelGainNodes[channel.id]);
   }
-  channelPanNodes[channel.id].pan.setValueAtTime(channel.pan || 0, audioCtx.currentTime);
+  channelPanNodes[channel.id].pan.setValueAtTime(
+    typeof channel.pan === 'undefined' ? 0 : channel.pan,
+    audioCtx.currentTime,
+  );
 };
 
 export const updateChannelNodes = (channels) => {
