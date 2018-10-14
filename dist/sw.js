@@ -4,8 +4,8 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-48x48.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-72x72.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-96x96.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-144x144.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-192x192.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-144x144.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-256x256.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-384x384.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-512x512.png",
@@ -32,14 +32,14 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-750x1294.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1182x2208.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1242x2148.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1536x2008.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1496x2048.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_60x60.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1536x2008.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_128x128.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_60x60.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.json",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.webapp",
-    "./iconstats-2ae154208a871dfdbdee.json",
+    "./iconstats-46c9a05fdd8efb7e896d.json",
     "./assets/fonts/98b481e1ff888902698bc7f3a797f2dd.woff2",
     "./assets/fonts/a938437d7566748d14d57f641d31d984.woff",
     "./assets/fonts/04bbbfb4916d4f4ee846b88684c1eb31.woff2",
@@ -92,9 +92,9 @@ var serviceWorkerOption = {
     "./assets/audio/hip-hop-ch-2.mp3",
     "./assets/audio/hip-hop-oh.mp3",
     "./assets/images/construction-light.svg",
-    "./assets/images/github.svg",
     "./assets/images/simplegray.png",
-    "./assets/js/bundle-c8070c97edbf623fc950.js"
+    "./assets/images/github.svg",
+    "./assets/js/bundle-d604fab988cb0b5843aa.js"
   ]
 };
         
