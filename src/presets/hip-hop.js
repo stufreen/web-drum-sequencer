@@ -1,6 +1,7 @@
 export default {
   name: 'Hip Hop',
   bpm: 98,
+  swing: 0.4,
   channels: [
     {
       id: 'e75658e5-e17b-47dd-b8ca-4d03b06068d9',

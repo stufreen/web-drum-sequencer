@@ -1,4 +1,4 @@
-import { setBPM } from '../tempo';
+import { setBPM, setSwing } from '../tempo';
 import { loadChannels } from '../channels';
 import { setPattern, setSelectedChannel } from '../master';
 import { PRESETS_CONSTANTS } from './presets.constants';
@@ -26,6 +26,7 @@ export const deletePreset = presetName => ({
 
 export const loadPreset = preset => (dispatch) => {
   dispatch(setBPM(preset.bpm));
+  dispatch(setSwing(preset.swing));
   dispatch(loadChannels(preset.channels, preset.notes));
   dispatch(setPreset(preset.name));
   dispatch(setPattern(0));
@@ -34,6 +35,7 @@ export const loadPreset = preset => (dispatch) => {
 
 export const erasePreset = presetName => (dispatch) => {
   dispatch(setBPM(presets[0].bpm));
+  dispatch(setSwing(presets[0].swing));
   dispatch(loadChannels(presets[0].channels, presets[0].notes));
   dispatch(setPreset(presets[0].name));
   dispatch(setPattern(0));

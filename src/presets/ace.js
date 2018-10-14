@@ -1,6 +1,7 @@
 export default {
   name: 'Ace Drum',
   bpm: 140,
+  swing: 0.3,
   channels: [
     {
       id: 'empty_channel',

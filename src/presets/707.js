@@ -1,6 +1,7 @@
 export default {
   name: '707',
   bpm: 133,
+  swing: 0.2,
   channels: [
     {
       id: 'empty_channel',

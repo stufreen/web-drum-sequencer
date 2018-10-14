@@ -14,6 +14,7 @@ export const EMPTY_NOTE_ROW = [
 export default {
   name: 'Empty',
   bpm: 80,
+  swing: 0,
   channels: [
     {
       id: 'empty_channel',

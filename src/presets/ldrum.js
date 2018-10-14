@@ -1,6 +1,7 @@
 export default {
   name: 'LDrum',
   bpm: 124,
+  swing: 0.2,
   channels: [
     {
       id: 'empty_channel',
