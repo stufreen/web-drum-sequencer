@@ -16,14 +16,16 @@ const Text = styled.span`
   ${ss.textAlign}
   ${ss.opacity}
   ${ss.lineHeight}
+  ${ss.display}
+  ${ss.verticalAlign}
   user-select: ${({ userSelect }) => userSelect};
-  display: block;
 `;
 
 Text.defaultProps = {
   m: 0,
   p: 0,
   lineHeight: '1em',
+  display: 'block',
 };
 
 export { Text };

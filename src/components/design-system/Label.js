@@ -12,6 +12,7 @@ const Label = styled.label`
   ${ss.letterSpacing}
   ${ss.height}
   display: block;
+  line-height: 1em;
 `;
 
 Label.defaultProps = {

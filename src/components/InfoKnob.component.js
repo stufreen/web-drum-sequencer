@@ -14,11 +14,11 @@ export const InfoKnob = ({
       {label}
     </ControlLabel>
     <Box display="flex" alignItems="baseline">
-      <ControlLabel opacity="0.5">
+      <ControlLabel opacity="0.5" fontSize={1}>
         {minLabel}
       </ControlLabel>
       <Knob size={45} {...rest} />
-      <ControlLabel opacity="0.5">
+      <ControlLabel opacity="0.5" fontSize={1}>
         {maxLabel}
       </ControlLabel>
     </Box>
