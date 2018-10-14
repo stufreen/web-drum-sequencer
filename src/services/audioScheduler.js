@@ -1,6 +1,7 @@
 import { LOOKAHEAD } from './audioEngine.config';
 import { playNote } from './audioContext';
 import { sampleStore } from './sampleStore';
+import { swing } from './swing';
 
 // schedule is a lookup table of all the notes currently scheduled to be played
 const schedule = {};
@@ -29,12 +30,16 @@ export const getScheduledNotes = ({
   channelNotes,
   channel,
   startTime,
-  bpm,
+  tempo,
   currentBeat,
 }) => channelNotes.map(
   (note) => {
-    const lookaheadBeats = LOOKAHEAD * (bpm / 60);
-    const noteTime = startTime + ((note.beat - 1) * (60 / bpm));
+    const lookaheadBeats = LOOKAHEAD * (tempo.bpm / 60);
+
+    const swingAmount = typeof tempo.swing === 'undefined' ? 0 : tempo.swing;
+    const swingBeat = swing(note.beat, swingAmount);
+
+    const noteTime = startTime + ((swingBeat - 1) * (60 / tempo.bpm));
     if (isBetween(note.beat, currentBeat, currentBeat + lookaheadBeats)) {
       return {
         id: note.id,
@@ -46,7 +51,7 @@ export const getScheduledNotes = ({
     if (isBetween(note.beat, currentBeat - 4, currentBeat + lookaheadBeats - 4)) {
       return {
         id: note.id,
-        time: startTime + ((note.beat + 3) * 60 / bpm),
+        time: startTime + ((note.beat + 3) * 60 / tempo.bpm),
         channel,
       };
     }
@@ -64,7 +69,7 @@ export const scheduleNotes = ({
   channels,
   startTime,
   pattern,
-  bpm,
+  tempo,
   currentBeat,
 }) => {
   // Determine which notes need to be scheduled
@@ -75,7 +80,7 @@ export const scheduleNotes = ({
         channelNotes: notes[channel.id][pattern], // Play the current pattern
         channel,
         startTime,
-        bpm,
+        tempo,
         currentBeat,
       }),
     ], [],

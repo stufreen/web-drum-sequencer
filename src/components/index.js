@@ -15,3 +15,4 @@ export * from './Logo.component';
 export * from './GithubLink.component';
 export * from './ChannelControls';
 export * from './FlashMessage';
+export * from './SwingControl';

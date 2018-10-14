@@ -31,7 +31,7 @@ export const initializeAudio = (store) => {
         notes,
         channels,
         startTime: sT,
-        bpm: tempo.bpm,
+        tempo,
         pattern: master.pattern,
         currentBeat: getCurrentBeat(tempo.bpm, playbackSession.startTime),
       });

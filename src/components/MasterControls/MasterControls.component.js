@@ -4,6 +4,7 @@ import { PlayButton } from '../PlayButton';
 import { BPMInput } from '../BPMInput';
 import { PresetSelector } from '../PresetSelector';
 import { PatternSelector } from '../PatternSelector';
+import { SwingControl } from '../SwingControl';
 
 export const MasterControls = () => (
   <Box mb={3} display="flex" alignItems="stretch" height="3rem" justifyContent="space-between">
@@ -12,6 +13,7 @@ export const MasterControls = () => (
         <PlayButton />
       </Box>
       <BPMInput />
+      <SwingControl />
     </Box>
     <Box display="flex">
       <PatternSelector />
