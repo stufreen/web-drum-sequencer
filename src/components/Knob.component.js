@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '@webcomponents/webcomponentsjs/webcomponents-bundle.js'; // eslint-disable-line
-import knobImage from 'webaudio-controls/knobs/simplegray.png'; // eslint-disable-line import/no-extraneous-dependencies
+import knobImage from '../assets/images/maschine-50.png'; // eslint-disable-line import/no-extraneous-dependencies
 import 'webaudio-controls/webaudio-controls'; // eslint-disable-line import/no-extraneous-dependencies
 
 export class Knob extends React.Component {
@@ -21,7 +21,7 @@ export class Knob extends React.Component {
       <webaudio-knob
         ref={(element) => { this.knob = element; }}
         src={knobImage}
-        sprites="100"
+        sprites="50"
         min="0"
         max="100"
         width={size}
