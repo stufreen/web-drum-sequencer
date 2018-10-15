@@ -3,6 +3,8 @@ import {
   getScheduledNotes,
 } from './audioScheduler';
 
+jest.mock('./featureChecks');
+
 describe('isBetween', () => {
   test('should return true if query is between a and b', () => {
     expect(isBetween(2, 1, 3)).toBe(true);
@@ -36,7 +38,10 @@ describe('getScheduledNotes', () => {
       },
     },
     channelNotes: testNotes,
-    bpm: 60,
+    tempo: {
+      bpm: 60,
+      swing: 0.2,
+    },
     startTime: 0,
     currentBeat: 1,
   });

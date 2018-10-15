@@ -12,6 +12,7 @@ import {
 
 jest.mock('../../presets');
 jest.mock('../../samples.config');
+jest.mock('../../services/featureChecks');
 
 const testSample = '/fake/sample/b/url.wav';
 

@@ -2,6 +2,8 @@ import {
   getCurrentBeat,
 } from './audioContext';
 
+jest.mock('./featureChecks');
+
 describe('getCurrentBeat', () => {
   test('should return beat 1 if startTime is the same as currentTime', () => {
     expect(getCurrentBeat(60, 1, 1)).toBe(1);

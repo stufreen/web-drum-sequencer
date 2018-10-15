@@ -7,6 +7,7 @@ import {
 } from './presets.actions';
 
 jest.mock('../../presets');
+jest.mock('../../services/featureChecks');
 
 const testPreset = {
   name: 'Test preset',
