@@ -17,7 +17,7 @@ export const MasterControls = () => (
     </Box>
     <Box display="flex">
       <PatternSelector />
-      <Box ml={2} width="17rem">
+      <Box ml={2} width="15rem">
         <PresetSelector />
       </Box>
     </Box>
