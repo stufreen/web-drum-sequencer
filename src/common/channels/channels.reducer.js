@@ -42,6 +42,13 @@ export const channelsReducer = (state = channelsInitialState, action) => {
         }
         return channel;
       });
+    case CHANNELS_CONSTANTS.SET_CHANNEL_REVERB:
+      return state.map((channel) => {
+        if (channel.id === action.payload.channel) {
+          return { ...channel, reverb: action.payload.reverb };
+        }
+        return channel;
+      });
     case CHANNELS_CONSTANTS.ADD_CHANNEL:
       return [...state, action.payload];
     case CHANNELS_CONSTANTS.REMOVE_CHANNEL:

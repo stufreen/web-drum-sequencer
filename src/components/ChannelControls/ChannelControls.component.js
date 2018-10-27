@@ -20,6 +20,7 @@ export const ChannelControlsComponent = ({
   onSetGain,
   onSetPan,
   onSetChannelPitchCoarse,
+  onSetReverb,
 }) => (
   <LabelBox label="CHANNEL CONTROL">
     <ControlCluster>
@@ -56,13 +57,25 @@ export const ChannelControlsComponent = ({
           onChange={onSetPan}
         />
       </Box>
-      <Box>
+      <Box mr={4}>
         <InfoKnob
           label="VOL"
           minLabel="0"
           maxLabel="1"
           value={channel.gain * 100}
           onChange={onSetGain}
+        />
+      </Box>
+      <Box>
+        <InfoKnob
+          label="REV"
+          minLabel="0"
+          maxLabel="1"
+          min="0"
+          max="1"
+          step="0.01"
+          value={channel.reverb || 0}
+          onChange={onSetReverb}
         />
       </Box>
     </ControlCluster>
@@ -76,4 +89,5 @@ ChannelControlsComponent.propTypes = {
   onSetGain: PropTypes.func.isRequired,
   onSetPan: PropTypes.func.isRequired,
   onSetChannelPitchCoarse: PropTypes.func.isRequired,
+  onSetReverb: PropTypes.func.isRequired,
 };

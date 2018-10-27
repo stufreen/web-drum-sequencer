@@ -1,5 +1,6 @@
 import * as stereoPannerPolyfill from 'stereo-panner-node';
-import { getAudioContext, getCurrentBeat, updateChannelNodes } from './audioContext';
+import { getAudioContext, getCurrentBeat } from './audioContext';
+import { updateChannelNodes } from './audioRouter';
 import { scheduleNotes } from './audioScheduler';
 import { setStartTime } from '../common';
 import { INTERVAL } from './audioEngine.config';

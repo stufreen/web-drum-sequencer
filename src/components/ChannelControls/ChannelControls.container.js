@@ -6,12 +6,14 @@ import {
   setChannelGain,
   setChannelPitchCoarse,
   setChannelPan,
+  setChannelReverb,
 } from '../../common';
 
 const mapDispatchToProps = {
   setChannelGain,
   setChannelPan,
   setChannelPitchCoarse,
+  setChannelReverb,
 };
 
 const handlers = withHandlers({
@@ -26,6 +28,10 @@ const handlers = withHandlers({
   onSetChannelPitchCoarse: props => (e) => {
     const { setChannelPitchCoarse: setChannelPitchCoarseConnected, channel } = props;
     setChannelPitchCoarseConnected(channel.id, e.target.value);
+  },
+  onSetReverb: props => (e) => {
+    const { setChannelReverb: setChannelReverbConnected, channel } = props;
+    setChannelReverbConnected(channel.id, e.target.value);
   },
 });
 
