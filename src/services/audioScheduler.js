@@ -1,5 +1,5 @@
 import { LOOKAHEAD } from './audioEngine.config';
-import { playNote } from './audioContext';
+import { playNote } from './audioRouter';
 import { sampleStore } from './sampleStore';
 import { swing } from './swing';
 

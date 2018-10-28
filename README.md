@@ -10,7 +10,10 @@ https://stufreen.github.io/web-drum-sequencer
  * Swap drum samples
  * Pattern selector to save up to 8 patterns per drum kit
  * BPM and swing control
- * Gain, pitch and pan control and hit button for each channel
+ * Sample hit buttons
+ * Gain and pan
+ * Reverb
+ * Pitch shift
  * Preset system for saving and loading drum kits
  * Works offline with service worker and caching
  * Installable as PWA
@@ -35,3 +38,4 @@ npm run test
  * [React-Select](https://github.com/JedWatson/react-select)
  * [Webaudio-Controls](https://github.com/g200kg/webaudio-controls)
  * Chris Wilson's article [here](https://www.html5rocks.com/en/tutorials/audio/scheduling/)
+ * [Voxengo impluse response](https://www.voxengo.com/impulses/)

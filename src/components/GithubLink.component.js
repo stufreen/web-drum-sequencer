@@ -1,5 +1,10 @@
 import React from 'react';
-import { Image, HoverLink, Text, Box } from './design-system';
+import {
+  Image,
+  HoverLink,
+  Text,
+  Box,
+} from './design-system';
 import octocat from '../assets/images/github.svg';
 
 export const GithubLink = () => (

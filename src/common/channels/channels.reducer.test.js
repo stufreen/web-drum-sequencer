@@ -8,6 +8,7 @@ import {
   replaceChannels,
   setChannelPitchCoarse,
   setChannelPitchFine,
+  setChannelReverb,
 } from './channels.actions';
 
 jest.mock('../../presets');
@@ -66,6 +67,15 @@ describe('setChannelPitchFine', () => {
   });
 });
 
+describe('setChannelReverb', () => {
+  test('should change reverb for a channel', () => {
+    const state = channelsReducer(
+      channelsInitialState,
+      setChannelReverb(channelsInitialState[0].id, 0.5),
+    );
+    expect(state[0].reverb).toEqual(0.5);
+  });
+});
 
 describe('addChannel', () => {
   test('should add a channel', () => {
