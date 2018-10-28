@@ -1,7 +1,7 @@
 import { detuneSupported } from './featureChecks';
 import { getAudioContext } from './audioContext';
 import { loadImpulseResponse } from './reverb';
-import impulseResponse from '../assets/impulse-responses/vocal_duo.wav';
+import impulseResponse from '../assets/impulse-responses/ruby-room.mp3';
 
 const audioCtx = getAudioContext();
 

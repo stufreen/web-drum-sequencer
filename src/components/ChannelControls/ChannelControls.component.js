@@ -57,7 +57,7 @@ export const ChannelControlsComponent = ({
           onChange={onSetPan}
         />
       </Box>
-      <Box mr={4}>
+      <Box>
         <InfoKnob
           label="VOL"
           minLabel="0"
@@ -66,9 +66,11 @@ export const ChannelControlsComponent = ({
           onChange={onSetGain}
         />
       </Box>
+    </ControlCluster>
+    <ControlCluster>
       <Box>
         <InfoKnob
-          label="REV"
+          label="REVERB"
           minLabel="0"
           maxLabel="1"
           min="0"
