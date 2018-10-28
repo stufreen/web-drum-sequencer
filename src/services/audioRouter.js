@@ -16,11 +16,11 @@ loadImpulseResponse(impulseResponse)
  * The channel routing is:
  *
  * Drum Sample
- *  -> Pan node
- *    -> Gain node
+ *  -> Gain node
+ *    -> Reverb node
  *      -> Master out
- *      -> Reverb gain
- *        -> Master out
+ *    -> Pan node
+ *      -> Master out
  */
 
 const channelGainNodes = {};
@@ -31,7 +31,7 @@ const updateGainNode = (channel) => {
   if (typeof channelGainNodes[channel.id] === 'undefined') {
     // Set up a GainNode to control note volume
     channelGainNodes[channel.id] = audioCtx.createGain();
-    channelGainNodes[channel.id].connect(audioCtx.destination);
+    channelGainNodes[channel.id].connect(channelPanNodes[channel.id]);
 
     // Also route to reverb
     channelGainNodes[channel.id].connect(channelReverbNodes[channel.id]);
@@ -46,7 +46,7 @@ const updatePanNode = (channel) => {
   if (typeof channelPanNodes[channel.id] === 'undefined') {
     // Set up a GainNode to control note volume
     channelPanNodes[channel.id] = audioCtx.createStereoPanner();
-    channelPanNodes[channel.id].connect(channelGainNodes[channel.id]);
+    channelPanNodes[channel.id].connect(audioCtx.destination);
   }
   channelPanNodes[channel.id].pan.setValueAtTime(
     typeof channel.pan === 'undefined' ? 0 : channel.pan,
@@ -69,8 +69,8 @@ const updateReverbNode = (channel) => {
 export const updateChannelNodes = (channels) => {
   channels.forEach((channel) => {
     updateReverbNode(channel);
-    updateGainNode(channel);
     updatePanNode(channel);
+    updateGainNode(channel);
   });
 };
 
@@ -84,8 +84,8 @@ export const playNote = (noteTime, buffer, channelID, notePitch = 0) => {
     source.detune.value = notePitch;
   }
 
-  // Route to channel pan node
-  source.connect(channelPanNodes[channelID]);
+  // Route to channel gain node
+  source.connect(channelGainNodes[channelID]);
 
   // Connect and start
   source.start(noteTime);
