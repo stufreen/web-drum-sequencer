@@ -60,6 +60,28 @@ export const channelsReducer = (state = channelsInitialState, action) => {
         }
         return channel;
       });
+    case CHANNELS_CONSTANTS.SET_CHANNEL_MUTED:
+      return state.map((channel) => {
+        if (channel.id === action.payload.channel) {
+          return {
+            ...channel,
+            muted: action.payload.muted,
+            solo: false,
+          };
+        }
+        return channel;
+      });
+    case CHANNELS_CONSTANTS.SET_CHANNEL_SOLO:
+      return state.map((channel) => {
+        if (channel.id === action.payload.channel) {
+          return {
+            ...channel,
+            solo: action.payload.solo,
+            muted: false,
+          };
+        }
+        return channel;
+      });
     case CHANNELS_CONSTANTS.SET_CHANNELS:
       return [...action.payload];
     default:

@@ -37,6 +37,22 @@ export const setChannelPitchFine = (channel, pitchFine) => ({
   },
 });
 
+export const setChannelMuted = (channel, muted) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_MUTED,
+  payload: {
+    channel,
+    muted,
+  },
+});
+
+export const setChannelSolo = (channel, solo) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_SOLO,
+  payload: {
+    channel,
+    solo,
+  },
+});
+
 export const addChannel = channel => ({
   type: CHANNELS_CONSTANTS.ADD_CHANNEL,
   payload: channel,

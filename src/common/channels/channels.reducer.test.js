@@ -9,6 +9,8 @@ import {
   setChannelPitchCoarse,
   setChannelPitchFine,
   setChannelReverb,
+  setChannelMuted,
+  setChannelSolo,
 } from './channels.actions';
 
 jest.mock('../../presets');
@@ -74,6 +76,52 @@ describe('setChannelReverb', () => {
       setChannelReverb(channelsInitialState[0].id, 0.5),
     );
     expect(state[0].reverb).toEqual(0.5);
+  });
+});
+
+describe('setChannelMuted', () => {
+  test('should mute a channel', () => {
+    const state = channelsReducer(
+      channelsInitialState,
+      setChannelMuted(channelsInitialState[0].id, true),
+    );
+    expect(state[0].muted).toEqual(true);
+  });
+
+  test('should set solo to false if it was true', () => {
+    const soloState = channelsReducer(
+      channelsInitialState,
+      setChannelSolo(channelsInitialState[0].id, true),
+    );
+    expect(soloState[0].solo).toEqual(true);
+    const state = channelsReducer(
+      soloState,
+      setChannelMuted(channelsInitialState[0].id, true),
+    );
+    expect(state[0].solo).toEqual(false);
+  });
+});
+
+describe('setChannelSolo', () => {
+  test('should solo a channel', () => {
+    const state = channelsReducer(
+      channelsInitialState,
+      setChannelSolo(channelsInitialState[0].id, true),
+    );
+    expect(state[0].solo).toEqual(true);
+  });
+
+  test('should set muted to false if it was true', () => {
+    const mutedState = channelsReducer(
+      channelsInitialState,
+      setChannelMuted(channelsInitialState[0].id, true),
+    );
+    expect(mutedState[0].muted).toEqual(true);
+    const state = channelsReducer(
+      mutedState,
+      setChannelSolo(channelsInitialState[0].id, true),
+    );
+    expect(state[0].muted).toEqual(false);
   });
 });
 
