@@ -22,6 +22,7 @@ const Button = styled.button`
   ${ss.display}
   ${ss.alignItems}
   ${ss.justifyContent}
+  ${ss.opacity}
   outline: ${({ outline }) => outline};
 `;
 

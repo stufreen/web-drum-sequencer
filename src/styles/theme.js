@@ -14,6 +14,7 @@ const colors = {
   darkRed: '#633231',
   brightRed: '#E1523D',
   gold: '#E6A65D',
+  yellow: '#efd65f',
   primary: 'rgba(213,255,169,1)',
   primaryDark: 'rgba(180,215,129,1)',
   secondary: 'rgba(152,255,193,1)',
