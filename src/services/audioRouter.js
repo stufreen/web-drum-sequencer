@@ -79,19 +79,20 @@ const updateReverbNode = (channel) => {
   );
 };
 
-export const updateChannelNodes = (channels) => {
-  let soloEnabled = false;
+const checkSoloEnabled = (channels) => {
   for (let i = 0; i < channels.length; i += 1) {
     if (channels[i].solo) {
-      soloEnabled = true;
-      break;
+      return true;
     }
   }
+  return false;
+};
 
+export const updateChannelNodes = (channels) => {
   channels.forEach((channel) => {
     updateReverbNode(channel);
     updatePanNode(channel);
-    updateGainNode(channel, soloEnabled);
+    updateGainNode(channel, checkSoloEnabled(channels));
   });
 };
 
