@@ -8,6 +8,7 @@ import {
 } from '../design-system';
 import { RemoveButton } from './RemoveButton.component';
 import { HitButton } from './HitButton.component';
+import { MuteSolo } from '../MuteSolo';
 import construction from '../../assets/images/construction-light.svg';
 
 export const ChannelComponent = ({
@@ -46,6 +47,7 @@ export const ChannelComponent = ({
           {channel.sample.name}
         </Text>
       </Box>
+      <MuteSolo channel={channel} />
       <HitButton channel={channel} onMouseDown={onPressHitButton} />
     </Box>
     <Toggles

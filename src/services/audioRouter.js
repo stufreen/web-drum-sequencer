@@ -27,7 +27,20 @@ const channelGainNodes = {};
 const channelPanNodes = {};
 const channelReverbNodes = {};
 
-const updateGainNode = (channel) => {
+const calculateGain = (channel, soloEnabled) => {
+  if (channel.muted) {
+    return 0;
+  }
+  if (soloEnabled && !channel.solo) {
+    return 0;
+  }
+  if (channel.gain === 'undefined') {
+    return 1;
+  }
+  return channel.gain;
+};
+
+const updateGainNode = (channel, soloEnabled) => {
   if (typeof channelGainNodes[channel.id] === 'undefined') {
     // Set up a GainNode to control note volume
     channelGainNodes[channel.id] = audioCtx.createGain();
@@ -37,7 +50,7 @@ const updateGainNode = (channel) => {
     channelGainNodes[channel.id].connect(channelReverbNodes[channel.id]);
   }
   channelGainNodes[channel.id].gain.setValueAtTime(
-    typeof channel.gain === 'undefined' ? 1 : channel.gain,
+    calculateGain(channel, soloEnabled),
     audioCtx.currentTime,
   );
 };
@@ -66,11 +79,20 @@ const updateReverbNode = (channel) => {
   );
 };
 
+const checkSoloEnabled = (channels) => {
+  for (let i = 0; i < channels.length; i += 1) {
+    if (channels[i].solo) {
+      return true;
+    }
+  }
+  return false;
+};
+
 export const updateChannelNodes = (channels) => {
   channels.forEach((channel) => {
     updateReverbNode(channel);
     updatePanNode(channel);
-    updateGainNode(channel);
+    updateGainNode(channel, checkSoloEnabled(channels));
   });
 };
 
