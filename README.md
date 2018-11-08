@@ -13,6 +13,7 @@ https://stufreen.github.io/web-drum-sequencer
  * Sample hit buttons
  * Gain and pan
  * Reverb
+ * Mute and solo
  * Pitch shift
  * Preset system for saving and loading drum kits
  * Works offline with service worker and caching
