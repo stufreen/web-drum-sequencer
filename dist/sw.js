@@ -1,8 +1,8 @@
 var serviceWorkerOption = {
   "assets": [
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-36x36.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-72x72.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-48x48.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-72x72.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-96x96.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-144x144.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-192x192.png",
@@ -24,8 +24,8 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-16x16.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-32x32.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon.ico",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x920.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-320x460.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x920.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x1096.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-768x1004.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-748x1024.png",
@@ -35,11 +35,11 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1536x2008.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-1496x2048.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_60x60.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_128x128.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.json",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.webapp",
-    "./iconstats-d22643681c10c6a46dec.json",
+    "./iconstats-9437506dc900f3392a11.json",
     "./assets/fonts/98b481e1ff888902698bc7f3a797f2dd.woff2",
     "./assets/fonts/a938437d7566748d14d57f641d31d984.woff",
     "./assets/fonts/04bbbfb4916d4f4ee846b88684c1eb31.woff2",
@@ -95,7 +95,7 @@ var serviceWorkerOption = {
     "./assets/audio/ruby-room.mp3",
     "./assets/images/maschine-50.png",
     "./assets/images/github.svg",
-    "./assets/js/bundle-2f912df6b7b46c481120.js"
+    "./assets/js/bundle-b4f12b6023802010af5a.js"
   ]
 };
         
