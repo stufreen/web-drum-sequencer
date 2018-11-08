@@ -7,11 +7,7 @@ const MSButton = Button.extend`
   height: 0.8rem;
   padding: 0;
   border-radius: 100%;
-  transition: all 0.2s;
-
-  &:hover {
-    box-shadow: 0 0 0 1.5px ${theme.colors.gray};
-  }
+  transition: all 0.1s;
 `;
 
 export const MuteSoloComponent = ({ onPressMuted, onPressSolo, channel}) => (
