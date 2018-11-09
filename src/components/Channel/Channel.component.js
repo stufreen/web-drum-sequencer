@@ -12,6 +12,8 @@ import { MuteSolo } from '../MuteSolo';
 import construction from '../../assets/images/construction-light.svg';
 
 const ChannelBox = Box.extend`
+  outline: none;
+  
   &.draggable-source--is-dragging {
     opacity: 0.2;
   }
