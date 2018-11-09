@@ -15,17 +15,17 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-76x76.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-114x114.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-120x120.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-144x144.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-152x152.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-144x144.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-167x167.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-180x180.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-precomposed.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-180x180.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-16x16.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-32x32.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon.ico",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-320x460.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x920.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-320x460.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-640x1096.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-768x1004.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-startup-image-748x1024.png",
@@ -39,7 +39,7 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.json",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.webapp",
-    "./iconstats-9437506dc900f3392a11.json",
+    "./iconstats-48e7bef86792b757aaf7.json",
     "./assets/fonts/98b481e1ff888902698bc7f3a797f2dd.woff2",
     "./assets/fonts/a938437d7566748d14d57f641d31d984.woff",
     "./assets/fonts/04bbbfb4916d4f4ee846b88684c1eb31.woff2",
@@ -95,7 +95,7 @@ var serviceWorkerOption = {
     "./assets/audio/ruby-room.mp3",
     "./assets/images/maschine-50.png",
     "./assets/images/github.svg",
-    "./assets/js/bundle-b4f12b6023802010af5a.js"
+    "./assets/js/bundle-13b5894149194a6fcef2.js"
   ]
 };
         

@@ -5,6 +5,10 @@ import { Box } from '../design-system';
 import { Channel } from '../Channel';
 import { AddChannelButton } from '../AddChannelButton';
 
+const ChannelListBox = Box.extend`
+  outline: none;
+`;
+
 export class ChannelListComponent extends React.Component {
   componentDidMount() {
     // eslint-disable-next-line
@@ -22,10 +26,10 @@ export class ChannelListComponent extends React.Component {
   render() {
     const { channels } = this.props;
     return (
-      <Box mt={2} innerRef={(el) => { this.channelContainer = el; }}>
+      <ChannelListBox mt={2} innerRef={(el) => { this.channelContainer = el; }}>
         {channels.map(channel => <Channel key={channel.id} channel={channel} />)}
         <AddChannelButton />
-      </Box>
+      </ChannelListBox>
     );
   }
 }
