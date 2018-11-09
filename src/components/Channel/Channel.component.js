@@ -11,6 +11,27 @@ import { HitButton } from './HitButton.component';
 import { MuteSolo } from '../MuteSolo';
 import construction from '../../assets/images/construction-light.svg';
 
+const ChannelBox = Box.extend`
+  &.draggable-source--is-dragging {
+    opacity: 0.2;
+  }
+
+  &.draggable-mirror {
+    opacity: 0.9;
+    z-index: 10;
+  }
+`;
+
+const MoveImage = Image.extend`
+  cursor: move;
+  opacity: 0.2;
+  transition: opacity 0.1s;
+
+  &:hover, &:focus, &:active {
+    opacity: 0.3;
+  }
+`;
+
 export const ChannelComponent = ({
   channel,
   onPressRemove,
@@ -20,7 +41,7 @@ export const ChannelComponent = ({
   onTouchChannel,
   selectedChannelId,
 }) => (
-  <Box
+  <ChannelBox
     width="100%"
     display="flex"
     flex="1 1 auto"
@@ -30,6 +51,7 @@ export const ChannelComponent = ({
     onMouseDown={onTouchChannel}
     bg={selectedChannelId === channel.id ? 'darkGray' : 'transparent'}
     outline="none"
+    className="wds-draggable"
   >
     <Box
       bg={selectedChannelId === channel.id ? 'steel' : 'darkGray'}
@@ -41,7 +63,7 @@ export const ChannelComponent = ({
       alignItems="center"
       position="relative"
     >
-      <Image src={construction} height="2.5rem" mr={3} opacity={0.2} userSelect="none" />
+      <MoveImage src={construction} height="2.5rem" mr={3} userSelect="none" className="wds-channel-handle" />
       <Box flex="1 1 auto">
         <Text color="white" fontWeight="normal" textAlign="left" fontSize={2} userSelect="none">
           {channel.sample.name}
@@ -55,7 +77,7 @@ export const ChannelComponent = ({
       channelID={channel.id}
     />
     <RemoveButton onClick={onPressRemove} />
-  </Box>
+  </ChannelBox>
 );
 
 ChannelComponent.propTypes = {

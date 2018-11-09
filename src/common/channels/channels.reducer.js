@@ -82,6 +82,12 @@ export const channelsReducer = (state = channelsInitialState, action) => {
         }
         return channel;
       });
+    case CHANNELS_CONSTANTS.UPDATE_CHANNEL_ORDER:
+      return R.insert(
+        action.payload.newIndex,
+        state[action.payload.oldIndex],
+        R.remove(action.payload.oldIndex, 1, state),
+      );
     case CHANNELS_CONSTANTS.SET_CHANNELS:
       return [...action.payload];
     default:
