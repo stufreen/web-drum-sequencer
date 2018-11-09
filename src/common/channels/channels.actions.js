@@ -63,6 +63,14 @@ export const removeChannel = id => ({
   payload: id,
 });
 
+export const updateChannelOrder = (oldIndex, newIndex) => ({
+  type: CHANNELS_CONSTANTS.UPDATE_CHANNEL_ORDER,
+  payload: {
+    oldIndex,
+    newIndex,
+  },
+});
+
 export const replaceChannels = channels => ({
   type: CHANNELS_CONSTANTS.SET_CHANNELS,
   payload: channels,

@@ -7,10 +7,16 @@ import { AddChannelButton } from '../AddChannelButton';
 
 export class ChannelListComponent extends React.Component {
   componentDidMount() {
-    new Sortable([this.channelContainer], {
+    // eslint-disable-next-line
+    const sortable = new Sortable([this.channelContainer], {
       draggable: '.wds-draggable',
       handle: '.wds-channel-handle',
-    }); 
+    });
+
+    sortable.on('sortable:stop', ({ oldIndex, newIndex }) => {
+      const { onUpdateChannelOrder } = this.props;
+      onUpdateChannelOrder(oldIndex, newIndex);
+    });
   }
 
   render() {
@@ -26,4 +32,5 @@ export class ChannelListComponent extends React.Component {
 
 ChannelListComponent.propTypes = {
   channels: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onUpdateChannelOrder: PropTypes.func.isRequired,
 };

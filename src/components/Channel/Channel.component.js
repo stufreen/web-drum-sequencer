@@ -18,6 +18,7 @@ const ChannelBox = Box.extend`
 
   &.draggable-mirror {
     opacity: 0.9;
+    z-index: 10;
   }
 `;
 
