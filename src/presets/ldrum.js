@@ -108,7 +108,6 @@ export default {
         url: 'assets/audio/linn-tamb.mp3',
       },
       gain: 0.28,
-      
       reverb: 0.3,
       pan: 0.7,
     },

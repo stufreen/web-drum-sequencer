@@ -39,6 +39,19 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+  
+  test:
+    docker:
+      - image: circleci/node:9.4.0
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: npm run test
+      - run:
+          name: Lint
+          command: npm run lint
         
       # run tests!
       #- run: yarn test
@@ -62,6 +75,12 @@ workflows:
   build-deploy:
     jobs:
       - build
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
       - deploy:
           requires:
             - build

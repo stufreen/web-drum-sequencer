@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Box, Button } from '../design-system';
-import theme from '../../styles/theme';
 
 const MSButton = Button.extend`
   width: 0.8rem;
@@ -10,7 +10,7 @@ const MSButton = Button.extend`
   transition: all 0.1s;
 `;
 
-export const MuteSoloComponent = ({ onPressMuted, onPressSolo, channel}) => (
+export const MuteSoloComponent = ({ onPressMuted, onPressSolo, channel }) => (
   <Box
     justifyContent="space-around"
     width="1.2rem"
@@ -29,3 +29,12 @@ export const MuteSoloComponent = ({ onPressMuted, onPressSolo, channel}) => (
     />
   </Box>
 );
+
+MuteSoloComponent.propTypes = {
+  onPressMuted: PropTypes.func.isRequired,
+  onPressSolo: PropTypes.func.isRequired,
+  channel: PropTypes.shape({
+    solo: PropTypes.bool.isRequired,
+    muted: PropTypes.bool.isRequired,
+  }).isRequired,
+};
