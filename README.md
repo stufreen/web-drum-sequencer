@@ -4,7 +4,7 @@ A browser-based drum machine and sequencer built with the Web Audio API, React, 
 
 ## Demo
 
-https://stufreen.github.io/web-drum-sequencer
+http://wds-1.com
 
 ## Features
  * Swap drum samples
@@ -18,6 +18,11 @@ https://stufreen.github.io/web-drum-sequencer
  * Preset system for saving and loading drum kits
  * Works offline with service worker and caching
  * Installable as PWA
+ * Drag to reorder channels
+
+## Circle CI status
+
+[![CircleCI](https://circleci.com/gh/stufreen/web-drum-sequencer.svg?style=svg)](https://circleci.com/gh/stufreen/web-drum-sequencer)
 
 ## Installation
 
