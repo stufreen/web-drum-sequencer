@@ -5,6 +5,7 @@ import {
 
 jest.mock('./featureChecks');
 jest.mock('./audioContext');
+jest.mock('./audioRouter');
 
 describe('isBetween', () => {
   test('should return true if query is between a and b', () => {
