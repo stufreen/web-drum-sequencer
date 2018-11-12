@@ -4,7 +4,7 @@ A browser-based drum machine and sequencer built with the Web Audio API, React, 
 
 ## Demo
 
-http://wds-1.com
+https://wds-1.com
 
 ## Features
  * Swap drum samples
