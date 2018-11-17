@@ -1,9 +1,10 @@
 import { getCurrentBeat } from './audioContext';
+import { swing } from './swing';
 
 const draw = (store) => {
   // Get some data from redux store
   const state = store.getState();
-  const { bpm } = state.tempo;
+  const { bpm, swing: swingAmount } = state.tempo;
   const { playing, startTime } = state.playbackSession;
   const currentBeat = getCurrentBeat(bpm, startTime);
 
@@ -13,11 +14,12 @@ const draw = (store) => {
     const toggle = toggles[i];
     const { beat, active } = toggle.dataset;
     const beatNum = parseFloat(beat);
+    const swingBeat = swing(beatNum, swingAmount);
     const isActive = (active === 'true');
     if (playing
       && isActive
-      && currentBeat - beatNum < 0.25
-      && currentBeat - beatNum > 0
+      && currentBeat - swingBeat < 0.25
+      && currentBeat - swingBeat > 0
     ) {
       toggle.style.transition = 'all 0s';
       toggle.style.opacity = '0.8';
