@@ -15,6 +15,9 @@ export class ChannelListComponent extends React.Component {
     const sortable = new Sortable([this.channelContainer], {
       draggable: '.wds-draggable',
       handle: '.wds-channel-handle',
+      mirror: {
+        constrainDimensions: true,
+      },
     });
 
     sortable.on('sortable:stop', ({ oldIndex, newIndex }) => {

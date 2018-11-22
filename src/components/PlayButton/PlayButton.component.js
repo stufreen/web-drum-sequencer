@@ -3,18 +3,21 @@ import PropTypes from 'prop-types';
 import { FancyButton } from '../FancyButton.component';
 import { Text } from '../design-system';
 
+const PlayButton = FancyButton.extend`
+  margin-bottom: 1px;
+  width: 8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+`;
+
 export const PlayButtonComponent = ({ startPlaybackAndResume, stopPlayback, playing }) => (playing
   ? (
-    <FancyButton
+    <PlayButton
       onClick={stopPlayback}
       variant="red"
-      mb={1}
-      width="8rem"
-      display="flex"
-      flexDirection="row"
-      alignItems="baseline"
-      justifyContent="center"
-      p={0}
     >
       <Text mr={2}>
         Stop
@@ -24,19 +27,12 @@ export const PlayButtonComponent = ({ startPlaybackAndResume, stopPlayback, play
           <rect fill="#FFFFFF" x="0" y="0" width="371" height="371" />
         </g>
       </svg>
-    </FancyButton>
+    </PlayButton>
   )
   : (
-    <FancyButton
+    <PlayButton
       onClick={startPlaybackAndResume}
       variant="green"
-      mb={1}
-      width="8rem"
-      display="flex"
-      flexDirection="row"
-      alignItems="baseline"
-      justifyContent="center"
-      p={0}
     >
       <Text mr={2}>
         PLAY
@@ -49,7 +45,7 @@ export const PlayButtonComponent = ({ startPlaybackAndResume, stopPlayback, play
           </g>
         </g>
       </svg>
-    </FancyButton>
+    </PlayButton>
   ));
 
 PlayButtonComponent.propTypes = {
