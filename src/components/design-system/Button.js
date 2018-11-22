@@ -29,7 +29,6 @@ const Button = styled.button`
 
 Button.defaultProps = {
   border: 'none',
-  p: '1rem 2rem',
   fontWeight: 'bold',
   borderRadius: '0.25rem',
   variant: 'primary',

@@ -13,6 +13,7 @@ export const AddChannelButtonComponent = ({ newChannel }) => (
     transitionSpeed="0.2s"
     ml={1}
     mt={2}
+    py="1rem"
   >
     Add Channel +
   </HoverButton>

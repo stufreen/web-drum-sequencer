@@ -61,7 +61,6 @@ export class FlashMessageComponent extends React.Component {
             <Message onDismiss={onDismiss} />
             <HoverButton
               bg="transparent"
-              p={0}
               m={1}
               display="flex"
               justifyContent="space-between"
