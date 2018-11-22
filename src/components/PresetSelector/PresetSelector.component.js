@@ -98,6 +98,7 @@ export const PresetSelectorComponent = ({
           }
           return false;
         }}
+        searchable={false}
         styles={{
           container: styles => ({
             ...styles,
