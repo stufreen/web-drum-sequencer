@@ -6,6 +6,7 @@ export const HitButton = ({ channel, onMouseDown }) => (
   <HoverButton
     height={30}
     width={30}
+    minWidth={30}
     bg="lightGray"
     activeBg="gray"
     transitionSpeed="0.1s"
