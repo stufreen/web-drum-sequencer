@@ -13,3 +13,7 @@ export const removeUserSample = sampleId => ({
 export const clearUserSamples = () => ({
   type: USER_SAMPLES_CONSTANTS.CLEAR_USER_SAMPLES,
 });
+
+export const loadAndSetUserSample = (channelId, files) => (dispatch) => {
+
+};

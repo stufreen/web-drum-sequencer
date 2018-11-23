@@ -16,3 +16,13 @@ export const loadSample = (url) => {
     })
     .catch(() => false);
 };
+
+export const saveToSampleStore = (file) => {
+  const id = file.name
+  return decodeFile(file)
+    .then(decodeAudio)
+    .then((drumBuffer) => {
+      sampleStore[id] = drumBuffer;
+      return true;
+    });
+};
