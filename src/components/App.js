@@ -8,7 +8,7 @@ import {
   ChannelHeader,
   ChannelControls,
   MasterControls,
-  Logo,
+  Branding,
   GithubLink,
   FlashMessage,
 } from '.';
@@ -24,9 +24,7 @@ const App = () => (
       pt={[4, 4, 4, 4, 4, 4, 4, 4, 5]}
     >
       <header>
-        <Box mb={4}>
-          <Logo color="white" width="200px" />
-        </Box>
+        <Branding />
       </header>
       <main>
         <Box position="sticky" bg="nearBlack" top="0" zIndex="10" pt={2}>

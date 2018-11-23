@@ -16,3 +16,4 @@ export * from './GithubLink.component';
 export * from './ChannelControls';
 export * from './FlashMessage';
 export * from './SwingControl';
+export * from './Branding';
