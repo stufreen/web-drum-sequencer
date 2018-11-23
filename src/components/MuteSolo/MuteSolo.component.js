@@ -34,7 +34,7 @@ MuteSoloComponent.propTypes = {
   onPressMuted: PropTypes.func.isRequired,
   onPressSolo: PropTypes.func.isRequired,
   channel: PropTypes.shape({
-    solo: PropTypes.bool.isRequired,
-    muted: PropTypes.bool.isRequired,
+    solo: PropTypes.bool,
+    muted: PropTypes.bool,
   }).isRequired,
 };
