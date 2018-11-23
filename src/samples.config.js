@@ -182,33 +182,3 @@ const sampleOptions = [
 ];
 
 export default sampleOptions;
-
-export const getSampleSelectOptions = () => {
-  const allOptions = sampleOptions.map(sampleOption => ({
-    value: sampleOption.url,
-    label: sampleOption.name,
-  }));
-  const groupedOptions = [
-    {
-      label: '707',
-      options: allOptions.filter(item => item.label.includes('707')),
-    },
-    {
-      label: '808',
-      options: allOptions.filter(item => item.label.includes('808')),
-    },
-    {
-      label: 'Ace',
-      options: allOptions.filter(item => item.label.includes('Ace')),
-    },
-    {
-      label: 'LDrum',
-      options: allOptions.filter(item => item.label.includes('LDrum')),
-    },
-    {
-      label: 'Hip-hop',
-      options: allOptions.filter(item => item.label.includes('Hip Hop')),
-    },
-  ];
-  return groupedOptions;
-};

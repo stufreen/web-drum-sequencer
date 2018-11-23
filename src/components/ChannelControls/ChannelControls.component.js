@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { detuneSupported } from '../../services/featureChecks';
 import { Box } from '../design-system';
-import { ChannelSelect } from '../ChannelSelect';
+import { SampleSelect } from '../SampleSelect';
 import { InfoKnob } from '../InfoKnob.component';
 import { LabelBox } from '../LabelBox';
 
@@ -25,7 +25,7 @@ export const ChannelControlsComponent = ({
   <LabelBox label="CHANNEL CONTROL">
     <ControlCluster>
       <Box width="17rem" pr={2}>
-        <ChannelSelect channel={channel} />
+        <SampleSelect channel={channel} />
       </Box>
       <Box>
         {
