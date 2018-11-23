@@ -84,7 +84,10 @@ module.exports = {
         },
       ],
     }),
-    new FaviconsWebpackPlugin(path.resolve('src/assets/images/icon.png')),
+    new FaviconsWebpackPlugin(path.resolve({
+      logo: 'src/assets/images/icon.png',
+      background: '#202429',
+    })),
     new SocialTags({
       appUrl: 'https://stufreen.github.io/web-drum-sequencer',
       facebook: {
