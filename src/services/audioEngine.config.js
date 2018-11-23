@@ -1,2 +1,2 @@
-export const LOOKAHEAD = 0.1; // seconds
-export const INTERVAL = 16; // milliseconds
+export const LOOKAHEAD = 0.2; // seconds
+export const INTERVAL = 50; // milliseconds
