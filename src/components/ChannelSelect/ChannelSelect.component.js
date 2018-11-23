@@ -21,7 +21,7 @@ export const ChannelSelectComponent = ({ onSelectSample, channel }) => {
         options={getSampleSelectOptions()}
         onChange={onSelectSample}
         value={currentOption}
-        searchable={false}
+        isSearchable={false}
         styles={{
           container: styles => ({
             ...styles,
