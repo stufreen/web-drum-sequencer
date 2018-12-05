@@ -1,35 +1,51 @@
 import { injectGlobal } from 'styled-components';
 import theme from './theme';
-import jakobRegularWoff2 from '../assets/fonts/jakob-reg-webfont.woff2';
-import jakobRegularWoff from '../assets/fonts/jakob-reg-webfont.woff';
-import jakobBoldWoff2 from '../assets/fonts/jakob-b-webfont.woff2';
-import jakobBoldWoff from '../assets/fonts/jakob-b-webfont.woff';
-import jakobSemiboldWoff2 from '../assets/fonts/jakob-sb-webfont.woff2';
-import jakobSemiboldWoff from '../assets/fonts/jakob-sb-webfont.woff';
+// import josefinRegularWoff2 from '../assets/fonts/dtjakob-dflt-regular-webfont.woff2';
+// import josefinRegularWoff from '../assets/fonts/dtjakob-dflt-regular-webfont.woff';
+// import josefinBoldWoff2 from '../assets/fonts/dtjakobdflt-bold-webfont.woff2';
+// import josefinBoldWoff from '../assets/fonts/dtjakobdflt-bold-webfont.woff';
+// import josefinSemiboldWoff2 from '../assets/fonts/dtjakob-dflt-semibold-webfont.woff2';
+// import josefinSemiboldWoff from '../assets/fonts/dtjakob-dflt-semibold-webfont.woff';
+// import josefinRegularWoff2 from '../assets/fonts/wavehaus-book-webfont.woff2';
+// import josefinRegularWoff from '../assets/fonts/wavehaus-book-webfont.woff';
+// import josefinBoldWoff2 from '../assets/fonts/wavehaus-bold-webfont.woff2';
+// import josefinBoldWoff from '../assets/fonts/wavehaus-bold-webfont.woff';
+// import josefinSemiboldWoff2 from '../assets/fonts/wavehaus-semibold-webfont.woff2';
+// import josefinSemiboldWoff from '../assets/fonts/wavehaus-semibold-webfont.woff';
+import josefinRegularWoff2 from '../assets/fonts/jost-medium-webfont.woff2';
+import josefinRegularWoff from '../assets/fonts/jost-medium-webfont.woff';
+import josefinBoldWoff2 from '../assets/fonts/jost-bold-webfont.woff2';
+import josefinBoldWoff from '../assets/fonts/jost-bold-webfont.woff';
+import josefinSemiboldWoff2 from '../assets/fonts/jost-semi-webfont.woff2';
+import josefinSemiboldWoff from '../assets/fonts/jost-semi-webfont.woff';
 
 export default () => injectGlobal`
+  /* josefin-sans-regular - latin */
   @font-face {
-    font-family: 'dtj';
-    src: url(${jakobRegularWoff2}) format('woff2'),
-         url(${jakobRegularWoff}) format('woff');
-    font-weight: normal;
+    font-family: 'Josefin Sans';
     font-style: normal;
+    font-weight: 400;
+    src: local('Josefin Sans Regular'), local('JosefinSans-Regular'),
+        url(${josefinRegularWoff2}) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url(${josefinRegularWoff}) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-
+  /* josefin-sans-600 - latin */
   @font-face {
-    font-family: 'dtj';
-    src: url(${jakobSemiboldWoff2}) format('woff2'),
-         url(${jakobSemiboldWoff}) format('woff');
-    font-weight: 500;
+    font-family: 'Josefin Sans';
     font-style: normal;
+    font-weight: 600;
+    src: local('Josefin Sans SemiBold'), local('JosefinSans-SemiBold'),
+        url(${josefinSemiboldWoff2}) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url(${josefinSemiboldWoff}) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-
+  /* josefin-sans-700 - latin */
   @font-face {
-    font-family: 'dtj';
-    src: url(${jakobBoldWoff2}) format('woff2'),
-         url(${jakobBoldWoff}) format('woff');
-    font-weight: bold;
+    font-family: 'Josefin Sans';
     font-style: normal;
+    font-weight: 700;
+    src: local('Josefin Sans Bold'), local('JosefinSans-Bold'),
+        url(${josefinBoldWoff2}) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url(${josefinBoldWoff}) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
   html {
@@ -37,7 +53,7 @@ export default () => injectGlobal`
   }
 
   * {
-    font-family: "dtj", "Futura", sans-serif;
+    font-family: "Josefin Sans", "Futura", sans-serif;
     font-display: swap;
   }
 
