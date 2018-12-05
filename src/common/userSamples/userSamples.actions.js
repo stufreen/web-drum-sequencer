@@ -15,5 +15,5 @@ export const clearUserSamples = () => ({
 });
 
 export const loadAndSetUserSample = (channelId, files) => (dispatch) => {
-
+  
 };
