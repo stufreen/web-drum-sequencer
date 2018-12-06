@@ -1,35 +1,39 @@
 import { injectGlobal } from 'styled-components';
 import theme from './theme';
-import jakobRegularWoff2 from '../assets/fonts/jakob-reg-webfont.woff2';
-import jakobRegularWoff from '../assets/fonts/jakob-reg-webfont.woff';
-import jakobBoldWoff2 from '../assets/fonts/jakob-b-webfont.woff2';
-import jakobBoldWoff from '../assets/fonts/jakob-b-webfont.woff';
-import jakobSemiboldWoff2 from '../assets/fonts/jakob-sb-webfont.woff2';
-import jakobSemiboldWoff from '../assets/fonts/jakob-sb-webfont.woff';
+import jostMediumWoff2 from '../assets/fonts/jost-medium-webfont.woff2';
+import jostMediumWoff from '../assets/fonts/jost-medium-webfont.woff';
+import jostBoldWoff2 from '../assets/fonts/jost-bold-webfont.woff2';
+import jostBoldWoff from '../assets/fonts/jost-bold-webfont.woff';
+import jostSemiboldWoff2 from '../assets/fonts/jost-semi-webfont.woff2';
+import jostSemiboldWoff from '../assets/fonts/jost-semi-webfont.woff';
 
 export default () => injectGlobal`
+
   @font-face {
-    font-family: 'dtj';
-    src: url(${jakobRegularWoff2}) format('woff2'),
-         url(${jakobRegularWoff}) format('woff');
-    font-weight: normal;
+    font-family: 'Jost';
     font-style: normal;
+    font-weight: 400;
+    src: local('Jost Medium'), local('Jost-Medium'),
+        url(${jostMediumWoff2}) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url(${jostMediumWoff}) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
   @font-face {
-    font-family: 'dtj';
-    src: url(${jakobSemiboldWoff2}) format('woff2'),
-         url(${jakobSemiboldWoff}) format('woff');
-    font-weight: 500;
+    font-family: 'Jost';
     font-style: normal;
+    font-weight: 600;
+    src: local('Jost SemiBold'), local('Jost-SemiBold'),
+        url(${jostSemiboldWoff2}) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url(${jostSemiboldWoff}) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
   @font-face {
-    font-family: 'dtj';
-    src: url(${jakobBoldWoff2}) format('woff2'),
-         url(${jakobBoldWoff}) format('woff');
-    font-weight: bold;
+    font-family: 'Josts';
     font-style: normal;
+    font-weight: 700;
+    src: local('Jost Bold'), local('Jost-Bold'),
+        url(${jostBoldWoff2}) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url(${jostBoldWoff}) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
   html {
@@ -37,7 +41,7 @@ export default () => injectGlobal`
   }
 
   * {
-    font-family: "dtj", "Futura", sans-serif;
+    font-family: "Jost", "Futura", sans-serif;
     font-display: swap;
   }
 
