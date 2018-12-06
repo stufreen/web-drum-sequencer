@@ -21,7 +21,7 @@ export const PatternSelectorComponent = ({ onSelectPattern, pattern }) => {
         onSelectPattern(buttonNumber);
       }}
       fontWeight="500"
-      fontSize="0.6em"
+      fontSize="0.7em"
       color="rgba(0,0,0,0.5)"
       activeBg="primaryDark"
       disabled={pattern === buttonNumber}
