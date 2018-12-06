@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import { compose, withHandlers } from 'recompose';
 import { SampleSelectComponent } from './SampleSelect.component';
-import { loadAndSetChannelSample, loadAndSetUserSample } from '../../common';
+import { saveUserSample, loadAndSetChannelSample } from '../../common';
 import { sampleSelectSelectors } from './SampleSelect.selectors';
 
 const mapDispatchToProps = {
   loadAndSetChannelSample,
+  saveUserSample,
 };
 
 const handlers = withHandlers({
@@ -14,8 +15,8 @@ const handlers = withHandlers({
     connectedSetChannelSample(channel.id, sample.value);
   },
   onSampleFileChosen: props => (e) => {
-    const { loadAndSetUserSample: connectedSetUserSample, channel } = props;
-    connectedSetUserSample(channel.id, e.target.files);
+    const { saveUserSample: connectedSaveUserSample, channel } = props;
+    connectedSaveUserSample(channel.id, e.target.files);
   },
 });
 

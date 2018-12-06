@@ -88,6 +88,19 @@ export const channelsReducer = (state = channelsInitialState, action) => {
         state[action.payload.oldIndex],
         R.remove(action.payload.oldIndex, 1, state),
       );
+    case CHANNELS_CONSTANTS.SET_CHANNEL_USER_SAMPLE:
+      return state.map((channel) => {
+        if (channel.id === action.payload.channel) {
+          return {
+            ...channel,
+            sample: {
+              url: action.payload.sampleURL,
+              name: action.payload.sampleURL,
+            },
+          };
+        }
+        return channel;
+      });
     case CHANNELS_CONSTANTS.SET_CHANNELS:
       return [...action.payload];
     default:

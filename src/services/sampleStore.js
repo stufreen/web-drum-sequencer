@@ -1,4 +1,5 @@
 import { fetchFile, decodeFile, decodeAudio } from './fileUtils';
+import { saveToDb } from './database';
 
 export const sampleStore = {};
 
@@ -18,11 +19,14 @@ export const loadSample = (url) => {
 };
 
 export const saveToSampleStore = (file) => {
-  const id = file.name
+  const id = file.name;
   return decodeFile(file)
-    .then(decodeAudio)
+    .then((myArrayBuffer) => {
+      saveToDb(myArrayBuffer, id);
+      return decodeAudio(myArrayBuffer);
+    })
     .then((drumBuffer) => {
       sampleStore[id] = drumBuffer;
-      return true;
+      return id;
     });
 };

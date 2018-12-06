@@ -92,6 +92,14 @@ export const setChannelSample = (channel, sampleURL) => ({
   },
 });
 
+export const setChannelUserSample = (channel, sampleURL) => ({
+  type: CHANNELS_CONSTANTS.SET_CHANNEL_USER_SAMPLE,
+  payload: {
+    channel,
+    sampleURL,
+  },
+});
+
 export const setChannelReverb = (channel, reverb) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNEL_REVERB,
   payload: {

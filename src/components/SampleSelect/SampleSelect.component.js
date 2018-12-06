@@ -121,5 +121,5 @@ SampleSelectComponent.propTypes = {
   channel: PropTypes.shape({
     id: PropTypes.string.isRequired,
   }).isRequired,
-  userSamples: PropTypes.arrayOf(PropTypes.object).isRequired,
+  userSamples: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

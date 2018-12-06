@@ -9,6 +9,7 @@ import { configureStore } from './store';
 import { loadSampleStatefully } from './common';
 import { startAnimations } from './services/animations';
 import { initializePwaInstall } from './services/pwaInstall';
+import { initializeDB } from './services/database';
 
 const { store, persistor } = configureStore(() => {
   const { channels } = store.getState();
@@ -50,3 +51,5 @@ initializeAudio(store);
 startAnimations(store);
 
 initializePwaInstall(store);
+
+initializeDB();
