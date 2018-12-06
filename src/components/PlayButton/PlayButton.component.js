@@ -18,7 +18,7 @@ export const PlayButtonComponent = ({ startPlaybackAndResume, stopPlayback, play
       onClick={stopPlayback}
       variant="red"
     >
-      <Text mr={2}>
+      <Text mr={2} fontSize={1}>
         Stop
       </Text>
       <svg width="0.9em" height="0.9em" viewBox="0 0 371 371" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@ export const PlayButtonComponent = ({ startPlaybackAndResume, stopPlayback, play
       onClick={startPlaybackAndResume}
       variant="green"
     >
-      <Text mr={2}>
+      <Text mr={2} fontSize={1}>
         PLAY
       </Text>
       <svg width="1.1em" height="0.9em" viewBox="0 0 452 396" version="1.1" xmlns="http://www.w3.org/2000/svg">

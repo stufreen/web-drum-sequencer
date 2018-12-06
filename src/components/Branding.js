@@ -6,12 +6,12 @@ import { Box } from './design-system';
 
 const HeaderText = styled.h1`
   color: ${theme.colors.steel};
-  font-size: 0.9em;
-  font-weight: 500;
+  font-size: 1em;
+  font-weight: 600;
   margin-left: 1.5em;
   line-height: 1.2em;
   margin-top: 0.5em;
-  max-width: 5em;
+  max-width: 4em;
 `;
 
 export const Branding = () => (
