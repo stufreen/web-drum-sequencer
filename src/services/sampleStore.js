@@ -1,5 +1,5 @@
 import { fetchFile, decodeFile, decodeAudio } from './fileUtils';
-import { saveToDb } from './database';
+import { saveToDB, getFromDB } from './database';
 
 export const sampleStore = {};
 
@@ -8,21 +8,27 @@ export const loadSample = (url) => {
     return Promise.resolve(true);
   }
 
-  return fetchFile(url)
-    .then(decodeFile)
+  return getFromDB(url)
     .then(decodeAudio)
     .then((drumBuffer) => {
       sampleStore[url] = drumBuffer;
       return true;
     })
-    .catch(() => false);
+    .catch(() => fetchFile(url)
+      .then(decodeFile)
+      .then(decodeAudio)
+      .then((drumBuffer) => {
+        sampleStore[url] = drumBuffer;
+        return true;
+      })
+      .catch(() => false));
 };
 
 export const saveToSampleStore = (file) => {
   const id = file.name;
   return decodeFile(file)
     .then((myArrayBuffer) => {
-      saveToDb(myArrayBuffer, id);
+      saveToDB(myArrayBuffer, id);
       return decodeAudio(myArrayBuffer);
     })
     .then((drumBuffer) => {

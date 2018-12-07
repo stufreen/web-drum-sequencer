@@ -7,11 +7,12 @@ import theme from '../../styles/theme';
 
 const openFileInput = React.createRef();
 
-const getSampleSelectOptions = (userSamples = []) => {
-  const allOptions = sampleOptions.map(sampleOption => ({
-    value: sampleOption.url,
-    label: sampleOption.name,
-  }));
+const factoryOptions = sampleOptions.map(sampleOption => ({
+  value: sampleOption.url,
+  label: sampleOption.name,
+}));
+
+const getSampleSelectOptions = (userOptions = []) => {
   const groupedOptions = [
     {
       label: 'User',
@@ -20,28 +21,28 @@ const getSampleSelectOptions = (userSamples = []) => {
           value: 'CHOOSE_FILE',
           label: 'Choose file...',
         },
-        ...userSamples,
+        ...userOptions,
       ],
     },
     {
       label: '707',
-      options: allOptions.filter(item => item.label.includes('707')),
+      options: factoryOptions.filter(item => item.label.includes('707')),
     },
     {
       label: '808',
-      options: allOptions.filter(item => item.label.includes('808')),
+      options: factoryOptions.filter(item => item.label.includes('808')),
     },
     {
       label: 'Ace',
-      options: allOptions.filter(item => item.label.includes('Ace')),
+      options: factoryOptions.filter(item => item.label.includes('Ace')),
     },
     {
       label: 'LDrum',
-      options: allOptions.filter(item => item.label.includes('LDrum')),
+      options: factoryOptions.filter(item => item.label.includes('LDrum')),
     },
     {
       label: 'Hip-hop',
-      options: allOptions.filter(item => item.label.includes('Hip Hop')),
+      options: factoryOptions.filter(item => item.label.includes('Hip Hop')),
     },
   ];
   return groupedOptions;
@@ -53,11 +54,12 @@ export const SampleSelectComponent = ({
   channel,
   userSamples,
 }) => {
-  const options = sampleOptions.map(sampleOption => ({
-    value: sampleOption.url,
-    label: sampleOption.name,
+  const userOptions = userSamples.map(filename => ({
+    value: filename,
+    label: filename,
   }));
-  const currentOption = options.find(option => channel.sample.url === option.value);
+  const allOptions = userOptions.concat(factoryOptions);
+  // const currentOption = allOptions.find(option => channel.sample.url === option.value);
   return (
     <Box>
       <ControlLabel fontWeight="bold" mb={1} ml={1} textAlign="left">
@@ -65,7 +67,7 @@ export const SampleSelectComponent = ({
       </ControlLabel>
       <Select
         aria-label="Select Channel"
-        options={getSampleSelectOptions(userSamples)}
+        options={getSampleSelectOptions(userOptions)}
         onChange={(choice) => {
           if (choice.value === 'CHOOSE_FILE') {
             openFileInput.current.click();
@@ -73,7 +75,7 @@ export const SampleSelectComponent = ({
             onSelectSample(choice);
           }
         }}
-        value={currentOption}
+        // value={currentOption}
         isSearchable={false}
         styles={{
           container: styles => ({

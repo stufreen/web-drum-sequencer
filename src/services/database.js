@@ -22,7 +22,7 @@ export const initializeDB = () => new Promise((resolve, reject) => {
   };
 });
 
-export const saveToDb = (myArrayBuffer, myKey) => new Promise((resolve, reject) => {
+export const saveToDB = (myArrayBuffer, myKey) => new Promise((resolve, reject) => {
   const trans = db.transaction([USER_SAMPLES], 'readwrite');
   trans.objectStore(USER_SAMPLES).put(myArrayBuffer, myKey);
   trans.onerror = (event) => {
@@ -30,5 +30,19 @@ export const saveToDb = (myArrayBuffer, myKey) => new Promise((resolve, reject) 
   };
   trans.onsuccess = () => {
     resolve(myKey);
+  };
+});
+
+export const getFromDB = myKey => new Promise((resolve, reject) => {
+  const trans = db.transaction([USER_SAMPLES], 'readwrite');
+  const request = trans.objectStore(USER_SAMPLES).get(myKey);
+  request.onerror = (event) => {
+    reject(event);
+  };
+  request.onsuccess = () => {
+    if (request.result) {
+      resolve(request.result);
+    }
+    reject();
   };
 });
