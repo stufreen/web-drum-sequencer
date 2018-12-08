@@ -5,58 +5,37 @@ export default {
   channels: [
     {
       id: 'e75658e5-e17b-47dd-b8ca-4d03b06068d9',
-      sample: {
-        name: 'Hip Hop Bass 1',
-        url: 'assets/audio/hip-hop-bd-1.mp3',
-      },
+      sample: 'assets/audio/hip-hop-bd-1.mp3',
       gain: 1,
     },
     {
       id: 'empty_channel',
-      sample: {
-        name: 'Hip Hop Bass 2',
-        url: 'assets/audio/hip-hop-bd-2.mp3',
-      },
+      sample: 'assets/audio/hip-hop-bd-2.mp3',
       gain: 1,
     },
     {
       id: '8c754c56-6cdc-479a-95b2-890ce93856c2',
-      sample: {
-        name: 'Hip Hop Snare 1',
-        url: 'assets/audio/hip-hop-sd-1.mp3',
-      },
+      sample: 'assets/audio/hip-hop-sd-1.mp3',
       gain: 1,
     },
     {
       id: '6182dd6e-188c-4157-9b97-86d904f446d5',
-      sample: {
-        name: 'Hip Hop Snare 2',
-        url: 'assets/audio/hip-hop-sd-2.mp3',
-      },
+      sample: 'assets/audio/hip-hop-sd-2.mp3',
       gain: 0.6,
     },
     {
       id: '5c34f5d0-6605-471b-95f1-eea186f332ea',
-      sample: {
-        name: 'Hip Hop Hi-hat Closed 1',
-        url: 'assets/audio/hip-hop-ch-1.mp3',
-      },
+      sample: 'assets/audio/hip-hop-ch-1.mp3',
       gain: 1,
     },
     {
       id: '3a8d1712-d85b-4a1c-b812-4e16da1f3731',
-      sample: {
-        name: 'Hip Hop Hi-hat Closed 2',
-        url: 'assets/audio/hip-hop-ch-2.mp3',
-      },
+      sample: 'assets/audio/hip-hop-ch-2.mp3',
       gain: 0.46,
     },
     {
       id: '26feb931-cfb9-4a93-a0ab-6f9ca189bb40',
-      sample: {
-        name: 'Hip Hop Hi-hat Open',
-        url: 'assets/audio/hip-hop-oh.mp3',
-      },
+      sample: 'assets/audio/hip-hop-oh.mp3',
       gain: 0.33,
     },
   ],
