@@ -20,7 +20,7 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules)/,
+        exclude: /(node_modules|assets)/,
         loader: 'babel-loader',
         options: { presets: ['env'] },
       },
