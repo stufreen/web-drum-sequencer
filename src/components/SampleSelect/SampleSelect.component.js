@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as R from 'ramda';
 import Select from 'react-select';
 import { Box, ControlLabel } from '../design-system';
 import sampleOptions from '../../samples.config';
