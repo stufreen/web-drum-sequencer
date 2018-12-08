@@ -5,106 +5,67 @@ export default {
   channels: [
     {
       id: 'empty_channel',
-      sample: {
-        name: '808 Bass Short',
-        url: 'assets/audio/808-bd-short.mp3',
-      },
+      sample: 'assets/audio/808-bd-short.mp3',
       gain: 0.83,
     },
     {
       id: 'eb405dca-32d1-4867-b7e0-ef37198f5fee',
-      sample: {
-        name: '808 Bass Long',
-        url: 'assets/audio/808-bd-long.mp3',
-      },
+      sample: 'assets/audio/808-bd-long.mp3',
       gain: 1,
     },
     {
       id: '59fe4d57-c587-441b-b10d-9a2b54d588fd',
-      sample: {
-        name: '808 Snare',
-        url: 'assets/audio/808-sd.mp3',
-      },
+      sample: 'assets/audio/808-sd.mp3',
       gain: 1,
     },
     {
       id: '6a2a5e54-8cbc-4e7e-a81c-68fc4b34c0bc',
-      sample: {
-        name: '808 Clap',
-        url: 'assets/audio/808-clap.mp3',
-      },
+      sample: 'assets/audio/808-clap.mp3',
       gain: 0.85,
     },
     {
       id: '9b6de154-8a6e-4941-80db-4b9f47d9c241',
-      sample: {
-        name: '808 Hi-hat Closed',
-        url: 'assets/audio/808-ch.mp3',
-      },
+      sample: 'assets/audio/808-ch.mp3',
       gain: 0.21,
     },
     {
       id: 'fb2edb2c-3d21-49fd-98d8-459b153fb083',
-      sample: {
-        name: '808 Hi-hat Open',
-        url: 'assets/audio/808-oh.mp3',
-      },
+      sample: 'assets/audio/808-oh.mp3',
       gain: 0.28,
     },
     {
       id: '27f949f4-f5f7-4846-abfb-1d0e544b5bff',
-      sample: {
-        name: '808 Cowbell',
-        url: 'assets/audio/808-cowbell.mp3',
-      },
+      sample: 'assets/audio/808-cowbell.mp3',
       gain: 0.55,
     },
     {
       id: 'd8d65425-e980-43a6-b3b3-1c14b55b8c94',
-      sample: {
-        name: '808 Cymbal',
-        url: 'assets/audio/808-cym.mp3',
-      },
+      sample: 'assets/audio/808-cym.mp3',
       gain: 0.37,
     },
     {
       id: 'dbbfd24a-0f5d-409f-b4ed-ec330b47e2e5',
-      sample: {
-        name: '808 Clave',
-        url: 'assets/audio/808-clav.mp3',
-      },
+      sample: 'assets/audio/808-clav.mp3',
       gain: 0.31,
     },
     {
       id: '206fcf08-67ff-4e98-905e-2495383fb83c',
-      sample: {
-        name: '808 Rimshot',
-        url: 'assets/audio/808-rs.mp3',
-      },
+      sample: 'assets/audio/808-rs.mp3',
       gain: 0.43,
     },
     {
       id: '0ea2f943-2144-4434-92f7-8d689d49633a',
-      sample: {
-        name: '808 High Tom',
-        url: 'assets/audio/808-ht.mp3',
-      },
+      sample: 'assets/audio/808-ht.mp3',
       gain: 0.71,
     },
     {
       id: '2f090e95-37f7-4c49-b0c5-eb35d64216c8',
-      sample: {
-        name: '808 Mid Tom',
-        url: 'assets/audio/808-mt.mp3',
-      },
+      sample: 'assets/audio/808-mt.mp3',
       gain: 0.59,
     },
     {
       id: '816f7250-0afb-4353-bc6c-84ad97f9b8c6',
-      sample: {
-        name: '808 Low Tom',
-        url: 'assets/audio/808-lt.mp3',
-      },
+      sample: 'assets/audio/808-lt.mp3',
       gain: 0.71,
     },
   ],

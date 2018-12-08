@@ -11,16 +11,14 @@ export const pitchToCents = ({ pitchCoarse = 0, pitchFine = 0 }) => Math.round(
 );
 
 export const playNoteNow = (noteChannel) => {
-  const sampleID = noteChannel.sample.url;
   const pitch = pitchToCents(noteChannel);
-  playNote(null, sampleStore[sampleID], noteChannel.id, pitch);
+  playNote(null, sampleStore[noteChannel.sample], noteChannel.id, pitch);
 };
 
 export const scheduleNote = (noteID, noteTime, noteChannel) => {
   if (typeof schedule[noteID] === 'undefined') {
-    const sampleID = noteChannel.sample.url;
     const pitch = pitchToCents(noteChannel);
-    schedule[noteID] = playNote(noteTime, sampleStore[sampleID], noteChannel.id, pitch);
+    schedule[noteID] = playNote(noteTime, sampleStore[noteChannel.sample], noteChannel.id, pitch);
   }
 };
 

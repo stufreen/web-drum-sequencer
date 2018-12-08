@@ -92,10 +92,7 @@ export const channelsReducer = (state = channelsInitialState, action) => {
         if (channel.id === action.payload.channel) {
           return {
             ...channel,
-            sample: {
-              url: action.payload.sampleURL,
-              name: action.payload.sampleURL,
-            },
+            sample: action.payload.sampleURL,
           };
         }
         return channel;

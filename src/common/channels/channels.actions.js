@@ -110,7 +110,7 @@ export const setChannelReverb = (channel, reverb) => ({
 
 export const loadSampleStatefully = (dispatch, channel) => {
   dispatch(sampleLoaded(channel.id, false));
-  loadSample(channel.sample.url).then(() => {
+  loadSample(channel.sample).then(() => {
     dispatch(sampleLoaded(channel.id, true));
   });
 };

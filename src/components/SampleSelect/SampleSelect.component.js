@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as R from 'ramda';
 import Select from 'react-select';
 import { Box, ControlLabel } from '../design-system';
 import sampleOptions from '../../samples.config';
@@ -59,7 +60,7 @@ export const SampleSelectComponent = ({
     label: filename,
   }));
   const allOptions = userOptions.concat(factoryOptions);
-  // const currentOption = allOptions.find(option => channel.sample.url === option.value);
+  const currentOption = allOptions.find(option => channel.sample === option.value);
   return (
     <Box>
       <ControlLabel fontWeight="bold" mb={1} ml={1} textAlign="left">
@@ -75,7 +76,7 @@ export const SampleSelectComponent = ({
             onSelectSample(choice);
           }
         }}
-        // value={currentOption}
+        value={currentOption}
         isSearchable={false}
         styles={{
           container: styles => ({
