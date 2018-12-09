@@ -4,9 +4,9 @@ import {
   Box,
   Text,
   HoverButton,
-} from '../design-system';
+} from './design-system';
 
-export const SampleLoadError = ({ onDismiss }) => (
+export const PresetDeleted = ({ onDismiss }) => (
   <Box>
     <Text
       fontWeight="400"
@@ -14,7 +14,7 @@ export const SampleLoadError = ({ onDismiss }) => (
       fontSize={2}
       mb={3}
     >
-      There was an error loading that sample.
+      User preset deleted.
     </Text>
     <Box display="flex" justifyContent="flex-end">
       <HoverButton
@@ -32,6 +32,6 @@ export const SampleLoadError = ({ onDismiss }) => (
   </Box>
 );
 
-SampleLoadError.propTypes = {
+PresetDeleted.propTypes = {
   onDismiss: PropTypes.func.isRequired,
 };

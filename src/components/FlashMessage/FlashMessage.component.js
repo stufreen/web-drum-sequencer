@@ -7,7 +7,9 @@ import {
   HoverButton,
 } from '../design-system';
 import { InstallPWA } from '../InstallPWA';
-import { SampleLoadError } from '../SampleLoadError';
+import { SampleLoadError } from '../SampleLoadError.component';
+import { PresetSaved } from '../PresetSaved.component';
+import { PresetDeleted } from '../PresetDeleted.component';
 
 const getMessageComponent = (messageKey) => {
   switch (messageKey) {
@@ -15,6 +17,10 @@ const getMessageComponent = (messageKey) => {
       return InstallPWA;
     case FLASH_MESSAGES.SAMPLE_LOAD_ERROR:
       return SampleLoadError;
+    case FLASH_MESSAGES.PRESET_SAVED:
+      return PresetSaved;
+    case FLASH_MESSAGES.PRESET_DELETED:
+      return PresetDeleted;
     default:
       return undefined;
   }
@@ -32,10 +38,11 @@ export class FlashMessageComponent extends React.Component {
   animateBox() {
     const { flashMessageVisible, messageKey } = this.props;
     if (messageKey && flashMessageVisible) {
-      TweenLite.from(
+      TweenLite.fromTo(
         this.flashBox,
         0.5,
         { autoAlpha: 0, y: '5%' },
+        { autoAlpha: 1, y: '0%' },
       );
     } else if (messageKey) {
       TweenLite.to(this.flashBox, 0.1, { autoAlpha: 0 });

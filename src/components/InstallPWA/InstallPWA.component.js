@@ -28,6 +28,7 @@ export const InstallPWA = ({ onDismiss }) => (
         width="7rem"
         color="white"
         display="block"
+        py={2}
       >
         INSTALL
       </HoverButton>
@@ -41,6 +42,7 @@ export const InstallPWA = ({ onDismiss }) => (
         color="darkGray"
         ml={1}
         display="block"
+        py={2}
       >
         NOPE
       </HoverButton>

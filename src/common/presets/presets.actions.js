@@ -3,6 +3,8 @@ import { loadChannels } from '../channels';
 import { setPattern, setSelectedChannel } from '../master';
 import { PRESETS_CONSTANTS } from './presets.constants';
 import presets from '../../presets';
+import { showFlashMessage, FLASH_MESSAGES } from '../window';
+import { currentStateSelector } from './presets.selectors';
 
 export const setPreset = presetName => ({
   type: PRESETS_CONSTANTS.SET_PRESET,
@@ -41,4 +43,24 @@ export const erasePreset = presetName => (dispatch) => {
   dispatch(setPattern(0));
   dispatch(setSelectedChannel(presets[0].channels[0].id));
   dispatch(deletePreset(presetName));
+  dispatch(showFlashMessage(FLASH_MESSAGES.PRESET_DELETED));
+};
+
+export const doSavePresetAs = presetName => (dispatch, getState) => {
+  const currentState = currentStateSelector(getState());
+  dispatch(savePresetAs({
+    ...currentState,
+    name: presetName,
+  }));
+  dispatch(setPreset(presetName));
+  dispatch(showFlashMessage(FLASH_MESSAGES.PRESET_SAVED));
+};
+
+export const doSavePreset = presetName => (dispatch, getState) => {
+  const currentState = currentStateSelector(getState());
+  dispatch(savePreset({
+    ...currentState,
+    name: presetName,
+  }));
+  dispatch(showFlashMessage(FLASH_MESSAGES.PRESET_SAVED));
 };
