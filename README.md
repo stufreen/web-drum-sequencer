@@ -8,6 +8,7 @@ https://wds-1.com
 
 ## Features
  * Swap drum samples
+ * Choose drum samples from file
  * Pattern selector to save up to 8 patterns per drum kit
  * BPM and swing control
  * Sample hit buttons
