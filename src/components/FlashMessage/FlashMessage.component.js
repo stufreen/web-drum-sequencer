@@ -10,6 +10,7 @@ import { InstallPWA } from '../InstallPWA';
 import { SampleLoadError } from '../SampleLoadError.component';
 import { PresetSaved } from '../PresetSaved.component';
 import { PresetDeleted } from '../PresetDeleted.component';
+import { timedCallback } from '../timedCallback.hoc';
 
 const getMessageComponent = (messageKey) => {
   switch (messageKey) {
@@ -52,6 +53,7 @@ export class FlashMessageComponent extends React.Component {
   render() {
     const { messageKey, onDismiss } = this.props;
     const Message = getMessageComponent(messageKey);
+    const DisappearingMessage = timedCallback(onDismiss, 6000)(Message);
     return Message
       ? (
         <Box
@@ -68,7 +70,7 @@ export class FlashMessageComponent extends React.Component {
             innerRef={(comp) => { this.flashMessage = comp; }}
             p={4}
           >
-            <Message onDismiss={onDismiss} />
+            <DisappearingMessage onDismiss={onDismiss} />
             <HoverButton
               bg="transparent"
               m={1}
