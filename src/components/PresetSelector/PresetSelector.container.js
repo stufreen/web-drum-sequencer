@@ -9,7 +9,7 @@ import {
   savePresetAs,
   deletePreset,
   setPresetPrompt,
-  savePreset,
+  doSavePreset,
   loadPreset,
   erasePreset,
 } from '../../common';
@@ -22,7 +22,7 @@ const mapDispatchToProps = {
   savePresetAs,
   deletePreset,
   setPresetPrompt,
-  savePreset,
+  doSavePreset,
   loadPreset,
   erasePreset,
 };
@@ -35,19 +35,15 @@ export const PresetSelector = compose(
   withHandlers({
     onSelectPreset: props => ({ value }) => {
       const {
-        savePreset: connectedSavePreset,
+        doSavePreset: connectedDoSavePreset,
         setPresetPrompt: connectedSetPresetPrompt,
         erasePreset: connectedErasePreset,
         loadPreset: connectedLoadPreset,
         currentPreset,
-        currentState,
       } = props;
       switch (value) {
         case 'SAVE_PRESET':
-          connectedSavePreset({
-            ...currentState,
-            name: currentPreset.name,
-          });
+          connectedDoSavePreset(currentPreset.name);
           break;
         case 'DELETE_PRESET':
           connectedErasePreset(currentPreset.name);

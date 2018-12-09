@@ -25,7 +25,7 @@ describe('setChannelSample', () => {
       channelsInitialState,
       setChannelSample(channelsInitialState[0].id, testSample),
     );
-    expect(state[0].sample.url).toEqual(testSample);
+    expect(state[0].sample).toEqual(testSample);
   });
 });
 

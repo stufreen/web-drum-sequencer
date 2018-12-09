@@ -5,108 +5,75 @@ export default {
   channels: [
     {
       id: 'empty_channel',
-      sample: {
-        name: 'LDrum Bass',
-        url: 'assets/audio/linn-bd.mp3',
-      },
+      sample: 'assets/audio/linn-bd.mp3',
       gain: 1,
     },
     {
       id: 'eca3906c-9577-4a38-a025-87f6c7b8fa88',
-      sample: {
-        name: 'LDrum Snare',
-        url: 'assets/audio/linn-sd.mp3',
-      },
+      sample: 'assets/audio/linn-sd.mp3',
       gain: 0.65,
       reverb: 0.1,
       pan: 0,
     },
     {
       id: 'c068fa91-9977-4fb1-9f41-ec3fe8473cea',
-      sample: {
-        name: 'LDrum Hi-hat Closed',
-        url: 'assets/audio/linn-ch.mp3',
-      },
+      sample: 'assets/audio/linn-ch.mp3',
       gain: 0.1,
       reverb: 0.2,
       pan: 0.3,
     },
     {
       id: '4ed97fa7-8798-4cf6-8c7b-0e42c76f1612',
-      sample: {
-        name: 'LDrum Hi-hat Pressed',
-        url: 'assets/audio/linn-ph.mp3',
-      },
+      sample: 'assets/audio/linn-ph.mp3',
       gain: 0.15,
       reverb: 0.2,
       pan: 0.3,
     },
     {
       id: '7ac094ef-282c-4d9d-8d7c-390118dd925a',
-      sample: {
-        name: 'LDrum High Tom',
-        url: 'assets/audio/linn-ht.mp3',
-      },
+      sample: 'assets/audio/linn-ht.mp3',
       gain: 0.26,
       reverb: 0.35,
       pan: -0.5,
     },
     {
       id: '046c982a-2576-453d-b021-963c6d3076ee',
-      sample: {
-        name: 'LDrum Mid Tom',
-        url: 'assets/audio/linn-mt.mp3',
-      },
+      sample: 'assets/audio/linn-mt.mp3',
       gain: 0.27,
       reverb: 0.35,
       pan: -0.3,
     },
     {
       id: '12a11640-05d9-4a1e-88ff-c4c7525385b1',
-      sample: {
-        name: 'LDrum Low Tom',
-        url: 'assets/audio/linn-lt.mp3',
-      },
+      sample: 'assets/audio/linn-lt.mp3',
       gain: 0.30,
       reverb: 0.35,
       pan: -0.1,
     },
     {
       id: 'e72fec64-9e3d-4848-81ee-c35643a70624',
-      sample: {
-        name: 'LDrum Cowbell',
-        url: 'assets/audio/linn-cowbell.mp3',
-      },
+      sample: 'assets/audio/linn-cowbell.mp3',
       gain: 0.24,
       reverb: 0.2,
       pan: 0.4,
     },
     {
       id: '06126c09-a20b-4cf4-8c05-a812d3ebc7c8',
-      sample: {
-        name: 'LDrum Clap',
-        url: 'assets/audio/linn-clap.mp3',
-      },
+      sample: 'assets/audio/linn-clap.mp3',
       gain: 0.44,
       reverb: 0.1,
       pan: -0.5,
     },
     {
       id: 'c4b37dfa-8f2f-491b-942a-b271b7b24c71',
-      sample: {
-        name: 'LDrum Rimshot',
-        url: 'assets/audio/linn-rim.mp3',
-      },
+      sample: 'assets/audio/linn-rim.mp3',
       gain: 0.43,
       reverb: 0.1,
       pan: 0.5,
     },
     {
       id: '3bd51432-6e07-4ec5-93b0-04eef8be49f6',
-      sample: {
-        name: 'LDrum Tambourine',
-        url: 'assets/audio/linn-tamb.mp3',
-      },
+      sample: 'assets/audio/linn-tamb.mp3',
       gain: 0.28,
       reverb: 0.3,
       pan: 0.7,

@@ -3,14 +3,12 @@ import { compose, withHandlers } from 'recompose';
 import { ChannelComponent } from './Channel.component';
 import { channelSelectors } from './Channel.selectors';
 import {
-  loadAndSetChannelSample,
   deleteChannel,
   setSelectedChannel,
 } from '../../common';
 import { playNoteNow } from '../../services/audioScheduler';
 
 const mapDispatchToProps = {
-  loadAndSetChannelSample,
   deleteChannel,
   setSelectedChannel,
 };

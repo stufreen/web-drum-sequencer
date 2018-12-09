@@ -9,14 +9,9 @@ import { configureStore } from './store';
 import { loadSampleStatefully } from './common';
 import { startAnimations } from './services/animations';
 import { initializePwaInstall } from './services/pwaInstall';
+import { initializeDB } from './services/database';
 
-const { store, persistor } = configureStore(() => {
-  const { channels } = store.getState();
-  // Load up all the initial samples
-  channels.forEach((channel) => {
-    loadSampleStatefully(store.dispatch, channel);
-  });
-});
+const { store, persistor } = configureStore();
 
 /**
  * Watch for user going online, and try to load any samples
@@ -50,3 +45,12 @@ initializeAudio(store);
 startAnimations(store);
 
 initializePwaInstall(store);
+
+initializeDB()
+  .then(() => {
+    const { channels } = store.getState();
+    // Load up all the initial samples
+    channels.forEach((channel) => {
+      loadSampleStatefully(store.dispatch, channel);
+    });
+  });

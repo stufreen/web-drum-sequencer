@@ -19,7 +19,7 @@ export const HitButton = ({ channel, onMouseDown }) => (
 
 HitButton.propTypes = {
   channel: PropTypes.shape({
-    sample: PropTypes.object.isRequired,
+    sample: PropTypes.string.isRequired,
     gain: PropTypes.number.isRequired,
   }).isRequired,
   onMouseDown: PropTypes.func.isRequired,

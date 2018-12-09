@@ -4,15 +4,13 @@ import { SavePresetModalComponent } from './SavePresetModal.component';
 import { savePresetModalSelectors } from './SavePresetModal.selectors';
 import {
   setPresetPrompt,
-  savePresetAs,
-  setPreset,
+  doSavePresetAs,
 } from '../../common';
 import defaultPresets from '../../presets';
 
 const mapDispatchToProps = {
   setPresetPrompt,
-  savePresetAs,
-  setPreset,
+  doSavePresetAs,
 };
 
 const isNameUnique = (proposedName, userPresets) => [...defaultPresets, ...userPresets].find(
@@ -38,9 +36,7 @@ const handlers = {
     event.preventDefault();
     const {
       setPresetPrompt: connectedSetPresetPrompt,
-      savePresetAs: connectedSavePresetAs,
-      setPreset: connectedSetPreset,
-      currentState,
+      doSavePresetAs: connectedDoSavePresetAs,
       updateNameField,
       nameField,
       setError,
@@ -55,11 +51,7 @@ const handlers = {
       setError('Must be unique');
     } else {
       connectedSetPresetPrompt(false);
-      connectedSavePresetAs({
-        ...currentState,
-        name: nameField,
-      });
-      connectedSetPreset(nameField);
+      connectedDoSavePresetAs(nameField);
       updateNameField('');
       setError(null);
     }

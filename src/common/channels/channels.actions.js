@@ -2,8 +2,9 @@ import { loadSample } from '../../services/sampleStore';
 import { CHANNELS_CONSTANTS } from './channels.constants';
 import { setNotes, initializeChannelNotes } from '../notes';
 import { uuid } from '../../services/uuid';
-import samples from '../../samples.config';
+import factorySamples from '../../samples.config';
 import { setSelectedChannel } from '../master';
+import { showFlashMessage, FLASH_MESSAGES } from '../window';
 
 export const setChannelGain = (channel, gain) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNEL_GAIN,
@@ -102,8 +103,10 @@ export const setChannelReverb = (channel, reverb) => ({
 
 export const loadSampleStatefully = (dispatch, channel) => {
   dispatch(sampleLoaded(channel.id, false));
-  loadSample(channel.sample.url).then(() => {
-    dispatch(sampleLoaded(channel.id, true));
+  loadSample(channel.sample).then((success) => {
+    if (success) {
+      dispatch(sampleLoaded(channel.id, true));
+    }
   });
 };
 
@@ -118,7 +121,7 @@ export const loadChannels = (channels, notes) => (dispatch) => {
 export const newChannel = () => (dispatch) => {
   const channelToAdd = {
     id: uuid(),
-    sample: samples[0],
+    sample: factorySamples[0].url,
     gain: 1,
     pitchCoarse: 0,
     pitchFine: 0,
@@ -130,12 +133,16 @@ export const newChannel = () => (dispatch) => {
   loadSampleStatefully(dispatch, channelToAdd);
 };
 
-export const loadAndSetChannelSample = (channel, sampleURL) => (dispatch) => {
-  dispatch(sampleLoaded(channel, false));
-  loadSample(sampleURL).then(() => {
-    dispatch(sampleLoaded(channel, true));
+export const loadAndSetChannelSample = (channelID, sampleURL) => (dispatch) => {
+  dispatch(sampleLoaded(channelID, false));
+  loadSample(sampleURL).then((success) => {
+    if (success) {
+      dispatch(sampleLoaded(channelID, true));
+    } else {
+      dispatch(showFlashMessage(FLASH_MESSAGES.SAMPLE_LOAD_ERROR));
+    }
   });
-  dispatch(setChannelSample(channel, sampleURL));
+  dispatch(setChannelSample(channelID, sampleURL));
 };
 
 export const deleteChannel = (channelID, channels, selectedChannelId) => (dispatch) => {

@@ -18,7 +18,7 @@ export default {
   channels: [
     {
       id: 'empty_channel',
-      sample: samples[0],
+      sample: samples[0].url,
       gain: 1,
     },
   ],

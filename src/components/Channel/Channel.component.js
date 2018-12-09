@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as R from 'ramda';
 import { Toggles } from '../Toggles';
 import {
   Box,
@@ -10,6 +11,12 @@ import { RemoveButton } from './RemoveButton.component';
 import { HitButton } from './HitButton.component';
 import { MuteSolo } from '../MuteSolo';
 import construction from '../../assets/images/construction-light.svg';
+import samples from '../../samples.config';
+
+const getSampleName = (sampleURL) => {
+  const maybeName = R.find(R.propEq('url', sampleURL))(samples);
+  return maybeName ? maybeName.name : sampleURL;
+};
 
 const ChannelBox = Box.extend`
   outline: none;
@@ -42,49 +49,53 @@ export const ChannelComponent = ({
   onPressHitButton,
   onTouchChannel,
   selectedChannelId,
-}) => (
-  <ChannelBox
-    width="100%"
-    display="flex"
-    flex="1 1 auto"
-    p={1}
-    alignItems="stretch"
-    borderRadius={0}
-    onMouseDown={onTouchChannel}
-    bg={selectedChannelId === channel.id ? 'darkGray' : 'transparent'}
-    outline="none"
-    className="wds-draggable"
-  >
-    <Box
-      bg={selectedChannelId === channel.id ? 'steel' : 'darkGray'}
-      width="16rem"
-      p={2}
-      borderRadius="0.25rem"
-      mr={[2, 2, 2, 3, 4]}
+}) => {
+  const sampleName = getSampleName(channel.sample);
+  return (
+    <ChannelBox
+      width="100%"
       display="flex"
-      alignItems="center"
-      position="relative"
+      flex="1 1 auto"
+      p={1}
+      alignItems="stretch"
+      borderRadius={0}
+      onMouseDown={onTouchChannel}
+      bg={selectedChannelId === channel.id ? 'darkGray' : 'transparent'}
+      outline="none"
+      className="wds-draggable"
     >
-      <MoveImage src={construction} height="2.5rem" mr={3} userSelect="none" className="wds-channel-handle" />
-      <Box flex="1 1 auto">
-        <Text color="white" fontWeight="normal" textAlign="left" fontSize={2} userSelect="none">
-          {channel.sample.name}
-        </Text>
+      <Box
+        bg={selectedChannelId === channel.id ? 'steel' : 'darkGray'}
+        width="16rem"
+        p={2}
+        borderRadius="0.25rem"
+        mr={[2, 2, 2, 3, 4]}
+        display="flex"
+        alignItems="center"
+        position="relative"
+      >
+        <MoveImage src={construction} height="2.5rem" mr={3} userSelect="none" className="wds-channel-handle" />
+        <Box flex="1 1 auto">
+          <Text color="white" fontWeight="normal" textAlign="left" fontSize={2} userSelect="none">
+            {sampleName}
+          </Text>
+        </Box>
+        <MuteSolo channel={channel} />
+        <HitButton channel={channel} onMouseDown={onPressHitButton} />
       </Box>
-      <MuteSolo channel={channel} />
-      <HitButton channel={channel} onMouseDown={onPressHitButton} />
-    </Box>
-    <Toggles
-      notes={notes[channel.id][pattern]}
-      channelID={channel.id}
-    />
-    <RemoveButton onClick={onPressRemove} />
-  </ChannelBox>
-);
+      <Toggles
+        notes={notes[channel.id][pattern]}
+        channelID={channel.id}
+      />
+      <RemoveButton onClick={onPressRemove} />
+    </ChannelBox>
+  );
+};
 
 ChannelComponent.propTypes = {
   notes: PropTypes.objectOf(PropTypes.array).isRequired,
   channel: PropTypes.shape({
+    sample: PropTypes.string,
     id: PropTypes.string.isRequired,
   }).isRequired,
   onPressRemove: PropTypes.func.isRequired,

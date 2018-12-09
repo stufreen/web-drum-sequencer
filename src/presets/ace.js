@@ -5,50 +5,32 @@ export default {
   channels: [
     {
       id: 'empty_channel',
-      sample: {
-        name: 'Ace Bass',
-        url: 'assets/audio/acetone-bd.mp3',
-      },
+      sample: 'assets/audio/acetone-bd.mp3',
       gain: 1,
     },
     {
       id: 'efd00923-e1b5-4bcd-b99c-2cbde8d92634',
-      sample: {
-        name: 'Ace Snare (Short)',
-        url: 'assets/audio/acetone-sd-1.mp3',
-      },
+      sample: 'assets/audio/acetone-sd-1.mp3',
       gain: 0.73,
     },
     {
       id: '6bf16a32-f8a1-4910-9046-be8b8c81591e',
-      sample: {
-        name: 'Ace Hi-hat Closed',
-        url: 'assets/audio/acetone-ch.mp3',
-      },
+      sample: 'assets/audio/acetone-ch.mp3',
       gain: 0.28,
     },
     {
       id: 'ab6ea4cd-f211-43a3-95ae-9a1cf7459de2',
-      sample: {
-        name: 'Ace Hi-hat Open',
-        url: 'assets/audio/acetone-oh.mp3',
-      },
+      sample: 'assets/audio/acetone-oh.mp3',
       gain: 0.46,
     },
     {
       id: '8d761f84-9f82-48b3-bfa1-a11c7a7deeff',
-      sample: {
-        name: 'Ace Percussion (Low)',
-        url: 'assets/audio/acetone-perc-1.mp3',
-      },
+      sample: 'assets/audio/acetone-perc-1.mp3',
       gain: 0.45,
     },
     {
       id: '8735d786-5ac0-4b36-a3fb-c58a55ee2b08',
-      sample: {
-        name: 'Ace Percussion (High)',
-        url: 'assets/audio/acetone-perc-2.mp3',
-      },
+      sample: 'assets/audio/acetone-perc-2.mp3',
       gain: 0.41,
     },
   ],
