@@ -7,11 +7,14 @@ import {
   HoverButton,
 } from '../design-system';
 import { InstallPWA } from '../InstallPWA';
+import { SampleLoadError } from '../SampleLoadError';
 
 const getMessageComponent = (messageKey) => {
   switch (messageKey) {
     case FLASH_MESSAGES.INSTALL_PWA:
       return InstallPWA;
+    case FLASH_MESSAGES.SAMPLE_LOAD_ERROR:
+      return SampleLoadError;
     default:
       return undefined;
   }
@@ -72,9 +75,10 @@ export class FlashMessageComponent extends React.Component {
               position="absolute"
               right="0.3rem"
               top="0.3rem"
-              width={16}
-              height={16}
+              width="0.8rem"
+              height="0.8rem"
               hoverOpacity="0.5"
+              p={0}
             >
               <svg width="100%" height="100%" viewBox="169 215 170 170" xmlns="http://www.w3.org/2000/svg">
                 <path d="M 169.72656,371.38672 L 238.67188,302.44141 L 169.92188,233.69141 L 181.25,222.36328 L 250,291.11328 L 318.75,222.36328 L 329.6875,233.49609 L 260.9375,302.24609 L 330.07812,371.38672 L 318.94531,382.71484 L 249.80469,313.57422 L 180.85938,382.51953 L 169.72656,371.38672 z" />
