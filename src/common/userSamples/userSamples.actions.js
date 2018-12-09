@@ -1,6 +1,7 @@
 import { saveToSampleStore } from '../../services/sampleStore';
 import { USER_SAMPLES_CONSTANTS } from './userSamples.constants';
 import { loadAndSetChannelSample } from '../channels';
+import { showFlashMessage, FLASH_MESSAGES } from '../window';
 
 export const addUserSample = sample => ({
   type: USER_SAMPLES_CONSTANTS.ADD_USER_SAMPLE,
@@ -21,5 +22,8 @@ export const saveUserSample = (channel, files) => (dispatch) => {
     .then((sampleURL) => {
       dispatch(addUserSample(sampleURL));
       dispatch(loadAndSetChannelSample(channel, sampleURL));
+    })
+    .catch(() => {
+      dispatch(showFlashMessage(FLASH_MESSAGES.SAMPLE_LOAD_ERROR));
     });
 };
