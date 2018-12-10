@@ -3,7 +3,7 @@ import presets from '../../presets';
 
 export const tempoInitialState = {
   bpm: presets[1].bpm,
-  swing: 0.5,
+  swing: presets[1].swing,
 };
 
 export const tempoReducer = (state = tempoInitialState, action) => {
