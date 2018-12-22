@@ -46,5 +46,5 @@ npm run test
  * [Webaudio-Controls](https://github.com/g200kg/webaudio-controls)
  * Chris Wilson's article [here](https://www.html5rocks.com/en/tutorials/audio/scheduling/)
  * [Voxengo impluse response](https://www.voxengo.com/impulses/)
- * [Jost typeface](http://indestructibletype.com/Jost.html)
+ * [Jost* typeface](https://github.com/indestructible-type/Jost)
  * [Draggable](https://shopify.github.io/draggable/)
