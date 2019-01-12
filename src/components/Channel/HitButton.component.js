@@ -14,6 +14,7 @@ export const HitButton = ({ channel, onMouseDown }) => (
     p={0}
     onMouseDown={onMouseDown}
     aria-label={`Play ${channel.sample.name}`}
+    touch-action="manipulation"
   />
 );
 

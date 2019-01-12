@@ -25,7 +25,7 @@ const Button = styled.button`
   ${ss.opacity}
   ${ss.minWidth}
   outline: ${({ outline }) => outline};
-  touch-action: none;
+  touch-action: manipulation;
 `;
 
 Button.defaultProps = {
