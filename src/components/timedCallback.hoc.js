@@ -6,7 +6,7 @@ export const timedCallback = (callback, delay) => WrappedEl => class extends Rea
     this.timer = setTimeout(callback, delay);
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     clearTimeout(this.timer);
   }
 

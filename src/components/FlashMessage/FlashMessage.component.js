@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TweenLite } from 'gsap/TweenMax';
+import * as animol from 'animol';
 import { FLASH_MESSAGES } from '../../common';
 import {
   Box,
@@ -39,14 +39,25 @@ export class FlashMessageComponent extends React.Component {
   animateBox() {
     const { flashMessageVisible, messageKey } = this.props;
     if (messageKey && flashMessageVisible) {
-      TweenLite.fromTo(
+      this.flashBox.style.display = 'block';
+      animol.css(
         this.flashBox,
-        0.5,
-        { autoAlpha: 0, y: '5%' },
-        { autoAlpha: 1, y: '0%' },
+        500,
+        { opacity: 0, transform: { translateY: '10%' } },
+        { opacity: 1, transform: { translateY: '0%' } },
+        animol.Easing.easeOutCubic,
       );
     } else if (messageKey) {
-      TweenLite.to(this.flashBox, 0.1, { autoAlpha: 0 });
+      const animation = animol.css(
+        this.flashBox,
+        200,
+        { opacity: 1 },
+        { opacity: 0 },
+        animol.Easing.easeInCubic,
+      );
+      animation.promise.then(() => {
+        this.flashBox.style.display = 'none';
+      });
     }
   }
 
@@ -65,6 +76,7 @@ export class FlashMessageComponent extends React.Component {
           boxShadow="0 0.5rem 3rem rgba(0,0,0,0.9)"
           maxWidth="30rem"
           innerRef={(comp) => { this.flashBox = comp; }}
+          opacity="0"
         >
           <Box
             innerRef={(comp) => { this.flashMessage = comp; }}
