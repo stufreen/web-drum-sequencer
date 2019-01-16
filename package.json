@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@shopify/draggable": "^1.0.0-beta.8",
-    "gsap": "^2.0.2",
+    "animol": "github:stufreen/animol#master",
     "prop-types": "^15.6.2",
     "ramda": "^0.25.0",
     "react": "^16.4.1",
