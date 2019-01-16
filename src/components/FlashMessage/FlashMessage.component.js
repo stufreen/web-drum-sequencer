@@ -43,16 +43,16 @@ export class FlashMessageComponent extends React.Component {
       animol.css(
         this.flashBox,
         500,
-        { opacity: 0, transform: { translateY: '5%' } },
+        { opacity: 0, transform: { translateY: '10%' } },
         { opacity: 1, transform: { translateY: '0%' } },
         animol.Easing.easeOutCubic,
       );
     } else if (messageKey) {
       const animation = animol.css(
         this.flashBox,
-        500,
-        { opacity: 1, transform: { translateY: '0%' } },
-        { opacity: 0, transform: { translateY: '0%' } },
+        200,
+        { opacity: 1 },
+        { opacity: 0 },
         animol.Easing.easeInCubic,
       );
       animation.promise.then(() => {
