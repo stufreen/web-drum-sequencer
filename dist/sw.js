@@ -5,8 +5,8 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-72x72.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-96x96.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-144x144.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-256x256.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-192x192.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-256x256.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-384x384.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/android-chrome-512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-57x57.png",
@@ -18,8 +18,8 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-144x144.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-152x152.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-167x167.png",
-    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-180x180.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon.png",
+    "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-180x180.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/apple-touch-icon-precomposed.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-16x16.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/favicon-32x32.png",
@@ -39,7 +39,7 @@ var serviceWorkerOption = {
     "./icons-05ba4b805f8a810423af5204b5b0d985/firefox_app_512x512.png",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.json",
     "./icons-05ba4b805f8a810423af5204b5b0d985/manifest.webapp",
-    "./iconstats-a8f540cac8aaa7506c12.json",
+    "./iconstats-a005444ed50d16fb6ace.json",
     "./assets/fonts/cfb42259b1ea50285ff056446f6320f2.woff2",
     "./assets/fonts/de815886b2d1af8d18c0241ab8fd2bcc.woff",
     "./assets/fonts/193e7796a51d7072416ab3d98fe558c4.woff2",
@@ -95,7 +95,7 @@ var serviceWorkerOption = {
     "./assets/audio/ruby-room.mp3",
     "./assets/images/maschine-50.png",
     "./assets/images/github.svg",
-    "./assets/js/bundle-b505aa9afdf40aa0aed2.js"
+    "./assets/js/bundle-632d6e707059e38b35a4.js"
   ]
 };
         
