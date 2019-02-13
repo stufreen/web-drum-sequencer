@@ -1,6 +1,6 @@
 {
   "name": "web-drum-sequencer",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A drum machine and sequencer built with the Web Audio API and React.",
   "main": "dist/index.html",
   "scripts": {
