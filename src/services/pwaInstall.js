@@ -1,4 +1,4 @@
-import { showFlashMessage, FLASH_MESSAGES } from '../common';
+import { setCanInstall } from '../common';
 
 let deferredPrompt;
 
@@ -6,10 +6,11 @@ export const initializePwaInstall = (store) => {
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
+    store.dispatch(setCanInstall(true));
+  });
 
-    setTimeout(() => {
-      store.dispatch(showFlashMessage(FLASH_MESSAGES.INSTALL_PWA));
-    }, 30000); // Wait 30 seconds until bugging the user to install
+  window.addEventListener('appinstalled', () => {
+    store.dispatch(setCanInstall(false));
   });
 };
 

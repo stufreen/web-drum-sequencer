@@ -4,6 +4,7 @@ export const windowInitialState = {
   presetPromptOpen: false,
   flashMessageKey: null,
   flashMessageVisible: false,
+  canInstall: false,
 };
 
 export const windowReducer = (state = windowInitialState, action) => {
@@ -23,6 +24,11 @@ export const windowReducer = (state = windowInitialState, action) => {
       return {
         ...state,
         flashMessageVisible: false,
+      };
+    case WINDOW_CONSTANTS.SET_CAN_INSTALL:
+      return {
+        ...state,
+        canInstall: action.payload,
       };
     default:
       return state;

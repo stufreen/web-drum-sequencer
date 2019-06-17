@@ -18,3 +18,8 @@ export const showFlashMessage = messageKey => ({
 export const clearFlashMessage = () => ({
   type: WINDOW_CONSTANTS.CLEAR_FLASH_MESSAGE,
 });
+
+export const setCanInstall = canInstall => ({
+  type: WINDOW_CONSTANTS.SET_CAN_INSTALL,
+  payload: canInstall,
+});
