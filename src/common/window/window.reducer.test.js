@@ -3,6 +3,7 @@ import {
   setPresetPrompt,
   showFlashMessage,
   clearFlashMessage,
+  setCanInstall,
 } from './window.actions';
 
 describe('setPresetPrompt', () => {
@@ -26,5 +27,12 @@ describe('clearFlashMessage', () => {
     const nullState = windowReducer(state, clearFlashMessage());
     expect(nullState.flashMessageKey).toBe('foobar');
     expect(nullState.flashMessageVisible).toEqual(false);
+  });
+});
+
+describe('setCanInstall', () => {
+  test('should set canInstall to a value', () => {
+    const state = windowReducer(windowInitialState, setCanInstall(true));
+    expect(state.canInstall).toBe(true);
   });
 });

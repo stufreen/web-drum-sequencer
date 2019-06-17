@@ -6,7 +6,6 @@ import {
   Box,
   HoverButton,
 } from '../design-system';
-import { InstallPWA } from '../InstallPWA';
 import { SampleLoadError } from '../SampleLoadError.component';
 import { PresetSaved } from '../PresetSaved.component';
 import { PresetDeleted } from '../PresetDeleted.component';
@@ -14,8 +13,6 @@ import { timedCallback } from '../timedCallback.hoc';
 
 const getMessageComponent = (messageKey) => {
   switch (messageKey) {
-    case FLASH_MESSAGES.INSTALL_PWA:
-      return InstallPWA;
     case FLASH_MESSAGES.SAMPLE_LOAD_ERROR:
       return SampleLoadError;
     case FLASH_MESSAGES.PRESET_SAVED:

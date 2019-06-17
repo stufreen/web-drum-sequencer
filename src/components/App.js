@@ -11,6 +11,7 @@ import {
   Branding,
   GithubLink,
   FlashMessage,
+  InstallButton,
 } from '.';
 
 globalStyles();
@@ -24,7 +25,10 @@ const App = () => (
       pt={[4, 4, 4, 4, 4, 4, 4, 4, 5]}
     >
       <header>
-        <Branding />
+        <Box display="flex" justifyContent="space-between" alignItems="flex-start">
+          <Branding />
+          <InstallButton />
+        </Box>
       </header>
       <main>
         <Box position="sticky" bg="nearBlack" top="0" zIndex="10" pt={2}>

@@ -17,3 +17,4 @@ export * from './ChannelControls';
 export * from './FlashMessage';
 export * from './SwingControl';
 export * from './Branding';
+export * from './InstallButton';
