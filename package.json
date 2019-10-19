@@ -51,13 +51,13 @@
     "style-loader": "^0.21.0",
     "webpack": "^4.16.2",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5",
+    "webpack-dev-server": "^3.8.2",
     "webpack-merge": "^4.1.4",
     "webpack-pwa-manifest": "^3.6.3"
   },
   "dependencies": {
     "@shopify/draggable": "^1.0.0-beta.8",
-    "animol": "github:stufreen/animol#master",
+    "animol": "1.0.9",
     "prop-types": "^15.6.2",
     "ramda": "^0.25.0",
     "react": "^16.4.1",
