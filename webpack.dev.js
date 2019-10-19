@@ -7,7 +7,7 @@ module.exports = merge(common, {
   mode: 'development',
   devServer: {
     port: 3000,
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, './dist'),
     hotOnly: true,
   },
   plugins: [
