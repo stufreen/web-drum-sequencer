@@ -121,6 +121,8 @@ SampleSelectComponent.propTypes = {
   onSelectSample: PropTypes.func.isRequired,
   onSampleFileChosen: PropTypes.func.isRequired,
   channel: PropTypes.shape({
+    sample: PropTypes.string,
+    sampleLoaded: PropTypes.bool,
     id: PropTypes.string.isRequired,
   }).isRequired,
   userSamples: PropTypes.arrayOf(PropTypes.string).isRequired,

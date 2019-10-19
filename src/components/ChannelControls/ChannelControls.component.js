@@ -87,6 +87,10 @@ export const ChannelControlsComponent = ({
 ChannelControlsComponent.propTypes = {
   channel: PropTypes.shape({
     id: PropTypes.string.isRequired,
+    pitchCoarse: PropTypes.number,
+    reverb: PropTypes.number,
+    gain: PropTypes.number,
+    pan: PropTypes.number,
   }).isRequired,
   onSetGain: PropTypes.func.isRequired,
   onSetPan: PropTypes.func.isRequired,
