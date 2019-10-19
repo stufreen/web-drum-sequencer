@@ -22,7 +22,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|assets)/,
         loader: 'babel-loader',
-        options: { presets: ['env'] },
+        options: { presets: ['@babel/preset-env', '@babel/preset-react'] },
       },
       {
         test: /\.(jpg|png|gif|svg)$/,
