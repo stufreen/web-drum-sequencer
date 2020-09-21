@@ -1,4 +1,4 @@
-import { detuneSupported } from './featureChecks';
+import { detuneSupported, stereoPannerSupported } from './featureChecks';
 import { getAudioContext } from './audioContext';
 import { loadImpulseResponse } from './reverb';
 import impulseResponse from '../assets/impulse-responses/ruby-room.mp3';
@@ -55,26 +55,25 @@ const updateGainNode = (channel, soloEnabled) => {
 };
 
 const updatePanNode = (channel) => {
-  // TO DO: emp fix for Safari (StereoPannerNode polyfill broken)
-  if (typeof audioCtx.createStereoPanner === 'undefined') {
+  if (stereoPannerSupported) {
     if (typeof channelPanNodes[channel.id] === 'undefined') {
-      // Set up a GainNode to control note volume
-      channelPanNodes[channel.id] = audioCtx.createGain();
+      channelPanNodes[channel.id] = audioCtx.createStereoPanner();
       channelPanNodes[channel.id].connect(audioCtx.destination);
     }
-    channelPanNodes[channel.id].gain.setValueAtTime(1, audioCtx.currentTime);
+    channelPanNodes[channel.id].pan.setValueAtTime(
+      typeof channel.pan === 'undefined' ? 0 : channel.pan,
+      audioCtx.currentTime,
+    );
+  } else {
+    if (typeof channelPanNodes[channel.id] === 'undefined') {
+      channelPanNodes[channel.id] = audioCtx.createPanner();
+      channelPanNodes[channel.id].panningModel = 'equalpower';
+      channelPanNodes[channel.id].connect(audioCtx.destination);
+    }
+    const pan = typeof channel.pan === 'undefined' ? 0 : channel.pan;
+    channelPanNodes[channel.id].setPosition(pan, 0, 1 - Math.abs(pan));
     return;
   }
-
-  if (typeof channelPanNodes[channel.id] === 'undefined') {
-    // Set up a GainNode to control note volume
-    channelPanNodes[channel.id] = audioCtx.createStereoPanner();
-    channelPanNodes[channel.id].connect(audioCtx.destination);
-  }
-  channelPanNodes[channel.id].pan.setValueAtTime(
-    typeof channel.pan === 'undefined' ? 0 : channel.pan,
-    audioCtx.currentTime,
-  );
 };
 
 const updateReverbNode = (channel) => {

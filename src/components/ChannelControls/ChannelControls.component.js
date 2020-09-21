@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   detuneSupported,
-  stereoPannerSupported,
 } from '../../services/featureChecks';
 import { Box } from '../design-system';
 import { SampleSelect } from '../SampleSelect';
@@ -45,20 +44,18 @@ export const ChannelControlsComponent = ({
       </Box>
     </ControlCluster>
     <ControlCluster>
-      {stereoPannerSupported && (
-        <Box mr={4}>
-          <InfoKnob
-            label="PAN"
-            minLabel="L"
-            maxLabel="R"
-            min="-1"
-            max="1"
-            step="0.1"
-            value={channel.pan || 0}
-            onChange={onSetPan}
-          />
-        </Box>
-      )}
+      <Box mr={4}>
+        <InfoKnob
+          label="PAN"
+          minLabel="L"
+          maxLabel="R"
+          min="-1"
+          max="1"
+          step="0.1"
+          value={channel.pan || 0}
+          onChange={onSetPan}
+        />
+      </Box>
       <Box>
         <InfoKnob
           label="VOL"
