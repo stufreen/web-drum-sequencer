@@ -7,10 +7,9 @@ const audioCtx = getAudioContext();
 
 const reverbNode = audioCtx.createConvolver();
 reverbNode.connect(audioCtx.destination);
-loadImpulseResponse(impulseResponse)
-  .then((impulseResponseArrayBuffer) => {
-    reverbNode.buffer = impulseResponseArrayBuffer;
-  });
+loadImpulseResponse(impulseResponse).then((impulseResponseArrayBuffer) => {
+  reverbNode.buffer = impulseResponseArrayBuffer;
+});
 
 /**
  * The channel routing is:
@@ -56,6 +55,17 @@ const updateGainNode = (channel, soloEnabled) => {
 };
 
 const updatePanNode = (channel) => {
+  // TO DO: emp fix for Safari (StereoPannerNode polyfill broken)
+  if (typeof audioCtx.createStereoPanner === 'undefined') {
+    if (typeof channelPanNodes[channel.id] === 'undefined') {
+      // Set up a GainNode to control note volume
+      channelPanNodes[channel.id] = audioCtx.createGain();
+      channelPanNodes[channel.id].connect(audioCtx.destination);
+    }
+    channelPanNodes[channel.id].gain.setValueAtTime(1, audioCtx.currentTime);
+    return;
+  }
+
   if (typeof channelPanNodes[channel.id] === 'undefined') {
     // Set up a GainNode to control note volume
     channelPanNodes[channel.id] = audioCtx.createStereoPanner();

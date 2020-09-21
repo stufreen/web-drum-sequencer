@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { detuneSupported } from '../../services/featureChecks';
+import {
+  detuneSupported,
+  stereoPannerSupported,
+} from '../../services/featureChecks';
 import { Box } from '../design-system';
 import { SampleSelect } from '../SampleSelect';
 import { InfoKnob } from '../InfoKnob.component';
@@ -28,35 +31,34 @@ export const ChannelControlsComponent = ({
         <SampleSelect channel={channel} />
       </Box>
       <Box>
-        {
-          detuneSupported
-          && (
-            <InfoKnob
-              label="PITCH"
-              minLabel="-24"
-              maxLabel="24"
-              min="-24"
-              max="24"
-              value={channel.pitchCoarse || 0}
-              onChange={onSetChannelPitchCoarse}
-            />
-          )
-        }
+        {detuneSupported && (
+          <InfoKnob
+            label="PITCH"
+            minLabel="-24"
+            maxLabel="24"
+            min="-24"
+            max="24"
+            value={channel.pitchCoarse || 0}
+            onChange={onSetChannelPitchCoarse}
+          />
+        )}
       </Box>
     </ControlCluster>
     <ControlCluster>
-      <Box mr={4}>
-        <InfoKnob
-          label="PAN"
-          minLabel="L"
-          maxLabel="R"
-          min="-1"
-          max="1"
-          step="0.1"
-          value={channel.pan || 0}
-          onChange={onSetPan}
-        />
-      </Box>
+      {stereoPannerSupported && (
+        <Box mr={4}>
+          <InfoKnob
+            label="PAN"
+            minLabel="L"
+            maxLabel="R"
+            min="-1"
+            max="1"
+            step="0.1"
+            value={channel.pan || 0}
+            onChange={onSetPan}
+          />
+        </Box>
+      )}
       <Box>
         <InfoKnob
           label="VOL"
