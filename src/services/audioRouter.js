@@ -72,7 +72,6 @@ const updatePanNode = (channel) => {
     }
     const pan = typeof channel.pan === 'undefined' ? 0 : channel.pan;
     channelPanNodes[channel.id].setPosition(pan, 0, 1 - Math.abs(pan));
-    return;
   }
 };
 
