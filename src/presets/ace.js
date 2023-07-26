@@ -1,3 +1,5 @@
+import { samples } from '../samples.config';
+
 export default {
   name: 'Ace Drum',
   bpm: 140,
@@ -5,32 +7,32 @@ export default {
   channels: [
     {
       id: 'empty_channel',
-      sample: 'assets/audio/acetone-bd.mp3',
+      sample: samples.AcetoneBd,
       gain: 1,
     },
     {
       id: 'efd00923-e1b5-4bcd-b99c-2cbde8d92634',
-      sample: 'assets/audio/acetone-sd-1.mp3',
+      sample: samples.AcetoneSd1,
       gain: 0.73,
     },
     {
       id: '6bf16a32-f8a1-4910-9046-be8b8c81591e',
-      sample: 'assets/audio/acetone-ch.mp3',
+      sample: samples.AcetoneCh,
       gain: 0.28,
     },
     {
       id: 'ab6ea4cd-f211-43a3-95ae-9a1cf7459de2',
-      sample: 'assets/audio/acetone-oh.mp3',
+      sample: samples.AcetoneOh,
       gain: 0.46,
     },
     {
       id: '8d761f84-9f82-48b3-bfa1-a11c7a7deeff',
-      sample: 'assets/audio/acetone-perc-1.mp3',
+      sample: samples.AcetonePerc1,
       gain: 0.45,
     },
     {
       id: '8735d786-5ac0-4b36-a3fb-c58a55ee2b08',
-      sample: 'assets/audio/acetone-perc-2.mp3',
+      sample: samples.AcetonePerc2,
       gain: 0.41,
     },
   ],
