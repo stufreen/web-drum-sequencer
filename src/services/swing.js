@@ -5,7 +5,6 @@ export const swing = (beatTime, swingAmount) => {
   const beatCyclePos = beatTime % SWING_TIMING;
   const beatCyclePercentage = beatCyclePos / SWING_TIMING;
 
-
   const fx = (beatCyclePercentage ** (1 - swingAmount)) * MAX_SWING; // Exponential function
   const offset = (fx - beatCyclePercentage) * beatCyclePos;
 

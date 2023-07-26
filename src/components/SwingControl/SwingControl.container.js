@@ -7,7 +7,7 @@ import { setSwing } from '../../common';
 const mapDispatchToProps = { setSwing };
 
 const handlers = withHandlers({
-  onSetSwing: props => (e) => {
+  onSetSwing: (props) => (e) => {
     const { setSwing: setSwingConnected } = props;
     setSwingConnected(e.target.value);
   },

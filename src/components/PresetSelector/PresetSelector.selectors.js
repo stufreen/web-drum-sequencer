@@ -14,7 +14,7 @@ const currentPresetSelector = createSelector(
   presetSelector,
   userPresetsSelector,
   (presetName, userPresets) => [...presets, ...userPresets].find(
-    preset => preset.name === presetName,
+    (preset) => preset.name === presetName,
   ),
 );
 

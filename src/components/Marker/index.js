@@ -1,1 +1,1 @@
-export * from './Marker.container.js';
+export * from './Marker.container';

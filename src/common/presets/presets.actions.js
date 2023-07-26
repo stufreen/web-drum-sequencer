@@ -6,27 +6,27 @@ import presets from '../../presets';
 import { showFlashMessage, FLASH_MESSAGES } from '../window';
 import { currentStateSelector } from './presets.selectors';
 
-export const setPreset = presetName => ({
+export const setPreset = (presetName) => ({
   type: PRESETS_CONSTANTS.SET_PRESET,
   payload: presetName,
 });
 
-export const savePreset = preset => ({
+export const savePreset = (preset) => ({
   type: PRESETS_CONSTANTS.SAVE_PRESET,
   payload: preset,
 });
 
-export const savePresetAs = preset => ({
+export const savePresetAs = (preset) => ({
   type: PRESETS_CONSTANTS.SAVE_PRESET_AS,
   payload: preset,
 });
 
-export const deletePreset = presetName => ({
+export const deletePreset = (presetName) => ({
   type: PRESETS_CONSTANTS.DELETE_PRESET,
   payload: presetName,
 });
 
-export const loadPreset = preset => (dispatch) => {
+export const loadPreset = (preset) => (dispatch) => {
   dispatch(setBPM(preset.bpm));
   dispatch(setSwing(preset.swing));
   dispatch(loadChannels(preset.channels, preset.notes));
@@ -35,7 +35,7 @@ export const loadPreset = preset => (dispatch) => {
   dispatch(setSelectedChannel(preset.channels[0].id));
 };
 
-export const erasePreset = presetName => (dispatch) => {
+export const erasePreset = (presetName) => (dispatch) => {
   dispatch(setBPM(presets[0].bpm));
   dispatch(setSwing(presets[0].swing));
   dispatch(loadChannels(presets[0].channels, presets[0].notes));
@@ -46,7 +46,7 @@ export const erasePreset = presetName => (dispatch) => {
   dispatch(showFlashMessage(FLASH_MESSAGES.PRESET_DELETED));
 };
 
-export const doSavePresetAs = presetName => (dispatch, getState) => {
+export const doSavePresetAs = (presetName) => (dispatch, getState) => {
   const currentState = currentStateSelector(getState());
   dispatch(savePresetAs({
     ...currentState,
@@ -56,7 +56,7 @@ export const doSavePresetAs = presetName => (dispatch, getState) => {
   dispatch(showFlashMessage(FLASH_MESSAGES.PRESET_SAVED));
 };
 
-export const doSavePreset = presetName => (dispatch, getState) => {
+export const doSavePreset = (presetName) => (dispatch, getState) => {
   const currentState = currentStateSelector(getState());
   dispatch(savePreset({
     ...currentState,

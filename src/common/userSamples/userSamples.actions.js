@@ -3,12 +3,12 @@ import { USER_SAMPLES_CONSTANTS } from './userSamples.constants';
 import { loadAndSetChannelSample } from '../channels';
 import { showFlashMessage, FLASH_MESSAGES } from '../window';
 
-export const addUserSample = sample => ({
+export const addUserSample = (sample) => ({
   type: USER_SAMPLES_CONSTANTS.ADD_USER_SAMPLE,
   payload: sample,
 });
 
-export const removeUserSample = sampleId => ({
+export const removeUserSample = (sampleId) => ({
   type: USER_SAMPLES_CONSTANTS.REMOVE_USER_SAMPLE,
   payload: sampleId,
 });

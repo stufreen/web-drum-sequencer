@@ -33,7 +33,7 @@ export const saveToDB = (myArrayBuffer, myKey) => new Promise((resolve, reject) 
   };
 });
 
-export const getFromDB = myKey => new Promise((resolve, reject) => {
+export const getFromDB = (myKey) => new Promise((resolve, reject) => {
   const trans = db.transaction([USER_SAMPLES], 'readwrite');
   const request = trans.objectStore(USER_SAMPLES).get(myKey);
   request.onerror = (event) => {

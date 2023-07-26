@@ -33,7 +33,7 @@ export const PresetSelector = compose(
     presets,
   }),
   withHandlers({
-    onSelectPreset: props => ({ value }) => {
+    onSelectPreset: (props) => ({ value }) => {
       const {
         doSavePreset: connectedDoSavePreset,
         setPresetPrompt: connectedSetPresetPrompt,

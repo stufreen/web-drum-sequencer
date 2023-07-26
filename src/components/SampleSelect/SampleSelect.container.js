@@ -10,11 +10,11 @@ const mapDispatchToProps = {
 };
 
 const handlers = withHandlers({
-  onSelectSample: props => (sample) => {
+  onSelectSample: (props) => (sample) => {
     const { loadAndSetChannelSample: connectedSetChannelSample, channel } = props;
     connectedSetChannelSample(channel.id, sample.value);
   },
-  onSampleFileChosen: props => (e) => {
+  onSampleFileChosen: (props) => (e) => {
     const { saveUserSample: connectedSaveUserSample, channel } = props;
     connectedSaveUserSample(channel.id, e.target.files);
   },

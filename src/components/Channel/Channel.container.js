@@ -14,15 +14,15 @@ const mapDispatchToProps = {
 };
 
 const handlers = withHandlers({
-  onSelectSample: props => (sample) => {
+  onSelectSample: (props) => (sample) => {
     const { loadAndSetChannelSample: scs, channel } = props;
     scs(channel.id, sample.value);
   },
-  onTouchChannel: props => () => {
+  onTouchChannel: (props) => () => {
     const { channel, setSelectedChannel: sscs } = props;
     sscs(channel.id);
   },
-  onPressRemove: props => () => {
+  onPressRemove: (props) => () => {
     const {
       channel,
       channels,
@@ -31,7 +31,7 @@ const handlers = withHandlers({
     } = props;
     dc(channel.id, channels, selectedChannelId);
   },
-  onPressHitButton: props => () => {
+  onPressHitButton: (props) => () => {
     const { channel } = props;
     playNoteNow(channel);
   },

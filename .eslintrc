@@ -8,18 +8,13 @@
     "react/jsx-filename-extension": [
       2,
       {
-        "extensions": [
-          ".js"
-        ]
+        "extensions": [".js"]
       }
     ],
     "import/prefer-default-export": 0,
     "global-require": 0,
-    "jsx-a11y/label-has-for": [
-      0
-    ],
-    "jsx-a11y/label-has-associated-control": [
-      0
-    ]
+    "jsx-a11y/label-has-for": [0],
+    "jsx-a11y/label-has-associated-control": [0],
+    "default-param-last": 0
   }
 }

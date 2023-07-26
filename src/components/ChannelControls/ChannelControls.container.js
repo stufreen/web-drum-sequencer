@@ -17,19 +17,19 @@ const mapDispatchToProps = {
 };
 
 const handlers = withHandlers({
-  onSetGain: props => (e) => {
+  onSetGain: (props) => (e) => {
     const { setChannelGain: setChannelGainConnected, channel } = props;
     setChannelGainConnected(channel.id, e.target.value / 100);
   },
-  onSetPan: props => (e) => {
+  onSetPan: (props) => (e) => {
     const { setChannelPan: setChannelPanConnected, channel } = props;
     setChannelPanConnected(channel.id, e.target.value);
   },
-  onSetChannelPitchCoarse: props => (e) => {
+  onSetChannelPitchCoarse: (props) => (e) => {
     const { setChannelPitchCoarse: setChannelPitchCoarseConnected, channel } = props;
     setChannelPitchCoarseConnected(channel.id, e.target.value);
   },
-  onSetReverb: props => (e) => {
+  onSetReverb: (props) => (e) => {
     const { setChannelReverb: setChannelReverbConnected, channel } = props;
     setChannelReverbConnected(channel.id, e.target.value);
   },
