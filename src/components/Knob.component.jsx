@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../assets/js/webcomponents-lite';
+// import '../assets/js/webcomponents-lite';
 import knobImage from '../assets/images/maschine-50.png';
 import '../assets/js/webaudio-controls';
 
@@ -19,7 +19,9 @@ export class Knob extends React.Component {
     const { size, value, ...rest } = this.props;
     return (
       <webaudio-knob
-        ref={(element) => { this.knob = element; }}
+        ref={(element) => {
+          this.knob = element;
+        }}
         src={knobImage}
         sprites="50"
         min="0"

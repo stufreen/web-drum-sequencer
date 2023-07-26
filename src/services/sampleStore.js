@@ -14,14 +14,16 @@ export const loadSample = (url) => {
       sampleStore[url] = drumBuffer;
       return true;
     })
-    .catch(() => fetchFile(url)
-      .then(decodeFile)
-      .then(decodeAudio)
-      .then((drumBuffer) => {
-        sampleStore[url] = drumBuffer;
-        return true;
-      })
-      .catch(() => false));
+    .catch(() =>
+      fetchFile(url)
+        .then(decodeFile)
+        .then(decodeAudio)
+        .then((drumBuffer) => {
+          sampleStore[url] = drumBuffer;
+          return true;
+        })
+        .catch(() => false),
+    );
 };
 
 export const saveToSampleStore = (file) => {

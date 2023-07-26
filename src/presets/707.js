@@ -1,3 +1,5 @@
+import { samples } from '../samples.config';
+
 export default {
   name: '707',
   bpm: 133,
@@ -5,32 +7,32 @@ export default {
   channels: [
     {
       id: 'empty_channel',
-      sample: 'assets/audio/707-bd.mp3',
+      sample: samples.tr707Bd,
       gain: 1,
     },
     {
       id: '19a36a53-a907-41f2-baef-394f0fbf0403',
-      sample: 'assets/audio/707-sd-high.mp3',
+      sample: samples.tr707SdHigh,
       gain: 1,
     },
     {
       id: 'ca0d0d5f-61af-45a4-8d36-8648d20e3132',
-      sample: 'assets/audio/707-ch.mp3',
+      sample: samples.tr707Ch,
       gain: 0.19,
     },
     {
       id: '69aa5d1a-085a-4083-93c5-b3aa7a334278',
-      sample: 'assets/audio/707-oh.mp3',
+      sample: samples.tr707Oh,
       gain: 0.32,
     },
     {
       id: '5a2f4293-159f-46e9-a9de-52eaeb326483',
-      sample: 'assets/audio/707-clap.mp3',
+      sample: samples.tr707Clap,
       gain: 0.75,
     },
     {
       id: '1449a5d5-79ea-4332-83e0-d5513a82d16f',
-      sample: 'assets/audio/707-tamb.mp3',
+      sample: samples.tr707Tamb,
       gain: 0.37,
     },
   ],
