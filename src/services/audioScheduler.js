@@ -6,7 +6,8 @@ import { swing } from './swing';
 // schedule is a lookup table of all the notes currently scheduled to be played
 const schedule = {};
 
-export const pitchToCents = ({ pitchCoarse = 0, pitchFine = 0 }) => Math.round(pitchCoarse * 100 + pitchFine);
+export const pitchToCents = ({ pitchCoarse = 0, pitchFine = 0 }) =>
+  Math.round(pitchCoarse * 100 + pitchFine);
 
 export const playNoteNow = (noteChannel) => {
   const pitch = pitchToCents(noteChannel);
@@ -33,37 +34,38 @@ export const getScheduledNotes = ({
   startTime,
   tempo,
   currentBeat,
-}) => channelNotes.map((note) => {
-  const lookaheadBeats = LOOKAHEAD * (tempo.bpm / 60);
+}) =>
+  channelNotes.map((note) => {
+    const lookaheadBeats = LOOKAHEAD * (tempo.bpm / 60);
 
-  const swingAmount = typeof tempo.swing === 'undefined' ? 0 : tempo.swing;
-  const swingBeat = swing(note.beat, swingAmount);
+    const swingAmount = typeof tempo.swing === 'undefined' ? 0 : tempo.swing;
+    const swingBeat = swing(note.beat, swingAmount);
 
-  const noteTime = startTime + (swingBeat - 1) * (60 / tempo.bpm);
-  if (isBetween(note.beat, currentBeat, currentBeat + lookaheadBeats)) {
+    const noteTime = startTime + (swingBeat - 1) * (60 / tempo.bpm);
+    if (isBetween(note.beat, currentBeat, currentBeat + lookaheadBeats)) {
+      return {
+        id: note.id,
+        time: noteTime,
+        channel,
+      };
+    }
+    // If nearing the end of the bar, schedule notes at the start of the bar too
+    if (
+      isBetween(note.beat, currentBeat - 4, currentBeat + lookaheadBeats - 4)
+    ) {
+      return {
+        id: note.id,
+        time: startTime + ((note.beat + 3) * 60) / tempo.bpm,
+        channel,
+      };
+    }
+    // Return note objects with time: null that should not be scheduled
     return {
       id: note.id,
-      time: noteTime,
+      time: null,
       channel,
     };
-  }
-  // If nearing the end of the bar, schedule notes at the start of the bar too
-  if (
-    isBetween(note.beat, currentBeat - 4, currentBeat + lookaheadBeats - 4)
-  ) {
-    return {
-      id: note.id,
-      time: startTime + ((note.beat + 3) * 60) / tempo.bpm,
-      channel,
-    };
-  }
-  // Return note objects with time: null that should not be scheduled
-  return {
-    id: note.id,
-    time: null,
-    channel,
-  };
-});
+  });
 
 export const scheduleNotes = ({
   notes,

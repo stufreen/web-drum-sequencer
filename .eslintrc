@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb",
+  "extends": "eslint:recommended",
   "env": {
     "browser": true,
     "jest": true
@@ -9,6 +9,8 @@
     "global-require": 0,
     "jsx-a11y/label-has-for": [0],
     "jsx-a11y/label-has-associated-control": [0],
-    "default-param-last": 0
-  }
+    "default-param-last": 0,
+    "implicit-arrow-linebreak": 0
+  },
+  "parser": "babel-eslint"
 }

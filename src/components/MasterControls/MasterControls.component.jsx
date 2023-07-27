@@ -7,7 +7,14 @@ import { PatternSelector } from '../PatternSelector';
 import { SwingControl } from '../SwingControl';
 
 export const MasterControls = () => (
-  <Box mb={3} display="flex" alignItems="stretch" height="3rem" justifyContent="space-between">
+  <Box
+    mb={3}
+    display="flex"
+    alignItems="stretch"
+    height="3rem"
+    justifyContent="space-between"
+  >
+    <meter id="volume-meter"></meter>
     <Box display="flex" mr={2}>
       <Box mr={2}>
         <PlayButton />

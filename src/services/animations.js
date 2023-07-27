@@ -1,5 +1,6 @@
 import { getCurrentBeat } from './audioContext';
 import { swing } from './swing';
+import { getVolume } from './audioAnalyzer';
 
 const draw = (store) => {
   // Get some data from redux store
@@ -15,11 +16,12 @@ const draw = (store) => {
     const { beat, active } = toggle.dataset;
     const beatNum = parseFloat(beat);
     const swingBeat = swing(beatNum, swingAmount);
-    const isActive = (active === 'true');
-    if (playing
-      && isActive
-      && currentBeat - swingBeat < 0.25
-      && currentBeat - swingBeat > 0
+    const isActive = active === 'true';
+    if (
+      playing &&
+      isActive &&
+      currentBeat - swingBeat < 0.25 &&
+      currentBeat - swingBeat > 0
     ) {
       toggle.style.transition = 'all 0s';
       toggle.style.opacity = '0.8';
@@ -29,6 +31,13 @@ const draw = (store) => {
       toggle.style.opacity = 0;
       toggle.style.transform = 'scale(1)';
     }
+  }
+
+  // Update volume meter
+  const currentVolume = getVolume();
+  const volumeMeterEl = document.getElementById('volume-meter');
+  if (volumeMeterEl) {
+    volumeMeterEl.value = currentVolume;
   }
 
   window.requestAnimationFrame(() => {
