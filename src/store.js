@@ -5,8 +5,8 @@ import storage from 'redux-persist/lib/storage';
 import reducer from './reducer';
 
 const migrations = {
-  1: () => ({ }),
-  2: () => ({ }),
+  1: () => ({}),
+  2: () => ({}),
 };
 
 export const configureStore = (callback) => {
@@ -15,15 +15,17 @@ export const configureStore = (callback) => {
     storage,
     version: 2,
     blacklist: ['playbackSession', 'window'],
-    migrate: createMigrate(migrations, { debug: process.env.__DEV__ }), // eslint-disable-line
+    migrate: createMigrate(migrations, { debug: import.meta.env.DEV }), // eslint-disable-line
   };
 
   const persistedReducer = persistReducer(persistConfig, reducer);
 
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line
-  const store = createStore(persistedReducer, composeEnhancers(
-    applyMiddleware(thunk),
-  ));
+  const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line
+  const store = createStore(
+    persistedReducer,
+    composeEnhancers(applyMiddleware(thunk)),
+  );
 
   const persistor = persistStore(store, null, callback);
 

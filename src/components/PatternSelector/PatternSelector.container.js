@@ -11,7 +11,7 @@ const mapDispatchToProps = {
 export const PatternSelector = compose(
   connect(patternSelectorSelectors, mapDispatchToProps),
   withHandlers({
-    onSelectPattern: props => (patternIndex) => {
+    onSelectPattern: (props) => (patternIndex) => {
       const {
         setPattern: connectedSetPattern,
       } = props;

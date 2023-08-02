@@ -14,7 +14,7 @@ const mapDispatchToProps = {
 };
 
 const isNameUnique = (proposedName, userPresets) => [...defaultPresets, ...userPresets].find(
-  preset => preset.name === proposedName,
+  (preset) => preset.name === proposedName,
 ) === undefined;
 
 const handlers = {
@@ -24,7 +24,7 @@ const handlers = {
       setError(null);
     }
   },
-  onClose: props => () => {
+  onClose: (props) => () => {
     const {
       setPresetPrompt: connectedSetPresetPrompt,
       updateNameField,
@@ -32,7 +32,7 @@ const handlers = {
     updateNameField('');
     connectedSetPresetPrompt(false);
   },
-  onSubmit: props => (event) => {
+  onSubmit: (props) => (event) => {
     event.preventDefault();
     const {
       setPresetPrompt: connectedSetPresetPrompt,

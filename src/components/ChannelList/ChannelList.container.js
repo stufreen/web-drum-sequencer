@@ -10,7 +10,7 @@ const mapDispatchToProps = {
 };
 
 const handlers = withHandlers({
-  onUpdateChannelOrder: props => (oldIndex, newIndex) => {
+  onUpdateChannelOrder: (props) => (oldIndex, newIndex) => {
     const { updateChannelOrder: updateChannelOrderConnected } = props;
     updateChannelOrderConnected(oldIndex, newIndex);
   },

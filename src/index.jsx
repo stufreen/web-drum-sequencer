@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import App from './components/App';
 import { initializeAudio } from './services/audioLoop';
 import { configureStore } from './store';
@@ -27,8 +26,14 @@ window.addEventListener('online', () => {
 });
 
 // Register service worker
-if (process.env.__PROD__ && 'serviceWorker' in navigator) { // eslint-disable-line
-  runtime.register();
+if (import.meta.env.DEV && 'serviceWorker' in navigator) {
+  try {
+    navigator.serviceWorker.register('./sw.js', {
+      scope: '/',
+    });
+  } catch (error) {
+    console.error(`Registration failed with ${error}`);
+  }
 }
 
 ReactDOM.render(
@@ -46,11 +51,10 @@ startAnimations(store);
 
 initializePwaInstall(store);
 
-initializeDB()
-  .then(() => {
-    const { channels } = store.getState();
-    // Load up all the initial samples
-    channels.forEach((channel) => {
-      loadSampleStatefully(store.dispatch, channel);
-    });
+initializeDB().then(() => {
+  const { channels } = store.getState();
+  // Load up all the initial samples
+  channels.forEach((channel) => {
+    loadSampleStatefully(store.dispatch, channel);
   });
+});

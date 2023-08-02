@@ -15,11 +15,12 @@ const draw = (store) => {
     const { beat, active } = toggle.dataset;
     const beatNum = parseFloat(beat);
     const swingBeat = swing(beatNum, swingAmount);
-    const isActive = (active === 'true');
-    if (playing
-      && isActive
-      && currentBeat - swingBeat < 0.25
-      && currentBeat - swingBeat > 0
+    const isActive = active === 'true';
+    if (
+      playing &&
+      isActive &&
+      currentBeat - swingBeat < 0.25 &&
+      currentBeat - swingBeat > 0
     ) {
       toggle.style.transition = 'all 0s';
       toggle.style.opacity = '0.8';

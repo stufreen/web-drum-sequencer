@@ -12,11 +12,11 @@ const mapDispatchToProps = {
 };
 
 const handlers = withHandlers({
-  onPressMuted: props => () => {
+  onPressMuted: (props) => () => {
     const { channel, setChannelMuted: setChannelMutedConnected } = props;
     setChannelMutedConnected(channel.id, !channel.muted);
   },
-  onPressSolo: props => () => {
+  onPressSolo: (props) => () => {
     const { channel, setChannelSolo: setChannelSoloConnected } = props;
     setChannelSoloConnected(channel.id, !channel.solo);
   },

@@ -1,6 +1,6 @@
 import { getAudioContext } from './audioContext';
 
-export const fetchFile = url => new Promise(
+export const fetchFile = (url) => new Promise(
   (resolve, reject) => {
     fetch(url).then((response) => {
       if (response.ok) {
@@ -11,7 +11,7 @@ export const fetchFile = url => new Promise(
   },
 );
 
-export const decodeFile = sampleBlob => new Promise(
+export const decodeFile = (sampleBlob) => new Promise(
   (resolve) => {
     const fileReader = new FileReader();
     fileReader.readAsArrayBuffer(sampleBlob);
@@ -21,7 +21,7 @@ export const decodeFile = sampleBlob => new Promise(
   },
 );
 
-export const decodeAudio = audioArrayBuffer => new Promise(
+export const decodeAudio = (audioArrayBuffer) => new Promise(
   (resolve, reject) => {
     getAudioContext().decodeAudioData(audioArrayBuffer, resolve, reject);
   },

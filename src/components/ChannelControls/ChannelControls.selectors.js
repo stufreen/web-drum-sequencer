@@ -6,7 +6,7 @@ const channelSelector = createSelector(
   selectedChannelSelector,
   (channels, selectedChannelID) => {
     const selectedChannel = channels.find(
-      channel => channel.id === selectedChannelID,
+      (channel) => channel.id === selectedChannelID,
     );
     return typeof selectedChannel === 'undefined' ? channels[0] : selectedChannel;
   },

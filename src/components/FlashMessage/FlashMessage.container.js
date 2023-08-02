@@ -9,7 +9,7 @@ const mapDispatchToProps = {
 };
 
 const handlers = withHandlers({
-  onDismiss: props => () => {
+  onDismiss: (props) => () => {
     const { clearFlashMessage: connectedClearFlashMessage } = props;
     connectedClearFlashMessage();
   },

@@ -17,7 +17,7 @@ export const presetsReducer = (state = presetsInitialState, action) => {
       return {
         ...state,
         userPresets: state.userPresets.map(
-          userPreset => (userPreset.name === action.payload.name
+          (userPreset) => (userPreset.name === action.payload.name
             ? action.payload
             : userPreset),
         ),
@@ -27,7 +27,7 @@ export const presetsReducer = (state = presetsInitialState, action) => {
         ...state,
         userPresets: [
           ...state.userPresets.filter(
-            userPreset => userPreset.name !== action.payload.name,
+            (userPreset) => userPreset.name !== action.payload.name,
           ),
           action.payload,
         ],
@@ -36,7 +36,7 @@ export const presetsReducer = (state = presetsInitialState, action) => {
       return {
         ...state,
         userPresets: state.userPresets.filter(
-          userPreset => userPreset.name !== action.payload,
+          (userPreset) => userPreset.name !== action.payload,
         ),
       };
     default:

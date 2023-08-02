@@ -25,7 +25,11 @@ const App = () => (
       pt={[4, 4, 4, 4, 4, 4, 4, 4, 5]}
     >
       <header>
-        <Box display="flex" justifyContent="space-between" alignItems="flex-start">
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="flex-start"
+        >
           <Branding />
           <InstallButton />
         </Box>
@@ -39,7 +43,12 @@ const App = () => (
         <ChannelList />
       </main>
       <footer>
-        <Box position="absolute" bottom={0} right={0} mr={[0, 0, 0, 1, 2, 2, 2, 3, 5]}>
+        <Box
+          position="absolute"
+          bottom={0}
+          right={0}
+          mr={[0, 0, 0, 1, 2, 2, 2, 3, 5]}
+        >
           <GithubLink />
         </Box>
       </footer>

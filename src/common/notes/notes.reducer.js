@@ -7,8 +7,8 @@ export const notesInitialState = presets[1].notes;
 
 // Returns a new noteAr clone with a note at beat either added or removed
 const toggleNote = (noteAr, beat) => {
-  if (noteAr.find(note => note.beat === beat)) {
-    return noteAr.filter(note => note.beat !== beat);
+  if (noteAr.find((note) => note.beat === beat)) {
+    return noteAr.filter((note) => note.beat !== beat);
   }
   return [
     ...noteAr,

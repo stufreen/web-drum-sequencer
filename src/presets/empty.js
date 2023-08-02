@@ -1,15 +1,6 @@
-import samples from '../samples.config';
+import sampleList from '../samples.config';
 
-export const EMPTY_NOTE_ROW = [
-  [],
-  [],
-  [],
-  [],
-  [],
-  [],
-  [],
-  [],
-];
+export const EMPTY_NOTE_ROW = [[], [], [], [], [], [], [], []];
 
 export default {
   name: 'Empty',
@@ -18,7 +9,7 @@ export default {
   channels: [
     {
       id: 'empty_channel',
-      sample: samples[0].url,
+      sample: sampleList[0].url,
       gain: 1,
     },
   ],

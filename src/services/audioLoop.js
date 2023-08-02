@@ -7,13 +7,8 @@ import { INTERVAL } from './audioEngine.config';
 export const initializeAudio = (store) => {
   const audioCtx = getAudioContext(); // Start the clock
   setInterval(() => {
-    const {
-      playbackSession,
-      tempo,
-      channels,
-      notes,
-      master,
-    } = store.getState();
+    const { playbackSession, tempo, channels, notes, master } =
+      store.getState();
 
     updateChannelNodes(channels);
 

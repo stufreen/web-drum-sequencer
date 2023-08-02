@@ -54,12 +54,12 @@ export const setChannelSolo = (channel, solo) => ({
   },
 });
 
-export const addChannel = channel => ({
+export const addChannel = (channel) => ({
   type: CHANNELS_CONSTANTS.ADD_CHANNEL,
   payload: channel,
 });
 
-export const removeChannel = id => ({
+export const removeChannel = (id) => ({
   type: CHANNELS_CONSTANTS.REMOVE_CHANNEL,
   payload: id,
 });
@@ -72,7 +72,7 @@ export const updateChannelOrder = (oldIndex, newIndex) => ({
   },
 });
 
-export const replaceChannels = channels => ({
+export const replaceChannels = (channels) => ({
   type: CHANNELS_CONSTANTS.SET_CHANNELS,
   payload: channels,
 });

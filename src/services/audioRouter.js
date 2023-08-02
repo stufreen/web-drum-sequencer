@@ -5,8 +5,15 @@ import impulseResponse from '../assets/impulse-responses/ruby-room.mp3';
 
 const audioCtx = getAudioContext();
 
+const masterOut = audioCtx.createGain();
+masterOut.connect(audioCtx.destination);
+
+export const analyserNode = audioCtx.createAnalyser();
+analyserNode.smoothingTimeConstant = 0;
+masterOut.connect(analyserNode);
+
 const reverbNode = audioCtx.createConvolver();
-reverbNode.connect(audioCtx.destination);
+reverbNode.connect(masterOut);
 loadImpulseResponse(impulseResponse).then((impulseResponseArrayBuffer) => {
   reverbNode.buffer = impulseResponseArrayBuffer;
 });
@@ -18,8 +25,10 @@ loadImpulseResponse(impulseResponse).then((impulseResponseArrayBuffer) => {
  *  -> Gain node
  *    -> Reverb node
  *      -> Master out
+ *        -> Analyser node
  *    -> Pan node
  *      -> Master out
+ *        -> Analyser node
  */
 
 const channelGainNodes = {};
@@ -58,7 +67,7 @@ const updatePanNode = (channel) => {
   if (stereoPannerSupported) {
     if (typeof channelPanNodes[channel.id] === 'undefined') {
       channelPanNodes[channel.id] = audioCtx.createStereoPanner();
-      channelPanNodes[channel.id].connect(audioCtx.destination);
+      channelPanNodes[channel.id].connect(masterOut);
     }
     channelPanNodes[channel.id].pan.setValueAtTime(
       typeof channel.pan === 'undefined' ? 0 : channel.pan,
@@ -68,7 +77,7 @@ const updatePanNode = (channel) => {
     if (typeof channelPanNodes[channel.id] === 'undefined') {
       channelPanNodes[channel.id] = audioCtx.createPanner();
       channelPanNodes[channel.id].panningModel = 'equalpower';
-      channelPanNodes[channel.id].connect(audioCtx.destination);
+      channelPanNodes[channel.id].connect(masterOut);
     }
     const pan = typeof channel.pan === 'undefined' ? 0 : channel.pan;
     channelPanNodes[channel.id].setPosition(pan, 0, 1 - Math.abs(pan));
