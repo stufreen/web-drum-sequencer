@@ -1,34 +1,58 @@
 {
   "icons": [
     {
-      "src": "icon_512x512.908d62f085a5ded43717427d63bab876.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "assets/icons/icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "icon_384x384.3d6eb9875df88e2db8afd525d8a3af39.png",
-      "sizes": "384x384",
-      "type": "image/png"
+      "src": "assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "icon_256x256.91932029d8d76c158becbe6428523cf5.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "icon_192x192.8fc3c9dd9f6bd1a00a4c572019d090e7.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon_128x128.bc71828add06ca4ace6feecd52cc31fe.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "icon_96x96.85626c8248cbf9fe2075fea87e7225de.png",
+      "src": "assets/icons/icon-96x96.png",
       "sizes": "96x96",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
     }
   ],
   "name": "WDS-1: Wed Drum Sequencer",
