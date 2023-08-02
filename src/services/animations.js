@@ -33,13 +33,6 @@ const draw = (store) => {
     }
   }
 
-  // Update volume meter
-  const currentVolume = getVolume();
-  const volumeMeterEl = document.getElementById('volume-meter');
-  if (volumeMeterEl) {
-    volumeMeterEl.value = currentVolume;
-  }
-
   window.requestAnimationFrame(() => {
     draw(store);
   });

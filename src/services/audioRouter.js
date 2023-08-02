@@ -9,6 +9,7 @@ const masterOut = audioCtx.createGain();
 masterOut.connect(audioCtx.destination);
 
 export const analyserNode = audioCtx.createAnalyser();
+analyserNode.smoothingTimeConstant = 0;
 masterOut.connect(analyserNode);
 
 const reverbNode = audioCtx.createConvolver();
