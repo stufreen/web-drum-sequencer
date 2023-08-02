@@ -1,5 +1,6 @@
 import { PLAYBACK_SESSION_CONSTANTS } from './playbackSession.constants';
 import { getAudioContext } from '../../services/audioContext';
+import { unmute } from '../../services/unmute';
 
 export const startPlayback = () => ({
   type: PLAYBACK_SESSION_CONSTANTS.START_PLAYBACK,
@@ -15,6 +16,7 @@ export const setStartTime = (val) => ({
 });
 
 export const startPlaybackAndResume = () => (dispatch) => {
+  unmute();
   getAudioContext().resume();
   dispatch(startPlayback());
 };
