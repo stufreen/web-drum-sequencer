@@ -7,13 +7,14 @@ import reducer from './reducer';
 const migrations = {
   1: () => ({}),
   2: () => ({}),
+  3: () => ({}),
 };
 
 export const configureStore = (callback) => {
   const persistConfig = {
     key: 'root-v1.0.0',
     storage,
-    version: 2,
+    version: 3,
     blacklist: ['playbackSession', 'window'],
     migrate: createMigrate(migrations, { debug: import.meta.env.DEV }), // eslint-disable-line
   };
