@@ -66,7 +66,7 @@ jobs:
       #- run: yarn test
   deploy:
     docker:
-      - image: cimg/python:2.7-jessie
+      - image: circleci/python:2.7-jessie
     working_directory: ~/repo
     steps:
       - attach_workspace:
