@@ -2,7 +2,8 @@
   "extends": "eslint:recommended",
   "env": {
     "browser": true,
-    "jest": true
+    "jest": true,
+    "es6": true
   },
   "rules": {
     "import/prefer-default-export": 0,
@@ -12,5 +13,5 @@
     "default-param-last": 0,
     "implicit-arrow-linebreak": 0
   },
-  "parser": "babel-eslint"
+  "parser": "@babel/eslint-parser"
 }

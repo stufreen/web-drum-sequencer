@@ -1,6 +1,5 @@
 import { getCurrentBeat } from './audioContext';
 import { swing } from './swing';
-import { getVolume } from './audioAnalyzer';
 
 const draw = (store) => {
   // Get some data from redux store
