@@ -2,6 +2,7 @@ import { LOOKAHEAD } from './audioEngine.config';
 import { playNote } from './audioRouter';
 import { sampleStore } from './sampleStore';
 import { swing } from './swing';
+import { unmute } from './unmute';
 
 // schedule is a lookup table of all the notes currently scheduled to be played
 const schedule = {};
@@ -10,6 +11,7 @@ export const pitchToCents = ({ pitchCoarse = 0, pitchFine = 0 }) =>
   Math.round(pitchCoarse * 100 + pitchFine);
 
 export const playNoteNow = (noteChannel) => {
+  unmute();
   const pitch = pitchToCents(noteChannel);
   playNote(null, sampleStore[noteChannel.sample], noteChannel.id, pitch);
 };
