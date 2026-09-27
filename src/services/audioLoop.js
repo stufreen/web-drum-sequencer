@@ -12,6 +12,10 @@ export const initializeAudio = (store) => {
 
     updateChannelNodes(channels);
 
+    if ('audioSession' in navigator) {
+      navigator.audioSession.type = 'playback'; // Bypasses iPadOS ambient muting
+    }
+
     if (playbackSession.playing) {
       let sT = playbackSession.startTime;
       // Loop if we reached the end of the bar
